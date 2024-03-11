@@ -8,31 +8,27 @@ type Metadata = {
 
 // FIXME: Add an image for displaying on social networks, remember that this image must meet the size of 1200x630
 // For example: /images/social-previews/index.jpg
-const DEFAULT_IMAGE_PATH = '';
+const DEFAULT_IMAGE_PATH = "";
 
 export function getMetadata({
   title,
   description,
   pathname,
   imagePath = DEFAULT_IMAGE_PATH,
-  type = 'website',
+  type = "website",
 }: Metadata) {
   const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
   const canonicalUrl = SITE_URL + pathname;
-  const imageUrl = imagePath.startsWith('http') ? imagePath : SITE_URL + imagePath;
-  const siteName = 'Pixel Point Next.js TypeScript Tailwind Starter';
+  const imageUrl = imagePath.startsWith("http")
+    ? imagePath
+    : SITE_URL + imagePath;
+  const siteName = "Pixel Point Next.js TypeScript Tailwind Starter";
 
   return {
     title,
     description,
     alternates: {
       canonical: canonicalUrl,
-    },
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-      maximumScale: 1,
-      viewportFit: 'cover',
     },
     // FIXME: Generate favicons with Favpie - https://github.com/pixel-point/favpie
     // manifest: `${SITE_URL}/manifest.json`,
@@ -63,7 +59,7 @@ export function getMetadata({
       type,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
     },
   };
 }
