@@ -37,9 +37,6 @@ function Header() {
             <Image src={logo} width={90} height={18} alt="NextJS logo" priority />
           </Link>
           <div className="flex gap-x-5 md:hidden">
-            <Link className="text-base font-semibold" href="/about">
-              About
-            </Link>
             <span>|</span>
             <Link
               className="transition-opacity duration-200 hover:opacity-75"

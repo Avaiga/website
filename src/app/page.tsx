@@ -34,10 +34,9 @@ function Home() {
 export default Home;
 
 export async function generateMetadata() {
-  // FIXME: Add real data here
   return getMetadata({
-    title: 'Home - Next.js TypeScript Tailwind Starter',
-    description: 'Next.js TypeScript Tailwind Starter',
+    title: 'Taipy',
+    description: 'Build Python data & AI web applications',
     pathname: '/',
   });
 }

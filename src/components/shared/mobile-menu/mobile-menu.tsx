@@ -37,13 +37,8 @@ function MobileMenu({ isOpen, onClick }: { isOpen: boolean; onClick: () => void 
             <div className="flex h-full w-full px-4 py-16 text-left">
               <ul className="flex max-h-full w-full flex-col divide-y divide-[#000] overflow-y-auto">
                 <li>
-                  <Link className="block py-5 text-xl" href="/">
+                  <Link className="text-xl block py-5" href="/">
                     Home
-                  </Link>
-                </li>
-                <li>
-                  <Link className="block py-5 text-xl" href="/about">
-                    About
                   </Link>
                 </li>
               </ul>
