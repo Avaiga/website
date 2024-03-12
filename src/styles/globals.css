@@ -12,7 +12,7 @@
   .container {
     /* FIXME: Specify the real "px-" padding */
     /* FIXME: Specify the max-width "max-w-" by formula: 1920px design content width + padding * 2 */
-    @apply mx-auto w-full max-w-[1400px];
+    @apply mx-auto w-full max-w-[1344px];
 
     /*
       FIXME: Specify the real "px-" padding for each breakpoint
