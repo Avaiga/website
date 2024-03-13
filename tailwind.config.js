@@ -18,6 +18,7 @@ module.exports = {
       32: '32px',
       36: '36px',
       40: '40px',
+      44: '44px',
       48: '48px',
       56: '56px',
       64: '64px',
@@ -28,7 +29,8 @@ module.exports = {
       dense: '1.4',
     },
     letterSpacing: {
-      tighter: '-0.04em',
+      tighter: '-0.06em',
+      tight: '-0.04em',
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
@@ -38,6 +40,7 @@ module.exports = {
       white: '#ffffff',
       primary: {
         red: '#ff371a',
+        orange: '#ff462b',
       },
       secondary: {
         blue: '#72bff1',

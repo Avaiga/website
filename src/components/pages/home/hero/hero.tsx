@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import Button from '@/components/shared/button';
 
-import bg from './images/bg.svg';
+import bg from './images/bg.png';
 import partners from './images/partners.svg';
 import screen from './images/screen.svg';
 
@@ -13,10 +13,10 @@ function Hero() {
         <div className="absolute bottom-[42px] right-[-218px] h-[751px] w-[1706px]">
           <Image src={bg} width={1706} height={751} alt="" className="h-full w-full" />
         </div>
-        <p className="relative text-center text-16 leading-snug text-[#FF462B]">
+        <p className="text-orange relative text-center text-16 leading-snug">
           Beyond existing libraries
         </p>
-        <h1 className="relative mx-auto mt-5 max-w-[610px] text-center text-64 font-medium leading-tighter tracking-tighter">
+        <h1 className="relative mx-auto mt-5 max-w-[610px] text-center text-64 font-medium leading-tighter tracking-tight">
           Build Python Data &&nbsp;AI web applications
         </h1>
         <p className="relative mx-auto mt-5 max-w-[610px] text-center text-18 text-white/80">
@@ -27,7 +27,7 @@ function Hero() {
           <Button size="lg" theme="primary">
             Request demo
           </Button>
-          <Button size="lg" theme="secondary">
+          <Button size="lg" theme="outline">
             Documentation
           </Button>
         </div>
