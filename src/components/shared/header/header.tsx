@@ -51,7 +51,7 @@ function Header() {
           <div className="col-span-4 flex justify-end gap-x-2.5">
             <Button theme="outline" size="sm" className="pl-2 pr-3 font-normal">
               <span className="flex gap-x-2.5">
-                <GithubLogo className="h-5 w-5" />
+                <GithubLogo className="h-5 w-5 fill-white" />
                 <span>Star Us</span>
                 <span className="h-[20px] w-px bg-white/20" />
                 <span>6.5k</span>

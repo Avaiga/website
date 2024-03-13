@@ -32,8 +32,8 @@ function Footer() {
         </nav>
         <div className="col-span-3 flex gap-x-6 self-end">
           {MENU.footer.social.map(({ href, icon: Icon }, idx) => (
-            <Link key={idx} href={href} className="hover:fill-grey-90">
-              <Icon className="h-5 w-5" />
+            <Link key={idx} href={href}>
+              <Icon className="h-5 w-5 fill-white hover:fill-grey-90" />
             </Link>
           ))}
         </div>
