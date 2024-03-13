@@ -11,8 +11,8 @@ const styles = {
   transition: 'transition-colors duration-300',
   base: 'inline-flex items-center justify-center rounded-full leading-snug',
   size: {
-    lg: 'h-12 text-16 px-9',
-    md: 'h-11 text-14 px-8',
+    lg: 'h-12 text-16 px-6 min-w-[180px]',
+    md: 'h-11 text-14 px-4 min-w-[160px]',
     sm: 'h-9 text-14 px-[18px]',
   },
   theme: {

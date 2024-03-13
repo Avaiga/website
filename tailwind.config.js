@@ -22,6 +22,14 @@ module.exports = {
       56: '56px',
       64: '64px',
     },
+    lineHeight: {
+      ...defaultTheme.lineHeight,
+      tighter: '1.125',
+      dense: '1.4',
+    },
+    letterSpacing: {
+      tighter: '-0.04em',
+    },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,

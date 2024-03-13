@@ -6,11 +6,11 @@ import clsx from 'clsx';
 // Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
 const styles = {
   transition: 'transition-colors duration-200',
-  base: '',
+  base: 'hover:text-grey-80',
   theme: {
-    default: '',
-    header: 'text-14 leading-none font-normal',
-    footer: '',
+    default: 'text-16 leading-snug',
+    header: 'text-14 leading-none',
+    footer: 'text-16 font-medium leading-dense',
   },
 };
 

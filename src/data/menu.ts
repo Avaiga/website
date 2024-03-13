@@ -1,3 +1,8 @@
+import GithubLogo from '@/svgs/logo-github.inline.svg';
+import LinkedinLogo from '@/svgs/logo-linkedin.inline.svg';
+import TwitterLogo from '@/svgs/logo-x.inline.svg';
+import YoutubeLogo from '@/svgs/logo-youtube.inline.svg';
+
 import { ROUTE } from './routes';
 
 export const MENU = {
@@ -44,10 +49,10 @@ export const MENU = {
       },
     ],
     social: [
-      { label: 'Twitter', href: ROUTE.INDEX, icon: 'x-icon' },
-      { label: 'LinkedIn', href: ROUTE.INDEX, icon: 'linkedin-icon' },
-      { label: 'GitHub', href: ROUTE.INDEX, icon: 'github-icon' },
-      { label: 'YouTube', href: ROUTE.INDEX, icon: 'youtube-icon' },
+      { label: 'Twitter', href: ROUTE.INDEX, icon: TwitterLogo },
+      { label: 'LinkedIn', href: ROUTE.INDEX, icon: LinkedinLogo },
+      { label: 'GitHub', href: ROUTE.INDEX, icon: GithubLogo },
+      { label: 'YouTube', href: ROUTE.INDEX, icon: YoutubeLogo },
     ],
   },
 };

@@ -1,9 +1,12 @@
-type Metadata = {
+import { Metadata } from 'next';
+import { OpenGraphType } from 'next/dist/lib/metadata/types/opengraph-types';
+
+type GetMetadataProps = {
   title: string;
   description: string;
   pathname: string;
   imagePath?: string;
-  type?: string;
+  type?: OpenGraphType;
 };
 
 // FIXME: Add an image for displaying on social networks, remember that this image must meet the size of 1200x630
@@ -16,7 +19,7 @@ export function getMetadata({
   pathname,
   imagePath = DEFAULT_IMAGE_PATH,
   type = 'website',
-}: Metadata) {
+}: GetMetadataProps): Metadata {
   const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
   const canonicalUrl = SITE_URL + pathname;
   const imageUrl = imagePath.startsWith('http') ? imagePath : SITE_URL + imagePath;
