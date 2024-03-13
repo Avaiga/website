@@ -1,7 +1,9 @@
+import Hero from '@/components/pages/home/hero';
+
 import { getMetadata } from '@/lib/get-metadata';
 
 function Home() {
-  return <section className="flex gap-4 py-32 px-safe">TAIPY</section>;
+  return <Hero />;
 }
 
 export default Home;
