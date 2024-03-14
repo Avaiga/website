@@ -54,7 +54,7 @@ function Header() {
                 <span>6.5k</span>
               </span>
             </Button>
-            <Button className="font-normal" theme="secondary" size="sm">
+            <Button className="!font-normal" theme="secondary" size="sm">
               Enterprise
             </Button>
           </div>
