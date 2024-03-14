@@ -9,7 +9,7 @@ import Logos from './logos';
 
 function Hero() {
   return (
-    <section className="mt-[72px]">
+    <section className="mt-[72px] overflow-x-hidden">
       <div className="container relative">
         <Image
           className="pointer-events-none absolute bottom-[42px] right-[-218px] -z-10 max-h-[751px] max-w-[1706px]"

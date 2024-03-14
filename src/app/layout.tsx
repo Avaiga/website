@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans text-white">
         <Banner />
         <Header />
-        <main className="overflow-x-hidden">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

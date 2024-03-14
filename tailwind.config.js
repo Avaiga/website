@@ -31,6 +31,7 @@ module.exports = {
     letterSpacing: {
       tighter: '-0.06em',
       tight: '-0.04em',
+      snug: '-0.02em',
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
