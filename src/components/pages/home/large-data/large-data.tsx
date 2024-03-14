@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import sinLoading from './images/sin-loading.svg';
-import sin from './images/sin.svg';
+import sinLoading from '@/svgs/pages/home/large-data/sin-loading.svg';
+import sin from '@/svgs/pages/home/large-data/sin.svg';
 
 function LargeData() {
   return (
@@ -12,11 +12,11 @@ function LargeData() {
         </h2>
         <div className="mt-[48px] flex gap-x-9">
           <Image
+            className="shadow-[0px_20px_60px_0px_#00000080]"
             src={sin}
             width={862}
             height={338}
             alt="loaded"
-            className="shadow-[0px_20px_60px_0px_#00000080]"
           />
           <div>
             <h3 className="text-24 font-medium">In Taipy</h3>
