@@ -1,6 +1,7 @@
 import type { Viewport } from 'next';
 import { Inter } from 'next/font/google';
 
+import Banner from '@/components/shared/banner';
 import Footer from '@/components/shared/footer';
 import Header from '@/components/shared/header/header';
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans text-white">
+        <Banner />
         <Header />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />

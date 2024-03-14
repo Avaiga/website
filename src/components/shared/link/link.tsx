@@ -7,23 +7,23 @@ import clsx from 'clsx';
 const styles = {
   transition: 'transition-colors duration-200',
   base: 'hover:text-grey-80',
-  theme: {
-    default: 'text-16 leading-snug',
-    header: 'text-14 leading-none',
-    footer: 'text-16 font-medium leading-dense',
+  size: {
+    lg: 'text-16 leading-snugger font-medium',
+    md: 'text-16 leading-snug',
+    sm: 'text-14 leading-none',
   },
 };
 
 function Link<T extends string>({
   className: additionalClassName,
-  theme,
+  size,
   href,
   children,
   ...props
 }: {
   className?: string;
   href: Route<T> | URL;
-  theme?: keyof typeof styles.theme;
+  size?: keyof typeof styles.size;
   children: React.ReactNode;
   prefetch?: boolean;
   target?: string;
@@ -32,8 +32,8 @@ function Link<T extends string>({
 }) {
   const linkClassName = clsx(
     styles.transition,
-    theme && styles.base,
-    theme && styles.theme[theme],
+    size && styles.base,
+    size && styles.size[size],
     additionalClassName,
   );
 

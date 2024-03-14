@@ -2,28 +2,34 @@ import Image from 'next/image';
 
 import Button from '@/components/shared/button';
 
-import bg from './images/bg.png';
-import partners from './images/partners.svg';
-import screen from './images/screen.svg';
+import bg from '@/svgs/pages/home/hero/bg.svg';
+import screen from '@/svgs/pages/home/hero/screen.svg';
+
+import Logos from './logos';
 
 function Hero() {
   return (
-    <section className="mt-48">
+    <section className="mt-[72px]">
       <div className="container relative">
-        <div className="absolute bottom-[42px] right-[-218px] h-[751px] w-[1706px]">
-          <Image src={bg} width={1706} height={751} alt="" className="h-full w-full" />
-        </div>
-        <p className="text-orange relative text-center text-16 leading-snug">
+        <Image
+          className="pointer-events-none absolute bottom-[42px] right-[-218px] -z-10 max-h-[751px] max-w-[1706px]"
+          src={bg}
+          width={1706}
+          height={751}
+          alt=""
+          priority
+        />
+        <p className="text-center text-16 leading-snug text-primary-red">
           Beyond existing libraries
         </p>
-        <h1 className="relative mx-auto mt-5 max-w-[610px] text-center text-64 font-medium leading-tighter tracking-tight">
+        <h1 className="mx-auto mt-5 max-w-[610px] text-center text-64 font-medium leading-dense tracking-tight">
           Build Python Data &&nbsp;AI web applications
         </h1>
-        <p className="relative mx-auto mt-5 max-w-[610px] text-center text-18 text-white/80">
+        <p className="mx-auto mt-5 max-w-[610px] text-center text-18 text-white/80">
           From simple pilots to production-ready web applications in no times. No more compromise on
           performance, customization, and scalability.
         </p>
-        <div className="relative mt-[42px] flex justify-center gap-x-8">
+        <div className="mt-[42px] flex justify-center gap-x-8">
           <Button size="lg" theme="primary">
             Request demo
           </Button>
@@ -32,19 +38,14 @@ function Hero() {
           </Button>
         </div>
         <Image
+          className="mx-auto mt-[-9px]"
           src={screen}
           width={944}
           height={577}
           alt=""
-          className="relative mx-auto mt-[-9px]"
+          priority
         />
-        <Image
-          src={partners}
-          width={864}
-          height={91}
-          alt="partners"
-          className="mx-auto mt-[71px]"
-        />
+        <Logos />
       </div>
     </section>
   );
