@@ -1,0 +1,11 @@
+@layer components {
+  .logos-mask {
+    mask-image: radial-gradient(350px at 50% -200px, #000 25%, transparent 100%),
+      linear-gradient(
+        90deg,
+        rgba(217, 217, 217, 0.4) 0%,
+        rgba(217, 217, 217, 0.8) 48.89%,
+        rgba(217, 217, 217, 0.4) 100.68%
+      );
+  }
+}

@@ -7,7 +7,7 @@ function LargeData() {
   return (
     <section className="mt-[136px]">
       <div className="container px-16">
-        <h2 className="pl-[205px] text-56 font-semibold leading-tighter tracking-tight">
+        <h2 className="pl-[205px] text-56 font-semibold leading-dense tracking-tight">
           Large data support
         </h2>
         <div className="mt-[48px] flex gap-x-9">

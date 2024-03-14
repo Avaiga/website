@@ -25,8 +25,8 @@ module.exports = {
     },
     lineHeight: {
       ...defaultTheme.lineHeight,
-      tighter: '1.125',
-      dense: '1.4',
+      dense: '1.125',
+      snugger: '1.4',
     },
     letterSpacing: {
       tighter: '-0.06em',

@@ -1,7 +1,7 @@
-import GithubLogo from '@/svgs/logo-github.inline.svg';
-import LinkedinLogo from '@/svgs/logo-linkedin.inline.svg';
-import TwitterLogo from '@/svgs/logo-x.inline.svg';
-import YoutubeLogo from '@/svgs/logo-youtube.inline.svg';
+import GithubLogo from '@/svgs/icons/logo-github.inline.svg';
+import LinkedinLogo from '@/svgs/icons/logo-linkedin.inline.svg';
+import TwitterLogo from '@/svgs/icons/logo-x.inline.svg';
+import YoutubeLogo from '@/svgs/icons/logo-youtube.inline.svg';
 
 import { ROUTE } from './routes';
 
