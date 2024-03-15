@@ -34,15 +34,15 @@ const LOGOS = [
 
 function Logos() {
   return (
-    <div className="h-[91px]">
-      <ul className="logos-mask-white mt-[71px] flex h-[91px] items-center justify-center gap-x-14">
+    <div className="mt-12 h-[91px]">
+      <ul className="flex h-full items-center justify-center gap-x-14 [mask-image:linear-gradient(90deg,rgba(217,217,217,0.4)_0%,rgba(217,217,217,0.8)_48.89%,rgba(217,217,217,0.4)_100.68%)]">
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
           <li key={index}>
             <Logo className="fill-white" width={width} height={height} />
           </li>
         ))}
       </ul>
-      <ul className="logos-mask-red flex h-[91px] translate-y-[-91px] items-center justify-center gap-x-14">
+      <ul className="flex h-full -translate-y-full items-center justify-center gap-x-14 [mask-image:radial-gradient(730px_460px_at_50%_-375px,#000_25%,transparent_100%)]">
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
           <li key={index}>
             <Logo className="fill-[#ff462b]" width={width} height={height} />

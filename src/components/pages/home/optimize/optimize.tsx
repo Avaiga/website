@@ -8,8 +8,8 @@ import Link from '@/components/shared/link';
 
 function Optimize() {
   return (
-    <section className="mt-[165px]">
-      <div className="container relative max-w-[1088px]">
+    <section className="optimize mt-[188px] px-safe">
+      <div className="container max-w-[1152px]">
         <h2 className="pl-10 text-56 font-semibold leading-dense tracking-tight">
           Optimized for insights
         </h2>
@@ -91,8 +91,8 @@ function Optimize() {
               Taipy enhances performance with caching control of graphical events, optimizing
               rendering by selectively updating graphical components only upon interaction.
             </p>
-            <Link className="text-18 leading-normal" href={ROUTE.INDEX} size="md">
-              Read more <span className="text-primary-red">-&gt;</span>
+            <Link className="leading-normal" href={ROUTE.INDEX} size="lg" arrowTheme="red">
+              Read more
             </Link>
           </div>
           <div className="px-10">
