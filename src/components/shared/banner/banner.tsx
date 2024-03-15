@@ -4,20 +4,19 @@ import Link from '@/components/shared/link';
 
 function Banner() {
   return (
-    <section className="mb-1 mt-4">
-      <div className="container h-9 px-24">
+    <div className="banner mb-1 mt-4 px-safe pt-safe">
+      <div className="container-narrow">
         <Link
-          className="flex h-full w-full items-center justify-center gap-x-2.5 rounded-[20px] bg-[#1E1E20] text-14 leading-none"
+          className="flex h-9 items-center justify-center rounded-[20px] bg-[#1E1E20] text-14 leading-none"
           href={ROUTE.BANNER}
+          arrowTheme="blue"
         >
-          <span>Learn how to create a Taipy app from scratch</span>
-          <div className="h-4 w-px bg-white/10" />
-          <span>
-            Join Taipy Tech Talk <span className="text-[#50C2F3]">-&gt;</span>
-          </span>
+          Learn how to create a Taipy app from scratch
+          <div className="mx-2.5 h-4 w-px bg-white/10" aria-hidden />
+          <span className="font-semibold">Join Taipy Tech Talk</span>
         </Link>
       </div>
-    </section>
+    </div>
   );
 }
 
