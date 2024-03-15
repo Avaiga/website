@@ -1,4 +1,5 @@
 import Hero from '@/components/pages/home/hero';
+import Integrations from '@/components/pages/home/integrations';
 import LargeData from '@/components/pages/home/large-data';
 import Learn from '@/components/pages/home/learn';
 import Optimize from '@/components/pages/home/optimize';
@@ -14,6 +15,7 @@ function Home() {
       <LargeData />
       <Subscribe />
       <Learn />
+      <Integrations />
     </>
   );
 }
