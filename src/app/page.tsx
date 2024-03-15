@@ -1,3 +1,4 @@
+import Benefits from '@/components/pages/home/benefits';
 import Hero from '@/components/pages/home/hero';
 import Integrations from '@/components/pages/home/integrations';
 import LargeData from '@/components/pages/home/large-data';
@@ -16,6 +17,7 @@ function Home() {
       <Subscribe />
       <Learn />
       <Integrations />
+      <Benefits />
     </>
   );
 }
