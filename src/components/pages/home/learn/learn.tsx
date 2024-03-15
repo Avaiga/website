@@ -86,11 +86,6 @@ const CARDS = [
   },
 ];
 
-const styles = {
-  border:
-    'bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px rounded-lg',
-};
-
 function Learn() {
   return (
     <section className="mt-[200px]">
@@ -100,7 +95,13 @@ function Learn() {
         </h2>
         <div className="mt-14 grid grid-cols-12 grid-rows-[400px_400px] gap-8">
           {CARDS.map(({ title, description, image, size, descriptionSpacing }, index) => (
-            <div className={clsx(size, styles.border)} key={index}>
+            <div
+              className={clsx(
+                size,
+                'rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px',
+              )}
+              key={index}
+            >
               <div className="relative h-full rounded-lg bg-grey-10">
                 <p
                   className={clsx(
