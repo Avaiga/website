@@ -14,7 +14,7 @@ function Optimize() {
           Optimized for insights
         </h2>
         <div className="mt-14 rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px">
-          <div className="flex bg-[#131315]">
+          <div className="flex rounded-lg bg-[#131315]">
             <div className="px-10 pb-10 pt-[55px]">
               <h3 className="bg-[linear-gradient(88deg,#FFF_-61.26%,rgba(255,255,255,0.00)_591.66%)] bg-clip-text text-32 font-medium leading-dense tracking-tight text-transparent">
                 In Other Libraries

@@ -29,7 +29,7 @@ function Hero() {
           From simple pilots to production-ready web applications in no times. No more compromise on
           performance, customization, and scalability.
         </p>
-        <div className="mt-[42px] flex justify-center gap-x-8">
+        <div className="relative mt-[42px] flex justify-center gap-x-8">
           <Button size="lg" theme="primary">
             Request demo
           </Button>
