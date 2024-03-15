@@ -25,7 +25,7 @@ function Hero() {
         <h1 className="mx-auto mt-5 max-w-[610px] text-center text-64 font-medium leading-dense tracking-tight">
           Build Python Data &&nbsp;AI web applications
         </h1>
-        <p className="mx-auto mt-5 max-w-[610px] text-center text-18 text-white/80">
+        <p className="mx-auto mt-5 max-w-[600px] text-center text-18 font-light text-white/80">
           From simple pilots to production-ready web applications in no times. No more compromise on
           performance, customization, and scalability.
         </p>

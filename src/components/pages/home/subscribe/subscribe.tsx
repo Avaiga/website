@@ -21,7 +21,7 @@ function Subscribe() {
   }, [email]);
 
   return (
-    <section className="mt-[200px]">
+    <section className="mt-[196px]">
       <div className="container relative grid max-w-[1324px] grid-cols-12 gap-x-[52px]">
         <Image
           className="pointer-events-none absolute left-0 top-0 -z-10"
