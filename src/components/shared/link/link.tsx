@@ -6,11 +6,15 @@ import clsx from 'clsx';
 // Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
 const styles = {
   transition: 'transition-colors duration-200',
-  base: 'hover:text-grey-80',
+  // FIXME: Add base styles
+  base: '',
   size: {
     lg: 'text-16 leading-snugger font-medium',
     md: 'text-16 leading-snug',
     sm: 'text-14 leading-none',
+  },
+  theme: {
+    white: 'hover:text-grey-80',
   },
 };
 
@@ -18,12 +22,14 @@ function Link<T extends string>({
   className: additionalClassName,
   size,
   href,
+  theme = 'white',
   children,
   ...props
 }: {
   className?: string;
   href: Route<T> | URL;
   size?: keyof typeof styles.size;
+  theme?: keyof typeof styles.theme;
   children: React.ReactNode;
   prefetch?: boolean;
   target?: string;
@@ -34,6 +40,7 @@ function Link<T extends string>({
     styles.transition,
     size && styles.base,
     size && styles.size[size],
+    styles.theme[theme],
     additionalClassName,
   );
 
