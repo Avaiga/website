@@ -41,7 +41,7 @@ function Subscribe() {
           </p>
           <form className="relative mt-9 max-w-[496px]">
             <input
-              className="remove-autocomplete-styles h-[48px] w-full rounded-full pl-5 pr-48 font-medium text-black outline-none transition-shadow duration-300 placeholder:text-grey-50 focus:shadow-[0px_8px_30px_0px_#FF462B4D]"
+              className="remove-autocomplete-styles h-[48px] w-full rounded-full pl-5 pr-48 font-medium text-black shadow-[0px_8px_30px_0px_#FF462B4D] outline-none transition-shadow duration-300 placeholder:text-grey-50"
               type="email"
               placeholder="Your favorite email adress"
               onChange={(e) => setEmail(e.target.value)}
