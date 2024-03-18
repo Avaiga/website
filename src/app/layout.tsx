@@ -22,11 +22,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans text-white">
+      <body>
         <Banner />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <div className="relative flex min-h-screen flex-col">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

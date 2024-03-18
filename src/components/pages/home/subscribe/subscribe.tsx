@@ -46,7 +46,7 @@ function Subscribe() {
               placeholder="Your favorite email adress"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Button className="absolute right-0 top-0 !min-w-[178px]" theme="primary" size="lg">
+            <Button className="absolute right-0 top-0 !min-w-[178px]" theme="red-filled" size="lg">
               Subscribe now
             </Button>
             {error !== '' && (

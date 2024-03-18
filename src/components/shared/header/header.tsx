@@ -31,40 +31,47 @@ function Header() {
 
   return (
     <>
-      <header className="h-[64px] px-safe pt-safe">
-        <nav className="container grid h-full grid-cols-12 items-center px-24" aria-label="Global">
-          <Link className="w-[109px]" href="/">
-            <Image src={logo} width={109} height={28} alt="Taipy logo" priority />
+      <header className="absolute left-0 right-0 top-0 z-50 h-16 px-safe pt-safe">
+        <div className="container-narrow flex h-full items-center justify-between">
+          <Link href="/">
+            <span className="sr-only">Taipy</span>
+            <Image className="h-7" src={logo} width={109} height={28} alt="Taipy logo" priority />
           </Link>
-          <ul className="col-span-4 col-start-5 flex justify-center gap-x-7 md:hidden">
-            {MENU.header.map(({ label, href }, index) => (
-              <li key={index}>
-                <Link href={href} size="sm">
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="col-span-4 flex justify-end gap-x-2.5">
-            <Button className="pl-2 pr-3 font-normal" theme="outline" size="sm">
-              <span className="flex gap-x-2.5">
-                <GithubLogo className="h-5 w-5 fill-white" />
-                <span>Star Us</span>
-                <span className="h-[20px] w-px bg-white/20" aria-hidden />
-                <span>6.5k</span>
-              </span>
+          <nav
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            aria-label="Global"
+          >
+            <ul className="flex gap-x-7 md:hidden">
+              {MENU.header.map(({ label, href }, index) => (
+                <li key={index}>
+                  <Link href={href} size="sm">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <Burger
+              className="hidden md:block"
+              isToggled={isMobileMenuOpen}
+              onClick={toggleMobileMenu}
+            />
+          </nav>
+
+          <div className="flex gap-x-2.5">
+            <Button className="gap-x-2.5 pl-2 pr-3" theme="outline" size="sm">
+              <GithubLogo className="h-[18px] flex-shrink-0 fill-white" />
+              <span>Star Us</span>
+              <span className="h-5 w-px bg-white/20" aria-hidden />
+              <span>6.5k</span>
             </Button>
-            <Button className="!font-normal" theme="secondary" size="sm">
+            <Button theme="white-filled" size="sm">
               Enterprise
             </Button>
           </div>
-          <Burger
-            className="hidden md:block"
-            isToggled={isMobileMenuOpen}
-            onClick={toggleMobileMenu}
-          />
-        </nav>
+        </div>
       </header>
+
       <MobileMenu isOpen={isMobileMenuOpen} onClick={toggleMobileMenu} />
     </>
   );
