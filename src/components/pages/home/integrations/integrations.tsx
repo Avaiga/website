@@ -26,7 +26,7 @@ const CARDS = [
 
 function Integrations() {
   return (
-    <section className="integrations pt-40 px-safe">
+    <section className="integrations mt-40 px-safe">
       <div className="container max-w-[776px] text-center">
         <p className="leading-snug text-primary-red">Integrations</p>
         <h2 className="mt-5 text-56 font-semibold leading-dense tracking-tight">
