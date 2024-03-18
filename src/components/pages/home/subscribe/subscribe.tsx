@@ -21,10 +21,10 @@ function Subscribe() {
   }, [email]);
 
   return (
-    <section className="mt-[200px]">
-      <div className="container relative grid max-w-[1324px] grid-cols-12 gap-x-[52px]">
+    <section className="subscribe pt-[196px] px-safe">
+      <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px]">
         <Image
-          className="pointer-events-none absolute left-0 top-0 -z-10"
+          className="pointer-events-none absolute left-8 top-0 -z-10"
           width={1324}
           height={431}
           src={bg}
@@ -35,13 +35,13 @@ function Subscribe() {
           <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight">
             Subscribe to the Newsletter
           </h2>
-          <p className="mt-4 text-18 text-white/80">
+          <p className="mt-4 text-18 font-light text-white/80">
             Subscribe to Taipy&apos;s newsletter and stay informed of the latest news! We send four
             mails per year plus a few more for very special announcements.
           </p>
           <form className="relative mt-9 max-w-[496px]">
             <input
-              className="remove-autocomplete-styles h-[48px] w-full rounded-full pl-5 pr-48 text-black outline-none transition-shadow duration-300 placeholder:text-grey-50 focus:shadow-[0px_8px_30px_0px_#FF462B4D]"
+              className="remove-autocomplete-styles h-[48px] w-full rounded-full pl-5 pr-48 font-medium text-black outline-none transition-shadow duration-300 placeholder:text-grey-50 focus:shadow-[0px_8px_30px_0px_#FF462B4D]"
               type="email"
               placeholder="Your favorite email adress"
               onChange={(e) => setEmail(e.target.value)}

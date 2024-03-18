@@ -5,7 +5,7 @@ import sin from '@/svgs/pages/home/large-data/sin.svg';
 
 function LargeData() {
   return (
-    <section className="pt-[136px] px-safe">
+    <section className="large-data pt-[136px] px-safe">
       <div className="container max-w-[1280px]">
         <h2 className="pl-[205px] text-56 font-semibold leading-dense tracking-tight">
           Large data support
