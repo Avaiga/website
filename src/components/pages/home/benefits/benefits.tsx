@@ -34,8 +34,8 @@ const CARDS = [
 
 function Benefits() {
   return (
-    <section className="mt-[200px]">
-      <div className="container flex max-w-[1215px] gap-x-7">
+    <section className="benefits pt-[196px] px-safe">
+      <div className="container flex max-w-[1280px] gap-x-7">
         <div className="max-w-[452px] shrink-0 grow">
           <p className="leading-snug text-primary-red">Personas</p>
           <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight">
