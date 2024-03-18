@@ -88,7 +88,7 @@ const CARDS = [
 
 function Learn() {
   return (
-    <section className="mt-[200px]">
+    <section className="learn pt-[200px] px-safe">
       <div className="container">
         <h2 className="mx-auto max-w-[790px] text-center text-56 font-semibold leading-dense tracking-tight">
           Easy to learn, pleasure&nbsp;to&nbsp;work&nbsp;with
@@ -121,11 +121,11 @@ function Learn() {
               </div>
             </div>
           ))}
-          <div className="col-span-12 mt-2 flex justify-center">
-            <Link href="/" size="md">
-              See all demos <span className="text-primary-red">-&gt;</span>
-            </Link>
-          </div>
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Link href="/" size="md" theme="white" arrowTheme="red">
+            See all demos
+          </Link>
         </div>
       </div>
     </section>
