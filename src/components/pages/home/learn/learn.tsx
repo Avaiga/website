@@ -88,7 +88,7 @@ const CARDS = [
 
 function Learn() {
   return (
-    <section className="mt-[200px]">
+    <section className="learn pt-[200px] px-safe">
       <div className="container">
         <h2 className="mx-auto max-w-[790px] text-center text-56 font-semibold leading-dense tracking-tight">
           Easy to learn, pleasure&nbsp;to&nbsp;work&nbsp;with
