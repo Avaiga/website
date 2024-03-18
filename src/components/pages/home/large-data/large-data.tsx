@@ -5,8 +5,8 @@ import sin from '@/svgs/pages/home/large-data/sin.svg';
 
 function LargeData() {
   return (
-    <section className="mt-[136px]">
-      <div className="container max-w-[1216px]">
+    <section className="large-data pt-[136px] px-safe">
+      <div className="container max-w-[1280px]">
         <h2 className="pl-[205px] text-56 font-semibold leading-dense tracking-tight">
           Large data support
         </h2>
@@ -16,7 +16,7 @@ function LargeData() {
             src={sin}
             width={862}
             height={338}
-            alt="loaded"
+            alt="In Taipy"
           />
           <div>
             <h3 className="text-24 font-medium">In Taipy</h3>
@@ -28,7 +28,7 @@ function LargeData() {
           </div>
         </div>
         <div className="mt-10 flex gap-x-9">
-          <Image src={sinLoading} width={862} height={338} alt="loading" />
+          <Image src={sinLoading} width={862} height={338} alt="In Other Libraries" />
           <div>
             <h3 className="text-24 font-medium">In Other Libraries</h3>
             <p className="mt-2 text-18 font-light text-grey-70">

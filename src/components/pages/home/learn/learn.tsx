@@ -121,11 +121,11 @@ function Learn() {
               </div>
             </div>
           ))}
-          <div className="col-span-12 mt-2 flex justify-center">
-            <Link href="/" size="md">
-              See all demos <span className="text-primary-red">-&gt;</span>
-            </Link>
-          </div>
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Link href="/" size="md" theme="white" arrowTheme="red">
+            See all demos
+          </Link>
         </div>
       </div>
     </section>
