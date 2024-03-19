@@ -44,7 +44,7 @@ function Benefits() {
         </div>
         <div className="mt-[42px] grid grid-cols-2 gap-x-[75px] gap-y-14">
           {CARDS.map(({ icon, title, description }, index) => (
-            <div className="col-span-1" key={index}>
+            <div key={index}>
               <div className="flex gap-x-3">
                 <Image src={icon} width={24} height={24} alt={title} />
                 <h3 className="text-24 font-medium">{title}</h3>
