@@ -36,10 +36,10 @@ function Integrations() {
           Whether standalone or paired, Taipy connects effortlessly with leading data platforms,
           amplifying your application&apos;s potential.
         </p>
-        <div className="mt-11 grid grid-cols-12 gap-x-6">
+        <div className="mt-11 grid grid-cols-4 gap-x-6">
           {CARDS.map(({ icon, title }, index) => (
             <div
-              className="col-span-3 rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px"
+              className="rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px"
               key={index}
             >
               <div className="rounded-lg bg-[linear-gradient(204.2deg,#222225_-7.76%,#111113_84.5%)] pb-6 pt-[34px]">
