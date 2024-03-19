@@ -9,8 +9,9 @@ module.exports = {
   rules: {
     curly: 'error',
     'no-console': 'error',
-    // Why I do this: https://stackoverflow.com/questions/63961803/eslint-says-all-enums-in-typescript-app-are-already-declared-in-the-upper-scope
+    // Disable no-shadow for JavaScript files because it causes conflicts with enum declarations
     'no-shadow': 'off',
+    // Enable @typescript-eslint/no-shadow for TypeScript files to prevent shadowing issues
     '@typescript-eslint/no-shadow': 'error',
     'no-nested-ternary': 'error',
     'newline-before-return': 'error',
