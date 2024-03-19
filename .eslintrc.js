@@ -9,7 +9,10 @@ module.exports = {
   rules: {
     curly: 'error',
     'no-console': 'error',
-    'no-shadow': 'error',
+    // Disable no-shadow for JavaScript files because it causes conflicts with enum declarations
+    'no-shadow': 'off',
+    // Enable @typescript-eslint/no-shadow for TypeScript files to prevent shadowing issues
+    '@typescript-eslint/no-shadow': 'error',
     'no-nested-ternary': 'error',
     'newline-before-return': 'error',
     'no-restricted-exports': [
