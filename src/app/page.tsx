@@ -1,3 +1,4 @@
+import CTA from '@/components/pages/home/CTA';
 import Applications from '@/components/pages/home/applications';
 import Benefits from '@/components/pages/home/benefits';
 import Hero from '@/components/pages/home/hero';
@@ -20,6 +21,7 @@ function Home() {
       <Integrations />
       <Benefits />
       <Applications />
+      <CTA />
     </>
   );
 }
