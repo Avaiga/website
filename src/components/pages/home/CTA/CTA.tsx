@@ -1,6 +1,24 @@
+'use client';
+
+import { useRef } from 'react';
+
 import Button from '@/components/shared/button';
 
 function CTA() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function copyHandle(event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) {
+    event.preventDefault();
+
+    if (inputRef.current) {
+      const input = inputRef.current;
+
+      input.select();
+      input.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(input.value);
+    }
+  }
+
   return (
     <section className="cta mt-[200px] px-safe">
       <div className="container-narrow grix-cols-2 grid max-w-[1088px] gap-x-8">
@@ -11,7 +29,8 @@ function CTA() {
             features
           </p>
           <form action="">
-            <textarea name="" id="" />
+            <input ref={inputRef} value="copy test" disabled />
+            <Button onClick={copyHandle}>Copy</Button>
           </form>
         </div>
         <div>
