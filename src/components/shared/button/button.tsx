@@ -6,7 +6,16 @@ import Link from '@/components/shared/link';
 
 import { ClassName } from '@/types/classname';
 
-// Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
+import CheckIcon from '@/svgs/icons/check.inline.svg';
+import LoadingIcon from '@/svgs/icons/loading.inline.svg';
+
+export enum BUTTON_STATES {
+  DEFAULT = 'default',
+  LOADING = 'loading',
+  SUCCESS = 'success',
+  DISABLED = 'disabled',
+}
+
 const styles = {
   transition: 'transition-colors duration-300',
   base: 'inline-flex items-center justify-center rounded-full leading-none whitespace-nowrap',
@@ -19,6 +28,7 @@ const styles = {
     'red-filled': 'bg-primary-red font-medium hover:bg-[#FF634D]',
     'white-filled': 'bg-white text-black font-semibold hover:bg-grey-80',
     outline: 'font-medium border-white/20 border hover:bg-[rgba(255,255,255,0.1)]',
+    'green-filled': 'bg-[#05C776] font-medium',
   },
 };
 
@@ -28,6 +38,7 @@ type ButtonProps<T extends string> = ClassName & {
   theme?: keyof typeof styles.theme;
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
+  state?: BUTTON_STATES;
 };
 
 function Button({
@@ -36,27 +47,48 @@ function Button({
   theme,
   href = undefined,
   children,
+  state = BUTTON_STATES.DEFAULT,
   ...props
 }: ButtonProps<string>) {
   const linkClassName = clsx(
     styles.transition,
     size && theme && styles.base,
     size && styles.size[size],
-    theme && styles.theme[theme],
+    state === BUTTON_STATES.SUCCESS ? styles.theme['green-filled'] : theme && styles.theme[theme],
     additionalClassName,
+    {
+      'pointer-events-none':
+        state === BUTTON_STATES.LOADING ||
+        state === BUTTON_STATES.SUCCESS ||
+        state === BUTTON_STATES.DISABLED,
+    },
   );
+
+  let content = null;
+
+  switch (state) {
+    case BUTTON_STATES.LOADING:
+      content = <LoadingIcon className="w-7 animate-spin" />;
+      break;
+    case BUTTON_STATES.SUCCESS:
+      content = <CheckIcon className="w-7" />;
+      break;
+    case BUTTON_STATES.DEFAULT:
+    default:
+      content = children;
+  }
 
   if (href) {
     return (
       <Link className={linkClassName} href={href} {...props}>
-        {children}
+        {content}
       </Link>
     );
   }
 
   return (
     <button className={linkClassName} {...props}>
-      {children}
+      {content}
     </button>
   );
 }
