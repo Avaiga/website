@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-import cardFirst from '@/images/pages/home/learn/card-1.png';
-import cardSecond from '@/images/pages/home/learn/card-2.png';
-import cardThird from '@/images/pages/home/learn/card-3.png';
-import cardFourth from '@/images/pages/home/learn/card-4.png';
-import cardFifth from '@/images/pages/home/learn/card-5.png';
-import cardSixth from '@/images/pages/home/learn/card-6.png';
+import customizeStyles from '@/images/pages/home/learn/customize-styles.png';
+import explore from '@/images/pages/home/learn/explore.png';
+import longJobs from '@/images/pages/home/learn/long-jobs.png';
+import multiUsers from '@/images/pages/home/learn/multi-users.png';
+import scenarios from '@/images/pages/home/learn/scenarios.png';
+import tasksScheduler from '@/images/pages/home/learn/tasks-scheduler.png';
 import clsx from 'clsx';
 
 import Link from '@/components/shared/link';
@@ -16,10 +16,10 @@ const CARDS = [
     description: 'A powerful VS Code extension that unlocks a convenient graphical editor.',
     descriptionSpacing: 'pl-7 pr-16 pt-7',
     image: {
-      url: cardFirst,
+      url: scenarios,
       width: 656,
       height: 268,
-      className: 'mt-[53px] rounded-b-lg',
+      className: 'left-0 bottom-0',
     },
     size: 'col-span-6',
   },
@@ -28,10 +28,10 @@ const CARDS = [
     description: 'Get your methods invoked at a certain time or intervals.',
     descriptionSpacing: 'pl-7 pr-7 pt-7',
     image: {
-      url: cardSecond,
+      url: tasksScheduler,
       width: 312,
       height: 299,
-      className: 'rounded-b-lg',
+      className: 'left-0 bottom-0',
     },
     size: 'col-span-3',
   },
@@ -40,10 +40,10 @@ const CARDS = [
     description: 'Enjoy variety of predefined themes or build your own.',
     descriptionSpacing: 'pl-7 pr-7 pt-7',
     image: {
-      url: cardThird,
+      url: customizeStyles,
       width: 250,
       height: 238,
-      className: 'mt-[26px] ml-[30px]',
+      className: 'bottom-8 left-[30px]',
     },
     size: 'col-span-3',
   },
@@ -52,10 +52,10 @@ const CARDS = [
     description: 'Each end-user has his own state enabling multi-user support.',
     descriptionSpacing: 'pl-7 pr-7 pt-7',
     image: {
-      url: cardFourth,
+      url: multiUsers,
       width: 241,
       height: 186,
-      className: 'mt-[55px] ml-[34px]',
+      className: 'bottom-[55px] left-[34px]',
     },
     size: 'col-span-3',
   },
@@ -64,10 +64,10 @@ const CARDS = [
     description: 'Run heavy tasks in the background without slowing down experience.',
     descriptionSpacing: 'pl-7 pr-[26px] pt-7',
     image: {
-      url: cardFifth,
+      url: longJobs,
       width: 312,
       height: 400,
-      className: 'absolute top-0 left-0 rounded-lg',
+      className: 'top-0 left-0',
     },
     size: 'col-span-3',
   },
@@ -77,10 +77,10 @@ const CARDS = [
       'Leverage the LLM-based application to explore datasets using only natural languages.',
     descriptionSpacing: 'pl-7 pr-[42px] pt-7',
     image: {
-      url: cardSixth,
+      url: explore,
       width: 656,
       height: 400,
-      className: 'absolute top-0 left-0 rounded-lg',
+      className: 'top-0 left-0',
     },
     size: 'col-span-6',
   },
@@ -112,7 +112,7 @@ function Learn() {
                   <span className="text-white">{title}</span> {description}
                 </p>
                 <Image
-                  className={image.className}
+                  className={clsx('absolute', image.className)}
                   src={image.url}
                   width={image.width}
                   height={image.height}
