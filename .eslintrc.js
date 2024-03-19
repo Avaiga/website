@@ -9,7 +9,9 @@ module.exports = {
   rules: {
     curly: 'error',
     'no-console': 'error',
-    'no-shadow': 'error',
+    // Why I do this: https://stackoverflow.com/questions/63961803/eslint-says-all-enums-in-typescript-app-are-already-declared-in-the-upper-scope
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
     'no-nested-ternary': 'error',
     'newline-before-return': 'error',
     'no-restricted-exports': [

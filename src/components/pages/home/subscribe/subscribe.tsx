@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import Button from '@/components/shared/button';
+import { BUTTON_STATES } from '@/components/shared/button/button';
 
 import bg from '@/svgs/pages/home/subscribe/bg.svg';
 
@@ -46,7 +47,12 @@ function Subscribe() {
               placeholder="Your favorite email adress"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Button className="absolute right-0 top-0 !min-w-[178px]" theme="red-filled" size="lg">
+            <Button
+              className="absolute right-0 top-0 !min-w-[178px]"
+              theme="red-filled"
+              size="lg"
+              state={BUTTON_STATES.LOADING}
+            >
               Subscribe now
             </Button>
             {error !== '' && (
