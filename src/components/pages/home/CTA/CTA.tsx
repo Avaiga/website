@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import clsx from 'clsx';
 
@@ -9,21 +9,25 @@ import Button from '@/components/shared/button';
 import CheckIcon from '@/svgs/icons/check.inline.svg';
 import CopyIcon from '@/svgs/icons/copy.inline.svg';
 
+const INPUT_VALUE = '$ pip install taipy';
+
 function CTA() {
-  const inputRef = useRef<HTMLInputElement>(null);
   const [isCopied, setIsCopied] = useState(false);
 
-  function copyHandle(event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) {
-    event.preventDefault();
+  function copyHandle() {
+    navigator.clipboard
+      .writeText(INPUT_VALUE.replace('$ ', ''))
+      .then(() => {
+        setIsCopied(true);
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error('Failed to copy text: ', error);
+      });
 
-    if (inputRef.current) {
-      const input = inputRef.current;
-
-      input.select();
-      input.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(input.value.replace('$ ', ''));
-      setIsCopied(true);
-    }
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 4000);
   }
 
   return (
@@ -43,16 +47,8 @@ function CTA() {
             Python library for building production-ready apps, including other libraries missing
             features
           </p>
-          <form
-            className="relative mx-auto mt-6 flex h-12 w-full max-w-[300px] justify-between rounded-full bg-white px-5"
-            noValidate
-          >
-            <input
-              className="bg-transparent text-grey-20"
-              ref={inputRef}
-              value="$ pip install taipy"
-              disabled
-            />
+          <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[300px] items-center justify-between rounded-full bg-white px-5">
+            <span className="text-grey-20">{INPUT_VALUE}</span>
             <Button disabled={isCopied} onClick={copyHandle}>
               {isCopied ? (
                 <CheckIcon className="h-5 w-5" />
@@ -60,7 +56,7 @@ function CTA() {
                 <CopyIcon className="h-5 w-5 fill-black transition-colors duration-300 hover:fill-grey-20" />
               )}
             </Button>
-          </form>
+          </div>
         </div>
         <div className="card-border rounded-2xl">
           <div className="rounded-2xl bg-grey-10 px-10 py-11">
