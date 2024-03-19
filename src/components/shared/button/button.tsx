@@ -28,6 +28,7 @@ type ButtonProps<T extends string> = ClassName & {
   theme?: keyof typeof styles.theme;
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
+  disabled?: boolean;
 };
 
 function Button({
