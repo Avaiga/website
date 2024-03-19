@@ -64,8 +64,10 @@ function Applications() {
                   alt={title}
                   fill
                 />
-                <h3 className="text-20 font-semibold leading-snug">{title}</h3>
-                <p className="mt-2 text-18 text-grey-70">{description}</p>
+                <div className="relative">
+                  <h3 className="text-20 font-semibold leading-snug">{title}</h3>
+                  <p className="mt-2 text-18 text-grey-70">{description}</p>
+                </div>
               </div>
             </div>
           ))}
