@@ -5,15 +5,14 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { BUTTON_SUCCESS_TIMEOUT_MS, UTMS } from '@/constants/forms';
+import { BUTTON_SUCCESS_TIMEOUT_MS } from '@/constants/forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 import Button from '@/components/shared/button';
 import { BUTTON_STATES } from '@/components/shared/button/button';
 
-import { getUtmParamsValue } from '@/lib/get-utm-params-value';
-import { sendFormData } from '@/lib/sendFormData';
+import { sendFormData } from '@/lib/send-form-data';
 
 import bg from '@/svgs/pages/home/subscribe/bg.svg';
 
@@ -36,17 +35,11 @@ function Subscribe() {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const onSubmit = async (values: { email: string }) => {
-    const utms = getUtmParamsValue(UTMS);
     setButtonState(BUTTON_STATES.LOADING);
 
     try {
       await sendFormData({
         input_1: values.email,
-        input_2: utms?.utm_source,
-        input_3: utms?.utm_medium,
-        input_4: utms?.utm_campaign,
-        input_5: utms?.utm_term,
-        input_6: utms?.utm_content,
       });
 
       setButtonState(BUTTON_STATES.SUCCESS);
