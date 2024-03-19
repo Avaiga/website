@@ -41,7 +41,6 @@ module.exports = {
       white: '#ffffff',
       primary: {
         red: '#ff371a',
-        orange: '#ff462b',
       },
       secondary: {
         blue: '#72bff1',
