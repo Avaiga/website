@@ -45,6 +45,19 @@ function Hero() {
           alt=""
           priority
         />
+        <video
+          className="absolute inset-x-0 top-[451px] mx-auto rounded-[10px]"
+          controls={false}
+          width={732}
+          height={454}
+          loop
+          playsInline
+          muted
+          autoPlay
+        >
+          <source src="/videos/pages/home/hero/hero.mp4" type="video/mp4" />
+          <source src="/videos/pages/home/hero/hero.webm" type="video/webm" />
+        </video>
         <Logos />
       </div>
     </section>
