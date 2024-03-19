@@ -112,7 +112,7 @@ function Learn() {
                   <span className="text-white">{title}</span> {description}
                 </p>
                 <Image
-                  className={clsx('absolute', image.className)}
+                  className={clsx('pointer-events-none absolute z-0', image.className)}
                   src={image.url}
                   width={image.width}
                   height={image.height}
