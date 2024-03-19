@@ -12,8 +12,6 @@ import * as yup from 'yup';
 import Button from '@/components/shared/button';
 import { BUTTON_STATES } from '@/components/shared/button/button';
 
-import { sendFormData } from '@/lib/send-form-data';
-
 import bg from '@/svgs/pages/home/subscribe/bg.svg';
 
 const validationSchema = yup.object().shape({
@@ -34,15 +32,13 @@ function Subscribe() {
     reset,
   } = useForm({ resolver: yupResolver(validationSchema) });
 
-  const onSubmit = async (values: { email: string }) => {
+  const onSubmit = async () => {
     setButtonState(BUTTON_STATES.LOADING);
 
     try {
-      await sendFormData({
-        input_1: values.email,
-      });
-
-      setButtonState(BUTTON_STATES.SUCCESS);
+      setTimeout(() => {
+        setButtonState(BUTTON_STATES.SUCCESS);
+      }, 2000);
 
       setTimeout(() => {
         setButtonState(BUTTON_STATES.DEFAULT);
