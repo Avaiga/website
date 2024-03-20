@@ -17,17 +17,11 @@ function CTA() {
   function copyHandle() {
     navigator.clipboard
       .writeText(INPUT_VALUE.replace('$ ', ''))
-      .then(() => {
-        setIsCopied(true);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error('Failed to copy text: ', error);
-      });
+      .then(() => setIsCopied(true))
+      // eslint-disable-next-line no-console
+      .catch((error) => console.error('Failed to copy text: ', error));
 
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 4000);
+    setTimeout(() => setIsCopied(false), 4000);
   }
 
   return (
