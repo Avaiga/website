@@ -37,14 +37,22 @@ function Hero() {
             Documentation
           </Button>
         </div>
-        <Image
-          className="mx-auto mt-[-9px]"
-          src={screen}
-          width={944}
-          height={577}
-          alt=""
-          priority
-        />
+        <div className="relative mt-[-9px]">
+          <Image className="mx-auto" src={screen} width={944} height={577} alt="" priority />
+          <video
+            className="absolute inset-x-0 top-[108px] mx-auto rounded-[10px]"
+            controls={false}
+            width={732}
+            height={454}
+            loop
+            playsInline
+            muted
+            autoPlay
+          >
+            <source src="/videos/pages/home/hero/hero.mp4" type="video/mp4" />
+            <source src="/videos/pages/home/hero/hero.webm" type="video/webm" />
+          </video>
+        </div>
         <Logos />
       </div>
     </section>
