@@ -39,6 +39,7 @@ type ButtonProps<T extends string> = ClassName & {
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
   state?: BUTTON_STATES;
+  disabled?: boolean;
 };
 
 function Button({
