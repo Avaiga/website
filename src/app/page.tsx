@@ -1,6 +1,8 @@
+import Benefits from '@/components/pages/home/benefits';
 import Hero from '@/components/pages/home/hero';
 import Integrations from '@/components/pages/home/integrations';
 import LargeData from '@/components/pages/home/large-data';
+import Learn from '@/components/pages/home/learn';
 import Optimize from '@/components/pages/home/optimize';
 import Subscribe from '@/components/pages/home/subscribe';
 
@@ -13,7 +15,9 @@ function Home() {
       <Optimize />
       <LargeData />
       <Subscribe />
+      <Learn />
       <Integrations />
+      <Benefits />
     </>
   );
 }
