@@ -56,7 +56,7 @@ function Applications() {
         </p>
         <div className="mt-16 grid grid-cols-3 gap-8">
           {CARDS.map(({ image, title, description }, index) => (
-            <div key={index} className="card-border h-[384px] rounded-lg">
+            <div className="card-border h-[384px] rounded-lg" key={index}>
               <div className="relative flex h-full w-full flex-col justify-end rounded-lg bg-grey-10 p-8">
                 <Image
                   className="pointer-events-none object-contain object-top"
@@ -64,10 +64,8 @@ function Applications() {
                   alt={title}
                   fill
                 />
-                <div className="relative">
-                  <h3 className="text-20 font-semibold leading-snug">{title}</h3>
-                  <p className="mt-2 text-18 text-grey-70">{description}</p>
-                </div>
+                <h3 className="text-20 font-semibold leading-snug">{title}</h3>
+                <p className="mt-2 text-18 text-grey-70">{description}</p>
               </div>
             </div>
           ))}
