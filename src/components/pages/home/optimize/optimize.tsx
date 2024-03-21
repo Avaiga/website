@@ -27,10 +27,10 @@ function Optimize() {
           Optimized for insights
         </h2>
         <div className="card-border mt-14 rounded-lg p-px" ref={ref}>
-          <div className="flex rounded-lg bg-grey-10">
+          <div className="flex h-[701px] rounded-lg bg-grey-10">
             <div>
               <video
-                className="rounded-l-lg"
+                className="rounded-lg mix-blend-lighten"
                 controls={false}
                 width={544}
                 height={702}
@@ -43,20 +43,22 @@ function Optimize() {
                 <source src="/videos/pages/home/optimize/optimize-other.webm" type="video/webm" />
               </video>
             </div>
-            <div className="rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%),linear-gradient(182.49deg,rgba(255,255,255,0.5)_-7.22%,rgba(255,255,255,0.0498282)_2.63%,rgba(255,255,255,0)_4.07%)] pl-px shadow-[0px_20px_60px_0px_#00000080]">
-              <video
-                className="rounded-lg"
-                controls={false}
-                width={544}
-                height={702}
-                ref={taipyRef}
-                loop
-                playsInline
-                muted
-              >
-                <source src="/videos/pages/home/optimize/optimize-taipy.mp4" type="video/mp4" />
-                <source src="/videos/pages/home/optimize/optimize-taipy.webm" type="video/webm" />
-              </video>
+            <div className="-m-px rounded-lg bg-video-border p-px shadow-[0px_20px_60px_0px_#00000080]">
+              <div className="rounded-lg bg-video">
+                <video
+                  className="rounded-lg mix-blend-lighten"
+                  controls={false}
+                  width={544}
+                  height={702}
+                  ref={taipyRef}
+                  loop
+                  playsInline
+                  muted
+                >
+                  <source src="/videos/pages/home/optimize/optimize-taipy.mp4" type="video/mp4" />
+                  <source src="/videos/pages/home/optimize/optimize-taipy.webm" type="video/webm" />
+                </video>
+              </div>
             </div>
           </div>
         </div>
