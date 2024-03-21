@@ -50,8 +50,8 @@ function Optimize() {
                 <source src="/videos/pages/home/optimize/optimize-other.webm" type="video/webm" />
               </video>
             </div>
-            <div className="-m-px rounded-lg bg-video-border p-px shadow-[0px_20px_60px_0px_#00000080]">
-              <div className="rounded-lg bg-video">
+            <div className="-m-px rounded-lg bg-gradient-border p-px shadow-[0px_20px_60px_0px_#00000080]">
+              <div className="rounded-lg bg-gradient-grey-10">
                 <video
                   className="rounded-lg mix-blend-lighten"
                   controls={false}

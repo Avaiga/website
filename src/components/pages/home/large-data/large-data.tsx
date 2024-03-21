@@ -35,8 +35,8 @@ function LargeData() {
           Large data support
         </h2>
         <div className="mt-[48px] flex gap-x-9">
-          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-video-border p-px">
-            <div className="-m-px rounded-lg bg-large-video-gradient" ref={taipyRef}>
+          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px">
+            <div className="-m-px rounded-lg bg-gradient-grey" ref={taipyRef}>
               <video
                 className="rounded-lg mix-blend-lighten"
                 controls={false}
@@ -65,8 +65,8 @@ function LargeData() {
           </div>
         </div>
         <div className="mt-10 flex gap-x-9">
-          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-video-border p-px">
-            <div className="-m-px rounded-lg bg-large-video-gradient" ref={otherRef}>
+          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px">
+            <div className="-m-px rounded-lg bg-gradient-grey" ref={otherRef}>
               <video
                 className="rounded-lg mix-blend-lighten"
                 controls={false}
