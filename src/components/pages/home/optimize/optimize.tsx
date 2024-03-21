@@ -8,15 +8,20 @@ import { ROUTE } from '@/constants/routes';
 import Link from '@/components/shared/link';
 
 function Optimize() {
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   const otherRef = useRef<HTMLVideoElement>(null);
   const taipyRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (inView && otherRef?.current && taipyRef?.current) {
-      otherRef.current.play();
-      taipyRef.current.play();
+    if (otherRef.current && taipyRef.current) {
+      if (inView) {
+        otherRef.current.play();
+        taipyRef.current.play();
+      } else {
+        otherRef.current.pause();
+        taipyRef.current.pause();
+      }
     }
   }, [inView]);
 
@@ -27,7 +32,7 @@ function Optimize() {
           Optimized for insights
         </h2>
         <div className="card-border mt-14 rounded-lg p-px" ref={ref}>
-          <div className="flex h-[701px] rounded-lg bg-grey-10">
+          <div className="flex aspect-[1.549] rounded-lg bg-grey-10">
             <div>
               <video
                 className="rounded-lg mix-blend-lighten"
