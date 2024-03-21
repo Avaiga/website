@@ -1,9 +1,33 @@
-import Image from 'next/image';
+'use client';
 
-import sinLoading from '@/svgs/pages/home/large-data/sin-loading.svg';
-import sin from '@/svgs/pages/home/large-data/sin.svg';
+import { useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 function LargeData() {
+  const { ref: otherRef, inView: otherInView } = useInView({ threshold: 0.1 });
+  const { ref: taipyRef, inView: taipyInView } = useInView({ threshold: 0.1 });
+
+  const taipyVideoRef = useRef<HTMLVideoElement>(null);
+  const otherVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!taipyVideoRef.current || !otherVideoRef.current) {
+      return;
+    }
+
+    if (taipyInView) {
+      taipyVideoRef.current.play();
+    } else {
+      taipyVideoRef.current.pause();
+    }
+
+    if (otherInView) {
+      otherVideoRef.current.play();
+    } else {
+      otherVideoRef.current.pause();
+    }
+  }, [otherInView, taipyInView]);
+
   return (
     <section className="large-data mt-[136px] px-safe">
       <div className="container max-w-[1280px]">
@@ -11,13 +35,26 @@ function LargeData() {
           Large data support
         </h2>
         <div className="mt-[48px] flex gap-x-9">
-          <Image
-            className="shadow-[0px_20px_60px_0px_#00000080]"
-            src={sin}
-            width={862}
-            height={338}
-            alt="In Taipy"
-          />
+          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px">
+            <div className="-m-px rounded-lg bg-gradient-grey" ref={taipyRef}>
+              <video
+                className="rounded-lg mix-blend-lighten"
+                controls={false}
+                width={860}
+                height={336}
+                ref={taipyVideoRef}
+                loop
+                playsInline
+                muted
+              >
+                <source src="/videos/pages/home/large-data/large-data-taipy.mp4" type="video/mp4" />
+                <source
+                  src="/videos/pages/home/large-data/large-data-taipy.webm"
+                  type="video/webm"
+                />
+              </video>
+            </div>
+          </div>
           <div>
             <h3 className="text-24 font-medium">In Taipy</h3>
             <p className="mt-2 text-18 font-light text-grey-70">
@@ -28,7 +65,26 @@ function LargeData() {
           </div>
         </div>
         <div className="mt-10 flex gap-x-9">
-          <Image src={sinLoading} width={862} height={338} alt="In Other Libraries" />
+          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px">
+            <div className="-m-px rounded-lg bg-gradient-grey" ref={otherRef}>
+              <video
+                className="rounded-lg mix-blend-lighten"
+                controls={false}
+                width={860}
+                height={336}
+                ref={otherVideoRef}
+                loop
+                playsInline
+                muted
+              >
+                <source src="/videos/pages/home/large-data/large-data-other.mp4" type="video/mp4" />
+                <source
+                  src="/videos/pages/home/large-data/large-data-other.webm"
+                  type="video/webm"
+                />
+              </video>
+            </div>
+          </div>
           <div>
             <h3 className="text-24 font-medium">In Other Libraries</h3>
             <p className="mt-2 text-18 font-light text-grey-70">
