@@ -4,17 +4,29 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 function LargeData() {
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const { ref: otherRef, inView: otherInView } = useInView({ threshold: 0.1 });
+  const { ref: taipyRef, inView: taipyInView } = useInView({ threshold: 0.1 });
 
-  const otherRef = useRef<HTMLVideoElement>(null);
-  const taipyRef = useRef<HTMLVideoElement>(null);
+  const taipyVideoRef = useRef<HTMLVideoElement>(null);
+  const otherVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (inView && otherRef?.current && taipyRef?.current) {
-      otherRef.current.play();
-      taipyRef.current.play();
+    if (!taipyVideoRef.current || !otherVideoRef.current) {
+      return;
     }
-  }, [inView]);
+
+    if (taipyInView) {
+      taipyVideoRef.current.play();
+    } else {
+      taipyVideoRef.current.pause();
+    }
+
+    if (otherInView) {
+      otherVideoRef.current.play();
+    } else {
+      otherVideoRef.current.pause();
+    }
+  }, [otherInView, taipyInView]);
 
   return (
     <section className="large-data mt-[136px] px-safe">
@@ -22,19 +34,18 @@ function LargeData() {
         <h2 className="pl-[205px] text-56 font-semibold leading-dense tracking-tight">
           Large data support
         </h2>
-        <div className="mt-[48px] flex gap-x-9" ref={ref}>
-          <div className="shrink-0 rounded-lg bg-large-video-border p-px">
-            <div className="-m-px rounded-lg bg-large-video-gradient">
+        <div className="mt-[48px] flex gap-x-9">
+          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-large-video-border p-px">
+            <div className="-m-px rounded-lg bg-large-video-gradient" ref={taipyRef}>
               <video
                 className="rounded-lg mix-blend-lighten"
                 controls={false}
                 width={860}
                 height={336}
-                ref={taipyRef}
+                ref={taipyVideoRef}
                 loop
                 playsInline
                 muted
-                autoPlay
               >
                 <source src="/videos/pages/home/large-data/large-data-taipy.mp4" type="video/mp4" />
                 <source
@@ -54,18 +65,17 @@ function LargeData() {
           </div>
         </div>
         <div className="mt-10 flex gap-x-9">
-          <div className="shrink-0 rounded-lg bg-large-video-border p-px">
-            <div className="-m-px rounded-lg bg-large-video-gradient">
+          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-large-video-border p-px">
+            <div className="-m-px rounded-lg bg-large-video-gradient" ref={otherRef}>
               <video
                 className="rounded-lg mix-blend-lighten"
                 controls={false}
                 width={860}
                 height={336}
-                ref={otherRef}
+                ref={otherVideoRef}
                 loop
                 playsInline
                 muted
-                autoPlay
               >
                 <source src="/videos/pages/home/large-data/large-data-other.mp4" type="video/mp4" />
                 <source
