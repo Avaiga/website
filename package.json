@@ -27,6 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.1",
+    "react-intersection-observer": "^9.8.1",
     "sharp": "^0.33.2",
     "tailwindcss-safe-area": "^0.5.1",
     "yup": "^1.4.0"

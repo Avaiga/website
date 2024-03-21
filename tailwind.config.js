@@ -33,6 +33,13 @@ module.exports = {
       tight: '-0.04em',
       snug: '-0.02em',
     },
+    backgroundImage: {
+      ...defaultTheme.backgroundImage,
+      'large-video-border':
+        'linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%), linear-gradient(182.49deg, rgba(255, 255, 255, 0.5) -7.22%, rgba(255, 255, 255, 0.0498282) 2.63%, rgba(255, 255, 255, 0) 4.07%)',
+      'large-video-gradient':
+        'linear-gradient(0deg, #1B1B1D, #1B1B1D), radial-gradient(93.11% 55.91% at 100% 0%, rgba(204, 204, 204, 0.09) 0%, rgba(204, 204, 204, 0) 100%)',
+    },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,
