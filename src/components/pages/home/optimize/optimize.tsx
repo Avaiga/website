@@ -14,14 +14,16 @@ function Optimize() {
   const taipyRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (otherRef.current && taipyRef.current) {
-      if (inView) {
-        otherRef.current.play();
-        taipyRef.current.play();
-      } else {
-        otherRef.current.pause();
-        taipyRef.current.pause();
-      }
+    if (!otherRef.current || !taipyRef.current) {
+      return;
+    }
+
+    if (inView) {
+      otherRef.current.play();
+      taipyRef.current.play();
+    } else {
+      otherRef.current.pause();
+      taipyRef.current.pause();
     }
   }, [inView]);
 
