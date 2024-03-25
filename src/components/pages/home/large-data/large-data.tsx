@@ -10,6 +10,31 @@ function LargeData() {
   const taipyVideoRef = useRef<HTMLVideoElement>(null);
   const otherVideoRef = useRef<HTMLVideoElement>(null);
 
+  const itemsData = [
+    {
+      title: 'In Taipy',
+      description:
+        "Effortlessly manage massive datasets with Taipy's built-in decimator for charts, intelligently reducing the number of data points to save time and memory without losing the essence of your data's shape.",
+      ref: taipyRef,
+      video: {
+        mp4: '/videos/pages/home/large-data/large-data-taipy.mp4',
+        webm: '/videos/pages/home/large-data/large-data-taipy.webm',
+        ref: taipyVideoRef,
+      },
+    },
+    {
+      title: 'In Other Libraries',
+      description:
+        'Struggle with sluggish performance and excessive memory usage, as every data point demands processing. Large datasets become cumbersome, complicating the user experience and data analysis.',
+      ref: otherRef,
+      video: {
+        mp4: '/videos/pages/home/large-data/large-data-other.mp4',
+        webm: '/videos/pages/home/large-data/large-data-other.webm',
+        ref: otherVideoRef,
+      },
+    },
+  ];
+
   useEffect(() => {
     if (!taipyVideoRef.current || !otherVideoRef.current) {
       return;
@@ -29,71 +54,36 @@ function LargeData() {
   }, [otherInView, taipyInView]);
 
   return (
-    <section className="large-data mt-[136px] px-safe">
+    <section className="large-data mt-[136px] px-safe lg:mt-[112px]">
       <div className="container max-w-[1280px]">
-        <h2 className="pl-[205px] text-56 font-semibold leading-dense tracking-tight">
+        <h2 className="mb-[48px] pl-[205px] text-56 font-semibold leading-dense tracking-tight lg:mb-[57px] lg:pl-16 lg:text-48">
           Large data support
         </h2>
-        <div className="mt-[48px] flex gap-x-9">
-          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px">
-            <div className="-m-px rounded-lg bg-gradient-grey" ref={taipyRef}>
-              <video
-                className="rounded-lg mix-blend-lighten"
-                controls={false}
-                width={860}
-                height={336}
-                ref={taipyVideoRef}
-                loop
-                playsInline
-                muted
-              >
-                <source src="/videos/pages/home/large-data/large-data-taipy.mp4" type="video/mp4" />
-                <source
-                  src="/videos/pages/home/large-data/large-data-taipy.webm"
-                  type="video/webm"
-                />
-              </video>
+        {itemsData.map(({ title, description, video, ref }, index) => (
+          <div className="mt-10 flex gap-x-9 lg:mt-9 lg:gap-x-8" key={index}>
+            <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px lg:max-w-[672px]">
+              <div className="-m-px rounded-lg bg-gradient-grey" ref={ref}>
+                <video
+                  className="rounded-lg mix-blend-lighten"
+                  controls={false}
+                  width={860}
+                  height={336}
+                  ref={video.ref}
+                  loop
+                  playsInline
+                  muted
+                >
+                  <source src={video.mp4} type="video/mp4" />
+                  <source src={video.webm} type="video/webm" />
+                </video>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-24 font-medium lg:text-20">{title}</h3>
+              <p className="mt-2 text-18 font-light text-grey-70 lg:text-16">{description}</p>
             </div>
           </div>
-          <div>
-            <h3 className="text-24 font-medium">In Taipy</h3>
-            <p className="mt-2 text-18 font-light text-grey-70">
-              Effortlessly manage massive datasets with Taipy&apos;s built-in decimator for charts,
-              intelligently reducing the number of data points to save time and memory without
-              losing the essence of your data&apos;s shape.
-            </p>
-          </div>
-        </div>
-        <div className="mt-10 flex gap-x-9">
-          <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px">
-            <div className="-m-px rounded-lg bg-gradient-grey" ref={otherRef}>
-              <video
-                className="rounded-lg mix-blend-lighten"
-                controls={false}
-                width={860}
-                height={336}
-                ref={otherVideoRef}
-                loop
-                playsInline
-                muted
-              >
-                <source src="/videos/pages/home/large-data/large-data-other.mp4" type="video/mp4" />
-                <source
-                  src="/videos/pages/home/large-data/large-data-other.webm"
-                  type="video/webm"
-                />
-              </video>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-24 font-medium">In Other Libraries</h3>
-            <p className="mt-2 text-18 font-light text-grey-70">
-              Struggle with sluggish performance and excessive memory usage, as every data point
-              demands processing. Large datasets become cumbersome, complicating the user experience
-              and data analysis.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
