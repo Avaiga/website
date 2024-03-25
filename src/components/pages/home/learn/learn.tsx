@@ -125,8 +125,7 @@ function Learn() {
             </div>
           ))}
         </div>
-        {/* TODO: remove lg:hidden before review */}
-        <div className="mt-10 flex justify-center lg:hidden">
+        <div className="mt-10 flex justify-center">
           <Link href="/" size="md" theme="white" arrowTheme="red">
             See all demos
           </Link>
