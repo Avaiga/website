@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 import Button from '@/components/shared/button';
 
-import bgLg from '@/svgs/pages/home/hero/bg-lg.svg';
 import bg from '@/svgs/pages/home/hero/bg.svg';
 import screen from '@/svgs/pages/home/hero/screen.svg';
 
@@ -12,10 +11,14 @@ function Hero() {
   return (
     <section className="hero overflow-hidden pt-[136px] px-safe lg:pt-[120px]">
       <div className="container-wide relative">
-        <picture className="pointer-events-none absolute left-[37px] top-[287px] -z-10 max-w-full xxl:left-0 lg:left-[33px] lg:top-[308px] lg:max-w-[960px]">
-          <source srcSet={bgLg} media="(max-width: 1279px)" />
-          <Image className="" src={bg} width={1706} height={751} alt="" priority />
-        </picture>
+        <Image
+          className="pointer-events-none absolute left-[37px] top-[287px] -z-10 max-w-full xxl:left-0  lg:left-1/2 lg:top-[308px] lg:max-w-[960px] lg:-translate-x-1/2"
+          src={bg}
+          width={1706}
+          height={751}
+          alt=""
+          priority
+        />
         <p className="text-center text-16 leading-snug text-primary-red">
           Beyond existing libraries
         </p>
