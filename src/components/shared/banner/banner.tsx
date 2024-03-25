@@ -4,7 +4,7 @@ import Link from '@/components/shared/link';
 
 function Banner() {
   return (
-    <div className="banner mb-1 mt-4 px-safe pt-safe">
+    <div className="banner mb-1 mt-4 px-safe pt-safe lg:hidden">
       <div className="container-narrow">
         <Link
           className="flex h-9 items-center justify-center rounded-[20px] bg-[#1E1E20] text-14 leading-none"
