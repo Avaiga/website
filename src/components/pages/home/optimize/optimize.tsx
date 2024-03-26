@@ -28,12 +28,12 @@ function Optimize() {
   }, [inView]);
 
   return (
-    <section className="optimize mt-[188px] px-safe lg:mt-[92px]">
+    <section className="optimize mt-[188px] px-safe lg:mt-[92px] md:mt-[102px]">
       <div className="container max-w-[1152px]">
-        <h2 className="pl-10 text-56 font-semibold leading-dense tracking-tight lg:pl-16 lg:text-48">
+        <h2 className="pl-10 text-56 font-semibold leading-dense tracking-tight lg:pl-16 lg:text-48 md:pl-8 md:text-40">
           Optimized for insights
         </h2>
-        <div className="card-border mt-14 rounded-lg p-px lg:mt-12" ref={ref}>
+        <div className="card-border mt-14 rounded-lg p-px lg:mt-12 md:mt-10" ref={ref}>
           <div className="-m-px flex aspect-[1.549] rounded-lg bg-grey-10">
             <div>
               <video
@@ -69,9 +69,9 @@ function Optimize() {
             </div>
           </div>
         </div>
-        <div className="mt-12 grid grid-cols-2 lg:mt-9">
-          <div className="px-10 lg:px-16">
-            <p className="mb-4 max-w-[404px] text-18 font-light text-grey-70 lg:text-16">
+        <div className="mt-12 grid grid-cols-2 lg:mt-9 md:mt-6">
+          <div className="px-10 lg:px-16 md:pl-8 md:pr-[62px]">
+            <p className="mb-4 max-w-[404px] text-18 font-light text-grey-70 lg:text-16 md:mb-3 md:text-14">
               Taipy enhances performance with caching control of graphical events, optimizing
               rendering by selectively updating graphical components only upon interaction.
             </p>
@@ -79,12 +79,15 @@ function Optimize() {
               Read more
             </Link>
           </div>
-          <div className="px-10 lg:px-16">
-            <p className="text-18 font-light text-grey-70 lg:text-16">Up to</p>
-            <p className="-ml-0.5 -mt-0.5 inline-block bg-[linear-gradient(88deg,#FF462B_6.46%,rgba(0,0,0,0.00)_251.98%)] bg-clip-text text-[92px] font-light leading-dense tracking-tighter text-transparent lg:text-[80px]">
-              10<span className="text-44 font-normal tracking-tight lg:text-40">x faster</span>
+          <div className="px-10 lg:px-16 md:px-8">
+            <p className="text-18 font-light text-grey-70 lg:text-16 md:text-14">Up to</p>
+            <p className="-ml-0.5 -mt-0.5 inline-block bg-[linear-gradient(88deg,#FF462B_6.46%,rgba(0,0,0,0.00)_251.98%)] bg-clip-text text-[92px] font-light leading-dense tracking-tighter text-transparent lg:text-[80px] md:text-[72px]">
+              10
+              <span className="text-44 font-normal tracking-tight lg:text-40 md:text-36">
+                x faster
+              </span>
             </p>
-            <p className="-mt-1 text-18 font-light text-grey-70 lg:mt-0.5 lg:text-16">
+            <p className="-mt-1 text-18 font-light text-grey-70 lg:mt-0.5 lg:text-16 md:text-14">
               for resource-heavy apps
             </p>
           </div>
