@@ -18,9 +18,9 @@ const CARDS = [
       url: scenarios,
       width: 656,
       height: 268,
-      className: 'left-0 bottom-0',
+      className: 'left-0 bottom-0 md:-bottom-3',
     },
-    size: 'col-span-6',
+    className: 'col-span-6 md:col-span-2 md:order-1',
   },
   {
     title: 'Tasks Scheduler.',
@@ -31,7 +31,7 @@ const CARDS = [
       height: 299,
       className: 'left-0 bottom-0',
     },
-    size: 'col-span-3',
+    className: 'col-span-3 md:col-span-1 md:order-2',
   },
   {
     title: 'Customize styles.',
@@ -40,9 +40,9 @@ const CARDS = [
       url: customizeStyles,
       width: 250,
       height: 238,
-      className: 'bottom-8 px-[30px] lg:px-4 lg:left-1 lg:bottom-[22px]',
+      className: 'bottom-8 px-[30px] lg:px-4 lg:left-1 lg:bottom-[22px] md:px-8 md:left-0',
     },
-    size: 'col-span-3',
+    className: 'col-span-3 md:col-span-1 md:order-3',
   },
   {
     title: 'Multi-users.',
@@ -51,9 +51,10 @@ const CARDS = [
       url: multiUsers,
       width: 241,
       height: 186,
-      className: 'bottom-[55px] px-[34px] lg:px-5 lg:left-1.5 lg:bottom-[42px]',
+      className:
+        'bottom-[55px] px-[34px] lg:px-5 lg:left-1.5 lg:bottom-[42px] md:px-9 md:-left-0.5',
     },
-    size: 'col-span-3',
+    className: 'col-span-3 md:col-span-1 md:order-5',
   },
   {
     title: 'Long jobs.',
@@ -62,9 +63,9 @@ const CARDS = [
       url: longJobs,
       width: 312,
       height: 400,
-      className: 'bottom-0 left-0',
+      className: 'bottom-0 left-0 md:-bottom-8',
     },
-    size: 'col-span-3',
+    className: 'col-span-3 md:col-span-1 md:order-6',
   },
   {
     title: 'Explore datasets with TalkToTaipy.',
@@ -76,7 +77,7 @@ const CARDS = [
       height: 400,
       className: 'bottom-0 left-0',
     },
-    size: 'col-span-6',
+    className: 'col-span-6 md:col-span-2 md:order-4',
   },
 ];
 
@@ -84,15 +85,15 @@ function Learn() {
   return (
     <section className="learn mt-[200px] px-safe lg:mt-32">
       <div className="container">
-        <h2 className="mx-auto max-w-[790px] text-center text-56 font-semibold leading-dense tracking-tight lg:max-w-[500px] lg:text-48">
+        <h2 className="mx-auto max-w-[790px] text-center text-56 font-semibold leading-dense tracking-tight lg:max-w-[500px] lg:text-48 md:text-40">
           Easy to learn, pleasure&nbsp;to&nbsp;work&nbsp;with
         </h2>
-        <div className="mt-14 grid grid-cols-12 grid-rows-[400px_400px] gap-8 lg:grid-rows-[300px_300px] lg:gap-6">
-          {CARDS.map(({ title, description, image, size }, index) => (
+        <div className="mt-14 grid grid-cols-12 grid-rows-[400px_400px] gap-8 lg:grid-rows-[300px_300px] lg:gap-6 md:mt-10 md:grid-cols-2 md:grid-rows-4 md:px-8">
+          {CARDS.map(({ title, description, image, className }, index) => (
             <div
               className={clsx(
-                size,
-                'overflow-hidden rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px',
+                className,
+                'overflow-hidden rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px md:h-[340px]',
               )}
               key={index}
             >
@@ -111,7 +112,7 @@ function Learn() {
             </div>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex justify-center md:mt-8">
           <Link href="/" size="md" theme="white" arrowTheme="red">
             See all demos
           </Link>
