@@ -24,9 +24,9 @@ function Burger({
         onClick={onClick}
       >
         <div className="absolute -inset-5" aria-hidden />
-        <span className="relative block h-7 w-7">
+        <span className="relative block h-6 w-6">
           <m.span
-            className="absolute right-0 top-1 block h-0.5 w-7 rounded-full bg-[#000] transition-colors duration-200"
+            className="absolute right-0 top-1 block h-0.5 w-6 rounded-full bg-white transition-colors duration-200"
             variants={{
               initial: {
                 top: 4,
@@ -41,7 +41,7 @@ function Burger({
             }}
           />
           <m.span
-            className="absolute right-0 top-[13px] block h-0.5 w-7 rounded-full bg-[#000] transition-colors duration-200"
+            className="absolute right-0 top-[11px] block h-0.5 w-6 rounded-full bg-white transition-colors duration-200"
             variants={{
               initial: {
                 display: 'block',
@@ -54,7 +54,7 @@ function Burger({
             }}
           />
           <m.span
-            className="absolute bottom-1 right-0 block h-0.5 w-7 rounded-full bg-[#000] transition-colors duration-200"
+            className="absolute bottom-1 right-0 block h-0.5 w-6 rounded-full bg-white transition-colors duration-200"
             variants={{
               initial: {
                 bottom: 4,
