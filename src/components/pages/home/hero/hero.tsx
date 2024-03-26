@@ -29,7 +29,7 @@ function Hero() {
           From simple pilots to production-ready web applications in no times. No more compromise on
           performance, customization, and scalability.
         </p>
-        <div className="relative mt-[42px] flex justify-center gap-x-8 lg:mt-[28px]">
+        <div className="relative mt-[42px] flex justify-center gap-x-8 lg:mt-7">
           <Button className="w-full max-w-[180px]" size="lg" theme="red-filled">
             Request demo
           </Button>
@@ -47,7 +47,7 @@ function Hero() {
             priority
           />
           <video
-            className="absolute inset-x-0 top-[108px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-[590px] lg:top-16 lg:h-[268px] lg:w-[431px]"
+            className="absolute inset-x-0 top-[108px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-auto lg:top-[62px] lg:h-[268px]"
             controls={false}
             width={732}
             height={454}
