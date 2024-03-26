@@ -96,7 +96,7 @@ function Learn() {
               )}
               key={index}
             >
-              <div className="relative h-full rounded-lg bg-grey-10 p-7 lg:p-6 lg:pr-3">
+              <div className="relative h-full rounded-lg bg-grey-10 p-7 lg:p-6">
                 <Image
                   className={clsx('pointer-events-none absolute w-full', image.className)}
                   src={image.url}
