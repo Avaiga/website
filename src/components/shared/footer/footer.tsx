@@ -16,7 +16,7 @@ function Footer() {
             <span className="sr-only">Taipy</span>
             <Image className="h-7" src={logo} width={109} height={28} alt="Taipy logo" />
           </Link>
-          <nav className="flex gap-x-[106px] lg:mr-[58px] lg:w-full lg:max-w-[582px] lg:justify-between lg:gap-x-0">
+          <nav className="flex gap-x-[106px] lg:gap-x-16">
             {MENU.footer.main.map(({ title, items }, index) => (
               <div key={index}>
                 <span className="text-16 leading-normal text-[#ADB0B9]">{title}</span>

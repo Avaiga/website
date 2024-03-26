@@ -59,13 +59,13 @@ function Header() {
           </nav>
 
           <div className="flex gap-x-2.5 lg:grow lg:justify-end md:hidden">
-            <Button className="gap-x-2.5 pl-2 pr-3 !font-normal" theme="outline" size="sm">
+            <Button className="gap-x-2.5 pl-2 pr-3" theme="outline" size="sm">
               <GithubLogo className="h-[18px] flex-shrink-0 fill-white" />
               <span>Star Us</span>
               <span className="h-5 w-px bg-white/20" aria-hidden />
               <span>6.5k</span>
             </Button>
-            <Button className="!font-normal" theme="white-filled" size="sm">
+            <Button theme="white-filled" size="sm">
               Enterprise
             </Button>
           </div>

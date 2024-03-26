@@ -56,13 +56,12 @@ function Applications() {
         </p>
         <div className="mt-16 grid grid-cols-3 gap-8 lg:mt-12 lg:gap-6">
           {CARDS.map(({ image, title, description }, index) => (
-            <div className="card-border h-[384px] rounded-lg lg:h-[304px]" key={index}>
-              <div className="relative flex h-full w-full flex-col justify-end rounded-lg bg-grey-10 p-8 lg:p-6">
+            <div className="card-border flex h-[384px] rounded-lg lg:h-[304px]" key={index}>
+              <div className="relative flex flex-col justify-end rounded-lg bg-grey-10 p-8 lg:p-6">
                 <Image
-                  className="pointer-events-none object-contain object-top"
+                  className="pointer-events-none absolute left-0 top-0 h-auto w-full"
                   src={image}
                   alt={title}
-                  fill
                 />
                 <h3 className="text-20 font-semibold leading-snug lg:text-16">{title}</h3>
                 <p className="mt-2 text-18 text-grey-70 lg:text-14">{description}</p>
