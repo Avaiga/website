@@ -35,12 +35,12 @@ const LOGOS = [
 ];
 
 const styles = {
-  logosWrapper: 'flex h-full items-center justify-center gap-x-14',
+  logosWrapper: 'flex h-full items-center justify-center gap-x-14 md:gap-x-0 md:justify-between',
 };
 
 function Logos() {
   return (
-    <div className="mt-12 h-[91px] lg:mt-[9px] lg:scale-[0.585]">
+    <div className="mt-12 h-[91px] lg:mt-[9px] lg:scale-[0.585] md:mx-auto md:mt-6 md:h-[56px] md:max-w-[560px] md:scale-100">
       <ul
         className={clsx(
           styles.logosWrapper,
@@ -49,7 +49,7 @@ function Logos() {
       >
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
           <li key={index}>
-            <Logo className="fill-white" width={width} height={height} />
+            <Logo className="fill-white md:h-[33px]" width={width} height={height} />
           </li>
         ))}
       </ul>
@@ -61,7 +61,7 @@ function Logos() {
       >
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
           <li key={index}>
-            <Logo className="fill-[#ff462b]" width={width} height={height} />
+            <Logo className="fill-[#ff462b] md:h-[33px]" width={width} height={height} />
           </li>
         ))}
       </ul>
