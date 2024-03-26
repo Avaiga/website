@@ -14,7 +14,6 @@ const CARDS = [
   {
     title: 'Scenarios made easy with Taipy Studio.',
     description: 'A powerful VS Code extension that unlocks a convenient graphical editor.',
-    descriptionSpacing: 'pl-7 pr-16 pt-7',
     image: {
       url: scenarios,
       width: 656,
@@ -26,7 +25,6 @@ const CARDS = [
   {
     title: 'Tasks Scheduler.',
     description: 'Get your methods invoked at a certain time or intervals.',
-    descriptionSpacing: 'pl-7 pr-7 pt-7',
     image: {
       url: tasksScheduler,
       width: 312,
@@ -38,36 +36,33 @@ const CARDS = [
   {
     title: 'Customize styles.',
     description: 'Enjoy variety of predefined themes or build your own.',
-    descriptionSpacing: 'pl-7 pr-7 pt-7',
     image: {
       url: customizeStyles,
       width: 250,
       height: 238,
-      className: 'bottom-8 left-[30px]',
+      className: 'bottom-8 px-[30px] lg:px-4 lg:left-1 lg:bottom-[22px]',
     },
     size: 'col-span-3',
   },
   {
     title: 'Multi-users.',
     description: 'Each end-user has his own state enabling multi-user support.',
-    descriptionSpacing: 'pl-7 pr-7 pt-7',
     image: {
       url: multiUsers,
       width: 241,
       height: 186,
-      className: 'bottom-[55px] left-[34px]',
+      className: 'bottom-[55px] px-[34px] lg:px-5 lg:left-1.5 lg:bottom-[42px]',
     },
     size: 'col-span-3',
   },
   {
     title: 'Long jobs.',
     description: 'Run heavy tasks in the background without slowing down experience.',
-    descriptionSpacing: 'pl-7 pr-[26px] pt-7',
     image: {
       url: longJobs,
       width: 312,
       height: 400,
-      className: 'top-0 left-0',
+      className: 'bottom-0 left-0',
     },
     size: 'col-span-3',
   },
@@ -75,12 +70,11 @@ const CARDS = [
     title: 'Explore datasets with TalkToTaipy.',
     description:
       'Leverage the LLM-based application to explore datasets using only natural languages.',
-    descriptionSpacing: 'pl-7 pr-[42px] pt-7',
     image: {
       url: explore,
       width: 656,
       height: 400,
-      className: 'top-0 left-0',
+      className: 'bottom-0 left-0',
     },
     size: 'col-span-6',
   },
@@ -88,36 +82,31 @@ const CARDS = [
 
 function Learn() {
   return (
-    <section className="learn mt-[200px] px-safe">
+    <section className="learn mt-[200px] px-safe lg:mt-32">
       <div className="container">
-        <h2 className="mx-auto max-w-[790px] text-center text-56 font-semibold leading-dense tracking-tight">
+        <h2 className="mx-auto max-w-[790px] text-center text-56 font-semibold leading-dense tracking-tight lg:max-w-[500px] lg:text-48">
           Easy to learn, pleasure&nbsp;to&nbsp;work&nbsp;with
         </h2>
-        <div className="mt-14 grid grid-cols-12 grid-rows-[400px_400px] gap-8">
-          {CARDS.map(({ title, description, image, size, descriptionSpacing }, index) => (
+        <div className="mt-14 grid grid-cols-12 grid-rows-[400px_400px] gap-8 lg:grid-rows-[300px_300px] lg:gap-6">
+          {CARDS.map(({ title, description, image, size }, index) => (
             <div
               className={clsx(
                 size,
-                'rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px',
+                'overflow-hidden rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px',
               )}
               key={index}
             >
-              <div className="relative h-full rounded-lg bg-grey-10">
-                <p
-                  className={clsx(
-                    descriptionSpacing,
-                    'relative text-18 font-medium leading-snug text-grey-70',
-                  )}
-                >
-                  <span className="text-white">{title}</span> {description}
-                </p>
+              <div className="relative h-full rounded-lg bg-grey-10 p-7 lg:p-6">
                 <Image
-                  className={clsx('pointer-events-none absolute', image.className)}
+                  className={clsx('pointer-events-none absolute w-full', image.className)}
                   src={image.url}
                   width={image.width}
                   height={image.height}
                   alt={title}
                 />
+                <p className="relative text-18 font-medium leading-snug text-grey-70 lg:text-14 lg:font-normal">
+                  <span className="text-white lg:font-medium">{title}</span> {description}
+                </p>
               </div>
             </div>
           ))}

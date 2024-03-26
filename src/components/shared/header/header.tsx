@@ -32,13 +32,13 @@ function Header() {
   return (
     <>
       <header className="absolute left-0 right-0 top-0 z-50 h-16 px-safe pt-safe">
-        <div className="container-narrow flex h-full items-center justify-between">
+        <div className="container-narrow flex h-full items-center justify-between lg:justify-start">
           <Link href="/">
             <span className="sr-only">Taipy</span>
             <Image className="h-7" src={logo} width={109} height={28} alt="Taipy logo" priority />
           </Link>
           <nav
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            className="lg:translate-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:relative lg:inset-0 lg:ml-16 lg:translate-x-0 lg:translate-y-0"
             aria-label="Global"
           >
             <ul className="flex gap-x-7 md:hidden">
@@ -58,7 +58,7 @@ function Header() {
             />
           </nav>
 
-          <div className="flex gap-x-2.5">
+          <div className="flex gap-x-2.5 lg:grow lg:justify-end">
             <Button className="gap-x-2.5 pl-2 pr-3" theme="outline" size="sm">
               <GithubLogo className="h-[18px] flex-shrink-0 fill-white" />
               <span>Star Us</span>

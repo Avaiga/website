@@ -84,6 +84,7 @@ module.exports = {
       },
     }),
     screens: {
+      xxl: { max: '1919px' },
       xl: { max: '1439px' },
       lg: { max: '1279px' },
       md: { max: '1023px' },

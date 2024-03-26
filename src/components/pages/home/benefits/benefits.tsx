@@ -34,22 +34,30 @@ const CARDS = [
 
 function Benefits() {
   return (
-    <section className="benefits mt-[196px] px-safe">
-      <div className="container flex max-w-[1280px] gap-x-7">
-        <div className="max-w-[452px] shrink-0 grow">
+    <section className="benefits mt-[196px] px-safe lg:mt-32">
+      <div className="container flex max-w-[1280px] gap-x-7 lg:gap-x-8">
+        <div className="max-w-[452px] shrink-0 grow lg:max-w-[352px]">
           <p className="leading-snug text-primary-red">Personas</p>
-          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight">
+          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40">
             Who can benefit from Taipy&apos;s tools and capabilities?
           </h2>
         </div>
-        <div className="mt-[42px] grid grid-cols-2 gap-x-[75px] gap-y-14">
+        <div className="mt-[42px] grid grid-cols-2 gap-x-[75px] gap-y-14 lg:mt-9 lg:gap-x-12 lg:gap-y-9">
           {CARDS.map(({ icon, title, description }, index) => (
             <div key={index}>
-              <div className="flex gap-x-3">
-                <Image src={icon} width={24} height={24} alt={title} />
-                <h3 className="text-24 font-medium">{title}</h3>
+              <div className="flex gap-x-3 lg:gap-x-2.5">
+                <Image
+                  className="lg:mt-1 lg:h-5 lg:w-5"
+                  src={icon}
+                  width={24}
+                  height={24}
+                  alt={title}
+                />
+                <h3 className="text-24 font-medium lg:text-20 lg:leading-snug">{title}</h3>
               </div>
-              <p className="mt-2 text-18 font-light text-grey-70">{description}</p>
+              <p className="mt-2 text-18 font-light text-grey-70 lg:mt-2.5 lg:text-14">
+                {description}
+              </p>
             </div>
           ))}
         </div>

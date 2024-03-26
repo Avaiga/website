@@ -44,33 +44,32 @@ const CARDS = [
 
 function Applications() {
   return (
-    <section className="applications mt-[200px] px-safe">
+    <section className="applications mt-[200px] px-safe lg:mt-32">
       <div className="container max-w-[1281px]">
         <p className="text-center leading-snug text-primary-red">Applications</p>
-        <h2 className="mt-4 text-center text-56 font-semibold leading-dense tracking-tight">
+        <h2 className="mt-4 text-center text-56 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-48">
           Build anything, use Python only
         </h2>
-        <p className="mx-auto mt-6 max-w-[768px] text-center text-18 font-light leading-snug text-grey-70">
+        <p className="mx-auto mt-6 max-w-[768px] text-center text-18 font-light text-grey-70 lg:mt-5 lg:max-w-[646px] lg:text-16">
           Taipy holds no opinions on what&apos;s and how&apos;s. Build simple pilots, large-scale
           complex apps, or anything in between. Explore demos for inspiration.
         </p>
-        <div className="mt-16 grid grid-cols-3 gap-8">
+        <div className="mt-16 grid grid-cols-3 gap-8 lg:mt-12 lg:gap-6">
           {CARDS.map(({ image, title, description }, index) => (
-            <div className="card-border h-[384px] rounded-lg" key={index}>
-              <div className="relative flex h-full w-full flex-col justify-end rounded-lg bg-grey-10 p-8">
+            <div className="card-border flex h-[384px] rounded-lg lg:h-[304px]" key={index}>
+              <div className="relative flex flex-col justify-end rounded-lg bg-grey-10 p-8 lg:p-6">
                 <Image
-                  className="pointer-events-none object-contain object-top"
+                  className="pointer-events-none absolute left-0 top-0 h-auto w-full"
                   src={image}
                   alt={title}
-                  fill
                 />
-                <h3 className="text-20 font-semibold leading-snug">{title}</h3>
-                <p className="mt-2 text-18 text-grey-70">{description}</p>
+                <h3 className="text-20 font-semibold leading-snug lg:text-16">{title}</h3>
+                <p className="mt-2 text-18 text-grey-70 lg:text-14">{description}</p>
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-[50px] flex justify-center">
+        <div className="mt-[50px] flex justify-center lg:mt-10">
           <Link className="leading-snug" href="/" size="lg" theme="white" arrowTheme="red">
             See all demos
           </Link>
