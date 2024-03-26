@@ -9,7 +9,7 @@ import logo from '@/svgs/logo.svg';
 
 function Footer() {
   return (
-    <footer className="relative bg-[linear-gradient(89.86deg,rgba(41,41,45,0.6)_-34.54%,rgba(19,19,21,0)_104.53%)] pt-16 px-safe pb-safe-or-12 before:absolute before:-top-px before:left-0 before:h-px before:w-full before:bg-[linear-gradient(90deg,#383839_4%,#5D2822_16%,#1E1E21_30%,#151517_54.82%)] lg:pt-12 lg:pb-safe-or-10">
+    <footer className="relative bg-[linear-gradient(89.86deg,rgba(41,41,45,0.6)_-34.54%,rgba(19,19,21,0)_104.53%)] pt-16 px-safe pb-safe-or-12 before:absolute before:-top-px before:left-0 before:h-px before:w-full before:bg-[linear-gradient(90deg,#383839_4%,#5D2822_16%,#1E1E21_30%,#151517_54.82%)] lg:pt-12 lg:pb-safe-or-10 lg:before:bg-[linear-gradient(90deg,#383839_-7.32%,#5D2822_5.12%,#1E1E21_18.94%,#151517_48.93%)]">
       <div className="container">
         <div className="flex items-start justify-between">
           <Link href="/">

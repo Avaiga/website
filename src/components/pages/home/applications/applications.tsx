@@ -50,7 +50,7 @@ function Applications() {
         <h2 className="mt-4 text-center text-56 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-48">
           Build anything, use Python only
         </h2>
-        <p className="mx-auto mt-6 max-w-[768px] text-center text-18 font-light leading-snug text-grey-70 lg:mt-5 lg:max-w-[646px] lg:text-16 lg:leading-normal">
+        <p className="mx-auto mt-6 max-w-[768px] text-center text-18 font-light text-grey-70 lg:mt-5 lg:max-w-[646px] lg:text-16">
           Taipy holds no opinions on what&apos;s and how&apos;s. Build simple pilots, large-scale
           complex apps, or anything in between. Explore demos for inspiration.
         </p>
