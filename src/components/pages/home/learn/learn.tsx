@@ -113,7 +113,7 @@ function Learn() {
           ))}
         </div>
         <div className="mt-10 flex justify-center md:mt-8">
-          <Link href="/" size="md" theme="white" arrowTheme="red">
+          <Link href="/" size="lg" theme="white" arrowTheme="red">
             See all demos
           </Link>
         </div>
