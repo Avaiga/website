@@ -37,7 +37,7 @@ function Hero() {
         </div>
         <div className="relative mt-[-9px] lg:mt-7 md:mt-0 md:px-4">
           <Image
-            className="mx-auto xl:h-[465px] xl:w-[760px] lg:h-[337px] lg:w-[556px] md:h-auto md:w-full"
+            className="mx-auto xl:h-auto xl:w-[760px] lg:w-[556px] md:w-[656px]"
             src={screen}
             width={944}
             height={577}
@@ -45,7 +45,7 @@ function Hero() {
             priority
           />
           <video
-            className="absolute inset-x-0 top-[109px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-auto lg:top-[62px] lg:h-[268px] lg:rounded-md md:top-[18.5%] md:h-auto md:w-[74%]"
+            className="absolute inset-x-0 top-[109px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-auto lg:top-[62px] lg:h-[268px] lg:rounded-md md:top-[75px] md:h-auto md:w-[513px]"
             controls={false}
             width={732}
             height={454}
