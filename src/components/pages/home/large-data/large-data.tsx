@@ -54,14 +54,17 @@ function LargeData() {
   }, [otherInView, taipyInView]);
 
   return (
-    <section className="large-data mt-[136px] px-safe lg:mt-28 md:mt-[90px]">
+    <section className="large-data mt-[136px] px-safe lg:mt-28 md:mt-[90px] sm:mt-20">
       <div className="container max-w-7xl">
-        <h2 className="mb-12 pl-[205px] text-56 font-semibold leading-dense tracking-tight lg:mb-[57px] lg:pl-16 lg:text-48 md:mb-10 md:pl-8 md:text-40">
+        <h2 className="mb-12 pl-[205px] text-56 font-semibold leading-dense tracking-tight lg:mb-[57px] lg:pl-16 lg:text-48 md:mb-10 md:pl-8 md:text-40 sm:mb-4 sm:pl-0 sm:text-center sm:text-28">
           Large data support
         </h2>
         {itemsData.map(({ title, description, video, ref }, index) => (
-          <div className="mt-10 flex gap-x-9 lg:mt-9 lg:gap-x-8 md:mt-7 md:items-start" key={index}>
-            <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px lg:max-w-[672px] md:max-w-md sm:max-w-full">
+          <div
+            className="mt-10 flex gap-x-9 lg:mt-9 lg:gap-x-8 md:mt-7 md:items-start sm:mb-5 sm:mt-0 sm:flex-wrap"
+            key={index}
+          >
+            <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px lg:max-w-[672px] md:max-w-md sm:order-2 sm:max-w-full">
               <div className="-m-px rounded-lg bg-gradient-grey" ref={ref}>
                 <video
                   className="rounded-lg mix-blend-lighten"
@@ -78,9 +81,9 @@ function LargeData() {
                 </video>
               </div>
             </div>
-            <div className="sm:hidden">
+            <div className="sm:order-1 sm:mb-2 sm:w-full">
               <h3 className="text-24 font-medium lg:text-20 md:text-16">{title}</h3>
-              <p className="mt-2 text-18 font-light text-grey-70 lg:text-16 md:text-14">
+              <p className="mt-2 text-18 font-light text-grey-70 lg:text-16 md:text-14 sm:hidden">
                 {description}
               </p>
             </div>

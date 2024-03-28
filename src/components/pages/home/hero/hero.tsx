@@ -9,7 +9,7 @@ import Logos from './logos';
 
 function Hero() {
   return (
-    <section className="hero overflow-hidden pt-[136px] px-safe lg:pt-[120px] md:pt-[110px]">
+    <section className="hero overflow-hidden pt-[136px] px-safe lg:pt-[120px] md:pt-[110px] sm:pt-[90px]">
       <div className="container-wide relative text-center">
         <Image
           className="pointer-events-none absolute left-[37px] top-[287px] -z-10 max-w-full xxl:left-0  lg:left-1/2 lg:top-[308px] lg:max-w-[960px] lg:-translate-x-1/2 md:hidden"
@@ -20,7 +20,7 @@ function Hero() {
           priority
         />
         <span className="leading-snug text-primary-red md:text-14">Beyond existing libraries</span>
-        <h1 className="mx-auto mt-5 max-w-[610px] text-64 font-medium leading-dense tracking-tight lg:max-w-[548px] lg:text-56 md:mt-3.5 md:max-w-[470px] md:text-48 sm:mt-3 sm:text-32">
+        <h1 className="mx-auto mt-5 max-w-[610px] text-64 font-medium leading-dense tracking-tight lg:max-w-[548px] lg:text-56 md:mt-3.5 md:max-w-[470px] md:text-48 sm:mt-2.5 sm:text-32">
           Build Python Data &&nbsp;AI&nbsp;web applications
         </h1>
         <p className="mx-auto mt-5 max-w-[600px] text-18 font-light text-white/80 lg:max-w-[536px] lg:text-16 md:mt-4 sm:mt-3 sm:text-14">
@@ -43,7 +43,7 @@ function Hero() {
             Documentation
           </Button>
         </div>
-        <div className="relative mt-[-9px] lg:mt-7 md:mt-0 md:px-4">
+        <div className="relative mt-[-9px] lg:mt-7 md:mt-0 md:px-4 sm:mt-2">
           <Image
             className="relative mx-auto xl:h-[465px] xl:w-[760px] lg:h-[337px] lg:w-[556px] md:h-auto md:w-full sm:left-1/2 sm:m-0 sm:w-[392px] sm:max-w-none sm:-translate-x-1/2"
             src={screen}
