@@ -53,7 +53,7 @@ function Subscribe() {
     <section className="subscribe mt-[196px] overflow-hidden px-safe lg:mt-[124px] md:mt-[92px]">
       <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end">
         <Image
-          className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-[342px] lg:w-[1060px] md:left-[-88px] md:max-w-none"
+          className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-full lg:w-auto lg:max-w-none md:left-[-88px]"
           width={1324}
           height={431}
           src={bg}
