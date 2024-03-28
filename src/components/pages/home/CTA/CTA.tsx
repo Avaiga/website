@@ -29,7 +29,7 @@ function CTA() {
       <div className="container-narrow grid max-w-[1088px] grid-cols-2 gap-x-8 text-center md:max-w-lg md:grid-cols-1 md:gap-y-6">
         <div
           className={clsx(
-            'relative z-0 overflow-hidden rounded-2xl bg-primary-red px-10 pb-12 pt-11 shadow-[0px_12px_40px_0px_#FF462B80] lg:px-9 lg:pb-11 lg:pt-10 md:px-[42px] md:pb-9 md:pt-8',
+            'relative overflow-hidden rounded-2xl bg-primary-red px-10 pb-12 pt-11 shadow-[0px_12px_40px_0px_#FF462B80] lg:px-9 lg:pb-11 lg:pt-10 md:px-[42px] md:pb-9 md:pt-8',
             'before:pointer-events-none before:absolute before:inset-0 before:left-[310px] before:top-[-360px] before:h-[1154px] before:w-[225px] before:rotate-[30deg] before:bg-[linear-gradient(76.28deg,#FFFFFF_12.28%,rgba(255,255,255,0)_70.86%)] before:opacity-[0.08]',
             'after:pointer-events-none after:absolute after:inset-0 after:left-[120px] after:top-[-360px] after:h-[1154px] after:w-[225px] after:rotate-[30deg] after:bg-[linear-gradient(76.28deg,#FFFFFF_12.28%,rgba(255,255,255,0)_70.86%)] after:opacity-[0.08]',
           )}

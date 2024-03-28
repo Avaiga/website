@@ -45,7 +45,7 @@ function Hero() {
         </div>
         <div className="relative mt-[-9px] lg:mt-7 md:mt-0 md:px-4 sm:mt-2">
           <Image
-            className="relative mx-auto xl:h-[465px] xl:w-[760px] lg:h-[337px] lg:w-[556px] md:h-auto md:w-full sm:left-1/2 sm:m-0 sm:w-[392px] sm:max-w-none sm:-translate-x-1/2"
+            className="relative mx-auto xl:h-auto xl:w-[760px] lg:w-[556px] md:w-[656px] sm:left-1/2 sm:m-0 sm:w-[392px] sm:max-w-none sm:-translate-x-1/2"
             src={screen}
             width={944}
             height={577}
@@ -53,7 +53,7 @@ function Hero() {
             priority
           />
           <video
-            className="absolute inset-x-0 top-[108px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-auto lg:top-[62px] lg:h-[268px] md:top-[18.5%] md:h-auto md:w-[74%] sm:top-[45px] sm:w-[305px] sm:rounded-[4px]"
+            className="absolute inset-x-0 top-[109px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-auto lg:top-[62px] lg:h-[268px] lg:rounded-md md:top-[75px] md:h-auto md:w-[513px] sm:top-[45px] sm:w-[305px] sm:rounded-[4px]"
             controls={false}
             width={732}
             height={454}
