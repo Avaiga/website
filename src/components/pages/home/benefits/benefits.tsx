@@ -34,15 +34,15 @@ const CARDS = [
 
 function Benefits() {
   return (
-    <section className="benefits mt-[196px] px-safe lg:mt-32">
-      <div className="container flex max-w-[1280px] gap-x-7 lg:gap-x-8">
-        <div className="max-w-[452px] shrink-0 grow lg:max-w-[352px]">
-          <p className="leading-snug text-primary-red">Personas</p>
-          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40">
-            Who can benefit from Taipy&apos;s tools and capabilities?
+    <section className="benefits mt-[196px] px-safe lg:mt-32 md:mt-24">
+      <div className="container flex max-w-7xl gap-x-7 lg:gap-x-8 md:flex-wrap md:justify-center">
+        <div className="max-w-[452px] shrink-0 grow lg:max-w-[352px] md:max-w-full md:text-center ">
+          <span className="leading-snug text-primary-red md:text-14">Personas</span>
+          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mx-auto md:max-w-[484px] md:text-36">
+            Who can benefit from Taipy&apos;s&nbsp;tools and capabilities?
           </h2>
         </div>
-        <div className="mt-[42px] grid grid-cols-2 gap-x-[75px] gap-y-14 lg:mt-9 lg:gap-x-12 lg:gap-y-9">
+        <div className="mt-[42px] grid grid-cols-2 gap-x-[75px] gap-y-14 lg:mt-9 lg:gap-x-12 lg:gap-y-9 md:mt-10 md:max-w-xl md:gap-x-8">
           {CARDS.map(({ icon, title, description }, index) => (
             <div key={index}>
               <div className="flex gap-x-3 lg:gap-x-2.5">
