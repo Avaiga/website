@@ -40,7 +40,7 @@ const styles = {
 
 function Logos() {
   return (
-    <div className="mt-12 h-[91px] lg:mt-[9px] lg:scale-[0.585] md:mx-auto md:mt-6 md:h-[56px] md:max-w-[560px] md:scale-100">
+    <div className="mt-12 h-[91px] lg:mt-[9px] lg:scale-[0.585] md:mx-auto md:mt-6 md:h-[56px] md:max-w-[560px] md:scale-100 sm:max-w-[310px]">
       <ul
         className={clsx(
           styles.logosWrapper,
@@ -49,7 +49,11 @@ function Logos() {
       >
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
           <li key={index}>
-            <Logo className="fill-white md:h-[33px]" width={width} height={height} />
+            <Logo
+              className="fill-white md:h-[33px] sm:h-[19px] sm:w-auto"
+              width={width}
+              height={height}
+            />
           </li>
         ))}
       </ul>
@@ -61,7 +65,11 @@ function Logos() {
       >
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
           <li key={index}>
-            <Logo className="fill-[#ff462b] md:h-[33px]" width={width} height={height} />
+            <Logo
+              className="fill-[#ff462b] md:h-[33px] sm:h-[19px] sm:w-auto"
+              width={width}
+              height={height}
+            />
           </li>
         ))}
       </ul>

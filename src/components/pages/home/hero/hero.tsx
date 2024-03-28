@@ -22,24 +22,32 @@ function Hero() {
         <p className="text-center leading-snug text-primary-red md:text-14">
           Beyond existing libraries
         </p>
-        <h1 className="mx-auto mt-5 max-w-[610px] text-center text-64 font-medium leading-dense tracking-tight lg:max-w-[548px] lg:text-56 md:mt-3.5 md:max-w-[470px] md:text-48">
-          Build Python Data &&nbsp;AI web applications
+        <h1 className="mx-auto mt-5 max-w-[610px] text-center text-64 font-medium leading-dense tracking-tight lg:max-w-[548px] lg:text-56 md:mt-3.5 md:max-w-[470px] md:text-48 sm:mt-3 sm:text-32">
+          Build Python Data &&nbsp;AI&nbsp;web applications
         </h1>
-        <p className="mx-auto mt-5 max-w-[600px] text-center text-18 font-light text-white/80 lg:max-w-[536px] lg:text-16 md:mt-4">
+        <p className="mx-auto mt-5 max-w-[600px] text-center text-18 font-light text-white/80 lg:max-w-[536px] lg:text-16 md:mt-4 sm:mt-3 sm:text-14">
           From simple pilots to production-ready web applications in no times. No more compromise on
           performance, customization, and scalability.
         </p>
-        <div className="relative mt-[42px] flex justify-center gap-x-8 lg:mt-7 md:gap-x-6">
-          <Button className="w-full max-w-[180px] md:max-w-[160px]" size="lg" theme="red-filled">
+        <div className="relative mt-[42px] flex justify-center gap-x-8 lg:mt-7 md:gap-x-6 sm:mt-6 sm:gap-x-5">
+          <Button
+            className="w-full max-w-[180px] md:max-w-[160px] sm:max-w-[150px]"
+            size="lg"
+            theme="red-filled"
+          >
             Request demo
           </Button>
-          <Button className="w-full max-w-[180px] md:max-w-[160px]" size="lg" theme="outline">
+          <Button
+            className="w-full max-w-[180px] md:max-w-[160px] sm:max-w-[150px]"
+            size="lg"
+            theme="outline"
+          >
             Documentation
           </Button>
         </div>
         <div className="relative mt-[-9px] lg:mt-7 md:mt-0 md:px-[16px]">
           <Image
-            className="mx-auto xl:h-[465px] xl:w-[760px] lg:h-[337px] lg:w-[556px] md:h-auto md:w-full"
+            className="relative mx-auto xl:h-[465px] xl:w-[760px] lg:h-[337px] lg:w-[556px] md:h-auto md:w-full sm:left-1/2 sm:m-0 sm:w-[392px] sm:max-w-none sm:-translate-x-1/2"
             src={screen}
             width={944}
             height={577}
@@ -47,7 +55,7 @@ function Hero() {
             priority
           />
           <video
-            className="absolute inset-x-0 top-[108px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-auto lg:top-[62px] lg:h-[268px] md:top-[18.5%] md:h-auto md:w-[74%]"
+            className="absolute inset-x-0 top-[108px] mx-auto rounded-[10px] xl:top-[88px] xl:h-[366px] xl:w-auto lg:top-[62px] lg:h-[268px] md:top-[18.5%] md:h-auto md:w-[74%] sm:top-[45px] sm:w-[305px] sm:rounded-[4px]"
             controls={false}
             width={732}
             height={454}
