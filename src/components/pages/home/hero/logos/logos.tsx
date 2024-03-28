@@ -40,7 +40,7 @@ const styles = {
 
 function Logos() {
   return (
-    <div className="mt-12 h-[91px] lg:mt-[9px] lg:scale-[0.585] md:mx-auto md:mt-6 md:h-[56px] md:max-w-[560px] md:scale-100 sm:max-w-[310px]">
+    <div className="mt-12 h-[91px] lg:mt-[9px] lg:scale-[0.585] md:mx-auto md:mt-6 md:h-14 md:max-w-[560px] md:scale-100 sm:max-w-[310px]">
       <ul
         className={clsx(
           styles.logosWrapper,

@@ -16,7 +16,7 @@ function Footer() {
             <span className="sr-only">Taipy</span>
             <Image className="h-7" src={logo} width={109} height={28} alt="Taipy logo" />
           </Link>
-          <nav className="flex gap-x-[106px] lg:gap-x-16 md:mt-12 md:w-full md:gap-x-[106px]">
+          <nav className="flex gap-x-[105px] md:mt-12 md:w-full md:justify-between md:gap-x-0 md:pr-[116px]">
             {MENU.footer.main.map(({ title, items }, index) => (
               <div key={index}>
                 <span className="text-16 leading-normal text-[#ADB0B9]">{title}</span>
@@ -34,7 +34,7 @@ function Footer() {
           </nav>
         </div>
 
-        <div className="mt-[140px] flex items-end justify-between lg:mt-[89px] md:mt-[44px] md:flex-wrap">
+        <div className="mt-[62px] flex items-end justify-between lg:mt-[60px] md:mt-11 md:flex-wrap">
           <div className="flex gap-x-6 md:mb-5 md:w-full md:border-b md:border-b-grey-10 md:pb-7">
             {MENU.footer.social.map(({ href, icon: Icon }, index) => (
               <Link href={href} key={index}>
@@ -43,18 +43,20 @@ function Footer() {
             ))}
           </div>
 
-          <Link
-            className="ml-[-54px] font-medium lg:ml-[-280px] md:ml-0"
-            size="sm"
-            theme="grey"
-            href={ROUTE.PRIVACY}
-          >
-            Privacy
-          </Link>
+          <div className="flex md:w-full md:justify-between">
+            <Link
+              className="mr-[398px] font-medium lg:mr-[400px] md:mr-0"
+              size="sm"
+              theme="grey"
+              href={ROUTE.PRIVACY}
+            >
+              Privacy
+            </Link>
 
-          <p className="text-right text-14 font-medium leading-snugger text-white/40">
-            © {new Date().getFullYear()} — Copyright
-          </p>
+            <p className="text-right text-14 font-medium leading-snugger text-white/40">
+              © {new Date().getFullYear()} — Copyright
+            </p>
+          </div>
         </div>
       </div>
     </footer>

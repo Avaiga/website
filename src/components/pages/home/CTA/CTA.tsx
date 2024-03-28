@@ -26,7 +26,7 @@ function CTA() {
 
   return (
     <section className="cta my-[202px] px-safe lg:my-32 md:my-24">
-      <div className="container-narrow grid max-w-[1088px] grid-cols-2 gap-x-8 text-center md:max-w-[512px] md:grid-cols-1 md:gap-y-6">
+      <div className="container-narrow grid max-w-[1088px] grid-cols-2 gap-x-8 text-center md:max-w-lg md:grid-cols-1 md:gap-y-6">
         <div
           className={clsx(
             'relative z-0 overflow-hidden rounded-2xl bg-primary-red px-10 pb-12 pt-11 shadow-[0px_12px_40px_0px_#FF462B80] lg:px-9 lg:pb-11 lg:pt-10 md:px-[42px] md:pb-9 md:pt-8',
