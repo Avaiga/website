@@ -26,13 +26,13 @@ const CARDS = [
 
 function Integrations() {
   return (
-    <section className="integrations mt-40 px-safe lg:mt-32 md:mt-[100px]">
+    <section className="integrations mt-[154px] px-safe lg:mt-[120px] md:mt-24">
       <div className="container max-w-[776px] text-center">
-        <p className="leading-snug text-primary-red md:text-14">Integrations</p>
+        <span className="leading-snug text-primary-red md:text-14">Integrations</span>
         <h2 className="mt-5 text-56 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-48 md:text-40">
           Beyond the basics
         </h2>
-        <p className="mx-auto mt-5 max-w-[592px] text-18 font-light text-white/80 lg:mt-4 lg:max-w-[502px] lg:text-16 md:max-w-[446px] md:text-14">
+        <p className="mx-auto mt-5 max-w-[592px] text-18 font-light text-white/80 lg:mt-4 lg:max-w-[502px] lg:text-16 md:max-w-md md:text-14">
           Whether standalone or paired, Taipy connects effortlessly with leading data platforms,
           amplifying your application&apos;s potential.
         </p>

@@ -20,7 +20,7 @@ const CARDS = [
       height: 268,
       className: 'left-0 bottom-0 md:-bottom-3',
     },
-    className: 'col-span-6 md:col-span-2 md:order-1',
+    className: 'col-span-6 md:col-span-2 md:order-1 md:aspect-[1.882]',
   },
   {
     title: 'Tasks Scheduler.',
@@ -31,7 +31,7 @@ const CARDS = [
       height: 299,
       className: 'left-0 bottom-0',
     },
-    className: 'col-span-3 md:col-span-1 md:order-2',
+    className: 'col-span-3 md:col-span-1 md:order-2 md:aspect-[0.906]',
   },
   {
     title: 'Customize styles.',
@@ -42,7 +42,7 @@ const CARDS = [
       height: 238,
       className: 'bottom-8 px-[30px] lg:px-4 lg:left-1 lg:bottom-[22px] md:px-8 md:left-0',
     },
-    className: 'col-span-3 md:col-span-1 md:order-3',
+    className: 'col-span-3 md:col-span-1 md:order-3 md:aspect-[0.906]',
   },
   {
     title: 'Multi-users.',
@@ -54,7 +54,7 @@ const CARDS = [
       className:
         'bottom-[55px] px-[34px] lg:px-5 lg:left-1.5 lg:bottom-[42px] md:px-9 md:-left-0.5',
     },
-    className: 'col-span-3 md:col-span-1 md:order-5',
+    className: 'col-span-3 md:col-span-1 md:order-5 md:aspect-[0.906]',
   },
   {
     title: 'Long jobs.',
@@ -65,7 +65,7 @@ const CARDS = [
       height: 400,
       className: 'bottom-0 left-0 md:-bottom-8',
     },
-    className: 'col-span-3 md:col-span-1 md:order-6',
+    className: 'col-span-3 md:col-span-1 md:order-6 md:aspect-[0.906]',
   },
   {
     title: 'Explore datasets with TalkToTaipy.',
@@ -77,7 +77,7 @@ const CARDS = [
       height: 400,
       className: 'bottom-0 left-0',
     },
-    className: 'col-span-6 md:col-span-2 md:order-4',
+    className: 'col-span-6 md:col-span-2 md:order-4 md:aspect-[1.882]',
   },
 ];
 
@@ -93,7 +93,7 @@ function Learn() {
             <div
               className={clsx(
                 className,
-                'overflow-hidden rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px md:h-[340px]',
+                'overflow-hidden rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px',
               )}
               key={index}
             >
@@ -112,7 +112,7 @@ function Learn() {
             </div>
           ))}
         </div>
-        <div className="mt-10 flex justify-center md:mt-8">
+        <div className="mt-10 flex justify-center lg:mt-9 md:mt-8">
           <Link href="/" size="lg" theme="white" arrowTheme="red">
             See all demos
           </Link>

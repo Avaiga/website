@@ -29,7 +29,7 @@ function Optimize() {
 
   return (
     <section className="optimize mt-[188px] px-safe lg:mt-[92px] md:mt-[102px]">
-      <div className="container max-w-[1152px]">
+      <div className="container max-w-6xl">
         <h2 className="pl-10 text-56 font-semibold leading-dense tracking-tight lg:pl-16 lg:text-48 md:pl-8 md:text-40">
           Optimized for insights
         </h2>
