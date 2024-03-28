@@ -61,7 +61,7 @@ function LargeData() {
         </h2>
         {itemsData.map(({ title, description, video, ref }, index) => (
           <div className="mt-10 flex gap-x-9 lg:mt-9 lg:gap-x-8 md:mt-7 md:items-start" key={index}>
-            <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px lg:max-w-[672px] md:max-w-[448px]">
+            <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px lg:max-w-[672px] md:max-w-[448px] sm:max-w-full">
               <div className="-m-px rounded-lg bg-gradient-grey" ref={ref}>
                 <video
                   className="rounded-lg mix-blend-lighten"
@@ -78,7 +78,7 @@ function LargeData() {
                 </video>
               </div>
             </div>
-            <div>
+            <div className="sm:hidden">
               <h3 className="text-24 font-medium lg:text-20 md:text-16">{title}</h3>
               <p className="mt-2 text-18 font-light text-grey-70 lg:text-16 md:text-14">
                 {description}
