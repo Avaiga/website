@@ -14,6 +14,7 @@ function Sidebar() {
           type="search"
           placeholder="Search posts..."
           aria-label="Search posts..."
+          autoComplete="off"
         />
       </label>
 
@@ -21,10 +22,10 @@ function Sidebar() {
         {MENU.sidebar.map((item, index) => (
           <li
             key={index}
-            className={`border-l-2 border-l-transparent py-[4px] pl-[12px] tracking-snug transition-all ${
+            className={`border-l-2 py-[4px] pl-[12px] tracking-snug transition-all ${
               index === 0
                 ? 'border-l-primary-red text-white'
-                : 'hover:border-l-primary-red hover:text-white'
+                : 'border-l-transparent hover:border-l-primary-red hover:text-white'
             }`}
           >
             <Link className="text-15 leading-normal" href={item.href}>
