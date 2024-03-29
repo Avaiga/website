@@ -36,7 +36,7 @@ function Header() {
           <Link href="/">
             <span className="sr-only">Taipy</span>
             <Image
-              className="h-7 sm:h-6 sm:w-[94px]"
+              className="h-7 sm:h-6 sm:w-auto"
               src={logo}
               width={109}
               height={28}
