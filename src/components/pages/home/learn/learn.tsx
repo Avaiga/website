@@ -41,7 +41,8 @@ const CARDS = [
       url: customizeStyles,
       width: 250,
       height: 238,
-      className: 'bottom-8 px-[30px] lg:px-4 lg:left-1 lg:bottom-[22px] md:px-8 md:left-0',
+      className:
+        'bottom-8 px-[30px] lg:px-4 lg:left-1 lg:bottom-[22px] md:px-8 md:left-0 sm:w-52 sm:-left-1 sm:right-0 sm:mx-auto sm:bottom-8 sm:px-0',
     },
     className: 'col-span-3 md:col-span-1 md:order-3 md:aspect-[0.906]',
   },
@@ -53,7 +54,7 @@ const CARDS = [
       width: 241,
       height: 186,
       className:
-        'bottom-[55px] px-[34px] lg:px-5 lg:left-1.5 lg:bottom-[42px] md:px-9 md:-left-0.5',
+        'bottom-[55px] px-[34px] lg:px-5 lg:left-1.5 lg:bottom-[42px] md:px-9 md:-left-0.5 sm:left-0 sm:px-11 sm:bottom-8',
     },
     className: 'col-span-3 md:col-span-1 md:order-5 md:aspect-[0.906]',
   },
@@ -76,7 +77,7 @@ const CARDS = [
       url: explore,
       width: 656,
       height: 400,
-      className: 'bottom-0 left-0',
+      className: 'bottom-0 left-0 sm:-bottom-5 sm:-left-5 sm:w-[540px] sm:max-w-none',
     },
     className: 'col-span-6 md:col-span-2 md:order-4 md:aspect-[1.882]',
   },
@@ -113,7 +114,7 @@ function Learn() {
             </div>
           ))}
         </div>
-        <div className="mt-10 flex justify-center lg:mt-9 md:mt-8">
+        <div className="mt-10 flex justify-center lg:mt-9 md:mt-7">
           <Link href="/" size="lg" theme="white" arrowTheme="red">
             See all demos
           </Link>
