@@ -8,6 +8,7 @@ const styles = {
   transition: 'transition-colors duration-200',
   base: 'inline-flex',
   size: {
+    xl: 'text-20 font-medium',
     lg: 'text-18 lg:text-16 md:text-14',
     md: 'text-16 sm:text-14 font-medium',
     sm: 'text-14',
