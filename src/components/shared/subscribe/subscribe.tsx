@@ -56,34 +56,34 @@ function Subscribe({ tagline, title, text }: SubscribeProps) {
   };
 
   return (
-    <section className="subscribe mt-[196px] overflow-hidden px-safe lg:mt-32">
+    <section className="subscribe mt-[196px] overflow-hidden px-safe lg:mt-[124px] md:mt-[92px]">
       <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end">
         <Image
-          className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-[342px] lg:w-[1060px]"
+          className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-full lg:w-auto lg:max-w-none md:left-[-88px]"
           width={1324}
           height={431}
           src={bg}
           alt=""
         />
-        <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px]">
-          <p className="leading-snug text-primary-red">{tagline}</p>
-          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40">
+        <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px] md:mr-12 md:max-w-[496px]">
+          <span className="leading-snug text-primary-red md:text-14">{tagline}</span>
+          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mt-4 md:text-36">
             {title}
           </h2>
-          <p className="mt-4 text-18 font-light text-white/80 lg:text-16">{text}</p>
+          <p className="mt-4 text-18 font-light text-white/80 lg:text-16 md:text-14">{text}</p>
           <form
-            className="relative mt-9 max-w-[496px]"
+            className="relative mt-9 max-w-[496px] md:max-w-[472px]"
             noValidate
             onSubmit={handleSubmit(onSubmit)}
           >
             <input
-              className="remove-autocomplete-styles h-[48px] w-full rounded-full pl-5 pr-48 font-medium text-black shadow-[0px_8px_30px_0px_#FF462B4D] outline-none transition-shadow duration-300 placeholder:text-grey-50 lg:pl-6"
+              className="remove-autocomplete-styles h-12 w-full rounded-full pl-5 pr-48 font-medium text-black shadow-[0px_8px_30px_0px_#FF462B4D] outline-none transition-shadow duration-300 placeholder:text-grey-50 lg:pl-6 md:h-11 md:pl-5 md:text-14"
               type="email"
-              placeholder="Your favorite email adress"
+              placeholder="Your favorite email address"
               {...register('email')}
             />
             <Button
-              className="absolute right-0 top-0 !min-w-[178px]"
+              className="absolute right-0 top-0 !min-w-[178px] md:!min-w-[164px]"
               theme="red-filled"
               size="lg"
               state={buttonState}

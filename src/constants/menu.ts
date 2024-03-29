@@ -26,34 +26,26 @@ export const MENU = {
       {
         title: 'Taipy',
         items: [
-          { label: 'Resources', href: ROUTE.INDEX },
-          { label: 'Developers', href: ROUTE.INDEX },
+          { label: 'Home', href: ROUTE.INDEX },
+          { label: 'About us', href: ROUTE.INDEX },
+          { label: 'Enterprise', href: ROUTE.INDEX },
           { label: 'Pricing', href: ROUTE.INDEX },
-        ],
-      },
-      {
-        title: 'Links',
-        items: [
-          { label: 'Marketplace', href: ROUTE.INDEX },
-          { label: 'Dashboard', href: ROUTE.INDEX },
-          { label: 'Blog', href: ROUTE.INDEX },
+          { label: 'Customer Stories', href: ROUTE.INDEX },
         ],
       },
       {
         title: 'Resources',
         items: [
-          { label: 'Guides', href: ROUTE.INDEX },
-          { label: 'Support center', href: ROUTE.INDEX },
+          { label: 'Blog', href: ROUTE.INDEX },
+          { label: 'Documentation', href: ROUTE.INDEX },
+          { label: 'Community', href: ROUTE.INDEX },
         ],
       },
       {
-        title: 'Developers',
+        title: 'Legal',
         items: [
-          { label: 'Guides', href: ROUTE.INDEX },
-          {
-            label: 'API reference',
-            href: ROUTE.INDEX,
-          },
+          { label: 'Terms of service', href: ROUTE.INDEX },
+          { label: 'Privacy policy', href: ROUTE.INDEX },
         ],
       },
     ],
