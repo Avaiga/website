@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import { MENU } from '@/constants/menu';
-import { ROUTE } from '@/constants/routes';
 
 import Link from '@/components/shared/link';
 
@@ -42,28 +41,15 @@ function Footer() {
 
         <div className="mt-[62px] flex items-end justify-between lg:mt-[60px] md:mt-11 md:flex-wrap">
           <div className="flex gap-x-6 md:mb-5 md:w-full md:border-b md:border-b-grey-10 md:pb-7 sm:gap-x-5">
-            <div className="flex gap-x-6 md:mb-5 md:w-full md:border-b md:border-b-grey-10 md:pb-7 sm:gap-x-5">
-              {MENU.footer.social.map(({ href, icon: Icon }, index) => (
-                <Link href={href} key={index}>
-                  <Icon className="h-5 w-5 fill-white hover:fill-grey-90" />
-                </Link>
-              ))}
-            </div>
+            {MENU.footer.social.map(({ href, icon: Icon }, index) => (
+              <Link href={href} key={index}>
+                <Icon className="h-5 w-5 fill-white hover:fill-grey-90" />
+              </Link>
+            ))}
           </div>
-          <div className="flex md:w-full md:justify-between">
-            <Link
-              className="mr-[398px] font-medium lg:mr-[400px] md:mr-0"
-              size="sm"
-              theme="grey"
-              href={ROUTE.PRIVACY}
-            >
-              Privacy
-            </Link>
-
-            <p className="text-right text-14 font-medium leading-snugger text-white/40">
-              © {new Date().getFullYear()} — Copyright
-            </p>
-          </div>
+          <p className="text-right text-14 font-medium leading-snugger text-white/40">
+            Copyright © Taipy {new Date().getFullYear()} | Taipy is created and owned by Avaiga
+          </p>
         </div>
       </div>
     </footer>

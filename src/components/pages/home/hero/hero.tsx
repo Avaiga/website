@@ -19,7 +19,9 @@ function Hero() {
           alt=""
           priority
         />
-        <span className="leading-snug text-primary-red md:text-14">Beyond existing libraries</span>
+        <span className="leading-snug text-primary-red md:text-14">
+          Go beyond existing libraries
+        </span>
         <h1 className="mx-auto mt-5 max-w-[610px] text-64 font-medium leading-dense tracking-tight lg:max-w-[548px] lg:text-56 md:mt-3.5 md:max-w-[470px] md:text-48 sm:mt-2.5 sm:text-32">
           Build Python Data &&nbsp;AI&nbsp;web applications
         </h1>
@@ -33,7 +35,7 @@ function Hero() {
             size="lg"
             theme="red-filled"
           >
-            Request demo
+            Request a demo
           </Button>
           <Button
             className="w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
