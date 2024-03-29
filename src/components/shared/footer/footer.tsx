@@ -26,7 +26,7 @@ function Footer() {
             {MENU.footer.main.map(({ title, items }, index) => (
               <div key={index}>
                 <span className="text-16 leading-normal text-grey-70 sm:text-14">{title}</span>
-                <ul className="mt-6 flex flex-col gap-y-3.5 gap-y-[9px] sm:mt-3">
+                <ul className="mt-6 flex flex-col gap-y-3.5 sm:mt-3 sm:gap-y-[9px]">
                   {items.map(({ label, href }, itemIndex) => (
                     <li key={itemIndex}>
                       <Link href={href} size="md">
@@ -42,26 +42,28 @@ function Footer() {
 
         <div className="mt-[62px] flex items-end justify-between lg:mt-[60px] md:mt-11 md:flex-wrap">
           <div className="flex gap-x-6 md:mb-5 md:w-full md:border-b md:border-b-grey-10 md:pb-7 sm:gap-x-5">
-            {MENU.footer.social.map(({ href, icon: Icon }, index) => (
-              <Link href={href} key={index}>
-                <Icon className="h-5 w-5 fill-white hover:fill-grey-90" />
+            <div className="flex gap-x-6 md:mb-5 md:w-full md:border-b md:border-b-grey-10 md:pb-7 sm:gap-x-5">
+              {MENU.footer.social.map(({ href, icon: Icon }, index) => (
+                <Link href={href} key={index}>
+                  <Icon className="h-5 w-5 fill-white hover:fill-grey-90" />
+                </Link>
+              ))}
+            </div>
+
+            <div className="flex md:w-full md:justify-between">
+              <Link
+                className="mr-[398px] font-medium lg:mr-[400px] md:mr-0"
+                size="sm"
+                theme="grey"
+                href={ROUTE.PRIVACY}
+              >
+                Privacy
               </Link>
-            ))}
-          </div>
 
-          <div className="flex md:w-full md:justify-between">
-            <Link
-              className="mr-[398px] font-medium lg:mr-[400px] md:mr-0"
-              size="sm"
-              theme="grey"
-              href={ROUTE.PRIVACY}
-            >
-              Privacy
-            </Link>
-
-            <p className="text-right text-14 font-medium leading-snugger text-white/40">
-              © {new Date().getFullYear()} — Copyright
-            </p>
+              <p className="text-right text-14 font-medium leading-snugger text-white/40">
+                © {new Date().getFullYear()} — Copyright
+              </p>
+            </div>
           </div>
         </div>
       </div>
