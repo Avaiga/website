@@ -77,7 +77,7 @@ function Subscribe() {
             <input
               className="remove-autocomplete-styles h-12 w-full rounded-full pl-5 pr-48 font-medium text-black shadow-[0px_8px_30px_0px_#FF462B4D] outline-none transition-shadow duration-300 placeholder:text-grey-50 lg:pl-6 md:h-11 md:pl-5 md:text-14 sm:pr-14"
               type="email"
-              placeholder="Your favorite email address"
+              placeholder="Your email address"
               {...register('email')}
             />
             <Button
