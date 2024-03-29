@@ -60,7 +60,7 @@ function Subscribe() {
           src={bg}
           alt=""
         />
-        <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px] md:mr-12 md:max-w-[496px] sm:mr-0 sm:pb-16 sm:pt-5">
+        <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px] md:mr-12 md:max-w-[496px] sm:mx-auto sm:pb-16 sm:pt-5">
           <span className="leading-snug text-primary-red md:text-14">Integrations</span>
           <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mt-4 md:text-36 sm:mt-3 sm:text-28">
             Subscribe to&nbsp;the&nbsp;Newsletter

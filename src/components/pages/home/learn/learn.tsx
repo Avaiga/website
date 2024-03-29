@@ -90,7 +90,7 @@ function Learn() {
         <h2 className="mx-auto max-w-[790px] text-center text-56 font-semibold leading-dense tracking-tight lg:max-w-[500px] lg:text-48 md:text-40 sm:text-28">
           Easy to learn, pleasure&nbsp;to&nbsp;work&nbsp;with
         </h2>
-        <div className="mt-14 grid grid-cols-12 grid-rows-[400px_400px] gap-8 lg:grid-rows-[300px_300px] lg:gap-6 md:mt-10 md:grid-cols-2 md:grid-rows-4 md:px-8 sm:mt-6 sm:flex sm:grid-cols-1 sm:flex-wrap sm:justify-center sm:gap-5 sm:px-0">
+        <div className="mt-14 grid grid-cols-12 grid-rows-[400px_400px] gap-8 lg:grid-rows-[300px_300px] lg:gap-6 md:mt-10 md:grid-cols-2 md:grid-rows-4 md:px-8 sm:mt-6 sm:flex sm:flex-wrap sm:justify-center sm:gap-5 sm:px-0">
           {CARDS.map(({ title, description, image, className }, index) => (
             <div
               className={clsx(
