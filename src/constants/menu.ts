@@ -12,15 +12,6 @@ export const MENU = {
     { label: 'Pricing', href: ROUTE.INDEX },
     { label: 'Docs', href: ROUTE.INDEX },
   ],
-  sidebar: [
-    { label: 'All Posts', href: ROUTE.INDEX },
-    { label: 'Engineering', href: ROUTE.INDEX },
-    { label: 'Company', href: ROUTE.INDEX },
-    { label: 'Release notes', href: ROUTE.INDEX },
-    { label: 'Community', href: ROUTE.INDEX },
-    { label: 'Video', href: ROUTE.INDEX },
-    { label: 'Appearances', href: ROUTE.INDEX },
-  ],
   footer: {
     main: [
       {
