@@ -49,21 +49,20 @@ function Footer() {
                 </Link>
               ))}
             </div>
+          </div>
+          <div className="flex md:w-full md:justify-between">
+            <Link
+              className="mr-[398px] font-medium lg:mr-[400px] md:mr-0"
+              size="sm"
+              theme="grey"
+              href={ROUTE.PRIVACY}
+            >
+              Privacy
+            </Link>
 
-            <div className="flex md:w-full md:justify-between">
-              <Link
-                className="mr-[398px] font-medium lg:mr-[400px] md:mr-0"
-                size="sm"
-                theme="grey"
-                href={ROUTE.PRIVACY}
-              >
-                Privacy
-              </Link>
-
-              <p className="text-right text-14 font-medium leading-snugger text-white/40">
-                © {new Date().getFullYear()} — Copyright
-              </p>
-            </div>
+            <p className="text-right text-14 font-medium leading-snugger text-white/40">
+              © {new Date().getFullYear()} — Copyright
+            </p>
           </div>
         </div>
       </div>
