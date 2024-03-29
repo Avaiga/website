@@ -6,7 +6,7 @@ import Integrations from '@/components/pages/home/integrations';
 import LargeData from '@/components/pages/home/large-data';
 import Learn from '@/components/pages/home/learn';
 import Optimize from '@/components/pages/home/optimize';
-import Subscribe from '@/components/pages/home/subscribe';
+import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';
 
@@ -16,7 +16,11 @@ function Home() {
       <Hero />
       <Optimize />
       <LargeData />
-      <Subscribe />
+      <Subscribe
+        tagline="Integrations"
+        title="Subscribe to the Newsletter"
+        text="Subscribe to Taipy's newsletter and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
+      />
       <Learn />
       <Integrations />
       <Benefits />

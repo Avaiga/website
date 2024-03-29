@@ -14,6 +14,12 @@ import { BUTTON_STATES } from '@/components/shared/button/button';
 
 import bg from '@/svgs/pages/home/subscribe/bg.svg';
 
+interface SubscribeProps {
+  tagline: string;
+  title: string;
+  text: string;
+}
+
 const validationSchema = yup.object().shape({
   email: yup
     .string()
@@ -22,7 +28,7 @@ const validationSchema = yup.object().shape({
     .required('Email is a required field'),
 });
 
-function Subscribe() {
+function Subscribe({ tagline, title, text }: SubscribeProps) {
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
 
   const {
@@ -60,14 +66,11 @@ function Subscribe() {
           alt=""
         />
         <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px]">
-          <p className="leading-snug text-primary-red">Integrations</p>
+          <p className="leading-snug text-primary-red">{tagline}</p>
           <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40">
-            Subscribe to the Newsletter
+            {title}
           </h2>
-          <p className="mt-4 text-18 font-light text-white/80 lg:text-16">
-            Subscribe to Taipy&apos;s newsletter and stay informed of the latest news! We send four
-            mails per year plus a few more for very special announcements.
-          </p>
+          <p className="mt-4 text-18 font-light text-white/80 lg:text-16">{text}</p>
           <form
             className="relative mt-9 max-w-[496px]"
             noValidate
