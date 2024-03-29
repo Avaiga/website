@@ -4,15 +4,17 @@ import Link from '@/components/shared/link';
 
 function Banner() {
   return (
-    <div className="banner mb-1 mt-4 px-safe pt-safe lg:hidden">
+    <div className="banner bg-[linear-gradient(90deg,rgba(91,192,243,0)_0%,rgba(91,192,243,0.3)_56.75%,rgba(91,192,243,0)_109.09%);] px-safe pt-safe">
       <div className="container-narrow">
         <Link
-          className="flex h-9 items-center justify-center rounded-[20px] bg-[#1E1E20] text-14 leading-none"
+          className="flex h-10 items-center justify-center text-14 leading-none xs:h-14 xs:flex-wrap xs:py-[9px] xs:text-13"
           href={ROUTE.BANNER}
           arrowTheme="blue"
         >
-          Learn how to create a Taipy app from scratch
-          <div className="mx-2.5 h-4 w-px bg-white/10" aria-hidden />
+          <span className="xs:w-full xs:text-center">
+            Learn how to create a Taipy app from scratch
+          </span>
+          <div className="mx-3.5 h-4 w-px bg-white/10 xs:hidden" aria-hidden />
           <span className="font-semibold">Join Taipy Tech Talk</span>
         </Link>
       </div>
