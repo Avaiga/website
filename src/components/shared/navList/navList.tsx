@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import Link from '@/components/shared/link';
 
 interface NavItem {
@@ -15,9 +17,23 @@ export default function NavList({ data }: NavListProps) {
         {data.map(({ label, href }, index) => (
           <li key={index}>
             <Link
-              className={`block border-l-2 pb-[5px] pl-[11px] pt-1 text-15 leading-normal  tracking-snug transition-all hover:text-white ${
-                index === 0 ? 'border-l-primary-red text-white' : 'border-l-transparent'
-              }`}
+              className={clsx(
+                'block',
+                'border-l-2',
+                'pb-[5px]',
+                'pl-[11px]',
+                'pt-1',
+                'text-15',
+                'leading-normal',
+                'tracking-snug',
+                'transition-all',
+                'hover:text-white',
+                'hover:border-l-primary-red',
+                {
+                  'border-l-primary-red text-white': index === 0,
+                  'border-l-transparent': index !== 0,
+                },
+              )}
               href={href}
             >
               {label}
