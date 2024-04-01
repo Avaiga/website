@@ -4,6 +4,11 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    extend: {
+      gridTemplateColumns: {
+        14: 'repeat(14, minmax(0, 1fr))',
+      },
+    },
     fontFamily: {
       sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
     },
@@ -11,6 +16,7 @@ module.exports = {
       12: '12px',
       13: '13px',
       14: '14px',
+      15: '15px',
       16: '16px',
       18: '18px',
       20: '20px',

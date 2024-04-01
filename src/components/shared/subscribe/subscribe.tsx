@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 
 import { BUTTON_SUCCESS_TIMEOUT_MS } from '@/constants/forms';
 import { yupResolver } from '@hookform/resolvers/yup';
+import clsx from 'clsx';
 import * as yup from 'yup';
 
 import Button from '@/components/shared/button';
@@ -14,6 +15,13 @@ import { BUTTON_STATES } from '@/components/shared/button/button';
 
 import SendIcon from '@/svgs/icons/send.inline.svg';
 import bg from '@/svgs/pages/home/subscribe/bg.svg';
+
+interface SubscribeProps {
+  tagline: string;
+  title: string;
+  text: string;
+  isLastChild?: boolean;
+}
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -23,7 +31,7 @@ const validationSchema = yup.object().shape({
     .required('Email is a required field'),
 });
 
-function Subscribe() {
+function Subscribe({ tagline, title, text, isLastChild = false }: SubscribeProps) {
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
 
   const {
@@ -51,7 +59,11 @@ function Subscribe() {
   };
 
   return (
-    <section className="subscribe mt-[196px] overflow-hidden px-safe lg:mt-[124px] md:mt-[92px] sm:mt-14">
+    <section
+      className={clsx('subscribe mt-[196px] overflow-hidden px-safe lg:mt-[124px] md:mt-[92px]', {
+        'mb-36': isLastChild,
+      })}
+    >
       <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end">
         <Image
           className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-full lg:w-auto lg:max-w-none md:left-[-88px] sm:left-[-70px]"
@@ -60,15 +72,12 @@ function Subscribe() {
           src={bg}
           alt=""
         />
-        <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px] md:mr-12 md:max-w-[496px] sm:mx-auto sm:pb-16 sm:pt-5">
-          <span className="leading-snug text-primary-red md:text-14">Integrations</span>
-          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mt-4 md:text-36 sm:mt-3 sm:text-28">
-            Subscribe to&nbsp;the&nbsp;Newsletter
+        <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px] md:mr-12 md:max-w-[496px]">
+          <span className="leading-snug text-primary-red md:text-14">{tagline}</span>
+          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mt-4 md:text-36">
+            {title}
           </h2>
-          <p className="mt-4 text-18 font-light text-white/80 lg:text-16 md:text-14 sm:mt-3">
-            Subscribe to Taipy&apos;s newsletter and stay informed of the latest news! We send four
-            mails per year plus a few more for very special announcements.
-          </p>
+          <p className="mt-4 text-18 font-light text-white/80 lg:text-16 md:text-14">{text}</p>
           <form
             className="relative mt-9 max-w-[496px] md:max-w-[472px] sm:mt-7 sm:max-w-full"
             noValidate
