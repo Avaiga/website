@@ -92,7 +92,7 @@ export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps
               alt={altAuthorText}
               width={isFull ? 36 : 28}
               height={isFull ? 36 : 28}
-              {...(isPriorityLoad ? { priority: true } : {})}
+              priority={isPriorityLoad}
             />
             <div className="flex items-center gap-x-1.5">
               <span className="text-14 tracking-snug text-grey-94">{authorName}</span>
