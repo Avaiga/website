@@ -35,7 +35,14 @@ function Header() {
         <div className="container-narrow flex h-full items-center justify-between lg:justify-start md:justify-between">
           <Link href="/">
             <span className="sr-only">Taipy</span>
-            <Image className="h-7" src={logo} width={109} height={28} alt="Taipy logo" priority />
+            <Image
+              className="h-7 sm:h-6 sm:w-auto"
+              src={logo}
+              width={109}
+              height={28}
+              alt="Taipy logo"
+              priority
+            />
           </Link>
           <nav
             className="lg:translate-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:relative lg:inset-0 lg:ml-16 lg:translate-x-0 lg:translate-y-0"
