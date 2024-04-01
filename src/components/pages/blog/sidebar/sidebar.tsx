@@ -1,4 +1,4 @@
-import NavList from '@/components/shared/navList';
+import NavList from '@/components/pages/blog/sidebar/nav-list';
 
 import SearchIcon from '@/svgs/icons/search.inline.svg';
 
@@ -15,11 +15,11 @@ const navData = [
 
 function Sidebar() {
   return (
-    <aside className="sticky top-32">
-      <label className="relative mb-8 flex h-9 items-center rounded border border-grey-20 bg-transparent px-[9px]">
+    <aside className="sticky top-16">
+      <label className="relative mb-8 flex h-9 items-center rounded border border-grey-20 bg-transparent px-[9px] hover:border-grey-30 focus:border-2">
         <SearchIcon className="absolute h-4 w-4" />
         <input
-          className="block w-full border-none bg-transparent pl-6 text-14 leading-none tracking-snug text-white placeholder-grey-50 outline-none"
+          className="block w-full border-none bg-transparent pl-6 pr-2.5 text-14 leading-none tracking-snug text-white placeholder-grey-50 outline-none"
           type="search"
           placeholder="Search posts..."
           aria-label="Search posts..."

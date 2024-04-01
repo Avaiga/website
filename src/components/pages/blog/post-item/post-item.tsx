@@ -1,34 +1,21 @@
 import Image from 'next/image';
-import type { StaticImageData } from 'next/image';
 
+import { PostData } from '@/app/blog/page';
 import clsx from 'clsx';
 
-interface PostData {
-  altText: string;
-  hrefPost: string;
-  hrefCategory: string;
-  cover: StaticImageData;
-  activeCover: StaticImageData;
-  tagline: string;
-  title: string;
-  text: string;
-  authorImg: StaticImageData;
-  altAuthorText: string;
-  authorName: string;
-  date: string;
-}
+import Link from '@/components/shared/link';
 
 interface PostItemProps {
   post: PostData;
   isFull: boolean;
+  isPriorityLoad: boolean;
 }
 
-export default function PostItem({ post, isFull }: PostItemProps) {
+export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps) {
   const {
     altText,
     hrefPost,
     hrefCategory,
-    cover,
     activeCover,
     tagline,
     title,
@@ -60,22 +47,22 @@ export default function PostItem({ post, isFull }: PostItemProps) {
         })}
       >
         <div className="w-full">
-          <a href={hrefPost}>
+          <Link href={hrefPost}>
             <Image
               className={clsx('rounded-lg object-cover', {
                 'max-w-[648px]': isFull,
                 'max-w-[384px]': !isFull,
               })}
-              src={isFull ? activeCover : cover}
+              src={activeCover}
               alt={altText}
-              loading="lazy"
+              priority={isPriorityLoad}
             />
-          </a>
+          </Link>
         </div>
         <div
           className={clsx('flex flex-col items-start ', { 'gap-4': isFull, 'gap-2.5': !isFull })}
         >
-          <a
+          <Link
             className={clsx(
               'rounded-full border-0 bg-[#55C1F61A] px-2.5 font-medium leading-none tracking-snug text-secondary-blue',
               {
@@ -86,8 +73,8 @@ export default function PostItem({ post, isFull }: PostItemProps) {
             href={hrefCategory}
           >
             {tagline}
-          </a>
-          <a className="text-white" href={hrefPost}>
+          </Link>
+          <Link className="text-white" href={hrefPost}>
             <h3
               className={clsx({
                 'text-40 font-medium leading-[50px] -tracking-[0.036em]': isFull,
@@ -96,7 +83,7 @@ export default function PostItem({ post, isFull }: PostItemProps) {
             >
               {title}
             </h3>
-          </a>
+          </Link>
           {isFull && <p className="text-18 font-light leading-[27px] text-grey-70">{text}</p>}
           <div className="flex items-center gap-2.5">
             <Image
@@ -105,7 +92,7 @@ export default function PostItem({ post, isFull }: PostItemProps) {
               alt={altAuthorText}
               width={isFull ? 36 : 28}
               height={isFull ? 36 : 28}
-              loading="lazy"
+              {...(isPriorityLoad ? { priority: true } : {})}
             />
             <div className="flex items-center gap-x-1.5">
               <span className="text-14 tracking-snug text-grey-94">{authorName}</span>
