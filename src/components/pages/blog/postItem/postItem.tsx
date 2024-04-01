@@ -59,8 +59,7 @@ export default function PostItem({ post, isFull }: PostItemProps) {
           'flex flex-col items-start gap-4': !isFull,
         })}
       >
-        {/* убрала условный рендеринг добавив один див*/}
-        <div className="w-full flex-grow">
+        <div className="w-full">
           <a href={hrefPost}>
             <Image
               className={clsx('rounded-lg object-cover', {
@@ -73,7 +72,6 @@ export default function PostItem({ post, isFull }: PostItemProps) {
             />
           </a>
         </div>
-
         <div
           className={clsx('flex flex-col items-start ', { 'gap-4': isFull, 'gap-2.5': !isFull })}
         >
@@ -100,7 +98,6 @@ export default function PostItem({ post, isFull }: PostItemProps) {
             </h3>
           </a>
           {isFull && <p className="text-18 font-light leading-[27px] text-grey-70">{text}</p>}
-
           <div className="flex items-center gap-2.5">
             <Image
               className="rounded-full"
