@@ -75,14 +75,14 @@ export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps
             {tagline}
           </Link>
           <Link className="text-white" href={hrefPost}>
-            <h3
+            <h1
               className={clsx({
                 'text-40 font-medium leading-[50px] -tracking-[0.036em]': isFull,
                 'line-clamp-3 text-18 font-medium leading-[24.75px]': !isFull,
               })}
             >
               {title}
-            </h3>
+            </h1>
           </Link>
           {isFull && <p className="text-18 font-light leading-[27px] text-grey-70">{text}</p>}
           <div className="flex items-center gap-2.5">

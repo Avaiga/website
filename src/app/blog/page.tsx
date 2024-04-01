@@ -58,26 +58,24 @@ const posts = Array.from({ length: 16 }, (_, index) => (index % 2 === 0 ? fullPo
 
 function Blog() {
   return (
-    <>
-      <section className="min-h-screen pt-32">
-        <div className="container grid max-w-[1810px] grid-cols-14 gap-x-16 px-10">
-          <div className="col-span-2">
-            <Sidebar />
-          </div>
-          <div className="col-span-10 col-start-3 grid gap-y-[58px]">
-            <h1 className="sr-only">Taipy Blog</h1>
-            <PostsList posts={posts} />
-            <Pagination />
-            <Subscribe
-              tagline="Newsletter"
-              title="Stay ahead with our newsletter"
-              text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
-              isLastChild
-            />
-          </div>
+    <section className="pt-32">
+      <div className="container grid max-w-[1810px] grid-cols-14 gap-x-16 px-10">
+        <div className="col-span-2">
+          <Sidebar />
         </div>
-      </section>
-    </>
+        <div className="col-span-10 col-start-3 grid gap-y-[58px]">
+          <h1 className="sr-only">Taipy Blog</h1>
+          <PostsList posts={posts} />
+          <Pagination />
+          <Subscribe
+            tagline="Newsletter"
+            title="Stay ahead with our newsletter"
+            text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
+            isLastChild
+          />
+        </div>
+      </div>
+    </section>
   );
 }
 
