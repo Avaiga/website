@@ -52,7 +52,7 @@ const fullPostData: PostData = {
   date: '2024-03-05T12:00:00Z',
 };
 
-const posts = Array.from({ length: 14 }, (_, index) => (index % 2 === 0 ? fullPostData : postData));
+const posts = Array.from({ length: 16 }, (_, index) => (index % 2 === 0 ? fullPostData : postData));
 
 export default function PostsList() {
   return (
