@@ -57,7 +57,7 @@ export default defineConfig({
   basePath: '/studio',
 
   name: 'default',
-  title: 'ObservIQ',
+  title: 'Taipy',
 
   projectId,
   dataset,
