@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 
 import { BUTTON_SUCCESS_TIMEOUT_MS } from '@/constants/forms';
 import { yupResolver } from '@hookform/resolvers/yup';
+import clsx from 'clsx';
 import * as yup from 'yup';
 
 import Button from '@/components/shared/button';
@@ -58,9 +59,9 @@ function Subscribe({ tagline, title, text, isLastChild = false }: SubscribeProps
 
   return (
     <section
-      className={`subscribe mt-[196px] overflow-hidden px-safe lg:mt-[124px] md:mt-[92px] ${
-        isLastChild ? 'mb-36' : ''
-      }`}
+      className={clsx('subscribe mt-[196px] overflow-hidden px-safe lg:mt-[124px] md:mt-[92px]', {
+        'mb-36': isLastChild,
+      })}
     >
       <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end">
         <Image

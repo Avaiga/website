@@ -16,7 +16,7 @@ const navData = [
 function Sidebar() {
   return (
     <aside className="sticky top-32">
-      <label className="relative mb-8 flex h-9 items-center rounded border border-grey-20 bg-transparent px-[7px]">
+      <label className="relative mb-8 flex h-9 items-center rounded border border-grey-20 bg-transparent px-[9px]">
         <SearchIcon className="absolute h-4 w-4" />
         <input
           className="block w-full border-none bg-transparent pl-6 text-14 leading-none tracking-snug text-white placeholder-grey-50 outline-none"

@@ -1,3 +1,4 @@
+import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/postsList';
 import Sidebar from '@/components/pages/blog/sidebar';
 import InnerPageLayout from '@/components/shared/innerPageLayout';
@@ -10,8 +11,9 @@ function Blog() {
     <>
       <InnerPageLayout sidebar={<Sidebar />}>
         <h1 className="sr-only">Taipy Blog</h1>
-        <div className="posts-list-skeleton hidden h-[2456px] rounded-lg bg-grey-70" />
+        <div className="posts-list-skeleton hidden h-[2472px] rounded-lg bg-grey-70" />
         <PostsList />
+        <Pagination />
       </InnerPageLayout>
       <Subscribe
         tagline="Newsletter"
