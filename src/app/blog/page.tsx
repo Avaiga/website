@@ -35,7 +35,7 @@ const postData: PostData = {
   title: 'Big data charting strategies in Python',
   text: '',
   authorImg: authorImage,
-  altAuthorText: 'author img',
+  altAuthorText: 'Vincent Gosselin',
   authorName: 'Vincent Gosselin',
   date: '2024-03-05T12:00:00Z',
 };
@@ -49,7 +49,7 @@ const fullPostData: PostData = {
   title: 'Taipy 3.1: Elevating AI & Data Workflows',
   text: 'This latest version underscores our commitment to providing robust, scalable, and intuitive functionalities that cater to the community and the enterprise needs.',
   authorImg: authorImage,
-  altAuthorText: 'author img',
+  altAuthorText: 'Vincent Gosselin',
   authorName: 'Vincent Gosselin',
   date: '2024-03-05T12:00:00Z',
 };
@@ -58,23 +58,23 @@ const posts = Array.from({ length: 16 }, (_, index) => (index % 2 === 0 ? fullPo
 
 function Blog() {
   return (
-    <section className="pt-32">
-      <div className="container grid max-w-[1810px] grid-cols-14 gap-x-16 px-10">
-        <div className="col-span-2">
+    <section className="pt-32 lg:pt-[92px]">
+      <div className="container grid max-w-[1794px] grid-cols-14 gap-x-16 gap-y-[33px]">
+        <div className="col-span-2 lg:col-span-full">
           <Sidebar />
         </div>
-        <div className="col-span-10 col-start-3 grid gap-y-[58px]">
+        <div className="col-span-10 col-start-3 grid gap-y-[58px] lg:col-span-full lg:gap-y-[51px]">
           <h1 className="sr-only">Taipy Blog</h1>
           <PostsList posts={posts} />
           <Pagination />
-          <Subscribe
-            tagline="Newsletter"
-            title="Stay ahead with our newsletter"
-            text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
-            isLastChild
-          />
         </div>
       </div>
+      <Subscribe
+        tagline="Newsletter"
+        title="Stay ahead with our newsletter"
+        text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
+        className="my-36 lg:mb-32 lg:mt-[124px]"
+      />
     </section>
   );
 }
