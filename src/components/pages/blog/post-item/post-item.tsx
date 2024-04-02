@@ -55,7 +55,7 @@ export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps
         </div>
         <div
           className={clsx('flex flex-col items-start', {
-            'w-[81%] gap-[13px] lg:w-[92%]': isFull,
+            'w-[81%] gap-3 lg:w-[92%]': isFull,
             'gap-2.5': !isFull,
           })}
         >
@@ -63,7 +63,7 @@ export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps
             className={clsx(
               'rounded-full border-0 bg-[#55C1F61A] px-2.5 font-medium leading-none tracking-snug text-secondary-blue',
               {
-                'top-[2px] py-[7px] text-14 lg:py-[5px] lg:text-13 lg:tracking-[0]': isFull,
+                'top-0.5 py-[7px] text-14 lg:py-[6px] lg:text-13 lg:tracking-[0]': isFull,
                 'py-1.5 text-13': !isFull,
               },
             )}
