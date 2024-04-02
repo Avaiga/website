@@ -51,7 +51,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
         {isEnterprise && (
           <div className="absolute inset-0 h-full w-full bg-[linear-gradient(199.2deg,rgba(255,55,25,0.4)_-35.25%,rgba(120,37,26,0.4)_-15.75%,rgba(81,32,27,0.4)_3.6%,rgba(24,24,27,0.4)_36.09%)]" />
         )}
-        <div className="relative mx-auto max-w-[352px]">
+        <div className="relative mx-auto">
           <p className="text-16 font-medium leading-relaxed">{title}</p>
           <div className="relative mt-[35px] flex items-end">
             {isEnterprise && (
@@ -70,7 +70,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
             </Button>
           )}
           <div className="mt-6 flex flex-col gap-y-2.5">
-            {(description as string[]).map((item, index) => (
+            {description.map((item, index) => (
               <div key={index} className="flex items-start gap-x-2">
                 <div
                   className={clsx('mx-[7px] my-3 h-1.5 w-1.5 shrink-0 rounded-full bg-grey-30', {
