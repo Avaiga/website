@@ -11,7 +11,7 @@ type GetMetadataProps = {
 
 // FIXME: Add an image for displaying on social networks, remember that this image must meet the size of 1200x630
 // For example: /images/social-previews/index.jpg
-const DEFAULT_IMAGE_PATH = '';
+export const DEFAULT_IMAGE_PATH = '';
 
 export function getMetadata({
   title,

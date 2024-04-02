@@ -13,6 +13,13 @@ const TABLE_TYPES = [
   { title: 'Without header', value: 'withoutHeader' },
 ];
 
+const NOTICE_TYPES = [
+  { title: 'Info', value: 'info' },
+  { title: 'Note', value: 'note' },
+  { title: 'Warning', value: 'warning' },
+  { title: 'Attention', value: 'attention' },
+];
+
 export const customTable = {
   title: 'Table',
   name: 'customTable',
@@ -90,18 +97,24 @@ export const customNotice = {
   icon: WarningOutlineIcon,
   type: 'object',
   fields: [
-    { name: 'title', type: 'string', title: 'Title' },
+    {
+      name: 'type',
+      type: 'string',
+      title: 'Type',
+      options: { list: NOTICE_TYPES },
+      initialValue: 'info',
+    },
     { name: 'text', type: 'array', title: 'Text', of: [{ type: 'block' }] },
   ],
   preview: {
     select: {
-      title: 'title',
+      type: 'type',
       text: 'text',
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     prepare: (value: Record<string, any>) => {
       return {
-        title: value?.title || '',
+        title: value?.type || '',
         subtitle: value?.text?.[0]?.children?.[0]?.text || '',
       };
     },
@@ -156,6 +169,8 @@ export const contentField = defineField({
           { title: 'tsx', value: 'tsx' },
           { title: 'yaml', value: 'yaml' },
           { title: 'Golang', value: 'golang' },
+          { title: 'json', value: 'json' },
+          { title: 'Python', value: 'python' },
         ],
       },
     },

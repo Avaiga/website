@@ -18,6 +18,7 @@ export type Post = {
 };
 
 export type SinglePost = Post & {
+  lead: string;
   contentRaw: PortableTextBlock[];
   seo: SEO | null;
 };
