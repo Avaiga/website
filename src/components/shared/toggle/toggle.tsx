@@ -2,12 +2,13 @@
 
 import clsx from 'clsx';
 
-import { ClassName } from '@/types/classname';
+import type { ClassName } from '@/types/classname';
+import type { Setter, ToggleItems } from '@/types/shared';
 
 type ToggleProps<T extends string> = ClassName & {
-  items: Shared.ToggleItems<T>;
+  items: ToggleItems<T>;
   toggleItem: T;
-  setToggleItem: React.Setter<T>;
+  setToggleItem: Setter<T>;
 };
 
 function Toggle<T extends string>({ items, toggleItem, setToggleItem, className }: ToggleProps<T>) {

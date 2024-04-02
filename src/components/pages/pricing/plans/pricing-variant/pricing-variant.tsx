@@ -4,9 +4,11 @@ import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
 
+import type { PaymentPeriods } from '../plans';
+
 type PricingVariantProps = {
   type: 'community' | 'enterprise';
-  plan: Components.Pricing.PaymentPeriods;
+  plan: PaymentPeriods;
 };
 
 function PricingVariant({ type, plan }: PricingVariantProps) {
