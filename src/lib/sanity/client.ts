@@ -1,8 +1,6 @@
 import { GraphQLClient } from 'graphql-request';
 
-import { Category, SingleCategory } from '@/types/category';
-import { Legal, SingleLegal } from '@/types/legal';
-import { Post, SinglePost } from '@/types/post';
+import { Category, Legal, Post, SingleCategory, SingleLegal, SinglePost } from '@/types/blog';
 
 import {
   allCategoryQuery,
