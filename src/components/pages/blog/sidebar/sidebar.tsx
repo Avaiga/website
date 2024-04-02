@@ -3,7 +3,7 @@ import NavList from '@/components/pages/blog/sidebar/nav-list';
 import SearchIcon from '@/svgs/icons/search.inline.svg';
 
 const url = new URL('https://example.com');
-const navDataMobile = [
+const navData = [
   { label: 'All Posts', href: url },
   { label: 'Announcements', href: url },
   { label: 'Log Management', href: url },
@@ -25,7 +25,7 @@ function Sidebar() {
           autoComplete="off"
         />
       </label>
-      <NavList data={navDataMobile} />
+      <NavList data={navData} />
     </aside>
   );
 }

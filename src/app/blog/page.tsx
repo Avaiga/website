@@ -63,7 +63,7 @@ function Blog() {
         <div className="col-span-2 lg:col-span-full">
           <Sidebar />
         </div>
-        <div className="col-span-10 col-start-3 grid gap-y-[58px] lg:col-span-full lg:gap-y-[51px]">
+        <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12">
           <h1 className="sr-only">Taipy Blog</h1>
           <PostsList posts={posts} />
           <Pagination />
@@ -73,7 +73,7 @@ function Blog() {
         tagline="Newsletter"
         title="Stay ahead with our newsletter"
         text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
-        className="my-36 lg:mb-32 lg:mt-[124px]"
+        className="my-36 lg:my-32"
       />
     </section>
   );

@@ -39,7 +39,7 @@ export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps
   const formattedISODate = getFormattedISODate(date);
 
   return (
-    <li className={clsx({ 'col-span-3 pb-2': isFull })}>
+    <li className={clsx({ 'col-span-3 pb-2 lg:pb-1.5': isFull })}>
       <article
         className={isFull ? 'flex items-center gap-11 lg:gap-9' : 'flex flex-col items-start gap-4'}
       >
@@ -55,38 +55,41 @@ export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps
         </div>
         <div
           className={clsx('flex flex-col items-start', {
-            'w-[81%] gap-3 lg:w-[92%]': isFull,
+            'w-[81%] gap-[15px] lg:w-[92%] lg:gap-3': isFull,
             'gap-2.5': !isFull,
           })}
         >
           <Link
             className={clsx(
-              'rounded-full border-0 bg-[#55C1F61A] px-2.5 font-medium leading-none tracking-snug text-secondary-blue',
+              'rounded-full border-0 bg-[#55C1F61A] px-2.5 text-13 font-medium leading-none tracking-snug text-secondary-blue',
               {
-                'top-0.5 py-[7px] text-14 lg:py-[6px] lg:text-13 lg:tracking-[0]': isFull,
-                'py-1.5 text-13': !isFull,
+                'top-0.5 py-[7px] text-14 lg:py-1.5': isFull,
+                'py-1.5': !isFull,
               },
             )}
             href={hrefCategory}
           >
             {tagline}
           </Link>
+
           <Link className="text-white" href={hrefPost}>
             <h1
-              className={clsx('font-medium leading-[1.35] lg:leading-[1.38]', {
-                'text-40 -tracking-[0.036em] lg:text-34 lg:-tracking-[0.01em] md:text-34': isFull,
-                'line-clamp-3 text-18': !isFull,
+              className={clsx('font-medium tracking-tight', {
+                'text-40 leading-tight lg:text-36 md:text-34': isFull,
+                'line-clamp-3 text-18 leading-snug': !isFull,
               })}
             >
               {title}
             </h1>
           </Link>
-          {isFull && (
-            <p className="text-18 font-light leading-[1.5] text-grey-70 lg:text-17 lg:leading-[1.59] lg:tracking-[0.027rem]">
-              {text}
-            </p>
-          )}
-          <div className="flex items-center gap-2.5">
+
+          {isFull && <p className="text-18 font-light leading-normal text-grey-70">{text}</p>}
+
+          <div
+            className={clsx('flex items-center gap-2.5', {
+              'pt-0.5 lg:pt-1': isFull,
+            })}
+          >
             <Image
               className={isFull ? 'h-9 w-9 rounded-full lg:h-8 lg:w-8' : 'h-7 w-7 rounded-full'}
               src={authorImg}
