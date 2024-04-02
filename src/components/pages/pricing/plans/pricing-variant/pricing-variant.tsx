@@ -66,7 +66,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
             </Button>
           ) : (
             <Button className="mt-5 w-full" size="lg" theme="outline">
-              Start fo free
+              Start for free
             </Button>
           )}
           <div className="mt-6 flex flex-col gap-y-2.5">
