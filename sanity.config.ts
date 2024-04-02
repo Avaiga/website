@@ -1,5 +1,5 @@
 import { codeInput } from '@sanity/code-input';
-import { FilterIcon, TagIcon, TrendUpwardIcon, UserIcon } from '@sanity/icons';
+import { FilterIcon, TagIcon, UserIcon } from '@sanity/icons';
 import { table } from '@sanity/table';
 import { visionTool } from '@sanity/vision';
 import { SanityDocument, defineConfig } from 'sanity';
@@ -70,14 +70,6 @@ export default defineConfig({
           .items([
             ...S.documentTypeListItems().filter((listItem) => listItem.getId() !== 'legal'),
             S.divider(),
-            S.listItem()
-              .title('Promoted Posts')
-              .icon(TrendUpwardIcon)
-              .child(
-                S.documentTypeList('post')
-                  .title('Promoted Posts')
-                  .filter('_type == "post" && promoted == true'),
-              ),
             S.listItem()
               .title('Filtered Posts')
               .icon(FilterIcon)

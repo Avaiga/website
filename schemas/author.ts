@@ -9,7 +9,7 @@ export const author = defineType({
   fields: [
     defineField({
       name: 'image',
-      title: 'User Picture',
+      title: 'Photo',
       type: 'image',
       options: {
         hotspot: false,

@@ -97,25 +97,6 @@ export const post = defineType({
       validation: (rule: ArrayRule<ReferenceRule>) => rule.required(),
     }),
     defineField({
-      name: 'tags',
-      type: 'array',
-      title: 'Tags',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'tag' }],
-        },
-      ],
-      group: 'content',
-    }),
-    defineField({
-      name: 'promoted',
-      type: 'boolean',
-      title: 'Promoted',
-      initialValue: false,
-      group: 'content',
-    }),
-    defineField({
       name: 'seo',
       type: 'seo',
       title: 'SEO',

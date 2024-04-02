@@ -98,17 +98,6 @@ export const countPostQuery = gql`
   }
 `;
 
-export const promotedPostQuery = gql`
-  ${commonPostFieldsFragment}
-
-  query PromotedPost {
-    allPost(sort: { publishedAt: DESC }, where: { promoted: { eq: true } }, limit: 1) {
-      ...commonPostFields
-      lead
-    }
-  }
-`;
-
 export const postQuery = gql`
   ${commonPostFieldsFragment}
 
@@ -117,13 +106,6 @@ export const postQuery = gql`
       ...commonPostFields
       lead
       contentRaw
-      tags {
-        _id
-        label
-        slug {
-          current
-        }
-      }
       seo {
         metaTitle
         metaDescription

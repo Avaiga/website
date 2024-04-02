@@ -4,7 +4,6 @@ import { PortableTextBlock } from 'sanity';
 import { Author } from '@/types/author';
 import { Category } from '@/types/category';
 import { SEO } from '@/types/seo';
-import { Tag } from '@/types/tag';
 
 export type Post = {
   _id: string;
@@ -18,12 +17,7 @@ export type Post = {
   categories: Category[];
 };
 
-export type PromotedPost = Post & {
-  lead: string;
-};
-
-export type SinglePost = PromotedPost & {
+export type SinglePost = Post & {
   contentRaw: PortableTextBlock[];
-  tags: Tag[];
   seo: SEO | null;
 };

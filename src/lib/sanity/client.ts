@@ -2,7 +2,7 @@ import { GraphQLClient } from 'graphql-request';
 
 import { Category, SingleCategory } from '@/types/category';
 import { Legal, SingleLegal } from '@/types/legal';
-import { Post, PromotedPost, SinglePost } from '@/types/post';
+import { Post, SinglePost } from '@/types/post';
 
 import {
   allCategoryQuery,
@@ -13,7 +13,6 @@ import {
   countPostQuery,
   legalQuery,
   postQuery,
-  promotedPostQuery,
 } from '@/lib/sanity/query';
 import { BLOG_POST_PER_PAGE } from '@/lib/sanity/utils';
 
@@ -36,11 +35,6 @@ export const getAllPosts = async (): Promise<Post[]> =>
 export const getPosts = async (options: { page: number }): Promise<Post[]> =>
   await graphQLClient
     .request<{ allPost: Post[] }>(allPostWithLimitationsQuery, {
-      where: {
-        promoted: {
-          neq: true,
-        },
-      },
       offset: options?.page ? BLOG_POST_PER_PAGE * options.page - BLOG_POST_PER_PAGE : 0,
       limit: options?.page ? BLOG_POST_PER_PAGE : null,
     })
@@ -49,23 +43,8 @@ export const getPosts = async (options: { page: number }): Promise<Post[]> =>
 export const countPosts = async (options?: { categoryID?: string }): Promise<number> => {
   const { categoryID } = options || {};
 
-  const where = categoryID
-    ? {
-        _: {
-          references: categoryID,
-        },
-        promoted: {
-          neq: true,
-        },
-      }
-    : {
-        promoted: {
-          neq: true,
-        },
-      };
-
   return await graphQLClient
-    .request<{ allPost: { _id: string }[] }>(countPostQuery, { where })
+    .request<{ allPost: { _id: string }[] }>(countPostQuery, { categoryID })
     .then((data) => data.allPost.length);
 };
 
@@ -87,9 +66,6 @@ export const getPostsByCategorySlug = async ({
       where: {
         _: {
           references: categoryData._id,
-        },
-        promoted: {
-          neq: true,
         },
       },
       offset: BLOG_POST_PER_PAGE * page - BLOG_POST_PER_PAGE,
@@ -145,12 +121,6 @@ export const getRelatedPosts = async ({
     })
     .then((data) => data.allPost);
 };
-
-export const getPromotedPost = async (): Promise<PromotedPost | null> =>
-  await graphQLClient
-    .request<{ allPost: PromotedPost[] }>(promotedPostQuery)
-    .then((data) => data.allPost)
-    .then((data) => data[0] || null);
 
 export const getLegalPages = async (): Promise<Legal[]> =>
   await graphQLClient.request<{ allLegal: Legal[] }>(allLegalQuery).then((data) => data.allLegal);

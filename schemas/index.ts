@@ -4,12 +4,10 @@ import { customBlockquote, customNotice, customTable, customYoutube } from './co
 import { legal } from './legal';
 import { post } from './post';
 import { seo } from './seo';
-import { tag } from './tag';
 
 export const schemaTypes = [
   author,
   category,
-  tag,
   seo,
   customTable,
   customBlockquote,
