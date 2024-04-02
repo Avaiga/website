@@ -61,10 +61,10 @@ export default function PostItem({ post, isFull, isPriorityLoad }: PostItemProps
         >
           <Link
             className={clsx(
-              'rounded-full border-0 bg-[#55C1F61A] px-2.5 text-13 font-medium leading-none tracking-snug text-secondary-blue',
+              'rounded-full border-0 bg-[#55C1F61A] px-2.5 font-medium leading-none tracking-snug text-secondary-blue',
               {
                 'top-0.5 py-[7px] text-14 lg:py-1.5': isFull,
-                'py-1.5': !isFull,
+                'py-1.5 text-13': !isFull,
               },
             )}
             href={hrefCategory}
