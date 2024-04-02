@@ -21,7 +21,7 @@ function Plans() {
   return (
     <section className="plans mb-[169px] pt-[120px]">
       <div className="container flex max-w-[933px] flex-col items-center gap-y-7">
-        <h2 className="text-56 font-semibold leading-dense tracking-tight">Pricing plans</h2>
+        <h1 className="text-56 font-semibold leading-dense tracking-tight">Pricing plans</h1>
         <Toggle<PaymentPeriods>
           className="mt-px"
           items={planVariants}
