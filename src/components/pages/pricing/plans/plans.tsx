@@ -20,15 +20,14 @@ function Plans() {
 
   return (
     <section className="plans mb-[168px] pt-[120px]">
-      <div className="container flex flex-col items-center gap-8">
+      <div className="container flex flex-col items-center gap-y-8">
         <h2 className="text-56 font-semibold leading-dense tracking-tight">Pricing plans</h2>
         <Toggle<PaymentPeriods>
           items={planVariants}
           toggleItem={currentPlan}
           setToggleItem={setCurrentPlan}
-          className="mb-2.5"
         />
-        <div className="grid grid-cols-2 gap-8">
+        <div className="mt-2.5 grid grid-cols-2 gap-x-8">
           <PricingVariant type="community" plan={currentPlan} />
           <PricingVariant type="enterprise" plan={currentPlan} />
         </div>
