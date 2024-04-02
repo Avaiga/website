@@ -6,7 +6,7 @@ import Toggle from '@/components/shared/toggle';
 
 import PricingVariant from './pricing-variant';
 
-const planVariants: [Components.Pricing.PlanVariant, Components.Pricing.PlanVariant] = [
+const planVariants: Shared.ToggleItems<Components.Pricing.PaymentPeriods> = [
   { title: 'Monthly' },
   { title: 'Yearly', specialInfo: 'save 20%' },
 ];
@@ -18,15 +18,15 @@ function Plans() {
 
   return (
     <section className="plans mb-[168px] pt-[120px]">
-      <div className="container flex flex-col items-center justify-center gap-7">
-        <h2 className="text-56 font-semibold leading-[65px] tracking-[-2px]">Pricing plans</h2>
+      <div className="container flex flex-col items-center gap-8">
+        <h2 className="text-56 font-semibold leading-dense tracking-tight">Pricing plans</h2>
         <Toggle<Components.Pricing.PaymentPeriods>
           items={planVariants}
           toggleItem={currentPlan}
           setToggleItem={setCurrentPlan}
-          className="mb-3"
+          className="mb-2.5"
         />
-        <div className="grid grid-cols-2 grid-rows-1 gap-8">
+        <div className="grid grid-cols-2 gap-8">
           <PricingVariant type="community" plan={currentPlan} />
           <PricingVariant type="enterprise" plan={currentPlan} />
         </div>

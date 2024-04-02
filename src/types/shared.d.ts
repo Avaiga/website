@@ -3,4 +3,6 @@ declare namespace Shared {
     title: T;
     specialInfo?: string;
   };
+
+  type ToggleItems<T extends string> = [ToggleItem<T>, ToggleItem<T>];
 }
