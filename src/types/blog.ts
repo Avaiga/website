@@ -20,6 +20,7 @@ export type Author = {
 export type Category = {
   _id: string;
   title: string;
+  titleShort: string;
   slug: {
     current: string;
   };
