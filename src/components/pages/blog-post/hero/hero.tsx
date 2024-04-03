@@ -2,7 +2,7 @@ import { ROUTE } from '@/constants/routes';
 
 import Breadcrumbs from '@/components/shared/breadcrumbs';
 
-import { SinglePost } from '@/types/post';
+import { SinglePost } from '@/types/blog';
 
 type HeroProps = Pick<SinglePost, 'title' | 'cover' | 'author' | 'publishedAt' | 'category'>;
 
