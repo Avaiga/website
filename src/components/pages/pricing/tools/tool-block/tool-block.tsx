@@ -11,7 +11,7 @@ type ToolBlockProps = ClassName & Tool;
 function ToolBlock({ logo, title, description, image, gradient, className }: ToolBlockProps) {
   return (
     <li
-      className={clsx('grid overflow-hidden rounded-lg p-px', className, {
+      className={clsx('overflow-hidden rounded-lg p-px', className, {
         'col-span-2': image,
         'bg-gradient-grey-border': !gradient || gradient === 'right',
         'bg-gradient-left-bottom-orage-border': gradient === 'left',
@@ -25,7 +25,11 @@ function ToolBlock({ logo, title, description, image, gradient, className }: Too
           'bg-gradient-right-bottom-orange': gradient === 'right',
         })}
       >
-        <div>
+        <div
+          className={clsx({
+            'w-1/3': image,
+          })}
+        >
           <Image src={logo} alt="" width={40} height={40} />
           <h3 className="mt-6 text-20 font-semibold leading-snug">{title}</h3>
           <p className="mt-2 text-16 leading-snug text-grey-70">{description}</p>
