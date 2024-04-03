@@ -54,16 +54,16 @@ const fullPostData: PostData = {
   date: '2024-03-05T12:00:00Z',
 };
 
-const posts = Array.from({ length: 16 }, (_, index) => (index % 2 === 0 ? fullPostData : postData));
+const posts = Array.from({ length: 15 }, (_, index) => (index % 2 === 0 ? fullPostData : postData));
 
 function Blog() {
   return (
-    <section className="pt-32 lg:pt-[92px]">
-      <div className="container grid max-w-[1794px] grid-cols-14 gap-x-16 gap-y-[33px]">
+    <section className="pt-32 lg:pt-[92px] md:pt-[84px] sm:pt-[74px]">
+      <div className="container grid max-w-[1794px] grid-cols-14 gap-x-16 gap-y-[33px] lg:gap-x-0">
         <div className="col-span-2 lg:col-span-full">
           <Sidebar />
         </div>
-        <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12">
+        <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12 sm:gap-y-8">
           <h1 className="sr-only">Taipy Blog</h1>
           <PostsList posts={posts} />
           <Pagination />
@@ -73,7 +73,7 @@ function Blog() {
         tagline="Newsletter"
         title="Stay ahead with our newsletter"
         text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
-        className="my-36 lg:my-32"
+        className="my-36 lg:my-32 md:mb-[76px] md:mt-[101px] sm:my-[68px]"
       />
     </section>
   );
