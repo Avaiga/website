@@ -16,6 +16,7 @@ const styles = {
   theme: {
     white: 'hover:text-grey-80',
     grey: 'text-white/40',
+    orange: 'text-orange-1',
   },
 };
 

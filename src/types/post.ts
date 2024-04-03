@@ -14,7 +14,7 @@ export type Post = {
   };
   cover?: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
   author: Author;
-  categories: Category[];
+  category: Category;
 };
 
 export type SinglePost = Post & {

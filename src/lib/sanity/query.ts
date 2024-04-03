@@ -60,7 +60,7 @@ export const commonPostFieldsFragment = gql`
         }
       }
     }
-    categories {
+    category {
       _id
       title
       slug {

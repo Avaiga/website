@@ -1,4 +1,4 @@
-import NavList from '@/components/pages/blog/sidebar/nav-list';
+import NavList from '@/components/pages/blog-page/sidebar/nav-list';
 
 import SearchIcon from '@/svgs/icons/search.inline.svg';
 

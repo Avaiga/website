@@ -4,9 +4,11 @@ import { notFound } from 'next/navigation';
 
 import { ROUTE } from '@/constants/routes';
 
+import Hero from '@/components/pages/blog-post/hero';
+
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { PortableToPlain } from '@/lib/portable-to-plain';
-import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
+import { getPostBySlug } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 
 export default async function Post({ params }: { params: { slug: string } }) {
@@ -18,12 +20,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  const { _id, title, lead, cover, publishedAt, contentRaw, slug } = post;
-  let { categories, author } = post;
-
-  if (isDraftMode && !categories) {
-    categories = [];
-  }
+  const { _id, title, lead, cover, publishedAt, contentRaw, slug, category } = post;
+  let { author } = post;
 
   if (isDraftMode && !author) {
     author = {
@@ -33,36 +31,19 @@ export default async function Post({ params }: { params: { slug: string } }) {
     };
   }
 
-  const relatedPosts = isDraftMode
-    ? []
-    : await getRelatedPosts({
-        postId: _id,
-        categorySlug: categories[0].slug.current, // TODO: remove [0] when client will left only one category per post
-      });
+  console.log(_id, title, lead, cover, publishedAt, contentRaw, slug, author, category);
 
-  // eslint-disable-next-line no-console
-  console.log(
-    _id,
-    title,
-    lead,
-    cover,
-    publishedAt,
-    contentRaw,
-    slug,
-    author,
-    categories,
-    relatedPosts,
+  return (
+    <article className="pt-[92px]">
+      <Hero
+        title={title}
+        cover={cover}
+        author={author}
+        publishedAt={publishedAt}
+        category={category}
+      />
+    </article>
   );
-
-  return <div>Post</div>;
-}
-
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-
-  return posts.map((post) => ({
-    slug: post.slug.current,
-  }));
 }
 
 export async function generateMetadata({
