@@ -35,13 +35,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <article className="pt-[92px]">
-      <Hero
-        title={title}
-        cover={cover}
-        author={author}
-        publishedAt={publishedAt}
-        category={category}
-      />
+      <div className="container">
+        <Hero
+          title={title}
+          cover={cover}
+          author={author}
+          publishedAt={publishedAt}
+          category={category}
+        />
+      </div>
     </article>
   );
 }
