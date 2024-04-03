@@ -1,6 +1,5 @@
 import { BlockContentIcon, DocumentTextIcon, SearchIcon } from '@sanity/icons';
 import {
-  ArrayRule,
   DatetimeRule,
   ImageRule,
   ReferenceRule,
@@ -84,17 +83,19 @@ export const post = defineType({
       validation: (rule: ReferenceRule) => rule.required(),
     }),
     defineField({
-      name: 'categories',
-      type: 'array',
-      title: 'Categories',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'category' }],
-        },
-      ],
+      name: 'category',
+      type: 'reference',
+      title: 'Category',
+      to: [{ type: 'category' }],
       group: 'content',
-      validation: (rule: ArrayRule<ReferenceRule>) => rule.required(),
+      validation: (rule: ReferenceRule) => rule.required(),
+    }),
+    defineField({
+      name: 'featured',
+      type: 'boolean',
+      title: 'Featured',
+      initialValue: false,
+      group: 'content',
     }),
     defineField({
       name: 'seo',

@@ -20,6 +20,7 @@ export type Author = {
 export type Category = {
   _id: string;
   title: string;
+  titleShort: string;
   slug: {
     current: string;
   };
@@ -91,7 +92,7 @@ export type Post = {
   };
   cover?: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
   author: Author;
-  categories: Category[];
+  categories: Category;
 };
 
 export type SinglePost = Post & {
