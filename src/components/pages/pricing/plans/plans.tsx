@@ -19,7 +19,7 @@ function Plans() {
   const [currentPlan, setCurrentPlan] = useState<PaymentPeriods>(planVariants[0].title);
 
   return (
-    <section className="plans mb-[169px] pt-[120px]">
+    <section className="plans pt-[120px]">
       <div className="container flex max-w-[933px] flex-col items-center gap-y-7">
         <h1 className="text-56 font-semibold leading-dense tracking-tight">Pricing plans</h1>
         <Toggle<PaymentPeriods>
