@@ -5,6 +5,7 @@ export const allCategoryQuery = gql`
     allCategory(sort: { order: ASC }) {
       _id
       title
+      titleShort
       slug {
         current
       }
@@ -17,6 +18,7 @@ export const categoryQuery = gql`
     allCategory(where: { slug: { current: { eq: $slug } } }, limit: 1) {
       _id
       title
+      titleShort
       slug {
         current
       }
@@ -60,9 +62,9 @@ export const commonPostFieldsFragment = gql`
         }
       }
     }
-    categories {
+    category {
       _id
-      title
+      titleShort
       slug {
         current
       }
