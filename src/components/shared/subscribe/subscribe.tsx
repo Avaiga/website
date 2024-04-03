@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 
 import { BUTTON_SUCCESS_TIMEOUT_MS } from '@/constants/forms';
 import { yupResolver } from '@hookform/resolvers/yup';
+import clsx from 'clsx';
 import * as yup from 'yup';
 
 import Button from '@/components/shared/button';
@@ -63,7 +64,7 @@ function Subscribe({
   };
 
   return (
-    <section className={`subscribe overflow-hidden px-safe ${className}`}>
+    <section className={clsx('subscribe overflow-hidden px-safe', { className })}>
       <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end">
         <Image
           className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-full lg:w-auto lg:max-w-none md:left-[-88px] sm:left-[-70px]"
