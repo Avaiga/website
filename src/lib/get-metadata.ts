@@ -9,9 +9,7 @@ type GetMetadataProps = {
   type?: OpenGraphType;
 };
 
-// FIXME: Add an image for displaying on social networks, remember that this image must meet the size of 1200x630
-// For example: /images/social-previews/index.jpg
-export const DEFAULT_IMAGE_PATH = '';
+export const DEFAULT_IMAGE_PATH = '/images/og-image.png';
 
 export function getMetadata({
   title,
@@ -23,7 +21,7 @@ export function getMetadata({
   const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
   const canonicalUrl = SITE_URL + pathname;
   const imageUrl = imagePath.startsWith('http') ? imagePath : SITE_URL + imagePath;
-  const siteName = 'Pixel Point Next.js TypeScript Tailwind Starter';
+  const siteName = 'Taipy';
 
   return {
     title,

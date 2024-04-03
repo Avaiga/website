@@ -5,4 +5,5 @@ export const ROUTE: Record<string, URL | Route<string>> = {
   BLOG: '/blog',
   PRIVACY: '/',
   BANNER: '/',
+  PRICING: '/pricing',
 };
