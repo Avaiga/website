@@ -89,17 +89,15 @@ function Tools() {
   return (
     <section className="tools mb-[169px] mt-[165px]">
       <div className="container flex max-w-[1092px] flex-col items-center">
-        <div className="flex flex-col items-center text-center">
-          <p className="text-16 leading-snug text-primary-red">Features</p>
-          <h2 className="mt-3.5 text-56 font-semibold leading-[1.125] tracking-tight">
-            Advanced tools for enterprise
-          </h2>
-          <p className="mt-[18px] max-w-[640px] text-18 leading-snug text-grey-70">
-            Experience the difference with Taipy&apos;s unique tools, designed to support developers
-            in building projects.
-          </p>
-        </div>
-        <div className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px]">
+        <span className="text-16 leading-snug text-primary-red">Features</span>
+        <h2 className="mt-3.5 text-56 font-semibold leading-[1.125] tracking-tight">
+          Advanced tools for enterprise
+        </h2>
+        <p className="mt-[18px] max-w-[640px] text-center text-18 font-light leading-snug text-grey-70">
+          Experience the difference with Taipy&apos;s unique tools, designed to support developers
+          in building projects.
+        </p>
+        <ul className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px]">
           {toolBlocks.map(({ title, description, logo, image }, index) => {
             const gradientState = {
               [toolBlocks.length - 1]: gradient.left,
@@ -114,14 +112,14 @@ function Tools() {
                 description={description}
                 logo={logo}
                 image={image}
-                key={`${title}-${index}`}
+                key={index}
               />
             );
           })}
-        </div>
-        <Button size="lg" theme="outline" className="mt-[46px] flex items-center gap-x-2.5">
+        </ul>
+        <Button size="lg" theme="outline" className="mt-11 flex items-center gap-x-2.5">
           <span>See comparison table</span>
-          <ArrowIcon className="h-2.5 w-2.5" />
+          <ArrowIcon className="h-3 w-3" />
         </Button>
       </div>
     </section>
