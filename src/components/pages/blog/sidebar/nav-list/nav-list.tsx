@@ -12,8 +12,8 @@ interface NavListProps {
 }
 export default function NavList({ data }: NavListProps) {
   return (
-    <nav>
-      <ul className="flex flex-col gap-y-3 bg-transparent text-grey-60 lg:flex-row lg:gap-x-6 sm:overflow-hidden">
+    <nav className="no-scrollbars sticky top-4 px-5 sm:-mx-5 sm:overflow-auto">
+      <ul className="flex flex-col gap-y-3 bg-transparent text-grey-60 lg:flex-row lg:gap-x-6 md:after:shrink-0 md:after:grow-0 md:after:basis-px md:after:content-['']">
         {data.map(({ label, href }, index) => (
           <li key={index}>
             <Link
