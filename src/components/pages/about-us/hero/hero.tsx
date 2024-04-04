@@ -9,7 +9,7 @@ export default function Hero() {
             We provide an open-source Python full-stack application builder
           </h1>
           <p className="mt-1 w-full max-w-[602px] text-center text-20 font-light leading-normal opacity-80">
-            Facilitating your application&aposs front-end and back-end development with integrated
+            Facilitating your application&apos;s front-end and back-end development with integrated
             services.
           </p>
           <span className="order-first text-16 font-normal leading-snug text-primary-red">
