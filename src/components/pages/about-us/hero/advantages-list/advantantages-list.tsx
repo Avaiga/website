@@ -1,6 +1,10 @@
-import AdvantagesItem from '../advantages-item/advantages-item';
+type AdvantagesItemProps = {
+  id: number;
+  digit: string;
+  description: string;
+};
 
-const advantagesData = [
+const advantagesData: AdvantagesItemProps[] = [
   {
     id: 1,
     digit: '10x',
@@ -20,9 +24,16 @@ const advantagesData = [
 
 export default function AdvantagesList() {
   return (
-    <ul className="max-w-digitsWidth flex w-full justify-between gap-6">
+    <ul className="mt-11 flex w-full justify-between gap-6 ">
       {advantagesData.map((item) => (
-        <AdvantagesItem key={item.id} digit={item.digit} description={item.description} />
+        <li className=" w-full text-center" key={item.id}>
+          <span className="bg-gradient-digit bg-clip-text text-[120px] font-light leading-none tracking-snug text-transparent">
+            {item.digit}
+          </span>
+          <p className="mt-0.5 text-24 font-normal leading-none tracking-snug text-grey-40">
+            {item.description}
+          </p>
+        </li>
       ))}
     </ul>
   );
