@@ -58,9 +58,9 @@ const posts = Array.from({ length: 15 }, (_, index) => (index % 2 === 0 ? fullPo
 
 function Blog() {
   return (
-    <section className="pt-32 lg:pt-[92px] md:pt-[84px] sm:pt-[66px]">
+    <section className="pt-32 lg:pt-[92px] md:pt-[76px] sm:pt-[66px]">
       <div className="container grid max-w-[1794px] grid-cols-14 gap-x-16 gap-y-[33px] lg:gap-x-0 sm:gap-y-[25px]">
-        <div className="top-16 col-span-2 bg-black lg:col-span-full md:sticky md:top-0 sm:py-2">
+        <div className="top-16 col-span-2 bg-black lg:col-span-full md:sticky md:top-0 md:py-2">
           <Sidebar />
         </div>
         <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12 sm:gap-y-8">
