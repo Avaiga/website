@@ -12,6 +12,7 @@ import Link from '@/components/shared/link';
 import MobileMenu from '@/components/shared/mobile-menu';
 
 import GithubLogo from '@/svgs/icons/logo-github.inline.svg';
+import SearchIcon from '@/svgs/icons/search.inline.svg';
 import logo from '@/svgs/logo.svg';
 
 function Header() {
@@ -58,13 +59,19 @@ function Header() {
               ))}
             </ul>
 
-            <Burger
-              className="hidden md:block"
-              isToggled={isMobileMenuOpen}
-              onClick={toggleMobileMenu}
-            />
+            <div className="flex gap-5">
+              <div className="hidden items-center gap-x-3 md:gap-x-5 sm:flex">
+                <button type="button">
+                  <SearchIcon className="h-[18px] w-[18px] shrink-0" />
+                </button>
+              </div>
+              <Burger
+                className="hidden md:block"
+                isToggled={isMobileMenuOpen}
+                onClick={toggleMobileMenu}
+              />
+            </div>
           </nav>
-
           <div className="flex gap-x-2.5 lg:grow lg:justify-end md:hidden">
             <Button className="gap-x-2.5 pl-2 pr-3" theme="outline" size="sm">
               <GithubLogo className="h-[18px] flex-shrink-0 fill-white" />
