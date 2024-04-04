@@ -1,4 +1,4 @@
-import { PostData } from '@/app/blog/page';
+import { PostData } from '@/app/(website)/blog/page';
 
 import PostItem from '@/components/pages/blog/post-item/post-item';
 

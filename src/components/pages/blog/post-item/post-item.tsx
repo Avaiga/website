@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { PostData } from '@/app/blog/page';
+import { PostData } from '@/app/(website)/blog/page';
 import clsx from 'clsx';
 
 import Link from '@/components/shared/link';

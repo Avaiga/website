@@ -9,7 +9,7 @@ export const MENU = {
   header: [
     { label: 'Blog', href: ROUTE.INDEX },
     { label: 'Company', href: ROUTE.INDEX },
-    { label: 'Pricing', href: ROUTE.INDEX },
+    { label: 'Pricing', href: ROUTE.PRICING },
     { label: 'Docs', href: ROUTE.INDEX },
   ],
   footer: {
