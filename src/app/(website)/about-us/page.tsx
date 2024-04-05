@@ -1,3 +1,4 @@
+import Contribute from '@/components/pages/about-us/contribute';
 import Hero from '@/components/pages/about-us/hero/hero';
 import OurHistory from '@/components/pages/about-us/our-history';
 import OurPartners from '@/components/pages/about-us/our-partners';
@@ -12,6 +13,7 @@ function AboutUs() {
       <OurHistory />
       <OurTeam />
       <OurPartners />
+      <Contribute />
     </>
   );
 }
