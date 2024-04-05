@@ -27,6 +27,13 @@ export const category = defineType({
       validation: (rule: StringRule) => rule.required(),
     }),
     defineField({
+      name: 'titleShort',
+      type: 'string',
+      title: 'Short title',
+      group: 'content',
+      validation: (rule: StringRule) => rule.required(),
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       title: 'Slug',
