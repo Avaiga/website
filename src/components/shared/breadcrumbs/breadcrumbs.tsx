@@ -15,17 +15,17 @@ interface BreadcrumbsProps {
 function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   return (
     <nav className={className}>
-      <ol className="">
+      <ol className="flex gap-x-2.5">
         {items.map(({ title, url }, index) => (
-          <li className="" key={index}>
+          <li className="text-15 leading-snug" key={index}>
             {url ? (
-              <Link className="text-15" href={url} theme="orange">
+              <Link href={url} theme="orange">
                 {title}
               </Link>
             ) : (
-              <span className="line-clamp-1">{title}</span>
+              <span className="line-clamp-1 text-grey-60">{title}</span>
             )}
-            {index < items.length - 1 && <span className="">/</span>}
+            {index < items.length - 1 && <span className="ml-2.5 text-grey-30">/</span>}
           </li>
         ))}
       </ol>

@@ -24,7 +24,7 @@ function Link<T extends string>({
   className: additionalClassName,
   size,
   href,
-  theme = 'white',
+  theme,
   arrowTheme = null,
   children,
   ...props
@@ -44,7 +44,7 @@ function Link<T extends string>({
     styles.transition,
     size && styles.base,
     size && styles.size[size],
-    styles.theme[theme],
+    theme && styles.theme[theme],
     additionalClassName,
   );
 

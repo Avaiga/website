@@ -20,7 +20,7 @@ interface SubscribeProps {
   tagline: string;
   title: string;
   text: string;
-  isLastChild?: boolean;
+  className?: string;
 }
 
 const validationSchema = yup.object().shape({
@@ -31,7 +31,7 @@ const validationSchema = yup.object().shape({
     .required('Email is a required field'),
 });
 
-function Subscribe({ tagline, title, text, isLastChild = false }: SubscribeProps) {
+function Subscribe({ tagline, title, text, className }: SubscribeProps) {
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
 
   const {
@@ -59,11 +59,7 @@ function Subscribe({ tagline, title, text, isLastChild = false }: SubscribeProps
   };
 
   return (
-    <section
-      className={clsx('subscribe mt-[196px] overflow-hidden px-safe lg:mt-[124px] md:mt-[92px]', {
-        'mb-36': isLastChild,
-      })}
-    >
+    <section className={clsx('subscribe overflow-hidden px-safe', className)}>
       <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end">
         <Image
           className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-full lg:w-auto lg:max-w-none md:left-[-88px] sm:left-[-70px]"

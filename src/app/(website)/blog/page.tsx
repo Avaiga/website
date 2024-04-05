@@ -4,9 +4,9 @@ import type { StaticImageData } from 'next/image';
 import authorImage from '@/images/pages/blog/author-img.jpg';
 import activeCoverImg from '@/images/pages/blog/cover-img.jpg';
 
-import Pagination from '@/components/pages/blog-page/pagination/pagination';
-import PostsList from '@/components/pages/blog-page/posts-list';
-import Sidebar from '@/components/pages/blog-page/sidebar';
+import Pagination from '@/components/pages/blog/pagination/pagination';
+import PostsList from '@/components/pages/blog/posts-list';
+import Sidebar from '@/components/pages/blog/sidebar';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';
@@ -68,10 +68,10 @@ function Blog() {
           <PostsList posts={posts} />
           <Pagination />
           <Subscribe
+            className="mt-36 lg:mt-[124px] md:mt-[92px]"
             tagline="Newsletter"
             title="Stay ahead with our newsletter"
             text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
-            isLastChild
           />
         </div>
       </div>

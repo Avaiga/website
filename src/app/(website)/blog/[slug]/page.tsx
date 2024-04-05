@@ -4,9 +4,15 @@ import { notFound } from 'next/navigation';
 
 import { ROUTE } from '@/constants/routes';
 
-import Hero from '@/components/pages/blog-post/hero';
+import AuthorAndShare from '@/components/pages/article/author-and-share';
+import Content from '@/components/pages/article/content';
+import Hero from '@/components/pages/article/hero';
+import Navigation from '@/components/pages/article/navigation';
+import Subscribe from '@/components/shared/subscribe';
 
+import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
+import { getPublishDate } from '@/lib/get-publish-date';
 import { PortableToPlain } from '@/lib/portable-to-plain';
 import { getPostBySlug } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
@@ -20,7 +26,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  const { _id, title, lead, cover, publishedAt, contentRaw, slug, category } = post;
+  const { title, lead, cover, publishedAt, contentRaw, slug, category } = post;
   let { author } = post;
 
   if (isDraftMode && !author) {
@@ -30,21 +36,59 @@ export default async function Post({ params }: { params: { slug: string } }) {
       image: null,
     };
   }
+  const navItems = contentRaw
+    .filter((item) => item.style === 'h2' || item.style === 'h3')
+    .map((item) => {
+      if (item._type !== 'block' || !item.children) {
+        return {
+          title: '',
+          anchor: '',
+          level: '',
+        };
+      }
 
-  console.log(_id, title, lead, cover, publishedAt, contentRaw, slug, author, category);
+      return {
+        title: (item.children as { text: string }[])[0].text,
+        anchor: getAnchorFromText((item.children as { text: string }[])[0].text),
+        level: item.style as string,
+      };
+    });
 
   return (
-    <article className="pt-[92px]">
-      <div className="container">
-        <Hero
-          title={title}
-          cover={cover}
-          author={author}
-          publishedAt={publishedAt}
-          category={category}
-        />
-      </div>
-    </article>
+    <>
+      <article className="pt-[92px]">
+        <div className="container grid max-w-[1256px] grid-cols-[180px_704px_180px] gap-x-16">
+          <div className="col-start-2 col-end-2">
+            <Hero
+              title={title}
+              lead={lead}
+              cover={cover}
+              author={author}
+              publishedAt={publishedAt}
+              category={category}
+              slug={slug}
+            />
+            <Content content={contentRaw} className="mt-14 lg:mt-12 md:mt-10 sm:mt-8" />
+            <AuthorAndShare
+              className="border-t border-t-grey-20 pt-8"
+              author={author}
+              slug={slug}
+              publishedAt={getPublishDate(publishedAt).toUpperCase()}
+              title={title}
+            />
+          </div>
+          <div className="col-start-3">
+            <Navigation items={navItems} />
+          </div>
+        </div>
+      </article>
+      <Subscribe
+        className="my-36"
+        tagline="Newsletter"
+        title="Stay ahead with our newsletter"
+        text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
+      />
+    </>
   );
 }
 

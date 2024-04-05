@@ -9,9 +9,9 @@ interface CategoryLabelProps extends React.PropsWithChildren {
 }
 
 const styles = {
-  base: 'rounded-full border-0 px-2.5 bg-[#55c1f6] font-medium leading-none tracking-snug text-secondary-blue',
+  base: 'rounded-full px-2.5 bg-[#55c1f6]/10 font-medium leading-none tracking-snug text-secondary-blue inline-flex items-center',
   size: {
-    md: 'text-14',
+    md: 'text-14 h-7',
     sm: 'text-13',
   },
 };
