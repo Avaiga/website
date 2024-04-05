@@ -51,6 +51,11 @@ module.exports = {
         'linear-gradient(0deg, #1B1B1D, #1B1B1D), radial-gradient(93.11% 55.91% at 100% 0%, rgba(204, 204, 204, 0.09) 0%, rgba(204, 204, 204, 0) 100%)',
       'gradient-digit': 'linear-gradient(90deg, #ff462b 0%, rgba(0, 0, 0, 0) 160%)',
     },
+
+    boxShadow: {
+      btn: '0 8px 20px 0 rgba(255, 70, 43, 0.32)',
+    },
+
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,
@@ -65,6 +70,7 @@ module.exports = {
       },
       orange: {
         1: '#ff462b',
+        5: 'rgba(255, 70, 43, 0.08)',
         70: '#eca979',
       },
       grey: {
@@ -80,6 +86,7 @@ module.exports = {
         90: '#e2e2e9',
         94: '#ededf2',
         98: '#f9f9fb',
+        99: '#131315',
       },
       code: {
         blue: '#5199f7',
