@@ -6,6 +6,8 @@ import {
 import clsx from 'clsx';
 import { PortableTextBlock } from 'sanity';
 
+import Link from '@/components/shared/link';
+
 import {
   ContentBlockquote,
   ContentCode,
@@ -18,6 +20,7 @@ import {
 import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 
 import CircleHashIcon from '@/svgs/icons/circle-hashtag.inline.svg';
+import ExternalIcon from '@/svgs/icons/external.inline.svg';
 
 import Blockquote from './blockquote';
 import CodeBlock from './code-block';
@@ -46,6 +49,20 @@ const components: PortableTextComponents = {
     youtube: ({ value: { url, title } }: PortableTextComponentProps<ContentYoutube>) => (
       <YouTube url={url} title={title} />
     ),
+  },
+  marks: {
+    link: ({ children, value }) => {
+      if (value.href && value.href.startsWith('http')) {
+        return (
+          <a className="my-0 contents" href={value.href} target="_blank" rel="noopener noreferrer">
+            <span>{children}</span>
+            <ExternalIcon className="mb-1.5 ml-0.5 inline-block h-4 w-4" aria-hidden />
+          </a>
+        );
+      }
+
+      return <Link href={value.href || ''}>{children}</Link>;
+    },
   },
   block: {
     h2: ({ children }) => (

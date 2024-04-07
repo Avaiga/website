@@ -53,7 +53,6 @@ export default function SocialShare({ pathname, title }: SocialShareProps) {
           </li>
         ))}
         <li className="relative">
-          {/* TODO: implement copy logic from koyeb https://github.com/pixel-point/koyeb-next/blob/main/apps/www/src/components/page/article/social-share/social-share.tsx */}
           <Button
             className={clsx('block', {
               'pointer-events-none': isCopied,
@@ -67,7 +66,7 @@ export default function SocialShare({ pathname, title }: SocialShareProps) {
           </Button>
           <LazyMotion features={domAnimation}>
             <m.span
-              className="pp-md:bottom-10 text-grey-200 pointer-events-none absolute -right-3 bottom-8 whitespace-nowrap text-14 font-semibold leading-none opacity-0"
+              className="pp-md:bottom-10 pointer-events-none absolute -right-3 bottom-8 whitespace-nowrap text-14 font-semibold leading-none text-grey-90 opacity-0"
               animate={isCopied ? 'toggled' : 'initial'}
               variants={{
                 initial: {

@@ -13,6 +13,14 @@ interface HighlightLine {
   language?: BundledLanguage;
 }
 
+//TODO: Add custom theme
+// const customTheme = createCssVariablesTheme({
+//   name: 'css-variables',
+//   variablePrefix: '--shiki-',
+//   variableDefaults: {},
+//   fontStyle: true,
+// });
+
 function isBundledLanguage(lang: string): lang is BundledLanguage {
   return Object.keys(bundledLanguages).includes(lang as BundledLanguage);
 }

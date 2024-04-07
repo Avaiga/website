@@ -98,6 +98,7 @@ export type Post = {
 export type SinglePost = Post & {
   lead: string;
   contentRaw: PortableTextBlock[];
+  related: Post[];
   seo: SEO | null;
 };
 
