@@ -1,14 +1,15 @@
 import clsx from 'clsx';
 import { BundledLanguage } from 'shiki/langs';
 
+import { ClassName } from '@/types/classname';
+
 import { highlight } from '@/lib/shiki';
 
 import Wrapper from './wrapper';
 
-type CodeBlockProps = {
+type CodeBlockProps = ClassName & {
   language: string;
   code: string;
-  className?: string;
 };
 
 async function CodeBlock({ language, code, className }: CodeBlockProps) {

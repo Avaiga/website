@@ -5,11 +5,12 @@ import { ReactElement, ReactNode, isValidElement } from 'react';
 import useCopyToClipboard from '@/hooks/use-copy-to-clipboard';
 import clsx from 'clsx';
 
+import { ClassName } from '@/types/classname';
+
 import CheckIcon from '@/svgs/icons/check.inline.svg';
 import CopyIcon from '@/svgs/icons/copy-code.inline.svg';
 
-type CodeBlockWrapperProps = {
-  className?: string;
+type CodeBlockWrapperProps = ClassName & {
   children?: ReactNode;
 };
 

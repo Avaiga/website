@@ -16,6 +16,7 @@ import {
   ContentTable,
   ContentYoutube,
 } from '@/types/blog';
+import { ClassName } from '@/types/classname';
 
 import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 
@@ -84,8 +85,7 @@ const components: PortableTextComponents = {
   },
 };
 
-type contentProps = {
-  className?: string;
+type contentProps = ClassName & {
   content: PortableTextBlock[];
 };
 

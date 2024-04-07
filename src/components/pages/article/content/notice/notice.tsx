@@ -3,11 +3,11 @@ import { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { NoticeTypes } from '@/types/blog';
+import { ClassName } from '@/types/classname';
 
-type NoticeProps = {
+type NoticeProps = ClassName & {
   children: ReactNode;
   type: NoticeTypes;
-  className?: string;
 };
 
 function Notice({ type, children, className }: NoticeProps) {

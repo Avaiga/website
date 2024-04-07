@@ -3,6 +3,8 @@ import NextLink from 'next/link';
 
 import clsx from 'clsx';
 
+import { ClassName } from '@/types/classname';
+
 // Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
 const styles = {
   transition: 'transition-colors duration-200',
@@ -28,8 +30,7 @@ function Link<T extends string>({
   arrowTheme = null,
   children,
   ...props
-}: {
-  className?: string;
+}: ClassName & {
   href: Route<T> | URL;
   size?: keyof typeof styles.size;
   theme?: keyof typeof styles.theme;

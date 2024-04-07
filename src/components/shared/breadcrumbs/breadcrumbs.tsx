@@ -2,14 +2,15 @@ import { Route } from 'next';
 
 import Link from '@/components/shared/link';
 
+import { ClassName } from '@/types/classname';
+
 interface Breadcrumb {
   title: string;
   url?: URL | Route<string>;
 }
 
-interface BreadcrumbsProps {
+interface BreadcrumbsProps extends ClassName {
   items: Breadcrumb[];
-  className?: string;
 }
 
 function Breadcrumbs({ items, className }: BreadcrumbsProps) {
