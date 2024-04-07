@@ -31,7 +31,12 @@ const validationSchema = yup.object().shape({
     .required('Email is a required field'),
 });
 
-function Subscribe({ tagline, title, text, className }: SubscribeProps) {
+function Subscribe({
+  tagline,
+  title,
+  text,
+  className = 'mt-[196px] lg:mt-[124px] md:mt-[92px]',
+}: SubscribeProps) {
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
 
   const {

@@ -6,4 +6,5 @@ export const ROUTE: Record<string, URL | Route<string>> = {
   PRIVACY: '/',
   BANNER: '/',
   PRICING: '/pricing',
+  ABOUT_US: '/about-us',
 };

@@ -16,16 +16,19 @@ module.exports = {
     },
     fontSize: {
       10: '10px',
+      11: '11px',
       12: '12px',
       13: '13px',
       14: '14px',
       15: '15px',
       16: '16px',
+      17: '17px',
       18: '18px',
       20: '20px',
       24: '24px',
       28: '28px',
       32: '32px',
+      34: '34px',
       36: '36px',
       40: '40px',
       44: '44px',
@@ -51,6 +54,7 @@ module.exports = {
         'linear-gradient(0deg, #18181B, #18181B),radial-gradient(93.11% 55.91% at 100% 0%, rgba(148, 148, 148, 0.06) 0%, rgba(149, 149, 149, 0) 100%)',
       'gradient-grey':
         'linear-gradient(0deg, #1B1B1D, #1B1B1D), radial-gradient(93.11% 55.91% at 100% 0%, rgba(204, 204, 204, 0.09) 0%, rgba(204, 204, 204, 0) 100%)',
+      'gradient-digit': 'linear-gradient(90deg, #ff462b 0%, rgba(0, 0, 0, 0) 160%)',
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,

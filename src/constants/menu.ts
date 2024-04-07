@@ -18,7 +18,7 @@ export const MENU = {
         title: 'Taipy',
         items: [
           { label: 'Home', href: ROUTE.INDEX },
-          { label: 'About us', href: ROUTE.INDEX },
+          { label: 'About us', href: ROUTE.ABOUT_US },
           { label: 'Enterprise', href: ROUTE.INDEX },
           { label: 'Pricing', href: ROUTE.INDEX },
           { label: 'Customer Stories', href: ROUTE.INDEX },
