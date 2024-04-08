@@ -1,16 +1,11 @@
 import Image from 'next/image';
 
-import FrFlag from '@/images/pages/about-us/flags/fr.png';
-import GbFlag from '@/images/pages/about-us/flags/gb.png';
-import SgFlag from '@/images/pages/about-us/flags/sg.png';
-import UsFlag from '@/images/pages/about-us/flags/us.png';
 import TeamMember from '@/images/pages/about-us/team/1-team.jpg';
 
 const teamListData = [
   {
     photo: TeamMember,
-    name: 'Esther Monahan',
-    flag: FrFlag,
+    name: 'Esther Monahan 🇫🇷',
     position: 'Future Intranet Manager',
     alt: '.Esther Monahan',
     flagAlt: '.France flag',
@@ -18,8 +13,7 @@ const teamListData = [
 
   {
     photo: TeamMember,
-    name: 'Jane Smith',
-    flag: GbFlag,
+    name: 'Jane Smith 🇬🇧',
     position: 'Head of Marketing',
     alt: '.Jane Smith',
     flagAlt: '.Greate Britain flag',
@@ -27,8 +21,7 @@ const teamListData = [
 
   {
     photo: TeamMember,
-    name: 'Evan Purdy',
-    flag: FrFlag,
+    name: 'Evan Purdy 🇫🇷',
     position: 'Head of Product',
     alt: '.Evan Purdy',
     flagAlt: '.France flag',
@@ -36,8 +29,7 @@ const teamListData = [
 
   {
     photo: TeamMember,
-    name: 'Esther Monahan',
-    flag: UsFlag,
+    name: 'Esther Monahan 🇺🇸🇺',
     position: 'Chief Architect',
     alt: '.Esther Monahan',
     flagAlt: '.United States flag',
@@ -45,8 +37,7 @@ const teamListData = [
 
   {
     photo: TeamMember,
-    name: 'Evan Purdy',
-    flag: SgFlag,
+    name: 'Evan Purdy 🇸🇬',
     position: 'Head of Product',
     alt: '.Evan Purdy',
     flagAlt: '.Singapore flag',
@@ -54,8 +45,7 @@ const teamListData = [
 
   {
     photo: TeamMember,
-    name: 'Esther Monahan',
-    flag: FrFlag,
+    name: 'Esther Monahan 🇫🇷',
     position: 'Chief Architect',
     alt: '.Esther Monahan',
     flagAlt: '.France flag',
@@ -63,9 +53,7 @@ const teamListData = [
 
   {
     photo: TeamMember,
-
-    name: 'Esther Monahan',
-    flag: SgFlag,
+    name: 'Esther Monahan 🇫🇷',
     position: 'Future Intranet Manager',
     alt: '.Esther Monahan',
     flagAlt: '.Singapore flag',
@@ -86,7 +74,7 @@ export default function TeamList() {
           <div className="">
             <div className="flex items-center justify-center gap-1">
               <span className="text-18 font-medium leading-none tracking-snug">{item.name}</span>
-              <Image src={item.flag} width={19} height={19} alt={item.flagAlt} />
+              {/* <Image src={item.flag} width={19} height={19} alt={item.flagAlt} /> */}
             </div>
             <p className="pt-2 text-center text-16 font-light leading-none tracking-snug">
               {item.position}
