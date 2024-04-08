@@ -4,7 +4,7 @@ import FrFlag from '@/images/pages/about-us/flags/fr.png';
 import GbFlag from '@/images/pages/about-us/flags/gb.png';
 import SgFlag from '@/images/pages/about-us/flags/sg.png';
 import UsFlag from '@/images/pages/about-us/flags/us.png';
-import TeamMember from '@/images/pages/about-us/team/1-team.png';
+import TeamMember from '@/images/pages/about-us/team/1-team.jpg';
 
 const teamListData = [
   {
