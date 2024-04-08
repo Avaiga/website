@@ -39,6 +39,7 @@ export const commonPostFieldsFragment = gql`
   fragment commonPostFields on Post {
     _id
     publishedAt
+    featured
     cover {
       asset {
         _id
@@ -118,6 +119,17 @@ export const countPostQuery = gql`
   query CountPosts($where: PostFilter) {
     allPost(where: $where) {
       _id
+    }
+  }
+`;
+
+export const promotedPostQuery = gql`
+  ${commonPostFieldsFragment}
+
+  query PromotedPost {
+    allPost(sort: { publishedAt: DESC }, where: { featured: { eq: true } }, limit: 1) {
+      ...commonPostFields
+      lead
     }
   }
 `;

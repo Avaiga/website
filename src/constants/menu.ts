@@ -8,9 +8,9 @@ import { ROUTE } from './routes';
 export const MENU = {
   header: [
     { label: 'Blog', href: ROUTE.BLOG },
-    { label: 'Company', href: ROUTE.INDEX },
+    { label: 'Company', href: ROUTE.COMPANY },
     { label: 'Pricing', href: ROUTE.PRICING },
-    { label: 'Docs', href: ROUTE.INDEX },
+    { label: 'Docs', href: ROUTE.DOCUMENTATION },
   ],
   footer: {
     main: [
@@ -19,32 +19,32 @@ export const MENU = {
         items: [
           { label: 'Home', href: ROUTE.INDEX },
           { label: 'About us', href: ROUTE.ABOUT_US },
-          { label: 'Enterprise', href: ROUTE.INDEX },
-          { label: 'Pricing', href: ROUTE.INDEX },
-          { label: 'Customer Stories', href: ROUTE.INDEX },
+          { label: 'Enterprise', href: ROUTE.ENTERPRISE },
+          { label: 'Pricing', href: ROUTE.PRICING },
+          { label: 'Customer Stories', href: ROUTE.CUSTOMER_STORIES },
         ],
       },
       {
         title: 'Resources',
         items: [
-          { label: 'Blog', href: ROUTE.INDEX },
-          { label: 'Documentation', href: ROUTE.INDEX },
-          { label: 'Community', href: ROUTE.INDEX },
+          { label: 'Blog', href: ROUTE.BLOG },
+          { label: 'Documentation', href: ROUTE.DOCUMENTATION },
+          { label: 'Community', href: ROUTE.COMMUNITY },
         ],
       },
       {
         title: 'Legal',
         items: [
-          { label: 'Terms of service', href: ROUTE.INDEX },
-          { label: 'Privacy policy', href: ROUTE.INDEX },
+          { label: 'Terms of service', href: ROUTE.TERMS },
+          { label: 'Privacy policy', href: ROUTE.PRIVACY },
         ],
       },
     ],
     social: [
-      { label: 'Twitter', href: ROUTE.INDEX, icon: TwitterLogo },
-      { label: 'LinkedIn', href: ROUTE.INDEX, icon: LinkedinLogo },
-      { label: 'GitHub', href: ROUTE.INDEX, icon: GithubLogo },
-      { label: 'YouTube', href: ROUTE.INDEX, icon: YoutubeLogo },
+      { label: 'Twitter', href: ROUTE.TWITTER, icon: TwitterLogo },
+      { label: 'LinkedIn', href: ROUTE.LINKEDIN, icon: LinkedinLogo },
+      { label: 'GitHub', href: ROUTE.GITHUB, icon: GithubLogo },
+      { label: 'YouTube', href: ROUTE.YOUTUBE, icon: YoutubeLogo },
     ],
   },
 };
