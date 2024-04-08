@@ -1,11 +1,12 @@
 import Image from 'next/image';
 
-import Icb from '@/images/pages/about-us/customers-partners/icb.png';
-import Mousquetaires from '@/images/pages/about-us/customers-partners/mousquetaires.png';
-import Predictive from '@/images/pages/about-us/customers-partners/predictive.png';
-import Princeton from '@/images/pages/about-us/customers-partners/princeton.png';
-import Tal from '@/images/pages/about-us/customers-partners/tal.png';
 import clsx from 'clsx';
+
+import Icb from '@/svgs/pages/about-us/logos/icb.svg';
+import Mousquetaires from '@/svgs/pages/about-us/logos/mousquetaires.svg';
+import Predictive from '@/svgs/pages/about-us/logos/predirective.svg';
+import Princeton from '@/svgs/pages/about-us/logos/princeton.svg';
+import Tal from '@/svgs/pages/about-us/logos/tal.svg';
 
 const styles = {
   border: {
