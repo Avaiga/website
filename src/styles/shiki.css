@@ -1,0 +1,19 @@
+/* TODO: inplement custom shiki theme */
+@layer components {
+  :root {
+    --shiki-color-text: #18191b;
+    --shiki-color-background: transparent;
+    --shiki-foreground: #ad79d2;
+    --shiki-token-constant: #71dbd2;
+    --shiki-token-string: #078345;
+    --shiki-token-comment: #b3b3b3;
+    --shiki-token-keyword: #ededf2;
+    --shiki-token-parameter: #a35200;
+    --shiki-token-function: #078345;
+    --shiki-token-string-expression: #078345;
+    --shiki-token-punctuation: #94949e;
+    --shiki-token-link: #078345;
+    --shiki-token-operator: #a86624;
+    --shiki-token-embed: #18191b;
+  }
+}

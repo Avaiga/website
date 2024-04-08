@@ -72,6 +72,28 @@ export const commonPostFieldsFragment = gql`
   }
 `;
 
+export const commonPostFieldsWithRelatedFragment = gql`
+  ${commonPostFieldsFragment}
+
+  fragment commonPostFieldsWithRelated on Post {
+    ...commonPostFields
+    lead
+    contentRaw
+    related {
+      ...commonPostFields
+    }
+    seo {
+      metaTitle
+      metaDescription
+      socialImage {
+        asset {
+          _id
+        }
+      }
+    }
+  }
+`;
+
 export const allPostQuery = gql`
   ${commonPostFieldsFragment}
 
@@ -101,22 +123,11 @@ export const countPostQuery = gql`
 `;
 
 export const postQuery = gql`
-  ${commonPostFieldsFragment}
+  ${commonPostFieldsWithRelatedFragment}
 
   query Post($slug: String!) {
     allPost(where: { slug: { current: { eq: $slug } } }) {
-      ...commonPostFields
-      lead
-      contentRaw
-      seo {
-        metaTitle
-        metaDescription
-        socialImage {
-          asset {
-            _id
-          }
-        }
-      }
+      ...commonPostFieldsWithRelated
     }
   }
 `;

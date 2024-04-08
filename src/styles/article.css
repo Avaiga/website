@@ -1,0 +1,40 @@
+@layer components {
+  .prose {
+    @apply text-18 leading-relaxed text-grey-80;
+    @apply prose-p:mt-3.5;
+
+    @apply prose-ol:mt-8 prose-ul:mt-8 prose-ul:list-none prose-ul:pl-0;
+    @apply prose-a:cursor-pointer prose-a:text-secondary-blue prose-a:no-underline;
+    @apply prose-strong:text-grey-80;
+
+    @apply prose-h2:scroll-mt-12 prose-h2:text-28 prose-h2:font-semibold prose-h2:leading-tight prose-h2:tracking-tight prose-h2:text-white;
+
+    @apply prose-h3:scroll-mt-8 prose-h3:text-20 prose-h3:font-semibold prose-h3:leading-tight prose-h3:tracking-tight prose-h3:text-white;
+
+    ul > li {
+      @apply relative mb-3.5 pl-7;
+      @apply before:absolute before:left-[7px] before:top-[11px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red;
+    }
+
+    ol {
+      li::marker {
+        @apply text-grey-80;
+      }
+    }
+
+    p > code {
+      @apply inline-block rounded border border-grey-30 bg-grey-15 px-2 py-0.5 font-mono text-15 font-light leading-snug tracking-tight text-grey-94 before:hidden after:hidden;
+    }
+
+    h2,
+    h3 {
+      a {
+        @apply invisible relative top-0.5 ml-3 inline-flex h-full items-center opacity-0 transition-opacity duration-200 ease-in-out;
+      }
+
+      &:hover a {
+        @apply visible opacity-100;
+      }
+    }
+  }
+}

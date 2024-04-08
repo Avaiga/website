@@ -12,6 +12,7 @@ import CopyIcon from '@/svgs/icons/copy.inline.svg';
 const INPUT_VALUE = '$ pip install taipy';
 
 function CTA() {
+  // TODO: use useCopyToClipboard hook
   const [isCopied, setIsCopied] = useState(false);
 
   function copyHandle() {
