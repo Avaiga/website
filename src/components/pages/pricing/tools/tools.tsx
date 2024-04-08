@@ -34,11 +34,6 @@ export type Tool = {
 
 const toolBlocks: Tool[] = [
   {
-    logo: supportIcon,
-    title: 'Customer Support',
-    description: 'Personalized assistance and ticketing system.',
-  },
-  {
     logo: paintIcon,
     title: 'Taipy Designer',
     description: 'Simple drag-n-drop constructor.',
@@ -47,8 +42,13 @@ const toolBlocks: Tool[] = [
       alt: 'Taipy playground',
       width: 408,
       height: 210,
-      className: 'absolute right-3.5 top-0 shrink-0',
+      className: 'absolute right-2.5 top-0 shrink-0',
     },
+  },
+  {
+    logo: supportIcon,
+    title: 'Customer Support',
+    description: 'Personalized assistance and ticketing system.',
   },
   {
     logo: passwordIcon,
@@ -87,17 +87,17 @@ const toolBlocks: Tool[] = [
 
 function Tools() {
   return (
-    <section className="tools mb-[169px] mt-[165px]">
-      <div className="container flex max-w-[1092px] flex-col items-center">
+    <section className="tools mt-[168px]">
+      <div className="container flex max-w-[1088px] flex-col items-center">
         <span className="text-16 leading-snug text-primary-red">Features</span>
-        <h2 className="mt-3.5 text-56 font-semibold leading-[1.125] tracking-tight">
+        <h2 className="mt-3.5 text-56 font-semibold leading-dense tracking-tight">
           Advanced tools for enterprise
         </h2>
         <p className="mt-[18px] max-w-[640px] text-center text-18 font-light leading-snug text-grey-70">
           Experience the difference with Taipy&apos;s unique tools, designed to support developers
           in building projects.
         </p>
-        <ul className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px]">
+        <ul className="relative mt-11 grid grid-cols-3 gap-x-8 gap-y-[30px]">
           {toolBlocks.map(({ title, description, logo, image }, index) => {
             const gradientState = {
               [toolBlocks.length - 1]: gradient.left,
@@ -117,8 +117,8 @@ function Tools() {
             );
           })}
         </ul>
-        <Button size="lg" theme="outline" className="mt-11 flex items-center gap-x-2.5">
-          <span>See comparison table</span>
+        <Button size="lg" theme="outline" className="mt-10 flex items-center gap-x-2.5">
+          <span className="font-medium">See comparison table</span>
           <ArrowIcon className="h-3 w-3" />
         </Button>
       </div>
