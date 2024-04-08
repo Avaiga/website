@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-import PlayIcon from '@/svgs/pages/about-us/play.svg';
+import PlayIcon from '@/svgs/pages/about-us/play.inline.svg';
 
 export default function HistoryVideo() {
   return (
@@ -10,7 +8,7 @@ export default function HistoryVideo() {
         type="button"
       >
         Watch the video
-        <Image src={PlayIcon} width={7} height={8} quality={70} alt=".Play Icon" />
+        <PlayIcon className="h-[6px] w-[7px]" />
       </button>
     </div>
   );
