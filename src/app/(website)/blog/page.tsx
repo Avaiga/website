@@ -70,10 +70,10 @@ function Blog() {
         </div>
       </div>
       <Subscribe
+        className="my-36 lg:my-32 md:mb-[76px] md:mt-[101px] sm:my-[68px]"
         tagline="Newsletter"
         title="Stay ahead with our newsletter"
         text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
-        className="my-36 lg:my-32 md:mb-[76px] md:mt-[101px] sm:my-[68px]"
       />
     </section>
   );

@@ -11,6 +11,8 @@ module.exports = {
     },
     fontFamily: {
       sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+      mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
+      code: ['var(--font-code)', ...defaultTheme.fontFamily.mono],
     },
     fontSize: {
       10: '10px',
@@ -111,5 +113,6 @@ module.exports = {
   plugins: [
     // eslint-disable-next-line import/no-extraneous-dependencies
     require('tailwindcss-safe-area'),
+    require('@tailwindcss/typography'),
   ],
 };
