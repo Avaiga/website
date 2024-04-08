@@ -22,12 +22,11 @@ function Plans() {
       <div className="container flex max-w-[896px] flex-col items-center gap-y-7">
         <Heading text="Taipy License fees starting from" />
         <Toggle<PaymentPeriods>
-          className="-mr-3.5 "
           items={planVariants}
           toggleItem={currentPlan}
           setToggleItem={setCurrentPlan}
         />
-        <div className="mt-[11px] grid grid-cols-2 gap-x-8">
+        <div className="mt-[11px] grid grid-cols-2 gap-x-8 lg:mt-2 lg:gap-x-6">
           <h2 className="sr-only">Taipy pricing variants</h2>
           <PricingVariant type="community" plan={currentPlan} />
           <PricingVariant type="enterprise" plan={currentPlan} />

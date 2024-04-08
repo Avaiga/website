@@ -46,7 +46,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
         'bg-gradient-border': isCommunity,
       })}
     >
-      <div className="h-full rounded-lg bg-[linear-gradient(191.88deg,#222225_-22.23%,#19191B_34.09%,#111113_106.29%)] p-8">
+      <div className="h-full rounded-lg bg-[linear-gradient(191.88deg,#222225_-22.23%,#19191B_34.09%,#111113_106.29%)] p-8 lg:p-[23px] lg:pr-7 ">
         {isEnterprise && (
           <div className="absolute inset-0 h-full w-full bg-[linear-gradient(199.2deg,rgba(255,55,25,0.4)_-35.25%,rgba(120,37,26,0.4)_-15.75%,rgba(81,32,27,0.4)_3.6%,rgba(24,24,27,0.4)_36.09%)]" />
         )}
