@@ -16,7 +16,7 @@ const contributeListData = [
 export default function Contribute() {
   return (
     <section className="contribute pt-[176px]">
-      <div className="container-narrow text-center">
+      <div className="container-narrow max-w-[1277px] text-center">
         <span className="text-16 font-normal leading-snug text-primary-red">Contribute</span>
         <h2 className="pt-4 text-56 font-semibold leading-dense tracking-tight">
           Get started to drive your data in minutes
@@ -25,7 +25,7 @@ export default function Contribute() {
           Join Taipy&apos;s development community today! Your contributions are greatly appreciated
           and will be duly acknowledged. Don&apos;t hesitate and be part of the Taipy adventure!
         </p>
-        <ul className="mt-16 flex w-full justify-between">
+        <ul className="mt-16 flex w-full justify-between text-start">
           {contributeListData.map((item, index) => (
             <li
               className="flex h-[385px] w-full max-w-[383px] items-end bg-grey-10 p-8"
