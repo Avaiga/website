@@ -30,14 +30,14 @@ export type SingleCategory = Category & {
   seo: SEO | null;
 };
 
-export type ContentBlockqoute = {
+export type ContentBlockquote = {
   name?: string;
   role?: string;
   text: PortableTextBlock;
 };
 
 export type ContentNotice = {
-  title: string;
+  type: NoticeTypes;
   text: PortableTextBlock;
 };
 
@@ -92,11 +92,13 @@ export type Post = {
   };
   cover?: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
   author: Author;
-  categories: Category;
+  category: Category;
 };
 
 export type SinglePost = Post & {
+  lead: string;
   contentRaw: PortableTextBlock[];
+  related: Post[];
   seo: SEO | null;
 };
 
@@ -111,3 +113,10 @@ export type SEO = {
     };
   } | null;
 };
+
+export enum NoticeTypes {
+  INFO = 'info',
+  NOTE = 'note',
+  WARNING = 'warning',
+  ATTENTION = 'attention',
+}

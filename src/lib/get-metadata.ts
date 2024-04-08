@@ -9,7 +9,7 @@ type GetMetadataProps = {
   type?: OpenGraphType;
 };
 
-const DEFAULT_IMAGE_PATH = '/images/og-image.png';
+export const DEFAULT_IMAGE_PATH = '/images/og-image.png';
 
 export function getMetadata({
   title,
