@@ -93,6 +93,7 @@ export type Post = {
   cover?: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
   author: Author;
   category: Category;
+  lead: string;
 };
 
 export type SinglePost = Post & {

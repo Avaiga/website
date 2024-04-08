@@ -8,13 +8,15 @@ import AuthorAndShare from '@/components/pages/article/author-and-share';
 import Content from '@/components/pages/article/content';
 import Hero from '@/components/pages/article/hero';
 import Navigation from '@/components/pages/article/navigation';
+import Link from '@/components/shared/link';
+import PostItem from '@/components/shared/post-item';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { getPublishDate } from '@/lib/get-publish-date';
 import { PortableToPlain } from '@/lib/portable-to-plain';
-import { getPostBySlug } from '@/lib/sanity/client';
+import { getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 
 export default async function Post({ params }: { params: { slug: string } }) {
@@ -26,8 +28,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  const { title, lead, cover, publishedAt, contentRaw, slug, category } = post;
+  const { title, lead, cover, publishedAt, contentRaw, slug, category, related } = post;
   let { author } = post;
+
+  let relatedPosts = related;
+
+  if (!relatedPosts) {
+    relatedPosts = await getRelatedPosts({ postId: post._id });
+  }
 
   if (isDraftMode && !author) {
     author = {
@@ -82,6 +90,21 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </article>
+      <section className="related mt-[120px]">
+        <div className="container-narrow">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="text-32 font-semibold leading-none tracking-tight">Related Posts</h2>
+            <Link href={ROUTE.BLOG} size="md" theme="white" arrowTheme="red">
+              All posts
+            </Link>
+          </div>
+          <ul className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:grid-cols-2 sm:grid-cols-1 sm:gap-y-8">
+            {relatedPosts.map((relatedPost) => (
+              <PostItem key={relatedPost._id} post={relatedPost} />
+            ))}
+          </ul>
+        </div>
+      </section>
       <Subscribe
         className="my-36"
         tagline="Newsletter"

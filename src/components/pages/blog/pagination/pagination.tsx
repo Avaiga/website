@@ -1,45 +1,62 @@
-import Link from 'next/link';
+'use client';
 
-import clsx from 'clsx';
+import { useRouter } from 'next/navigation';
 
-import LeftArrow from '@/svgs/pages/blog/arrow-left.inline.svg';
-import RightArrow from '@/svgs/pages/blog/arrow-right.inline.svg';
+import ReactPaginate from 'react-paginate';
 
-export default function Pagination() {
-  const pageNumbers = [1, 2, '...', 6, 7];
+import Arrow from '@/svgs/icons/arrow.inline.svg';
+
+export default function Pagination({
+  currentPage,
+  pageCount,
+  path,
+}: {
+  currentPage: number;
+  pageCount: number;
+  path: string;
+}) {
+  const router = useRouter();
+
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    const page = selected + 1;
+    const navigateTo = path + (page === 1 ? '' : `/page/${page}`);
+    router.push(navigateTo);
+  };
 
   return (
     <nav className="text-15 text-white" aria-label="pagination">
-      <ul className="flex list-none items-center justify-center gap-x-4 sm:gap-x-3">
-        <li className="mr-auto w-20 sm:w-fit">
-          <Link className="flex items-center" href="#">
-            <LeftArrow className="mr-1 h-[13px] w-[13px] fill-current" />
+      <ReactPaginate
+        breakLabel="..."
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={2}
+        pageCount={pageCount}
+        forcePage={currentPage - 1}
+        containerClassName="flex list-none items-center justify-center gap-x-4 sm:gap-x-3"
+        pageLinkClassName="flex h-9 w-9 items-center justify-center rounded-full font-medium leading-none bg-grey-15"
+        breakLinkClassName="flex h-9 w-9 items-center justify-center rounded-full font-medium leading-none bg-grey-15"
+        activeLinkClassName="flex h-9 w-9 items-center justify-center rounded-full font-medium leading-none bg-primary-red"
+        previousClassName="mr-auto w-20 sm:w-fit"
+        nextClassName="ml-auto flex w-20 justify-end sm:w-fit"
+        previousLinkClassName="flex items-center *:fill-orange-1"
+        nextLinkClassName="flex items-center *:fill-orange-1"
+        disabledLinkClassName="pointer-events-none !text-grey-60 *:!fill-grey-60"
+        previousLabel={
+          <>
+            {/* TODO: Use common arrow -> */}
+            <Arrow className="mr-1 h-[13px] w-[13px]" />
             <span className="sm:hidden">Previous</span>
-          </Link>
-        </li>
-        {pageNumbers.map((number, index) => (
-          <li className="flex" key={index}>
-            <Link
-              className={clsx(
-                'flex h-9 w-9 items-center justify-center rounded-full font-medium leading-none',
-                {
-                  'bg-primary-red': number === 1,
-                  'bg-grey-15': number !== 1,
-                },
-              )}
-              href="#"
-            >
-              {number}
-            </Link>
-          </li>
-        ))}
-        <li className="ml-auto flex w-20 justify-end sm:w-fit">
-          <Link className="flex items-center" href="#">
+          </>
+        }
+        nextLabel={
+          <>
             <span className="sm:hidden">Next</span>
-            <RightArrow className="ml-1 h-[13px] w-[13px] fill-current" />
-          </Link>
-        </li>
-      </ul>
+            {/* TODO: Use common arrow -> */}
+            <Arrow className="ml-1 h-[13px] w-[13px] rotate-180" />
+          </>
+        }
+        renderOnZeroPageCount={null}
+        onPageChange={handlePageClick}
+      />
     </nav>
   );
 }
