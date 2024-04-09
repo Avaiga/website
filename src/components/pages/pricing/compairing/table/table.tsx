@@ -60,6 +60,7 @@ export default function Table() {
                     className={clsx(
                       'relative flex h-[44px] items-center justify-start border-b border-grey-20 py-3 transition-colors sm:h-[42px]',
                       rowClass[item.rows],
+                      value['isRowTitle'] && 'sm:hidden',
                       index === 0 && 'border-t border-grey-20',
                       currentRow === index.toString() && 'bg-[#9e9e9e1d]',
                     )}
@@ -83,6 +84,7 @@ export default function Table() {
                     'relative flex h-[44px] items-center justify-center border-b border-grey-20 text-center transition-colors sm:h-[42px]',
                     index === 0 && 'border-t border-grey-20',
                     rowClass[item.rows],
+                    value['isRowTitle'] && 'sm:hidden',
                     currentRow === index.toString() && 'bg-[#9e9e9e1d]',
                   )}
                   data-row-id={index}

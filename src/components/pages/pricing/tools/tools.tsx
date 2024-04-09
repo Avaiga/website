@@ -4,9 +4,6 @@ import type { ImageProps } from 'next/image';
 
 import playgroundImage from '@/images/pages/pricing/tools/playground.png';
 
-import Button from '@/components/shared/button';
-
-import ArrowIcon from '@/svgs/icons/arrow.inline.svg';
 import paintIcon from '@/svgs/pages/pricing/tools/paint.svg';
 import passwordIcon from '@/svgs/pages/pricing/tools/password.svg';
 import roadmapIcon from '@/svgs/pages/pricing/tools/roadmap.svg';
@@ -117,14 +114,6 @@ function Tools() {
             );
           })}
         </ul>
-        <Button
-          size="lg"
-          theme="outline"
-          className="mt-10 flex items-center gap-x-2.5 lg:mt-9 md:mt-8"
-        >
-          <span className="font-medium">See comparison table</span>
-          <ArrowIcon className="h-3 w-3" />
-        </Button>
       </div>
     </section>
   );

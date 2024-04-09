@@ -14,22 +14,30 @@ const items = [
   },
   {
     question: 'Do you require a special license for Testing, Stagings and Backups?',
-    answer: '',
-    hasListOptions: false,
+    answer: `Pricing is based on users and not features.There are two types of users: `,
+    hasListOptions: true,
+    options: [
+      `Development Users - Creators, builders, developers that are responsible for creating the application.`,
+      `Deployment Users – Business Users, users that are responsible for interacting with the application.`,
+    ],
   },
   {
     question: 'Does integration cost extra?',
-    answer: '',
-    hasListOptions: false,
+    answer: `Pricing is based on users and not features.There are two types of users: `,
+    hasListOptions: true,
+    options: [
+      `Development Users - Creators, builders, developers that are responsible for creating the application.`,
+      `Deployment Users – Business Users, users that are responsible for interacting with the application.`,
+    ],
   },
   {
     question: 'Is the price dependent on the Cloud provider?',
-    answer: '',
+    answer: 'Pricing is based on users and not features.There are two types of users: ',
     hasListOptions: false,
   },
   {
     question: 'Is support included?',
-    answer: '',
+    answer: 'Pricing is based on users and not features.There are two types of users: ',
     hasListOptions: false,
   },
 ];

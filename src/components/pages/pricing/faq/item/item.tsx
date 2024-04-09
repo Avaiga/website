@@ -1,3 +1,7 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
 import clsx from 'clsx';
 
 import ArrowIcon from '@/svgs/pages/pricing/faq/arrow-right-rounded.inline.svg';
@@ -10,13 +14,30 @@ interface ItemProps {
   isOpen: boolean;
 }
 
-function Item({ question, answer, hasListOptions, options = [], isOpen }: ItemProps) {
+function Item({ question, answer, hasListOptions, options = [], isOpen: initialOpen }: ItemProps) {
+  const [isOpen, setIsOpen] = useState(initialOpen);
+  const answerEl = useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = useState(initialOpen ? 'none' : '0px');
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    if (isOpen && answerEl.current) {
+      setContentHeight(`${answerEl.current.scrollHeight}px`);
+    } else {
+      setContentHeight('0px');
+    }
+  }, [isOpen, answerEl.current]);
+
   return (
     <li className="border-b border-grey-20 py-3.5 leading-snug">
       <div className="flex w-full items-start gap-4 text-left">
         <button
           className="relative flex w-full items-start gap-3 text-left after:absolute after:-inset-y-3.5 after:left-0 after:w-full sm:gap-[9px]"
           type="button"
+          onClick={toggleOpen}
         >
           <ArrowIcon
             className={clsx(
@@ -30,24 +51,29 @@ function Item({ question, answer, hasListOptions, options = [], isOpen }: ItemPr
           <h3 className="text-18 font-medium md:text-16">{question}</h3>
         </button>
       </div>
-
-      {isOpen && (
-        <div className="flex flex-col gap-0.5 py-2.5 pl-9 pr-6 text-16 text-grey-80 lg:pr-0.5 md:pb-[7px] md:pt-2.5 md:text-14 sm:gap-px sm:pb-1">
-          <p>{answer}</p>
-          {hasListOptions && (
-            <ul className="flex list-none flex-col gap-0.5 pl-0">
-              {options.map((optionText, index) => (
-                <li
-                  key={index}
-                  className="relative flex items-center pl-4 text-16 before:absolute before:left-[3px] before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red lg:pl-[13px] md:pl-4 md:text-14"
-                >
-                  {optionText}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
+      <div
+        ref={answerEl}
+        style={{ maxHeight: contentHeight }}
+        className="transition-max-height overflow-hidden duration-500"
+      >
+        {isOpen && (
+          <div className="flex flex-col gap-0.5 py-2.5 pl-9 pr-6 text-16 text-grey-80 lg:pr-0.5 md:pb-[7px] md:pt-2.5 md:text-14 sm:gap-px sm:pb-1">
+            <p>{answer}</p>
+            {hasListOptions && (
+              <ul className="flex list-none flex-col gap-0.5 pl-0">
+                {options.map((optionText, index) => (
+                  <li
+                    key={index}
+                    className="relative flex items-center pl-4 text-16 before:absolute before:left-[3px] before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red lg:pl-[13px] md:pl-4 md:text-14"
+                  >
+                    {optionText}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+      </div>
     </li>
   );
 }
