@@ -12,14 +12,14 @@ function ToolBlock({ logo, title, description, image, gradient, className }: Too
   return (
     <li
       className={clsx('overflow-hidden rounded-lg p-px', className, {
-        'col-span-2': image,
+        'col-span-2 sm:col-span-full sm:min-h-[287px]': image,
         'bg-gradient-grey-border': !gradient || gradient === 'right',
         'bg-gradient-left-bottom-orage-border': gradient === 'left',
         'bg-gradient-center-bottom-orange-border': gradient === 'center',
       })}
     >
       <div
-        className={clsx('relative flex h-full rounded-lg bg-grey-10 p-8', {
+        className={clsx('relative flex h-full rounded-lg bg-grey-10 p-8 lg:p-[23px] sm:flex-col', {
           'bg-gradient-left-bottom-orange': gradient === 'left',
           'bg-gradient-center-bottom-orange': gradient === 'center',
           'bg-gradient-right-bottom-orange': gradient === 'right',
@@ -27,12 +27,12 @@ function ToolBlock({ logo, title, description, image, gradient, className }: Too
       >
         <div
           className={clsx({
-            'w-1/3': image,
+            'w-1/3 sm:flex sm:w-full sm:flex-col': image,
           })}
         >
-          <Image src={logo} alt="" width={40} height={40} />
-          <h3 className="mt-6 text-20 font-semibold leading-snug">{title}</h3>
-          <p className="mt-2 text-16 leading-snug text-grey-70">{description}</p>
+          <Image src={logo} alt="" width={40} height={40} className="lg:h-9 lg:w-9 sm:h-8 sm:w-8" />
+          <h3 className="mt-6 text-20 font-semibold leading-snug lg:text-16 sm:mt-5">{title}</h3>
+          <p className="mt-2 text-16 leading-snug text-grey-70 lg:text-14">{description}</p>
         </div>
         {image && (
           <div className="w-2/3">

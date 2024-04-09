@@ -16,6 +16,7 @@ import supportIcon from '@/svgs/pages/pricing/tools/support.svg';
 import surveyIcon from '@/svgs/pages/pricing/tools/survey.svg';
 import userFocusIcon from '@/svgs/pages/pricing/tools/user-focus.svg';
 
+import Heading from '../heading';
 import ToolBlock from './tool-block';
 
 const gradient = {
@@ -42,7 +43,8 @@ const toolBlocks: Tool[] = [
       alt: 'Taipy playground',
       width: 408,
       height: 210,
-      className: 'absolute right-2.5 top-0 shrink-0',
+      className:
+        'absolute right-2.5 top-0 lg:top-[-2px] shrink-0 lg:max-w-[380px] sm:max-w-[307px] sm:bottom-[-5px] sm:r-2 sm:top-auto',
     },
   },
   {
@@ -87,17 +89,15 @@ const toolBlocks: Tool[] = [
 
 function Tools() {
   return (
-    <section className="tools mt-[168px]">
+    <section className="tools mt-[168px] lg:mt-[128px] md:mt-[98px] sm:mt-[78px]">
       <div className="container flex max-w-[1088px] flex-col items-center">
-        <span className="text-16 leading-snug text-primary-red">Features</span>
-        <h2 className="mt-3.5 text-56 font-semibold leading-dense tracking-tight">
-          Advanced tools for enterprise
-        </h2>
-        <p className="mt-[18px] max-w-[640px] text-center text-18 font-light leading-snug text-grey-70">
+        <span className="text-16 leading-normal text-primary-red md:text-14">Features</span>
+        <Heading className="mt-4 sm:mt-3" text="Advanced tools for enterprise" />
+        <p className="mt-[18px] max-w-[640px] text-center text-18 font-light leading-normal text-grey-70 lg:max-w-[586px] lg:text-16 md:max-w-[495px] md:text-14 sm:mt-3.5 sm:max-w-[293px]">
           Experience the difference with Taipy&apos;s unique tools, designed to support developers
           in building projects.
         </p>
-        <ul className="relative mt-11 grid grid-cols-3 gap-x-8 gap-y-[30px]">
+        <ul className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px] lg:gap-x-6 lg:gap-y-6 md:mt-8 md:max-w-[640px] md:grid-cols-2 sm:mt-6 sm:grid-cols-1 sm:gap-y-5">
           {toolBlocks.map(({ title, description, logo, image }, index) => {
             const gradientState = {
               [toolBlocks.length - 1]: gradient.left,
@@ -117,7 +117,11 @@ function Tools() {
             );
           })}
         </ul>
-        <Button size="lg" theme="outline" className="mt-10 flex items-center gap-x-2.5">
+        <Button
+          size="lg"
+          theme="outline"
+          className="mt-10 flex items-center gap-x-2.5 lg:mt-9 md:mt-8"
+        >
           <span className="font-medium">See comparison table</span>
           <ArrowIcon className="h-3 w-3" />
         </Button>

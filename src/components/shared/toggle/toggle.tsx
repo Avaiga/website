@@ -31,7 +31,7 @@ function Toggle<T extends string>({ items, toggleItem, setToggleItem, className 
           key={`${title}-${index}`}
           onClick={handleClick(title)}
         >
-          <span className="text-16 leading-snug">{title}</span>
+          <span className="text-16 leading-snug sm:text-14">{title}</span>
         </Button>
       ))}
     </div>
