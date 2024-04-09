@@ -29,7 +29,7 @@ const teamListData = [
 
   {
     photo: TeamMember,
-    name: 'Esther Monahan 🇺🇸🇺',
+    name: 'Esther Monahan 🇺🇸',
     position: 'Chief Architect',
     alt: '.Esther Monahan',
     flagAlt: '.United States flag',
