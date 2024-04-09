@@ -41,13 +41,13 @@ function Optimize() {
                 controls={false}
                 width={544}
                 height={702}
-                ref={otherRef}
+                ref={taipyRef}
                 loop
                 playsInline
                 muted
               >
-                <source src="/videos/pages/home/optimize/optimize-other.mp4" type="video/mp4" />
-                <source src="/videos/pages/home/optimize/optimize-other.webm" type="video/webm" />
+                <source src="/videos/pages/home/optimize/optimize-taipy.mp4" type="video/mp4" />
+                <source src="/videos/pages/home/optimize/optimize-taipy.webm" type="video/webm" />
               </video>
             </div>
             <div className="-m-px rounded-lg bg-gradient-border p-px shadow-[0px_20px_60px_0px_#00000080]">
@@ -57,13 +57,13 @@ function Optimize() {
                   controls={false}
                   width={544}
                   height={702}
-                  ref={taipyRef}
+                  ref={otherRef}
                   loop
                   playsInline
                   muted
                 >
-                  <source src="/videos/pages/home/optimize/optimize-taipy.mp4" type="video/mp4" />
-                  <source src="/videos/pages/home/optimize/optimize-taipy.webm" type="video/webm" />
+                  <source src="/videos/pages/home/optimize/optimize-other.mp4" type="video/mp4" />
+                  <source src="/videos/pages/home/optimize/optimize-other.webm" type="video/webm" />
                 </video>
               </div>
             </div>

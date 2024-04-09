@@ -67,7 +67,7 @@ function LargeData() {
             <div className="aspect-[2.559] w-[860px] shrink-0 rounded-lg bg-gradient-border p-px lg:max-w-[672px] md:max-w-md sm:order-2 sm:max-w-full">
               <div className="-m-px rounded-lg bg-gradient-grey" ref={ref}>
                 <video
-                  className="rounded-lg mix-blend-lighten"
+                  className="rounded-lg mix-blend-plus-lighter"
                   controls={false}
                   width={860}
                   height={336}
