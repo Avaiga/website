@@ -1,3 +1,5 @@
+import Button from '@/components/shared/button';
+
 const contributeListData = [
   {
     heading: 'Fix bugs',
@@ -21,7 +23,7 @@ export default function Contribute() {
         <h2 className="pt-4 text-56 font-semibold leading-dense tracking-tight">
           Get started to drive your data in minutes
         </h2>
-        <p className="mx-auto w-full max-w-[768px] pt-4 text-18 font-light leading-normal text-grey-70">
+        <p className="mx-auto w-full max-w-[768px] pt-4 text-18 font-light leading-snug text-grey-70">
           Join Taipy&apos;s development community today! Your contributions are greatly appreciated
           and will be duly acknowledged. Don&apos;t hesitate and be part of the Taipy adventure!
         </p>
@@ -33,17 +35,18 @@ export default function Contribute() {
             >
               <div className="">
                 <b className="text-20 font-semibold leading-snug">{item.heading}</b>
-                <p className="pt-4 text-18 font-normal leading-normal text-grey-70">{item.text}</p>
+                <p className="pt-2 text-18 font-normal leading-normal text-grey-70">{item.text}</p>
               </div>
             </li>
           ))}
         </ul>
-        <button
-          className="mx-auto mt-14 w-full max-w-[180px] rounded-[30px] bg-primary-red py-3 text-16 font-medium leading-snug"
-          type="button"
+        <Button
+          className="mt-[55px] w-full max-w-[180px] md:max-w-40 sm:mt-5"
+          size="lg"
+          theme="white-filled"
         >
           Learn more
-        </button>
+        </Button>
       </div>
     </section>
   );
