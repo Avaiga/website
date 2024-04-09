@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   poweredByHeader: false,
+  images: {
+    formats: ['image/webp'],
+    remotePatterns: [{ hostname: 'cdn.sanity.io' }],
+  },
   webpack: (config) => {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
 

@@ -3,14 +3,15 @@
 import clsx from 'clsx';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
 
+import { ClassName } from '@/types/classname';
+
 const ANIMATION_DURATION = 0.2;
 
 function Burger({
   className,
   isToggled,
   onClick,
-}: {
-  className?: string;
+}: ClassName & {
   isToggled: boolean;
   onClick: () => void;
 }) {
