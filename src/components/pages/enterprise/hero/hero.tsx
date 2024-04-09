@@ -44,16 +44,20 @@ export default function Hero() {
             </li>
           </ul>
           <div className="w-full max-w-[208px] text-start">
-            <b className="text-12 font-medium leading-normal tracking-[-0.24px]">Widgets</b>
-            <label className="relative">
-              <input
-                className="w-full rounded-md bg-input-grey py-1 pl-6"
-                type="text"
-                placeholder="Search widgets"
-              />
-              <MagnifierIcon className="absolute h-2 w-2" alt="Magnifier" />
-            </label>
+            <div className="flex flex-col gap-3">
+              <b className="text-12 font-medium leading-normal tracking-[-0.24px]">Widgets</b>
+              <label className="relative h-[24px]">
+                <input
+                  className="placeholder-gray-grey-60 h-[24px] w-full rounded-md bg-input-grey py-1 pl-6 text-10 font-normal leading-6 tracking-[-0.1px]"
+                  type="text"
+                  placeholder="Search widgets"
+                  disabled
+                />
+                <MagnifierIcon className="absolute left-2 top-[10px] h-2 w-2" alt="Magnifier" />
+              </label>
+            </div>
           </div>
+          <div className="w-full max-w-[275px]" />
         </div>
       </div>
     </section>
