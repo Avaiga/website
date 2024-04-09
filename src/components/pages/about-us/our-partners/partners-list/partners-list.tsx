@@ -10,9 +10,9 @@ import Tal from '@/svgs/logos/tal-group.inline.svg';
 
 const styles = {
   border: {
-    right: 'border-r-[1px]',
-    bottom: 'border-b-[1px]',
-    left: 'border-l-[1px]',
+    right: 'border-r',
+    bottom: 'border-b',
+    left: 'border-l',
   },
 };
 
