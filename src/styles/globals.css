@@ -1,6 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import './article.css';
+@import './no-scrollbars.css';
 
 @layer base {
   body {

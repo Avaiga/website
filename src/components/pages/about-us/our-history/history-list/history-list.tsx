@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-import PythonIcon from '/src/svgs/pages/about-us/python.svg';
+import PythonIcon from '@/svgs/pages/home/benefits/python.inline.svg';
 
 type historyListProps = {
   heading: string;
@@ -27,8 +25,8 @@ export default function HistoryList() {
     <ul className="flex flex-col gap-6 pt-10">
       {historyListData.map((item, index) => (
         <li key={index}>
-          <div className="flex gap-3">
-            <Image src={PythonIcon} width={24} height={24} quality={70} alt=".Python Icon" />
+          <div className="flex items-center gap-3">
+            <PythonIcon className="h-[24px] w-[24px]" />
             <h3 className="text-24 font-medium leading-normal">{item.heading}</h3>
           </div>
           <p className="pt-2 font-light leading-normal text-grey-70">{item.text}</p>

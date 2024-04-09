@@ -1,4 +1,4 @@
-export const BLOG_POST_PER_PAGE = 18;
+export const BLOG_POST_PER_PAGE = 15;
 
 type DataWithSlug = { slug: { current: string } };
 
