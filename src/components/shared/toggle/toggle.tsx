@@ -2,10 +2,10 @@
 
 import clsx from 'clsx';
 
+import Button from '@/components/shared/button';
+
 import type { ClassName } from '@/types/classname';
 import type { Setter, ToggleItems } from '@/types/shared';
-
-import Button from '../button';
 
 type ToggleProps<T extends string> = ClassName & {
   items: ToggleItems<T>;
@@ -19,24 +19,19 @@ function Toggle<T extends string>({ items, toggleItem, setToggleItem, className 
   };
 
   return (
-    <div className={clsx('flex rounded-full bg-grey-10 p-[3px]', className)}>
-      {items.map(({ title, specialInfo }, index) => (
+    <div className={clsx('flex h-[42px] items-center rounded-full bg-grey-10 px-1', className)}>
+      {items.map(({ title }, index) => (
         <Button
           className={clsx(
-            'flex h-9 min-w-[163px] cursor-pointer select-none flex-row items-center justify-center gap-x-1.5 rounded-full px-[18px] py-[5px] text-grey-50',
+            'flex h-9 min-w-[160px] cursor-pointer select-none items-center justify-center gap-x-1.5 rounded-full text-grey-50',
             {
-              'bg-grey-20 font-medium text-white': toggleItem === title,
+              'bg-grey-20 font-medium text-white ': toggleItem === title,
             },
           )}
           key={`${title}-${index}`}
           onClick={handleClick(title)}
         >
-          <span className="text-16 leading-dense">{title}</span>
-          {specialInfo && (
-            <span className="shrink-0 rounded-full bg-[#FF3626] px-2 py-1 text-13 font-medium leading-none tracking-snug text-white">
-              {specialInfo}
-            </span>
-          )}
+          <span className="text-16 leading-snug sm:text-14">{title}</span>
         </Button>
       ))}
     </div>
