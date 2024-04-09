@@ -2,7 +2,8 @@
 
 import clsx from 'clsx';
 
-import CheckListIcon from '../../icon';
+import CheckListIconInline from '@/svgs/pages/pricing/plans/check-list.inline.svg';
+
 import type { PaymentPeriods } from '../plans';
 
 type PricingVariantProps = {
@@ -41,14 +42,14 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
   return (
     <div
       className={clsx('relative overflow-hidden rounded-lg p-px', {
-        'pointer-events-none bg-[conic-gradient(transparent_270deg,rgba(255,70,43,0.4)_320deg,rgba(255,70,43,0.4)_360deg),conic-gradient(rgba(255,70,43,0.4)_35deg,rgba(255,102,26,1)_45deg,rgba(255,70,43,0.6)_55deg,transparent_80deg)]':
+        'bg-[conic-gradient(transparent_270deg,rgba(255,70,43,0.4)_320deg,rgba(255,70,43,0.4)_360deg),conic-gradient(rgba(255,70,43,0.4)_35deg,rgba(255,102,26,1)_45deg,rgba(255,70,43,0.6)_55deg,transparent_80deg)]':
           isEnterprise,
         'bg-gradient-border sm:order-last': isCommunity,
       })}
     >
       <div className="h-full rounded-lg bg-[linear-gradient(191.88deg,#222225_-22.23%,#19191B_34.09%,#111113_106.29%)] p-8 lg:p-[23px] lg:pr-7 sm:p-[22px]">
         {isEnterprise && (
-          <div className="absolute inset-0 h-full w-full bg-[linear-gradient(199.2deg,rgba(255,55,25,0.4)_-35.25%,rgba(120,37,26,0.4)_-15.75%,rgba(81,32,27,0.4)_3.6%,rgba(24,24,27,0.4)_36.09%)]" />
+          <div className="pointer-events-none absolute inset-0 h-full w-full bg-[linear-gradient(199.2deg,rgba(255,55,25,0.4)_-35.25%,rgba(120,37,26,0.4)_-15.75%,rgba(81,32,27,0.4)_3.6%,rgba(24,24,27,0.4)_36.09%)]" />
         )}
 
         <div className="mx-auto">
@@ -70,11 +71,13 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
                 className="flex items-start gap-x-2 text-16 font-light leading-normal text-grey-70 md:text-14"
                 key={index}
               >
-                <CheckListIcon
-                  color={isCommunity ? '#afafb6' : '#ff371a'}
-                  width={16}
-                  height={16}
-                  className={'relative left-[1px] top-1.5 shrink-0 sm:top-0.5'}
+                <CheckListIconInline
+                  className={clsx(
+                    'relative left-[1px] top-1.5 h-4 w-4 shrink-0 fill-grey-50 sm:top-0.5',
+                    {
+                      'fill-primary-red': isEnterprise,
+                    },
+                  )}
                 />
                 {item}
               </li>

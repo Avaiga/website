@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import ArrowIcon from '@/svgs/icons/arrow-right-rounded.inline.svg';
+import ArrowIcon from '@/svgs/pages/pricing/faq/arrow-right-rounded.inline.svg';
 
 interface ItemProps {
   question: string;
@@ -39,7 +39,7 @@ function Item({ question, answer, hasListOptions, options = [], isOpen }: ItemPr
               {options.map((optionText, index) => (
                 <li
                   key={index}
-                  className="relative flex items-center pl-4 text-16 before:absolute before:left-[3px] before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red before:content-[''] lg:pl-[13px] md:pl-4 md:text-14"
+                  className="relative flex items-center pl-4 text-16 before:absolute before:left-[3px] before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red lg:pl-[13px] md:pl-4 md:text-14"
                 >
                   {optionText}
                 </li>

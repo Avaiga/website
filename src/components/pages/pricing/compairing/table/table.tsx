@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
+import { PLANS } from '@/constants/plans';
 import clsx from 'clsx';
 
 import checkIcon from '@/svgs/icons/done.svg';
 import minusIcon from '@/svgs/icons/minus.svg';
-
-import tableData from '../data/plans.json';
 
 const rowClass: { [key: string]: string } = {
   '1': 'h-[44px] sm:h-[42px]',
@@ -16,7 +15,7 @@ const rowClass: { [key: string]: string } = {
 };
 
 export default function Table() {
-  const labelList: { [key: string]: string } = tableData.labels;
+  const labelList: { [key: string]: string } = PLANS.labels;
   const [currentRow, setCurrentRow] = useState('');
 
   useEffect(() => {
@@ -53,7 +52,7 @@ export default function Table() {
         >
           <span className="text-16 font-medium leading-snug sm:text-14">{labelList[key]}</span>
           <ul className="mt-[25px] flex w-full grow flex-col font-light text-grey-70 ">
-            {tableData.cols.map((item, index) => {
+            {PLANS.cols.map((item, index) => {
               const value: { [key: string]: string | boolean } = item;
               if (parentIndex === 0) {
                 return (
