@@ -10,10 +10,9 @@ import Tal from '@/svgs/logos/tal-group.inline.svg';
 
 const styles = {
   border: {
-    top: 'border-grey-15 border-t-[1px]',
-    right: 'border-grey-15 border-r-[1px]',
-    bottom: 'border-grey-15 border-b-[1px]',
-    left: 'border-grey-15 border-l-[1px]',
+    right: 'border-r-[1px]',
+    bottom: 'border-b-[1px]',
+    left: 'border-l-[1px]',
   },
 };
 
@@ -164,7 +163,7 @@ export default function PartnersList() {
       {partnersListData.map(({ logo: Logo, width, height, alt, borderSide }, index) => (
         <li
           className={clsx(
-            'relative flex h-[160px] w-full max-w-[320px] items-center justify-center',
+            'relative flex h-[160px] w-full max-w-[320px] items-center justify-center border-grey-15',
             borderSide?.map((side) => styles.border[side]),
           )}
           key={index}
