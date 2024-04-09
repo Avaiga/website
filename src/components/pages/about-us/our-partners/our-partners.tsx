@@ -3,7 +3,7 @@ import PartnersList from './partners-list';
 export default function OurPartners() {
   return (
     <section className="our-partners pt-[200px]">
-      <div className="container-narrow text-center">
+      <div className="container-narrow max-w-[1345px] text-center">
         <span className="text-16 font-normal leading-snug text-primary-red">
           Customers and partners
         </span>
