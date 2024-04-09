@@ -11,6 +11,7 @@ const items = [
       `Development Users - Creators, builders, developers that are responsible for creating the application.`,
       `Deployment Users – Business Users, users that are responsible for interacting with the application.`,
     ],
+    initialState: 'open' as const,
   },
   {
     question: 'Do you require a special license for Testing, Stagings and Backups?',
@@ -49,7 +50,7 @@ function Faq() {
         <Heading text="Frequently asked questions" />
         <ul className="mt-[30px] lg:mt-6 md:mt-[18px] sm:mt-[10px]">
           {items.map((item, index) => (
-            <Item {...item} key={index} isOpen={index === 0} />
+            <Item {...item} key={index} index={index} />
           ))}
         </ul>
       </div>
