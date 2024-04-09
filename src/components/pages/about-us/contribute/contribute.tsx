@@ -43,7 +43,7 @@ export default function Contribute() {
         <Button
           className="mt-[55px] w-full max-w-[180px] md:max-w-40 sm:mt-5"
           size="lg"
-          theme="white-filled"
+          theme="red-filled"
         >
           Learn more
         </Button>
