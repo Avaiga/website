@@ -1,4 +1,5 @@
 import type { Viewport } from 'next';
+import Script from 'next/script';
 
 import Banner from '@/components/shared/banner';
 import Footer from '@/components/shared/footer';
@@ -20,6 +21,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${ibmPlexMono.variable} ${jetBrainsMono.variable} ${inter.variable}`}
     >
+      <head>
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            strategy="afterInteractive"
+            src="https://plausible.io/js/script.tagged-events.js"
+            data-domain="taipy.io"
+          />
+        )}
+      </head>
       <body>
         <Banner />
         <div className="relative flex min-h-screen flex-col">
