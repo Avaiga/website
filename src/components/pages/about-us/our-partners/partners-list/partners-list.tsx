@@ -32,7 +32,7 @@ interface Partner {
 const partnersListData: Partner[] = [
   {
     logo: Tal,
-    alt: 'Tal group',
+    alt: 'Tal Group',
     width: 99,
     height: 55,
     borderSide: ['right', 'bottom'],
