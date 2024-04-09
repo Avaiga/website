@@ -1,6 +1,7 @@
 import Button from '@/components/shared/button';
 
 import DesignIcon from '@/svgs/pages/enterprise/hero/design-icon.inline.svg';
+import MagnifierIcon from '@/svgs/pages/enterprise/hero/magnifier.inline.svg';
 
 export default function Hero() {
   return (
@@ -26,10 +27,10 @@ export default function Hero() {
         >
           Request a demo
         </Button>
-        <div className="w-full max-w-[960px] rounded-lg bg-gradient-card px-[32px] pb-[29px] pt-[32px]">
+        <div className="flex w-full max-w-[960px] justify-between rounded-lg bg-gradient-card px-[32px] pb-[29px] pt-[32px]">
           <ul className="w-full max-w-[321px] text-start">
             <li className="">
-              <DesignIcon className="h-8 w-8" />
+              <DesignIcon className="h-8 w-8" alt="Design Icon" />
             </li>
             <li className="pt-[21px]">
               <b className="text-20 font-medium leading-dense tracking-[-0.8px]">
@@ -42,6 +43,17 @@ export default function Hero() {
               </p>
             </li>
           </ul>
+          <div className="w-full max-w-[208px] text-start">
+            <b className="text-12 font-medium leading-normal tracking-[-0.24px]">Widgets</b>
+            <label className="relative">
+              <input
+                className="w-full rounded-md bg-input-grey py-1 pl-6"
+                type="text"
+                placeholder="Search widgets"
+              />
+              <MagnifierIcon className="absolute h-2 w-2" alt="Magnifier" />
+            </label>
+          </div>
         </div>
       </div>
     </section>

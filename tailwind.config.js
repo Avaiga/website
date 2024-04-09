@@ -106,6 +106,10 @@ module.exports = {
         purple: '#b6c6fa',
       },
     }),
+    backgroundColor: (theme) => ({
+      ...theme('colors'),
+      'input-grey': 'rgba(153, 153, 153, 0.10)',
+    }),
     screens: {
       xxl: { max: '1919px' },
       xl: { max: '1439px' },
