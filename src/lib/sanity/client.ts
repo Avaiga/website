@@ -11,6 +11,7 @@ import {
   countPostQuery,
   legalQuery,
   postQuery,
+  promotedPostQuery,
 } from '@/lib/sanity/query';
 import { BLOG_POST_PER_PAGE } from '@/lib/sanity/utils';
 
@@ -33,6 +34,11 @@ export const getAllPosts = async (): Promise<Post[]> =>
 export const getPosts = async (options: { page: number }): Promise<Post[]> =>
   await graphQLClient
     .request<{ allPost: Post[] }>(allPostWithLimitationsQuery, {
+      where: {
+        featured: {
+          neq: true,
+        },
+      },
       offset: options?.page ? BLOG_POST_PER_PAGE * options.page - BLOG_POST_PER_PAGE : 0,
       limit: options?.page ? BLOG_POST_PER_PAGE : null,
     })
@@ -41,8 +47,23 @@ export const getPosts = async (options: { page: number }): Promise<Post[]> =>
 export const countPosts = async (options?: { categoryID?: string }): Promise<number> => {
   const { categoryID } = options || {};
 
+  const where = categoryID
+    ? {
+        _: {
+          references: categoryID,
+        },
+        featured: {
+          neq: true,
+        },
+      }
+    : {
+        featured: {
+          neq: true,
+        },
+      };
+
   return await graphQLClient
-    .request<{ allPost: { _id: string }[] }>(countPostQuery, { categoryID })
+    .request<{ allPost: { _id: string }[] }>(countPostQuery, { where })
     .then((data) => data.allPost.length);
 };
 
@@ -91,25 +112,10 @@ export const getPostBySlug = async (
     .then((data) => data.allPost)
     .then((data) => data[0] || null);
 
-export const getRelatedPosts = async ({
-  postId,
-  categorySlug,
-}: {
-  postId: string;
-  categorySlug: string;
-}): Promise<Post[]> => {
-  const categoryData = await getCategoryBySlug(categorySlug);
-
-  if (!categoryData) {
-    return [];
-  }
-
+export const getRelatedPosts = async ({ postId }: { postId: string }): Promise<Post[]> => {
   return await graphQLClient
     .request<{ allPost: Post[] }>(allPostWithLimitationsQuery, {
       where: {
-        _: {
-          references: categoryData._id,
-        },
         _id: {
           neq: postId,
         },
@@ -119,6 +125,12 @@ export const getRelatedPosts = async ({
     })
     .then((data) => data.allPost);
 };
+
+export const getPromotedPost = async (): Promise<Post | null> =>
+  await graphQLClient
+    .request<{ allPost: Post[] }>(promotedPostQuery)
+    .then((data) => data.allPost)
+    .then((data) => data[0] || null);
 
 export const getLegalPages = async (): Promise<Legal[]> =>
   await graphQLClient.request<{ allLegal: Legal[] }>(allLegalQuery).then((data) => data.allLegal);

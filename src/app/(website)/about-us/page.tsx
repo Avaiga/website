@@ -19,7 +19,6 @@ function AboutUs() {
         tagline="Newsletter"
         title="Subscribe to the Newsletter"
         text="Subscribe to Taipy's newsletter and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
-        isLastChild={true}
       />
     </>
   );
