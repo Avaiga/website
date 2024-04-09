@@ -13,14 +13,15 @@ import * as yup from 'yup';
 import Button from '@/components/shared/button';
 import { BUTTON_STATES } from '@/components/shared/button/button';
 
+import { ClassName } from '@/types/classname';
+
 import SendIcon from '@/svgs/icons/send.inline.svg';
 import bg from '@/svgs/pages/home/subscribe/bg.svg';
 
-interface SubscribeProps {
+interface SubscribeProps extends ClassName {
   tagline: string;
   title: string;
   text: string;
-  className?: string;
 }
 
 const validationSchema = yup.object().shape({
