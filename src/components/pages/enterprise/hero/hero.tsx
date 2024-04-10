@@ -12,7 +12,7 @@ import TextCards from './text-cards';
 export default function Hero() {
   return (
     <section className="hero pt-[113px] lg:pt-[102px]">
-      <div className="container-narrow max-w-[960px] text-center lg:max-w-[896px] ">
+      <div className="container-narrow max-w-[1024px] text-center lg:max-w-[896px] ">
         <p className="leading-snug text-primary-red">Taipy Enterprise Edition</p>
         <h1 className="mx-auto pt-5 text-48 font-semibold leading-dense tracking-tight lg:max-w-[832px] lg:text-40">
           We help organizations increase efficiency, cut costs, increase profits, and make better

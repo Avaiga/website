@@ -32,16 +32,18 @@ function DesignerItem({
   return (
     <li className="border-b border-grey-20 pb-4 pt-[15px]">
       <button
-        className="relative flex w-full items-center gap-3 text-left"
+        className="group relative flex w-full items-center gap-3 text-left"
         type="button"
         aria-expanded={isOpen}
         aria-controls={index.toString()}
         onClick={handleOpen}
       >
-        <h3 className="text-20 font-medium leading-dense tracking-tight lg:text-16">{question}</h3>
+        <h3 className="text-20 font-medium leading-dense tracking-tight group-hover:text-[#C8CAD0] lg:text-16">
+          {question}
+        </h3>
         <ArrowIcon
           className={clsx(
-            'ml-auto h-8 w-8 shrink-0 transition-[fill,transform] duration-200 lg:h-7 lg:w-7',
+            'ml-auto h-8 w-8 shrink-0 opacity-80 transition-[fill,transform] duration-200 group-hover:opacity-100 lg:h-7 lg:w-7',
             {
               'rotate-0': isOpen,
               'rotate-180': !isOpen,
