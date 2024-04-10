@@ -28,7 +28,7 @@ export async function GET() {
       url,
       date: new Date(publishedAt),
       author: author.name,
-      categories: [category.title],
+      categories: category ? [category.title] : ['All posts'],
       custom_elements: [{ 'content:encoded': contentRaw }],
     });
   });
