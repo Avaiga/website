@@ -58,7 +58,7 @@ export default function Hero() {
                 theme="red-outline"
               >
                 Watch the video
-                <PlayIcon className="h-1.5 w-[7px]" />
+                <PlayIcon className="h-1.5 w-[7px] shrink-0" />
               </Button>
             </div>
           </div>

@@ -32,7 +32,7 @@ const CARDS = [
 
 function Benefits() {
   return (
-    <section className="benefits mt-[196px] px-safe">
+    <section className="benefits mt-[223px] px-safe">
       <div className="container flex max-w-[1280px] gap-x-16 ">
         <div className="max-w-[384px] shrink-0 grow">
           <h2 className="text-48 font-medium leading-dense tracking-tight ">

@@ -50,9 +50,9 @@ const items: Feature[] = [
 
 function Designer() {
   const [currentFeature, setCurrentFeature] = useState(items[0]);
-  
-return (
-    <section className="designer mt-[188px] px-safe">
+
+  return (
+    <section className="designer mt-[185px] px-safe">
       <div className="container flex max-w-[1280px] flex-col items-center gap-x-16">
         <h2 className="text-48 font-medium leading-dense tracking-tight">
           Taipy Designer features
