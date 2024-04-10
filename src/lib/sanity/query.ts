@@ -96,11 +96,11 @@ export const commonPostFieldsWithRelatedFragment = gql`
 `;
 
 export const allPostQuery = gql`
-  ${commonPostFieldsFragment}
+  ${commonPostFieldsWithRelatedFragment}
 
   query Posts {
     allPost(sort: { publishedAt: DESC }) {
-      ...commonPostFields
+      ...commonPostFieldsWithRelated
     }
   }
 `;

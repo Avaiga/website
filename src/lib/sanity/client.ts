@@ -28,8 +28,8 @@ export const getCategoryBySlug = async (slug: string): Promise<SingleCategory | 
     .then((data) => data.allCategory)
     .then((data) => data[0] || null);
 
-export const getAllPosts = async (): Promise<Post[]> =>
-  await graphQLClient.request<{ allPost: Post[] }>(allPostQuery).then((data) => data.allPost);
+export const getAllPosts = async (): Promise<SinglePost[]> =>
+  await graphQLClient.request<{ allPost: SinglePost[] }>(allPostQuery).then((data) => data.allPost);
 
 export const getPosts = async (options: { page: number }): Promise<Post[]> =>
   await graphQLClient
