@@ -34,22 +34,7 @@ function Optimize() {
           Optimized for insights
         </h2>
         <div className="card-border mt-14 rounded-lg p-px lg:mt-12 md:mt-10 sm:mt-4" ref={ref}>
-          <div className="-m-px flex aspect-[1.549] rounded-lg bg-grey-10">
-            <div>
-              <video
-                className="rounded-lg mix-blend-lighten"
-                controls={false}
-                width={544}
-                height={702}
-                ref={otherRef}
-                loop
-                playsInline
-                muted
-              >
-                <source src="/videos/pages/home/optimize/optimize-other.mp4" type="video/mp4" />
-                <source src="/videos/pages/home/optimize/optimize-other.webm" type="video/webm" />
-              </video>
-            </div>
+          <div className="flex aspect-[1.549] rounded-lg bg-grey-10">
             <div className="-m-px rounded-lg bg-gradient-border p-px shadow-[0px_20px_60px_0px_#00000080]">
               <div className="rounded-lg bg-gradient-grey-10">
                 <video
@@ -66,6 +51,21 @@ function Optimize() {
                   <source src="/videos/pages/home/optimize/optimize-taipy.webm" type="video/webm" />
                 </video>
               </div>
+            </div>
+            <div>
+              <video
+                className="rounded-lg mix-blend-lighten"
+                controls={false}
+                width={544}
+                height={702}
+                ref={otherRef}
+                loop
+                playsInline
+                muted
+              >
+                <source src="/videos/pages/home/optimize/optimize-other.mp4" type="video/mp4" />
+                <source src="/videos/pages/home/optimize/optimize-other.webm" type="video/webm" />
+              </video>
             </div>
           </div>
         </div>

@@ -39,7 +39,7 @@ function MobileMenu({ isOpen, onClick }: { isOpen: boolean; onClick: () => void 
             variants={menuVariants}
             onClick={onClick}
           >
-            <div className="flex w-full flex-col bg-[linear-gradient(180deg,#0B0B0E_0%,#18181B_100%)] px-8 pb-7 pt-16 text-left sm:h-full sm:max-h-screen sm:justify-between sm:px-5 sm:pb-5">
+            <div className="flex w-full flex-col bg-[linear-gradient(180deg,#0B0B0E_0%,#18181B_100%)] px-8 pb-7 pt-16 text-left sm:h-full sm:max-h-screen sm:justify-between sm:px-5 sm:pb-16">
               <ul className="w-full border-t border-t-[#202027]">
                 {MENU.header.map(({ label, href }, index) => (
                   <li className="-mt-px border-b border-b-[#202027]" key={index}>
