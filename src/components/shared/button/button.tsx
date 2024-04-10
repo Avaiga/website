@@ -35,6 +35,8 @@ const styles = {
 
 type ButtonProps<T extends string> = ClassName & {
   href?: Route<T> | URL;
+  target?: string;
+  rel?: string;
   size?: keyof typeof styles.size;
   theme?: keyof typeof styles.theme;
   children: React.ReactNode;
