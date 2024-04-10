@@ -79,7 +79,7 @@ function Header() {
               <span className="h-5 w-px bg-white/20" aria-hidden />
               <span>6.5k</span>
             </Button>
-            <Button theme="white-filled" href="/enterprise" size="sm">
+            <Button theme="white-filled" size="sm">
               Enterprise
             </Button>
           </div>
