@@ -1,39 +1,46 @@
+import Image from 'next/image';
+
+import HeroPlug from '@/images/pages/enterprise/hero/hero-plug.png';
+
 import Button from '@/components/shared/button';
 
+import PlayIcon from '@/svgs/pages/about-us/play.inline.svg';
 import DesignIcon from '@/svgs/pages/enterprise/hero/design-icon.inline.svg';
-import MagnifierIcon from '@/svgs/pages/enterprise/hero/magnifier.inline.svg';
+
+import TextCards from './text-cards';
 
 export default function Hero() {
   return (
-    <section className="hero pt-[168px]">
+    <section className="hero pt-[129px] md:pt-[102px]">
       <div className="container-narrow text-center">
         <p className="text-16 font-normal leading-snug text-primary-red">
           Taipy Enterprise Edition
         </p>
-        <h1 className="mx-auto w-full max-w-[960px] pt-6 text-48 font-medium leading-dense tracking-[-1.92px]">
+        <h1 className="mx-auto w-full max-w-[960px] pt-6 text-48 font-medium leading-dense tracking-[-1.92px] md:max-w-[830px] md:pt-5 md:text-40 md:tracking-[-1.6px]">
           We help organizations increase efficiency, cut costs, increase profits, and make better
           business decisions.
         </h1>
-        <p className="mx-auto mt-5 w-full max-w-[642px] pt-4 text-20 font-light leading-normal text-white/80">
+        <p className="md:pt-20px mx-auto w-full max-w-[642px] pt-4 text-16 font-normal leading-snug opacity-80 md:max-w-[576px] md:pt-5">
           Technology you can trust. Built on Python with decades of industry expertise, we never
           stop innovating. You can count on us to deliver products that address your needs today and
           in the future.
         </p>
-
         <Button
-          className="mt-6 w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
-          size="lg"
+          className="relative mt-6 w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
+          size="lgConst"
           theme="red-filled"
         >
-          Request a demo
+          Request demo
+          <span className="absolute top-[-51px] h-[190px] w-full max-w-[36px] rotate-90 bg-hero-btn-enterprise blur-[36px]" />
         </Button>
-        <div className="flex w-full max-w-[960px] justify-between rounded-lg bg-gradient-card px-[32px] pb-[29px] pt-[32px]">
-          <ul className="w-full max-w-[321px] text-start">
+        <div className="relative mx-auto mt-16 flex h-[266px] w-full max-w-[960px] justify-between overflow-hidden rounded-lg bg-gradient-card pl-[32px] md:max-w-[832px]">
+          <span className="rounded-297px absolute right-[50%] top-0 z-[2] h-[60px] w-full max-w-[297px] translate-x-[50%] bg-shadow-red blur-[100px]" />
+          <ul className="mt-8 w-full max-w-[321px] text-start">
             <li className="">
               <DesignIcon className="h-8 w-8" alt="Design Icon" />
             </li>
             <li className="pt-[21px]">
-              <b className="text-20 font-medium leading-dense tracking-[-0.8px]">
+              <b className="text-20 font-medium leading-dense tracking-[-0.8px] md:text-18">
                 Ease of use: Taipy Designer
               </b>
               <p className="pt-4 text-16 font-normal leading-snug text-grey-70">
@@ -43,22 +50,21 @@ export default function Hero() {
               </p>
             </li>
           </ul>
-          <div className="w-full max-w-[208px] text-start">
-            <div className="flex flex-col gap-3">
-              <b className="text-12 font-medium leading-normal tracking-[-0.24px]">Widgets</b>
-              <label className="relative h-[24px]">
-                <input
-                  className="placeholder-gray-grey-60 h-[24px] w-full rounded-md bg-input-grey py-1 pl-6 text-10 font-normal leading-6 tracking-[-0.1px]"
-                  type="text"
-                  placeholder="Search widgets"
-                  disabled
-                />
-                <MagnifierIcon className="absolute left-2 top-[10px] h-2 w-2" alt="Magnifier" />
-              </label>
+          <div className="relative w-full max-w-[511px]">
+            <Image className="object-cover" src={HeroPlug} fill={true} alt="Hero Plug" />
+            <div className="absolute left-[55%] top-1/2 flex h-[80px] w-full max-w-[219px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+              <span className="absolute h-[80px] w-full rounded-[46px] bg-black blur-[24px]" />
+              <button
+                className="relative z-[2] flex w-full max-w-[187px] items-center justify-center gap-3 rounded-[46px] border-2 border-orange-1 bg-orange-5 py-3 text-16 font-medium leading-dense tracking-snug shadow-btn backdrop-blur"
+                type="button"
+              >
+                Watch the video
+                <PlayIcon className="h-[6px] w-[7px]" />
+              </button>
             </div>
           </div>
-          <div className="w-full max-w-[275px]" />
         </div>
+        <TextCards />
       </div>
     </section>
   );
