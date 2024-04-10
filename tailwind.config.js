@@ -71,6 +71,9 @@ module.exports = {
       'gradient-grey':
         'linear-gradient(0deg, #1B1B1D, #1B1B1D), radial-gradient(93.11% 55.91% at 100% 0%, rgba(204, 204, 204, 0.09) 0%, rgba(204, 204, 204, 0) 100%)',
       'gradient-digit': 'linear-gradient(90deg, #ff462b 0%, rgba(0, 0, 0, 0) 160%)',
+
+      'gradient-circle-enterprise':
+        'linear-gradient(to bottom, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 29.3761%, rgba(42, 42, 45, 0.4) 100%)',
     },
 
     boxShadow: {
