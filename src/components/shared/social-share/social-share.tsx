@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share';
+import { LinkedinShareButton, TwitterShareButton } from 'react-share';
 
 import useCopyToClipboard from '@/hooks/use-copy-to-clipboard';
 import clsx from 'clsx';
@@ -10,7 +10,6 @@ import { LazyMotion, domAnimation, m } from 'framer-motion';
 import Button from '@/components/shared/button';
 
 import LinkIcon from '@/svgs/icons/link.inline.svg';
-import FacebookIcon from '@/svgs/icons/logo-facebook.inline.svg';
 import LinkedinIcon from '@/svgs/icons/logo-linkedin.inline.svg';
 import TwitterIcon from '@/svgs/icons/logo-x.inline.svg';
 
@@ -19,11 +18,6 @@ const links = [
     name: 'Twitter',
     icon: TwitterIcon,
     tag: TwitterShareButton,
-  },
-  {
-    name: 'Facebook',
-    icon: FacebookIcon,
-    tag: FacebookShareButton,
   },
   {
     name: 'LinkedIn',

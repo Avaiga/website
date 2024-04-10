@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import {
   PortableText,
   PortableTextComponentProps,
@@ -20,7 +22,7 @@ import { ClassName } from '@/types/classname';
 
 import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 
-import CircleHashIcon from '@/svgs/icons/circle-hashtag.inline.svg';
+import circleHashIcon from '@/svgs/icons/circle-hashtag.svg';
 import ExternalIcon from '@/svgs/icons/external.inline.svg';
 
 import Blockquote from './blockquote';
@@ -55,9 +57,9 @@ const components: PortableTextComponents = {
     link: ({ children, value }) => {
       if (value.href && value.href.startsWith('http')) {
         return (
-          <a className="my-0 contents" href={value.href} target="_blank" rel="noopener noreferrer">
+          <a className="my-0" href={value.href} target="_blank" rel="noopener noreferrer">
             <span>{children}</span>
-            <ExternalIcon className="mb-1.5 ml-0.5 inline-block h-4 w-4" aria-hidden />
+            <ExternalIcon className="mb-1.5 ml-1 inline-block h-4 w-4" aria-hidden />
           </a>
         );
       }
@@ -69,16 +71,16 @@ const components: PortableTextComponents = {
     h2: ({ children }) => (
       <h2 id={getAnchorFromText(children?.toString())}>
         <span>{children}</span>
-        <a href={`#${getAnchorFromText(children?.toString())}`}>
-          <CircleHashIcon className="h-6 w-6" />
+        <a className="bottom-1.5" href={`#${getAnchorFromText(children?.toString())}`}>
+          <Image className="mb-0 mt-0" src={circleHashIcon} width={24} height={24} alt="" />
         </a>
       </h2>
     ),
     h3: ({ children }) => (
       <h3 id={getAnchorFromText(children?.toString())}>
         <span>{children}</span>
-        <a href={`#${getAnchorFromText(children?.toString())}`}>
-          <CircleHashIcon className="h-6 w-6" />
+        <a className="bottom-0.5" href={`#${getAnchorFromText(children?.toString())}`}>
+          <Image className="mb-0 mt-0" src={circleHashIcon} width={24} height={24} alt="" />
         </a>
       </h3>
     ),

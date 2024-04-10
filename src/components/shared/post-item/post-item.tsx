@@ -60,10 +60,10 @@ export default function PostItem({ post, isFull = false, isPriorityLoad = false 
         </CategoryLabel>
         <Link className="text-white" href={`${ROUTE.BLOG}/${slug.current}`}>
           <h1
-            className={clsx('font-medium sm:text-18', {
-              'text-40 leading-tight tracking-tight lg:text-36 md:text-32 sm:leading-snug sm:tracking-[0px]':
+            className={clsx('sm:text-18', {
+              'text-40 font-semibold leading-tight tracking-tight lg:text-36 md:text-32 sm:font-medium sm:leading-snug sm:tracking-[0px]':
                 isFull,
-              'line-clamp-3 text-18 leading-snug': !isFull,
+              'line-clamp-3 text-18 font-medium leading-snug': !isFull,
             })}
           >
             {title}

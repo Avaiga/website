@@ -83,7 +83,7 @@ function Navigation({ items }: NavigationProps) {
         {items.map(({ title, anchor, level }, index) => (
           <li
             className={clsx(
-              'text-sm relative truncate py-[7px] text-15 leading-none tracking-snug before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-primary-red before:opacity-0 before:transition-opacity before:duration-200 hover:text-white',
+              'text-sm relative py-[7px] text-15 leading-tight tracking-snug before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-primary-red before:opacity-0 before:transition-opacity before:duration-200 hover:text-white',
               {
                 'pl-3.5': level === 'h2',
                 'pl-7': level === 'h3',

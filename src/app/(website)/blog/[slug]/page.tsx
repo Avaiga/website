@@ -16,7 +16,7 @@ import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { getPublishDate } from '@/lib/get-publish-date';
 import { PortableToPlain } from '@/lib/portable-to-plain';
-import { getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
+import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 
 export default async function Post({ params }: { params: { slug: string } }) {
@@ -78,7 +78,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             />
             <Content content={contentRaw} className="mt-14 lg:mt-12 md:mt-10 sm:mt-8" />
             <AuthorAndShare
-              className="border-t border-t-grey-20 pt-8"
+              className="mt-8 border-t border-t-grey-20 pt-8"
               author={author}
               slug={slug}
               publishedAt={getPublishDate(publishedAt).toUpperCase()}
@@ -113,6 +113,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
       />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+
+  return posts.map(({ slug }) => ({
+    slug: slug.current,
+  }));
 }
 
 export async function generateMetadata({
