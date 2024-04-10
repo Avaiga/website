@@ -11,14 +11,14 @@ import TextCards from './text-cards';
 
 export default function Hero() {
   return (
-    <section className="hero pt-[129px] md:pt-[102px]">
+    <section className="hero pt-[113px] md:pt-[102px]">
       <div className="container-narrow text-center">
         <p className="leading-snug text-primary-red">Taipy Enterprise Edition</p>
-        <h1 className="mx-auto max-w-[960px] pt-6 text-48 font-medium leading-dense tracking-tight md:max-w-[830px] md:pt-5 md:text-40 md:tracking-tight">
+        <h1 className="mx-auto max-w-[960px] pt-5 text-48 font-semibold leading-dense tracking-tight md:max-w-[830px] md:pt-5 md:text-40">
           We help organizations increase efficiency, cut costs, increase profits, and make better
           business decisions.
         </h1>
-        <p className="md:pt-20px mx-auto max-w-[642px] pt-4 leading-snug opacity-80 md:max-w-[576px] md:pt-5">
+        <p className="mx-auto max-w-[642px] pt-5 leading-snug opacity-80 md:max-w-[576px] md:pt-5">
           Technology you can trust. Built on Python with decades of industry expertise, we never
           stop innovating. You can count on us to deliver products that address your needs today and
           in the future.
