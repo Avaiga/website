@@ -74,21 +74,22 @@ function Navigation({ items }: NavigationProps) {
   }, []);
 
   return (
-    <nav className="sticky top-12 mt-[69px]">
-      <span className="mb-5 flex items-center text-15 font-medium leading-none tracking-snug text-grey-50">
+    <nav className="sticky top-12 mt-[69px] xl:static xl:top-0 xl:mt-0">
+      <span className="mb-5 flex items-center text-15 font-medium leading-none tracking-snug text-grey-50 xl:mb-3.5 md:mb-3">
         <ArticleIcon className="mr-2.5 h-[18px] w-4" />
         In this article
       </span>
-      <ul className="flex flex-col gap-y-3">
+      <ul className="flex flex-col gap-y-3 lg:gap-y-1.5 md:gap-y-1">
         {items.map(({ title, anchor, level }, index) => (
           <li
             className={clsx(
-              'text-sm relative py-[7px] text-15 leading-tight tracking-snug before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-primary-red before:opacity-0 before:transition-opacity before:duration-200 hover:text-white',
+              'text-sm relative py-[7px] text-15 leading-tight tracking-snug before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-primary-red before:opacity-0 before:transition-opacity before:duration-200 hover:text-white xl:font-medium',
               {
-                'pl-3.5': level === 'h2',
-                'pl-7': level === 'h3',
+                'pl-3.5 xl:pl-0': level === 'h2',
+                'pl-7 xl:pl-3.5': level === 'h3',
                 'text-grey-60': currentAnchor !== anchor,
-                'text-white before:opacity-100': currentAnchor === anchor,
+                'text-white before:opacity-100 xl:text-grey-60 before:xl:opacity-0':
+                  currentAnchor === anchor,
               },
             )}
             key={index}

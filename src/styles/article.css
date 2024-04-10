@@ -1,19 +1,20 @@
 @layer components {
   .prose {
     @apply text-18 leading-relaxed text-grey-80;
-    @apply prose-p:mt-3.5;
+    @apply prose-p:mt-3.5 prose-p:xl:mt-3 prose-p:md:mt-2.5;
 
-    @apply prose-ol:mt-8 prose-ul:mt-8 prose-ul:list-none prose-ul:pl-0;
+    @apply prose-ol:mt-8 prose-ul:mt-8 prose-ul:list-none prose-ul:pl-0 prose-ol:xl:mt-6 prose-ul:xl:mt-6;
     @apply prose-a:cursor-pointer prose-a:stroke-secondary-blue prose-a:text-secondary-blue prose-a:no-underline;
     @apply prose-strong:!text-inherit;
-    @apply prose-strong:text-grey-80;
 
-    @apply prose-h2:relative prose-h2:scroll-mt-12 prose-h2:text-28 prose-h2:font-semibold prose-h2:leading-tight prose-h2:tracking-tight prose-h2:text-white;
+    @apply prose-blockquote:text-white;
 
-    @apply prose-h3:relative prose-h3:scroll-mt-8 prose-h3:text-20 prose-h3:font-semibold prose-h3:leading-tight prose-h3:tracking-tight prose-h3:text-white;
+    @apply prose-h2:relative prose-h2:scroll-mt-12 prose-h2:text-28 prose-h2:font-semibold prose-h2:leading-tight prose-h2:tracking-tight prose-h2:text-white prose-h2:xl:mt-10 prose-h2:xl:scroll-mt-10 prose-h2:xl:text-24 prose-h2:md:mt-8 prose-h2:md:scroll-mt-8 prose-h2:sm:mt-7 prose-h2:sm:scroll-mt-7;
+
+    @apply prose-h3:relative prose-h3:scroll-mt-8 prose-h3:text-20 prose-h3:font-semibold prose-h3:leading-tight prose-h3:tracking-tight prose-h3:text-white prose-h3:lg:mt-7 prose-h3:md:mt-6 prose-h3:sm:mt-5;
 
     ul > li {
-      @apply relative mb-3.5 pl-7;
+      @apply relative mb-3.5 pl-7 xl:mb-3 md:mb-2.5;
       @apply before:absolute before:left-[7px] before:top-[11px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red;
     }
 
@@ -34,7 +35,7 @@
     h2,
     h3 {
       a {
-        @apply invisible absolute  ml-3 inline-flex h-6 w-6 items-center stroke-none opacity-0 transition-opacity duration-200 ease-in-out hover:stroke-none;
+        @apply invisible absolute ml-3 inline-flex h-6 w-6 items-center stroke-none opacity-0 transition-opacity duration-200 ease-in-out hover:stroke-none md:hidden;
       }
 
       &:hover a {

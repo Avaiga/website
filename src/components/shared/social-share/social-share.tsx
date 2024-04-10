@@ -37,12 +37,12 @@ export default function SocialShare({ pathname, title }: SocialShareProps) {
 
   return (
     <div className="flex items-center">
-      <span className="mr-3.5 text-14 tracking-snug text-grey-60">Share:</span>
+      <span className="mr-3.5 text-14 tracking-snug text-grey-60 sm:text-13">Share:</span>
       <ul className="flex items-center gap-x-3.5">
         {links.map(({ icon: Icon, tag: Tag }, index) => (
           <li key={index}>
             <Tag className="block" url={url} title={title}>
-              <Icon className="h-5 w-5 fill-white hover:fill-grey-90" />
+              <Icon className="h-5 w-5 fill-white hover:fill-grey-90 sm:h-[18px] sm:w-[18px]" />
             </Tag>
           </li>
         ))}
@@ -56,11 +56,11 @@ export default function SocialShare({ pathname, title }: SocialShareProps) {
             onClick={() => handleCopy(url)}
           >
             <span className="sr-only">Copy article link</span>
-            <LinkIcon className="h-5 w-5 fill-white hover:fill-grey-90" />
+            <LinkIcon className="h-5 w-5 fill-white hover:fill-grey-90 sm:h-[18px] sm:w-[18px]" />
           </Button>
           <LazyMotion features={domAnimation}>
             <m.span
-              className="pp-md:bottom-10 pointer-events-none absolute -right-3 bottom-8 whitespace-nowrap text-14 font-semibold leading-none text-grey-90 opacity-0"
+              className="pointer-events-none absolute -right-3 bottom-8 whitespace-nowrap text-14 font-semibold leading-none text-grey-90 opacity-0 sm:bottom-6 sm:text-13"
               animate={isCopied ? 'toggled' : 'initial'}
               variants={{
                 initial: {

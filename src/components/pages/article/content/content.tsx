@@ -36,13 +36,13 @@ const components: PortableTextComponents = {
   types: {
     image: ({ value }: PortableTextComponentProps<ContentPicture>) => <Picture value={value} />,
     code: ({ value: { language, code } }: PortableTextComponentProps<ContentCode>) => (
-      <CodeBlock language={language!} code={code} className="my-8 lg:my-6 md:my-5" />
+      <CodeBlock language={language!} code={code} className="my-8 lg:my-7 md:my-6 sm:my-5" />
     ),
     customTable: ({ value: { table, type } }: PortableTextComponentProps<ContentTable>) => (
       <Table table={table} type={type} />
     ),
     customNotice: ({ value: { text, type } }: PortableTextComponentProps<ContentNotice>) => (
-      <Notice type={type} className="my-8 lg:my-6 md:my-5">
+      <Notice type={type} className="my-8 lg:my-7 md:my-6 sm:my-5">
         <PortableText value={text} />
       </Notice>
     ),

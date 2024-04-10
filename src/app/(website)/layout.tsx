@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Banner />
         <div className="relative flex min-h-screen flex-col">
           <Header />
-          <main className="overflow-hidden">{children}</main>
+          <main>{children}</main>
           <Footer />
         </div>
       </body>
