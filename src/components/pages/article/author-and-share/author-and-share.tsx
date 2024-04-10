@@ -13,7 +13,9 @@ type AuthorAndShareProps = { className?: string } & Pick<
 
 function AuthorAndShare({ publishedAt, author, slug, title, className }: AuthorAndShareProps) {
   return (
-    <div className={clsx('flex justify-between', className)}>
+    <div
+      className={clsx('flex justify-between sm:flex-wrap sm:gap-x-2 sm:gap-y-[18px]', className)}
+    >
       <AuthorAndDate author={author} publishedAt={publishedAt} />
       <SocialShare pathname={`${ROUTE.BLOG}/${slug.current}`} title={title} />
     </div>

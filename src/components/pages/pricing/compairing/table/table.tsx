@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { PLANS } from '@/constants/plans';
 import clsx from 'clsx';
 
-import checkIcon from '@/svgs/icons/done.svg';
-import minusIcon from '@/svgs/icons/minus.svg';
+import DoneIcon from '@/svgs/icons/done.inline.svg';
+import MinusIcon from '@/svgs/icons/minus.inline.svg';
 
 const rowClass: { [key: string]: string } = {
   '1': 'h-[44px] sm:h-[42px]',
@@ -93,9 +93,9 @@ export default function Table() {
                   {typeof value[key] === 'boolean' ? (
                     <>
                       {value[key] ? (
-                        <img src={checkIcon} width="18" height="18" alt="" loading="lazy" />
+                        <DoneIcon className="h-[18px] w-[18px]" />
                       ) : (
-                        <img src={minusIcon} width="18" height="18" alt="" loading="lazy" />
+                        <MinusIcon className="h-[18px] w-[18px]" />
                       )}
                     </>
                   ) : (

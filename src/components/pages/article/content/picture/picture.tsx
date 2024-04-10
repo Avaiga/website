@@ -12,7 +12,7 @@ function Picture({ value }: ContentBlockProps<ContentPicture>) {
   }
 
   return (
-    <figure className="not-prose my-8 lg:my-6 md:my-5">
+    <figure className="not-prose my-8 lg:my-7 md:my-6 sm:my-5">
       <Image
         className="w-full rounded-lg"
         src={imageUrl}
@@ -22,7 +22,7 @@ function Picture({ value }: ContentBlockProps<ContentPicture>) {
         alt={value.alt || ''}
       />
       {value?.caption && (
-        <figcaption className="mt-2.5 text-center text-14 leading-relaxed text-grey-70">
+        <figcaption className="mt-2.5 text-center text-14 leading-relaxed text-grey-70 sm:text-12">
           {value.caption}
         </figcaption>
       )}
