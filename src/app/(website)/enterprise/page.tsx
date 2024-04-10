@@ -30,12 +30,11 @@ function Enterprise() {
       <Designer />
       <Features />
       <Testimonial
-        className="mt-[184px]"
         quote="Integrating Taipy into our suite of products for the Quick Service Restaurant (QSR) market has marked a significant step forward. The ease with which our development team was able to pick up Taipy was remarkable."
         name="Jesselynn Mah"
         position="KnowledgeTouch"
       />
-      <CTA className="mb-[184px] mt-[208px]" isEnterprise />
+      <CTA className="mb-[184px] mt-[208px] lg:mb-[151px] lg:mt-[184px]" isEnterprise />
     </>
   );
 }

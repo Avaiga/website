@@ -52,17 +52,17 @@ function Designer() {
   const [currentFeature, setCurrentFeature] = useState(items[0]);
 
   return (
-    <section className="designer mt-[185px] px-safe">
+    <section className="designer mt-[185px] px-safe lg:mt-[154px]">
       <div className="container flex max-w-[1280px] flex-col items-center gap-x-16">
-        <h2 className="text-48 font-medium leading-dense tracking-tight">
+        <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold">
           Taipy Designer features
         </h2>
-        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70">
+        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 lg:leading-snug">
           Get flexible solutions that fit your environment and give you full control of your
           observability data.
         </p>
 
-        <div className="mt-[54px] flex max-w-[1280px] items-center gap-x-16">
+        <div className="mt-[54px] flex max-w-[1280px] items-center gap-x-16 lg:mt-[46px]">
           <ul className="basis-1/2">
             {items.map((feature, index) => (
               <DesignerItem
@@ -73,7 +73,7 @@ function Designer() {
               />
             ))}
           </ul>
-          <div className="flex basis-1/2 items-center justify-center">
+          <div className="flex basis-1/2 items-center justify-center lg:pt-4">
             <Image
               src={currentFeature.image}
               alt={`Feature ${currentFeature.question}`}
@@ -81,7 +81,11 @@ function Designer() {
             />
           </div>
         </div>
-        <Button className="mt-[70px] w-full max-w-[180px]" size="lg" theme="red-filled">
+        <Button
+          className="mt-[70px] w-full max-w-[180px] lg:mt-[51px]"
+          size="lg"
+          theme="red-filled"
+        >
           See our plans
         </Button>
       </div>

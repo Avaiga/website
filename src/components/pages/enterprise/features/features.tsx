@@ -31,10 +31,12 @@ const items: Feature[] = [
 
 function Features() {
   return (
-    <section className="features mt-[183px] px-safe">
-      <div className="container flex max-w-[1024px] flex-col items-center">
-        <h2 className="text-48 font-medium leading-dense tracking-tight">Taipy Features</h2>
-        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug tracking-snug text-grey-70">
+    <section className="features mt-[183px] px-safe lg:mt-[151px]">
+      <div className="container flex max-w-[1024px] flex-col items-center lg:max-w-[960px]">
+        <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold">
+          Taipy Features
+        </h2>
+        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug tracking-snug text-grey-70 lg:text-18">
           Get flexible solutions that fit your environment and give you full control of your
           observability data.
         </p>
@@ -46,14 +48,16 @@ function Features() {
                 className={clsx('flex items-center', { 'flex-row-reverse': index % 2 !== 0 })}
                 key={title}
               >
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-20' : 'pl-20'}`}>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-20 lg:pr-12' : 'pl-20 lg:pl-12'}`}>
                   <Image src={image} alt={`${title} image`} className="" />
                 </div>
                 <span className="z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-circle-enterprise text-16 text-grey-80">
                   {index + 1}
                 </span>
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pl-20' : 'pr-20'}`}>
-                  <h3 className="text-20 font-medium leading-dense tracking-tight">{title}</h3>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pl-20 lg:pl-12' : 'pr-20 lg:pr-12'}`}>
+                  <h3 className="text-20 font-medium leading-dense tracking-tight lg:text-18">
+                    {title}
+                  </h3>
                   <p className="mt-3 leading-snug text-grey-70">{text}</p>
                 </div>
               </li>

@@ -18,12 +18,16 @@ const textCardsData = [
 
 export default function TextCards() {
   return (
-    <ul className="mx-auto mt-[69px] flex w-full max-w-[896px] justify-between text-start">
+    <ul className="mx-auto mt-[69px] flex max-w-[896px] justify-between text-start lg:mt-[54px] lg:max-w-[768px] lg:gap-x-[128px]">
       {textCardsData.map(({ icon, heading, text }, index) => (
         <li className="w-full max-w-[384px]" key={index}>
           <Image className="" src={icon} width={24} height={24} alt={heading} />
-          <h2 className="mt-4 block text-20 font-medium leading-dense tracking-tight">{heading}</h2>
-          <p className="mt-4 font-light leading-normal text-grey-70">{text}</p>
+          <h2 className="mt-4 block text-20 font-medium leading-dense tracking-tight lg:text-18">
+            {heading}
+          </h2>
+          <p className="lg:text-normal mt-4 font-light leading-normal text-grey-70 lg:mt-[14px] lg:text-14 lg:leading-snug">
+            {text}
+          </p>
         </li>
       ))}
     </ul>

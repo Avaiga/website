@@ -32,26 +32,26 @@ const CARDS = [
 
 function Benefits() {
   return (
-    <section className="benefits mt-[223px] px-safe">
-      <div className="container flex max-w-[1280px] gap-x-16 ">
-        <div className="max-w-[384px] shrink-0 grow">
-          <h2 className="text-48 font-medium leading-dense tracking-tight ">
+    <section className="benefits mt-[223px] px-safe lg:mt-[184px]">
+      <div className="container flex max-w-[1280px] gap-x-16 lg:max-w-[1024px] lg:gap-x-8">
+        <div className="max-w-[384px] shrink-0 grow lg:max-w-[352px]">
+          <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold">
             Taipy Designer added value
           </h2>
-          <p className="mt-6 text-18 text-grey-70">
+          <p className="mt-6 text-18 text-grey-70 lg:mt-5 lg:text-16 lg:font-light">
             Taipy Designer gives you ease of use, flexibility, collaboration, and faster time to
             value, which is an ever-increasing need for today&#39;s Data/AI and Decision Support
             applications.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-x-16 gap-y-10">
+        <div className="grid grid-cols-2 gap-x-16 gap-y-10 lg:gap-x-[48px] lg:gap-y-9">
           {CARDS.map(({ icon: Icon, title, description }, index) => (
             <div key={index}>
-              <div className="flex items-center gap-x-3">
-                <Icon className="h-6 w-6 shrink-0" />
-                <h3 className="text-24 font-medium">{title}</h3>
+              <div className="flex items-center gap-x-3 lg:gap-x-2.5">
+                <Icon className="h-6 w-6 shrink-0 lg:h-5 lg:w-5" />
+                <h3 className="text-24 font-medium lg:text-20 lg:leading-snug">{title}</h3>
               </div>
-              <p className="mt-2 text-18 font-light text-grey-70 lg:mt-2.5 lg:text-14 sm:mt-1">
+              <p className="mt-2 text-18 font-light text-grey-70 lg:mt-3 lg:text-14 sm:mt-1">
                 {description}
               </p>
             </div>

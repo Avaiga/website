@@ -66,7 +66,12 @@ function LogosWall({ className, logos }: LogosProps) {
 
 function Logos({ className = '', logos }: LogosProps) {
   return (
-    <div className={clsx('container mt-[136px] w-full max-w-[960px]', className)}>
+    <div
+      className={clsx(
+        'container mt-[136px] w-full max-w-[960px] lg:mt-[118px] lg:max-w-[832px]',
+        className,
+      )}
+    >
       <h3 className="text-center leading-snug text-primary-red">They trust us</h3>
       <div className="mt-[56px] select-none md:-mb-8">
         <LogosWall className="logos-sides-fade" logos={logos} />

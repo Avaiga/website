@@ -11,20 +11,20 @@ import TextCards from './text-cards';
 
 export default function Hero() {
   return (
-    <section className="hero pt-[113px] md:pt-[102px]">
-      <div className="container-narrow text-center">
+    <section className="hero pt-[113px] lg:pt-[102px]">
+      <div className="container-narrow max-w-[960px] text-center lg:max-w-[896px] ">
         <p className="leading-snug text-primary-red">Taipy Enterprise Edition</p>
-        <h1 className="mx-auto max-w-[960px] pt-5 text-48 font-semibold leading-dense tracking-tight md:max-w-[830px] md:pt-5 md:text-40">
+        <h1 className="mx-auto pt-5 text-48 font-semibold leading-dense tracking-tight lg:max-w-[832px] lg:text-40">
           We help organizations increase efficiency, cut costs, increase profits, and make better
           business decisions.
         </h1>
-        <p className="mx-auto max-w-[642px] pt-5 leading-snug opacity-80 md:max-w-[576px] md:pt-5">
+        <p className="mx-auto max-w-[642px] pt-5 leading-snug opacity-80 lg:max-w-[576px]">
           Technology you can trust. Built on Python with decades of industry expertise, we never
           stop innovating. You can count on us to deliver products that address your needs today and
           in the future.
         </p>
         <Button
-          className="relative mt-6 w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
+          className="relative mt-6 w-full max-w-[180px] lg:mt-7"
           size="lgConst"
           theme="red-filled"
         >
@@ -38,17 +38,17 @@ export default function Hero() {
               <DesignIcon className="h-8 w-8" alt="Design Icon" />
             </li>
             <li className="pt-[21px]">
-              <b className="text-20 font-medium leading-dense tracking-tight md:text-18">
+              <b className="text-20 font-medium leading-dense tracking-tight lg:text-18">
                 Ease of use: Taipy Designer
               </b>
-              <p className="pt-4 leading-snug text-grey-70">
+              <p className="pt-4 leading-snug text-grey-70 lg:text-14">
                 Create a user-friendly web interface effortlessly for your Python projects.
                 Streamline your workflow by effortlessly crafting interactive web interfaces without
                 the need for a single line of code
               </p>
             </li>
           </ul>
-          <div className="relative w-full max-w-[511px]">
+          <div className="relative w-full max-w-[511px] lg:max-w-[490px]">
             <Image className="object-cover" src={HeroPlug} fill={true} alt="Hero Plug" />
             <div className="absolute left-[55%] top-1/2 flex h-[80px] w-full max-w-[219px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
               <span className="absolute h-[80px] w-full rounded-[46px] bg-black blur-[24px]" />
