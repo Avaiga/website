@@ -23,8 +23,10 @@ function Hero({ title, lead, cover, author, publishedAt, category, slug }: HeroP
       <Breadcrumbs items={[{ title: 'Blog', url: ROUTE.BLOG }, { title }]} />
 
       <header className="mt-12">
-        <CategoryLabel url={`${ROUTE.BLOG}/category/${category.slug.current}`}>
-          {category.titleShort}
+        <CategoryLabel
+          url={category ? `${ROUTE.BLOG_CATEGORY}/${category.slug.current}` : ROUTE.BLOG}
+        >
+          {category ? category.titleShort : 'All posts'}
         </CategoryLabel>
         <h1 className="mt-3.5 text-40 font-semibold leading-tight tracking-tight">{title}</h1>
         <p className="mt-[18px] text-20 font-light text-grey-70">{lead}</p>
