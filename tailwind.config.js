@@ -111,6 +111,7 @@ module.exports = {
       'input-grey': 'rgba(153, 153, 153, 0.10)',
       'hero-btn-enterprise': 'rgba(176, 60, 43, 0.80)',
       'shadow-red': '#EF270A',
+      'watch-btn-hover': 'rgba(255, 70, 43, 0.16)',
     }),
     screens: {
       xxl: { max: '1919px' },

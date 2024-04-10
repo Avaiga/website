@@ -54,13 +54,14 @@ export default function Hero() {
             <Image className="object-cover" src={HeroPlug} fill={true} alt="Hero Plug" />
             <div className="absolute left-[55%] top-1/2 flex h-[80px] w-full max-w-[219px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
               <span className="absolute h-[80px] w-full rounded-[46px] bg-black blur-[24px]" />
-              <button
-                className="relative z-[2] flex w-full max-w-[187px] items-center justify-center gap-3 rounded-[46px] border-2 border-orange-1 bg-orange-5 py-3 text-16 font-medium leading-dense tracking-snug shadow-btn backdrop-blur"
-                type="button"
+              <Button
+                className="z-[2] flex items-center justify-center gap-3 border-orange-1"
+                size="lg"
+                theme="red-outline"
               >
                 Watch the video
                 <PlayIcon className="h-[6px] w-[7px]" />
-              </button>
+              </Button>
             </div>
           </div>
         </div>
