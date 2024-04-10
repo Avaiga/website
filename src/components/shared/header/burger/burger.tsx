@@ -27,45 +27,52 @@ function Burger({
         <div className="absolute -inset-5" aria-hidden />
         <span className="relative block h-6 w-6">
           <m.span
-            className="absolute right-0 top-1 block h-0.5 w-6 rounded-full bg-white transition-colors duration-200"
+            className="absolute right-0 top-1 block h-0.5 w-6 rounded-full bg-white"
             variants={{
               initial: {
                 top: 4,
-                display: 'block',
-                transition: { duration: ANIMATION_DURATION, delay: ANIMATION_DURATION },
+                opacity: 1,
+                transition: {
+                  top: { duration: ANIMATION_DURATION, delay: ANIMATION_DURATION },
+                  opacity: { duration: 0, delay: ANIMATION_DURATION },
+                },
               },
               toggled: {
-                top: 9,
+                top: 11,
                 transition: { duration: ANIMATION_DURATION },
-                transitionEnd: { display: 'none' },
+                transitionEnd: { opacity: 0 },
               },
             }}
           />
           <m.span
-            className="absolute right-0 top-[11px] block h-0.5 w-6 rounded-full bg-white transition-colors duration-200"
+            className="absolute right-0 top-[11px] block h-0.5 w-6 rounded-full bg-white"
             variants={{
               initial: {
-                display: 'block',
-                transition: { delay: ANIMATION_DURATION },
+                opacity: 0,
+                transition: { duration: 0, delay: ANIMATION_DURATION },
+                transitionEnd: { opacity: 1 },
               },
               toggled: {
-                display: 'none',
-                transition: { delay: ANIMATION_DURATION },
+                opacity: 0,
+                transition: { duration: 0, delay: ANIMATION_DURATION },
               },
             }}
           />
           <m.span
-            className="absolute bottom-1 right-0 block h-0.5 w-6 rounded-full bg-white transition-colors duration-200"
+            className="absolute bottom-1 right-0 block h-0.5 w-6 rounded-full bg-white"
             variants={{
               initial: {
                 bottom: 4,
-                display: 'block',
-                transition: { duration: ANIMATION_DURATION, delay: ANIMATION_DURATION },
+                opacity: 1,
+                transition: {
+                  bottom: { duration: ANIMATION_DURATION, delay: ANIMATION_DURATION },
+                  opacity: { duration: 0, delay: ANIMATION_DURATION },
+                },
               },
               toggled: {
-                bottom: 9,
+                bottom: 11,
                 transition: { duration: ANIMATION_DURATION },
-                transitionEnd: { display: 'none' },
+                transitionEnd: { opacity: 0 },
               },
             }}
           />
