@@ -71,10 +71,6 @@ module.exports = {
       'gradient-grey':
         'linear-gradient(0deg, #1B1B1D, #1B1B1D), radial-gradient(93.11% 55.91% at 100% 0%, rgba(204, 204, 204, 0.09) 0%, rgba(204, 204, 204, 0) 100%)',
       'gradient-digit': 'linear-gradient(90deg, #ff462b 0%, rgba(0, 0, 0, 0) 160%)',
-      'gradient-card':
-        'radial-gradient(917.24% 246.32% at 47.18% 11.09%, #151518 0%, rgba(18, 18, 21, 0.72) 45.26%, rgba(17, 17, 19, 0.00) 59.74%)',
-      'gradient-about-digit':
-        'radial-gradient(676.47% 85.18% at 50% 50%, #FF5F47 0%, #FF3E22 30.13%, rgba(255, 70, 43, 0.30) 100%);',
     },
 
     boxShadow: {
@@ -123,13 +119,6 @@ module.exports = {
         red: '#ec6856',
         purple: '#b6c6fa',
       },
-    }),
-    backgroundColor: (theme) => ({
-      ...theme('colors'),
-      'input-grey': 'rgba(153, 153, 153, 0.10)',
-      'hero-btn-enterprise': 'rgba(176, 60, 43, 0.80)',
-      'shadow-red': '#EF270A',
-      'watch-btn-hover': 'rgba(255, 70, 43, 0.16)',
     }),
     screens: {
       xxl: { max: '1919px' },

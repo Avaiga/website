@@ -30,7 +30,6 @@ const styles = {
     'white-filled': 'bg-white text-black font-semibold hover:bg-grey-80',
     outline: 'font-medium border-white/20 border hover:bg-[rgba(255,255,255,0.1)]',
     'green-filled': 'bg-[#05C776] font-medium',
-    'red-outline': 'bg-orange-5 border-2 shadow-btn backdrop-blur hover:bg-watch-btn-hover',
   },
 };
 
