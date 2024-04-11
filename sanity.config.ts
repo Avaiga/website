@@ -23,7 +23,7 @@ function getPreviewUrl(doc: ExtendedSanityDocument) {
   const host = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
   const url = new URL('/api/preview', host);
 
-  url.searchParams.append('secret', process.env.NEXT_PUBLIC_SANITY_PREVIEW_SECRET!);
+  url.searchParams.append('secret', process.env.SANITY_PREVIEW_SECRET!);
 
   url.searchParams.append(
     'redirect_url',

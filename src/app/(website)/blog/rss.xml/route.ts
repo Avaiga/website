@@ -2,6 +2,7 @@
 import { ROUTE } from '@/constants/routes';
 import Rss from 'rss';
 
+import { portableToPlain } from '@/lib/portable-to-plain';
 import { getAllPosts } from '@/lib/sanity/client';
 
 const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
@@ -29,7 +30,7 @@ export async function GET() {
       date: new Date(publishedAt),
       author: author.name,
       categories: category ? [category.title] : ['All posts'],
-      custom_elements: [{ 'content:encoded': contentRaw }],
+      custom_elements: [{ 'content:encoded': portableToPlain(contentRaw) }],
     });
   });
 
