@@ -1,5 +1,6 @@
 import type { Route } from 'next';
 
+import { STATE } from '@/constants/forms';
 import clsx from 'clsx';
 
 import Link from '@/components/shared/link';
@@ -8,13 +9,6 @@ import { ClassName } from '@/types/classname';
 
 import CheckIcon from '@/svgs/icons/check.inline.svg';
 import LoadingIcon from '@/svgs/icons/loading.inline.svg';
-
-export enum BUTTON_STATES {
-  DEFAULT = 'default',
-  LOADING = 'loading',
-  SUCCESS = 'success',
-  DISABLED = 'disabled',
-}
 
 const styles = {
   transition: 'transition-colors duration-300',
@@ -43,7 +37,7 @@ type ButtonProps<T extends string> = ClassName & {
   theme?: keyof typeof styles.theme;
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
-  state?: BUTTON_STATES;
+  state?: STATE;
   disabled?: boolean;
 };
 
@@ -53,33 +47,31 @@ function Button({
   theme,
   href = undefined,
   children,
-  state = BUTTON_STATES.DEFAULT,
+  state = STATE.DEFAULT,
   ...props
 }: ButtonProps<string>) {
   const linkClassName = clsx(
     styles.transition,
     size && theme && styles.base,
     size && styles.size[size],
-    state === BUTTON_STATES.SUCCESS ? styles.theme['green-filled'] : theme && styles.theme[theme],
+    state === STATE.SUCCESS ? styles.theme['green-filled'] : theme && styles.theme[theme],
     additionalClassName,
     {
       'pointer-events-none':
-        state === BUTTON_STATES.LOADING ||
-        state === BUTTON_STATES.SUCCESS ||
-        state === BUTTON_STATES.DISABLED,
+        state === STATE.LOADING || state === STATE.SUCCESS || state === STATE.ERROR,
     },
   );
 
   let content = null;
 
   switch (state) {
-    case BUTTON_STATES.LOADING:
+    case STATE.LOADING:
       content = <LoadingIcon className="w-7 animate-spin" />;
       break;
-    case BUTTON_STATES.SUCCESS:
+    case STATE.SUCCESS:
       content = <CheckIcon className="w-7" />;
       break;
-    case BUTTON_STATES.DEFAULT:
+    case STATE.DEFAULT:
     default:
       content = children;
   }
