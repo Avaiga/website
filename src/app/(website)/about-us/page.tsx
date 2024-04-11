@@ -17,7 +17,7 @@ function AboutUs() {
       <Contribute />
       <Subscribe
         className="mb-[203px] mt-[196px] lg:mt-[124px] md:mt-[92px]"
-        tagline="Newsletter"
+        tagline="Integrations"
         title="Subscribe to the Newsletter"
         text="Subscribe to Taipy's newsletter and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
       />

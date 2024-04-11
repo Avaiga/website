@@ -19,7 +19,7 @@ const microhubsData: microhubsProps[] = [
 
 export default function OurHistory() {
   return (
-    <section className="our-history pt-[174px] md:pt-[124px]">
+    <section className="our-history pt-[155px] md:pt-[124px]">
       <div className="container-narrow max-w-[1279px]">
         <div className="w-full">
           <span className="text-16 font-normal leading-snug text-primary-red">Our story</span>

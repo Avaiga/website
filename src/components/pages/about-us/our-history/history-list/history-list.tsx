@@ -38,11 +38,11 @@ const historyListData: historyListProps[] = [
 
 export default function HistoryList() {
   return (
-    <ul className="flex flex-col gap-6 pt-10 md:gap-6 md:pt-[45px]">
+    <ul className="flex flex-col gap-7 pt-[45px] md:gap-6">
       {historyListData.map(({ logo: Logo, heading, text, alt }, index) => (
         <li key={index}>
-          <div className="flex items-center gap-3">
-            <Logo className="h-[24px] w-[24px] fill-white" alt={alt} />
+          <div className="flex items-center gap-3 md:items-start">
+            <Logo className="h-[24px] w-[24px] fill-white md:mt-1.5" alt={alt} />
             <h3 className="text-24 font-medium leading-normal md:leading-tight">{heading}</h3>
           </div>
           <p className="pt-2 font-light leading-normal text-grey-70">{text}</p>
