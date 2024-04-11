@@ -20,6 +20,7 @@ const styles = {
   transition: 'transition-colors duration-300',
   base: 'inline-flex items-center justify-center rounded-full leading-none whitespace-nowrap',
   size: {
+    xl: 'h-14 text-[19px] md:text-[18px] md:h-[53px]',
     lgConst: 'h-12 text-16',
     lg: 'h-12 text-16 px-8 md:h-11 md:text-14',
     md: 'h-11 text-14 px-4',

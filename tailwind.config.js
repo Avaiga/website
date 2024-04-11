@@ -70,11 +70,14 @@ module.exports = {
         'linear-gradient(0deg, #18181B, #18181B), radial-gradient(93.11% 55.91% at 100% 0%, rgba(148, 148, 148, 0.06) 0%, rgba(149, 149, 149, 0) 100%)',
       'gradient-grey':
         'linear-gradient(0deg, #1B1B1D, #1B1B1D), radial-gradient(93.11% 55.91% at 100% 0%, rgba(204, 204, 204, 0.09) 0%, rgba(204, 204, 204, 0) 100%)',
-      'gradient-digit': 'linear-gradient(90deg, #ff462b 0%, rgba(0, 0, 0, 0) 160%)',
-      'gradient-card':
+      'gradient-digit':
+        'radial-gradient(96.53% 52.02% at 50% 37%, #FF5F47 0%, #FF3E22 30.13%, rgba(255, 70, 43, 0.3) 100%)',
+      'gradient-about-digit':
         'radial-gradient(917.24% 246.32% at 47.18% 11.09%, #151518 0%, rgba(18, 18, 21, 0.72) 45.26%, rgba(17, 17, 19, 0.00) 59.74%)',
       'gradient-circle-enterprise':
         'linear-gradient(to bottom, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 29.3761%, rgba(42, 42, 45, 0.4) 100%)',
+      'gradient-hero-digit':
+        'radial-gradient(95.97% 100% at 50% 0%, rgba(255, 92, 77, 0.00) 28.79%, #FF5C4D 100%)',
     },
 
     boxShadow: {
@@ -108,6 +111,7 @@ module.exports = {
         60: '#94949e',
         70: '#afafb6',
         80: '#c7c7d1',
+        85: '#2A2A2D',
         90: '#e2e2e9',
         94: '#ededf2',
         98: '#f9f9fb',
