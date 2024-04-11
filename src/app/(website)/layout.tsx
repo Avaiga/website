@@ -1,7 +1,6 @@
 import type { Viewport } from 'next';
 import Script from 'next/script';
 
-import Banner from '@/components/shared/banner';
 import Footer from '@/components/shared/footer';
 import Header from '@/components/shared/header/header';
 
@@ -38,7 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        <Banner />
+        {/* TODO: Integrate banner data with sanity */}
+        {/* <Banner /> */}
         <div className="relative flex min-h-screen flex-col">
           <Header />
           <main>{children}</main>
