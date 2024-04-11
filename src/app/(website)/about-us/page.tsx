@@ -1,3 +1,5 @@
+import { SEO_DATA } from '@/constants/seo';
+
 import Contribute from '@/components/pages/about-us/contribute';
 import Hero from '@/components/pages/about-us/hero/hero';
 import OurHistory from '@/components/pages/about-us/our-history';
@@ -28,9 +30,5 @@ function AboutUs() {
 export default AboutUs;
 
 export async function generateMetadata() {
-  return getMetadata({
-    title: 'Taipy',
-    description: 'About Us',
-    pathname: '/about-us',
-  });
+  return getMetadata(SEO_DATA.ABOUT_US);
 }

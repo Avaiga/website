@@ -8,12 +8,7 @@ import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/posts-list';
 
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
-import {
-  countPosts,
-  getCategories,
-  getCategoryBySlug,
-  getPostsByCategorySlug,
-} from '@/lib/sanity/client';
+import { countPosts, getCategoryBySlug, getPostsByCategorySlug } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 import { BLOG_POST_PER_PAGE } from '@/lib/sanity/utils';
 
@@ -55,14 +50,6 @@ async function Category({ params }: CategoryProps) {
 }
 
 export default Category;
-
-export async function generateStaticParams() {
-  const categories = await getCategories();
-
-  return categories.map((category) => ({
-    category: category.slug.current,
-  }));
-}
 
 export async function generateMetadata({
   params,

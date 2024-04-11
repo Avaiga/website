@@ -23,11 +23,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         {process.env.NODE_ENV === 'production' && (
-          <Script
-            strategy="afterInteractive"
-            src="https://plausible.io/js/script.tagged-events.js"
-            data-domain="taipy.io"
-          />
+          <>
+            <Script
+              strategy="afterInteractive"
+              src="https://plausible.io/js/script.tagged-events.js"
+              data-domain="taipy.io"
+            />
+            <Script
+              strategy="afterInteractive"
+              src="https://tag.clearbitscripts.com/v1/pk_1733d1e9903ce4818fec6c5fdd8118cf/tags.js"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </>
         )}
       </head>
       <body>

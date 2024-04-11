@@ -15,7 +15,7 @@ import Subscribe from '@/components/shared/subscribe';
 import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { getPublishDate } from '@/lib/get-publish-date';
-import { PortableToPlain } from '@/lib/portable-to-plain';
+import { portableToPlain } from '@/lib/portable-to-plain';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 
@@ -77,9 +77,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
               slug={slug}
             />
           </div>
-          <div className="absolute col-start-3 h-full max-w-[180px] xl:static xl:mt-12 xl:h-auto xl:max-w-none md:mt-10 sm:mt-8">
-            <Navigation items={navItems} />
-          </div>
+          {navItems.length > 0 && (
+            <div className="absolute col-start-3 h-full max-w-[180px] xl:static xl:mt-12 xl:h-auto xl:max-w-none md:mt-10 sm:mt-8">
+              <Navigation items={navItems} />
+            </div>
+          )}
           <div className="col-start-2 col-end-2 mt-14 xl:mt-7 md:mt-6 sm:mt-5">
             <Content content={contentRaw} className="" />
             <AuthorAndShare
@@ -147,7 +149,7 @@ export async function generateMetadata({
   }
 
   const description =
-    seo?.metaDescription || lead || `${PortableToPlain(contentRaw).split('.')[0].slice(0, 159)}…`;
+    seo?.metaDescription || lead || `${portableToPlain(contentRaw).split('.')[0].slice(0, 159)}…`;
 
   const image = seo?.socialImage || cover;
 

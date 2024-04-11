@@ -1,6 +1,6 @@
 import { PortableTextBlock } from 'sanity';
 
-export const PortableToPlain = (blocks: PortableTextBlock[]) => {
+export const portableToPlain = (blocks: PortableTextBlock[]) => {
   return blocks
     .map((block) => {
       if (block._type !== 'block' || !block.children) {
