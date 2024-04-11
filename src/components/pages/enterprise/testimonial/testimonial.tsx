@@ -20,15 +20,13 @@ function Testimonial({ className = '', quote, name, position }: TestimonialProps
           <p className="text-28 font-light leading-normal tracking-tight lg:text-24">{quote}</p>
         </blockquote>
 
-        <div className="mt-8 flex items-center gap-x-4 text-start leading-tight text-white">
+        <figcaption className="mt-8 flex items-center gap-x-4 text-start leading-tight text-white">
           <QuoteIcon className="h-[36px] w-[36px]" width={72} height={72} aria-hidden />
           <div className="flex flex-col gap-y-0.5">
             <p className="text-16 leading-snug">{name}</p>
-            <figcaption className="text-14 font-light not-italic leading-snug text-grey-70">
-              {position}
-            </figcaption>
+            <p className="text-14 font-light not-italic leading-snug text-grey-70">{position}</p>
           </div>
-        </div>
+        </figcaption>
       </figure>
     </div>
   );

@@ -54,6 +54,7 @@ function DesignerItem({
       </button>
       <LazyMotion features={domAnimation}>
         <m.div
+          id={index.toString()}
           initial={initialState}
           animate={isOpen ? 'open' : 'closed'}
           variants={{
