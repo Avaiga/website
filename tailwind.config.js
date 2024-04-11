@@ -73,8 +73,6 @@ module.exports = {
       'gradient-digit': 'linear-gradient(90deg, #ff462b 0%, rgba(0, 0, 0, 0) 160%)',
       'gradient-card':
         'radial-gradient(917.24% 246.32% at 47.18% 11.09%, #151518 0%, rgba(18, 18, 21, 0.72) 45.26%, rgba(17, 17, 19, 0.00) 59.74%)',
-      'gradient-about-digit':
-        'radial-gradient(676.47% 85.18% at 50% 50%, #FF5F47 0%, #FF3E22 30.13%, rgba(255, 70, 43, 0.30) 100%);',
     },
 
     boxShadow: {
