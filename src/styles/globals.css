@@ -3,11 +3,16 @@
 @import 'tailwindcss/utilities';
 @import './article.css';
 @import './no-scrollbars.css';
+@import './logos.css';
 
 @layer base {
   body {
     @apply bg-black text-white antialiased;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer components {

@@ -74,6 +74,8 @@ module.exports = {
         'radial-gradient(96.53% 52.02% at 50% 37%, #FF5F47 0%, #FF3E22 30.13%, rgba(255, 70, 43, 0.3) 100%)',
       'gradient-about-digit':
         'radial-gradient(917.24% 246.32% at 47.18% 11.09%, #151518 0%, rgba(18, 18, 21, 0.72) 45.26%, rgba(17, 17, 19, 0.00) 59.74%)',
+      'gradient-circle-enterprise':
+        'linear-gradient(to bottom, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 29.3761%, rgba(42, 42, 45, 0.4) 100%)',
       'gradient-hero-digit':
         'radial-gradient(95.97% 100% at 50% 0%, rgba(255, 92, 77, 0.00) 28.79%, #FF5C4D 100%)',
     },
