@@ -19,7 +19,7 @@ export async function GET() {
 
   allBlogPosts.forEach((post) => {
     const { category, slug, lead, publishedAt, title, author, contentRaw } = post;
-    const url = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/${ROUTE.BLOG}/${slug}`;
+    const url = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}${ROUTE.BLOG}/${slug.current}`;
 
     feed.item({
       guid: url,
