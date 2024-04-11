@@ -32,6 +32,32 @@
       rgba(42, 42, 45, 0.4) 16.55%
     );
   }
+
+  .card-border-hover {
+    @apply card-border overflow-hidden transition-all duration-200;
+
+    & > a {
+      @apply after:absolute after:inset-x-0 after:bottom-[-140px] after:z-0 after:mx-auto after:h-[160px] after:w-[260px] after:rounded-[100%] after:bg-primary-red after:opacity-0 after:blur-3xl after:transition-opacity after:duration-200;
+    }
+
+    &:hover {
+      background-image: linear-gradient(
+          180deg,
+          #2a2a2d 0%,
+          rgba(42, 42, 45, 0.5) 4.86%,
+          rgba(42, 42, 45, 0.4) 16.55%
+        ),
+        radial-gradient(
+          45.83% 45.83% at 50% 100%,
+          rgba(255, 70, 43, 0.6) 0%,
+          rgba(255, 70, 43, 0) 100%
+        );
+
+      & > a {
+        @apply bg-[#131315] after:opacity-[0.24];
+      }
+    }
+  }
 }
 
 @layer utilities {

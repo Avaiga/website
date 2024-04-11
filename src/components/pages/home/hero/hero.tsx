@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { ROUTE } from '@/constants/routes';
+
 import Button from '@/components/shared/button';
 
 import bg from '@/svgs/pages/home/hero/bg.svg';
@@ -32,6 +34,7 @@ function Hero() {
         <div className="relative mt-[42px] flex justify-center gap-x-8 lg:mt-7 md:gap-x-6 sm:mt-6 sm:gap-x-5">
           <Button
             className="w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
+            href={ROUTE.REQUEST_A_DEMO}
             size="lg"
             theme="red-filled"
           >
@@ -39,6 +42,7 @@ function Hero() {
           </Button>
           <Button
             className="w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
+            href={ROUTE.DOCUMENTATION}
             size="lg"
             theme="outline"
           >

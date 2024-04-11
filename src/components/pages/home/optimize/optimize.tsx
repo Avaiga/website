@@ -3,8 +3,6 @@
 import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { ROUTE } from '@/constants/routes';
-
 import Link from '@/components/shared/link';
 
 function Optimize() {
@@ -75,7 +73,12 @@ function Optimize() {
               Taipy enhances performance with caching control of graphical events, optimizing
               rendering by selectively updating graphical components only upon interaction.
             </p>
-            <Link className="leading-normal" href={ROUTE.INDEX} size="lg" arrowTheme="red">
+            <Link
+              className="leading-normal"
+              href="https://docs.taipy.io/en/latest/tutorials/visuals/1_the_on_change_callback/"
+              size="lg"
+              arrowTheme="red"
+            >
               Read more
             </Link>
           </div>

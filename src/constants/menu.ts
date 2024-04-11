@@ -8,7 +8,7 @@ import { ROUTE } from './routes';
 export const MENU = {
   header: [
     { label: 'Blog', href: ROUTE.BLOG },
-    { label: 'Company', href: ROUTE.COMPANY },
+    { label: 'About', href: ROUTE.ABOUT_US },
     { label: 'Pricing', href: ROUTE.PRICING },
     { label: 'Docs', href: ROUTE.DOCUMENTATION },
   ],
@@ -21,7 +21,6 @@ export const MENU = {
           { label: 'About us', href: ROUTE.ABOUT_US },
           { label: 'Enterprise', href: ROUTE.ENTERPRISE },
           { label: 'Pricing', href: ROUTE.PRICING },
-          { label: 'Customer Stories', href: ROUTE.CUSTOMER_STORIES },
         ],
       },
       {
@@ -29,7 +28,6 @@ export const MENU = {
         items: [
           { label: 'Blog', href: ROUTE.BLOG },
           { label: 'Documentation', href: ROUTE.DOCUMENTATION },
-          { label: 'Community', href: ROUTE.COMMUNITY },
         ],
       },
       {

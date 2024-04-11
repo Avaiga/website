@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 module.exports = {
   poweredByHeader: false,
   images: {
@@ -34,6 +35,16 @@ module.exports = {
   //           value: 'public, max-age=31536000, immutable',
   //         },
   //       ],
+  //     },
+  //   ];
+  // },
+  // TODO: add real redirects
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/about',
+  //       destination: '/',
+  //       permanent: true,
   //     },
   //   ];
   // },

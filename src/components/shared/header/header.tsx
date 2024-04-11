@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import { MENU } from '@/constants/menu';
+import { ROUTE } from '@/constants/routes';
 
 import Button from '@/components/shared/button';
 import Burger from '@/components/shared/header/burger';
@@ -69,7 +70,7 @@ function Header() {
           </nav>
           <div className="flex gap-x-2.5 lg:grow lg:justify-end md:hidden">
             <GithubStarCounter />
-            <Button theme="white-filled" size="sm">
+            <Button theme="white-filled" size="sm" href={ROUTE.ENTERPRISE}>
               Enterprise
             </Button>
           </div>
