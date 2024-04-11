@@ -39,7 +39,7 @@ export default function Pagination({
         nextClassName="ml-auto flex w-20 justify-end sm:w-fit"
         previousLinkClassName="flex items-center *:fill-orange-1"
         nextLinkClassName="flex items-center *:fill-orange-1"
-        disabledLinkClassName="pointer-events-none !text-grey-60 *:!fill-grey-60"
+        disabledLinkClassName="pointer-events-none hidden"
         previousLabel={
           <>
             {/* TODO: Use common arrow -> */}

@@ -89,7 +89,6 @@ export const post = defineType({
       title: 'Category',
       to: [{ type: 'category' }],
       group: 'content',
-      validation: (rule: ReferenceRule) => rule.required(),
     }),
     defineField({
       name: 'related',

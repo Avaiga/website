@@ -47,6 +47,7 @@
     "react-share": "^5.1.0",
     "sanity": "^3.36.2",
     "sanity-plugin-iframe-pane": "^3.1.6",
+    "sanity-plugin-media": "^2.2.5",
     "sharp": "^0.33.2",
     "shiki": "^1.2.4",
     "styled-components": "^6.1.8",
