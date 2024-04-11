@@ -9,7 +9,7 @@ import Link from '@/components/shared/link';
 
 import { Category } from '@/types/blog';
 
-import SearchIcon from '@/svgs/icons/search.inline.svg';
+// import SearchIcon from '@/svgs/icons/search.inline.svg';
 
 type CategoriesListProps = {
   categories: Category[];
@@ -25,7 +25,8 @@ function Sidebar({ categories }: CategoriesListProps) {
 
   return (
     <aside className="sticky top-16">
-      <label className="relative mb-8 flex h-9 items-center rounded border border-grey-20 bg-transparent px-[9px] hover:border-grey-30 focus:border-2 lg:hidden">
+      {/* TODO: algolia integration */}
+      {/* <label className="relative mb-8 flex h-9 items-center rounded border border-grey-20 bg-transparent px-[9px] hover:border-grey-30 focus:border-2 lg:hidden">
         <SearchIcon className="absolute h-4 w-4" />
         <input
           className="block w-full border-none bg-transparent pl-6 pr-2.5 text-14 leading-none tracking-snug text-white placeholder-grey-50 outline-none"
@@ -34,7 +35,7 @@ function Sidebar({ categories }: CategoriesListProps) {
           aria-label="Search posts..."
           autoComplete="off"
         />
-      </label>
+      </label> */}
       <nav className="no-scrollbars sm:-mx-5 sm:overflow-auto sm:px-5">
         <ul className="flex flex-col gap-y-3 bg-transparent text-grey-60 lg:flex-row lg:gap-x-6 md:after:shrink-0 md:after:grow-0 md:after:basis-px md:after:content-['']">
           {navigation.map(({ _id, titleShort, slug }) => (
