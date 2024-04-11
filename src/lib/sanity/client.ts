@@ -28,8 +28,8 @@ export const getCategoryBySlug = async (slug: string): Promise<SingleCategory | 
     .then((data) => data.allCategory)
     .then((data) => data[0] || null);
 
-export const getAllPosts = async (): Promise<Post[]> =>
-  await graphQLClient.request<{ allPost: Post[] }>(allPostQuery).then((data) => data.allPost);
+export const getAllPosts = async (): Promise<SinglePost[]> =>
+  await graphQLClient.request<{ allPost: SinglePost[] }>(allPostQuery).then((data) => data.allPost);
 
 export const getPosts = async (options: { page: number }): Promise<Post[]> =>
   await graphQLClient
@@ -105,7 +105,7 @@ export const getPostBySlug = async (
       { slug },
       options?.isDraftMode
         ? {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SANITY_PREVIEW_SECRET}`,
+            Authorization: `Bearer ${process.env.SANITY_PREVIEW_SECRET}`,
           }
         : undefined,
     )

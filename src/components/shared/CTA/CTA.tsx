@@ -41,8 +41,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
             Start with Taipy now
           </h3>
           <p className="relative mt-3.5 text-18 font-light lg:mt-3 lg:text-16 md:text-14 sm:mt-2.5">
-            Python library for building production-ready apps, including other libraries missing
-            features
+            Build Python production-ready data & AI web applications
           </p>
           {isEnterprise ? (
             <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 md:mt-5 sm:mt-4 sm:max-w-none">
@@ -78,7 +77,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
             {isEnterprise ? (
               <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 md:mt-5 sm:mt-4 sm:max-w-none">
                 <Link
-                  href="/"
+                  href={ROUTE.REQUEST_A_DEMO}
                   className="whitespace-nowrap px-[47px] py-[13px] font-semibold leading-snug text-black transition-colors duration-300"
                 >
                   Request a demo
@@ -89,6 +88,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
                 className="mt-6 w-full max-w-[180px] md:max-w-40 sm:mt-5"
                 size="lg"
                 theme="white-filled"
+                href={ROUTE.ENTERPRISE}
               >
                 Learn more
               </Button>

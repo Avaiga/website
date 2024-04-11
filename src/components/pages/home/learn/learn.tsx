@@ -8,8 +8,6 @@ import scenarios from '@/images/pages/home/learn/scenarios.png';
 import tasksScheduler from '@/images/pages/home/learn/tasks-scheduler.png';
 import clsx from 'clsx';
 
-import Link from '@/components/shared/link';
-
 const CARDS = [
   {
     title: 'Scenarios made easy with Taipy Studio.',
@@ -113,11 +111,6 @@ function Learn() {
               </div>
             </div>
           ))}
-        </div>
-        <div className="mt-10 flex justify-center lg:mt-9 md:mt-7">
-          <Link href="/" size="lg" theme="white" arrowTheme="red">
-            See all demos
-          </Link>
         </div>
       </div>
     </section>

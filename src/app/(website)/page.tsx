@@ -1,3 +1,5 @@
+import { SEO_DATA } from '@/constants/seo';
+
 import Applications from '@/components/pages/home/applications';
 import Benefits from '@/components/pages/home/benefits';
 import Hero from '@/components/pages/home/hero';
@@ -34,9 +36,5 @@ function Home() {
 export default Home;
 
 export async function generateMetadata() {
-  return getMetadata({
-    title: 'Taipy',
-    description: 'Build Python data & AI web applications',
-    pathname: '/',
-  });
+  return getMetadata(SEO_DATA.INDEX);
 }

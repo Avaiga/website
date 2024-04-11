@@ -21,6 +21,7 @@ import {
 import { ClassName } from '@/types/classname';
 
 import { getAnchorFromText } from '@/lib/get-anchor-from-text';
+import { getTextFromChildren } from '@/lib/get-text-from-children';
 
 import circleHashIcon from '@/svgs/icons/circle-hashtag.svg';
 import ExternalIcon from '@/svgs/icons/external.inline.svg';
@@ -69,17 +70,17 @@ const components: PortableTextComponents = {
   },
   block: {
     h2: ({ children }) => (
-      <h2 id={getAnchorFromText(children?.toString())}>
+      <h2 id={getAnchorFromText(getTextFromChildren(children))}>
         <span>{children}</span>
-        <a className="bottom-1.5" href={`#${getAnchorFromText(children?.toString())}`}>
+        <a className="bottom-1.5" href={`#${getAnchorFromText(getTextFromChildren(children))}`}>
           <Image className="mb-0 mt-0" src={circleHashIcon} width={24} height={24} alt="" />
         </a>
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 id={getAnchorFromText(children?.toString())}>
+      <h3 id={getAnchorFromText(getTextFromChildren(children))}>
         <span>{children}</span>
-        <a className="bottom-0.5" href={`#${getAnchorFromText(children?.toString())}`}>
+        <a className="bottom-0.5" href={`#${getAnchorFromText(getTextFromChildren(children))}`}>
           <Image className="mb-0 mt-0" src={circleHashIcon} width={24} height={24} alt="" />
         </a>
       </h3>
