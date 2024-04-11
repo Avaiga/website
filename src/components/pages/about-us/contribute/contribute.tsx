@@ -8,21 +8,21 @@ import Button from '@/components/shared/button';
 
 const contributeListData = [
   {
-    secondaryClass: 'md:ml-[5px] mb:top-[-11px]',
+    secondaryClass: 'ml-[5px] mb:top-[-11px]',
     image: FirstCard,
     alt: 'Fix bugs',
     heading: 'Fix bugs',
     text: 'Help us identify unwanted behaviors in the product and fix them.',
   },
   {
-    secondaryClass: 'md:mt-[18px]',
+    secondaryClass: 'mt-4 md:mt-[18px]',
     image: SecondCard,
     alt: 'Implement features',
     heading: 'Implement features',
     text: 'Chose one of the incoming features from our list, or develop your own.',
   },
   {
-    secondaryClass: 'md:mt-[10px]',
+    secondaryClass: 'mt-[10px] md:mt-[10px]',
     image: ThirdCard,
     alt: 'Submit feedback',
     heading: 'Submit feedback',
