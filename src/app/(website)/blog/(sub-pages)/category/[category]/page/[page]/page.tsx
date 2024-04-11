@@ -49,16 +49,6 @@ async function BlogPage({ params }: BlogPageProps) {
 
 export default BlogPage;
 
-export async function generateStaticParams() {
-  const postCount = await countPosts();
-
-  const pageCount = Math.ceil(postCount / BLOG_POST_PER_PAGE);
-
-  return Array.from({ length: pageCount }, (_, idx) => idx + 1).map((page) => ({
-    page: page.toString(),
-  }));
-}
-
 export async function generateMetadata({
   params,
 }: {

@@ -29,11 +29,11 @@ async function BlogPage({ params }: BlogPageProps) {
   const pageCount = Math.ceil(postCount / BLOG_POST_PER_PAGE);
 
   return (
-    <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12 sm:gap-y-8">
+    <>
       <h1 className="sr-only">Taipy Blog</h1>
       <PostsList posts={posts} />
       <Pagination currentPage={page} pageCount={pageCount} path={`${ROUTE.BLOG}`} />
-    </div>
+    </>
   );
 }
 
@@ -59,7 +59,7 @@ export async function generateMetadata({
   return getMetadata({
     ...SEO_DATA.BLOG,
     title: `${SEO_DATA.BLOG.title} - Page ${page}`,
-    pathname: `${ROUTE.BLOG}/page/${page}`,
+    pathname: `${ROUTE.BLOG}/${page}`,
   });
 }
 

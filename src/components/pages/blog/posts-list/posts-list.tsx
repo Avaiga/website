@@ -10,7 +10,7 @@ export default function PostsList({
   withFeatured?: boolean;
 }) {
   return (
-    <ul className="grid grid-cols-3 gap-x-[31px] gap-y-14 lg:gap-x-6 lg:gap-y-12 md:grid-cols-2 md:gap-y-11 sm:grid-cols-1 sm:gap-y-8">
+    <section className="grid grid-cols-3 gap-x-[31px] gap-y-14 lg:gap-x-6 lg:gap-y-12 md:grid-cols-2 md:gap-y-11 sm:grid-cols-1 sm:gap-y-8">
       {posts.map((post, index) => (
         <PostItem
           key={post._id}
@@ -19,6 +19,6 @@ export default function PostsList({
           isPriorityLoad={index < 6}
         />
       ))}
-    </ul>
+    </section>
   );
 }

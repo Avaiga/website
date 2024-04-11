@@ -20,7 +20,6 @@ function Sidebar({ categories }: CategoriesListProps) {
 
   const navigation = [
     { _id: 'id-all-posts', title: 'All posts', titleShort: 'All posts', slug: { current: '' } },
-    // TODO: fix this after the content is ready
     ...categories.filter((category) => category.title !== 'All posts'),
   ];
 

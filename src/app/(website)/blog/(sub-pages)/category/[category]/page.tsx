@@ -8,7 +8,12 @@ import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/posts-list';
 
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
-import { countPosts, getCategoryBySlug, getPostsByCategorySlug } from '@/lib/sanity/client';
+import {
+  countPosts,
+  getCategories,
+  getCategoryBySlug,
+  getPostsByCategorySlug,
+} from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 import { BLOG_POST_PER_PAGE } from '@/lib/sanity/utils';
 
@@ -35,7 +40,7 @@ async function Category({ params }: CategoryProps) {
   const pageCount = Math.ceil(postCount / BLOG_POST_PER_PAGE);
 
   return (
-    <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12 sm:gap-y-8">
+    <>
       <h1 className="sr-only">Taipy Blog</h1>
       <PostsList posts={posts} />
       {pageCount !== 1 && (
@@ -45,11 +50,19 @@ async function Category({ params }: CategoryProps) {
           path={`${ROUTE.BLOG_CATEGORY}/${params.category}`}
         />
       )}
-    </div>
+    </>
   );
 }
 
 export default Category;
+
+export async function generateStaticParams() {
+  const categories = await getCategories();
+
+  return categories.map((category) => ({
+    category: category.slug.current,
+  }));
+}
 
 export async function generateMetadata({
   params,
