@@ -81,7 +81,7 @@ function Designer() {
             <Image
               src={items[openIndex].image}
               alt={`${items[openIndex].question}-image.jpg`}
-              className="max-h-full w-auto rounded-3xl"
+              className="max-h-full w-auto rounded-xl"
             />
           </div>
         </div>

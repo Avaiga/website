@@ -51,7 +51,7 @@ function Features() {
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pr-20 lg:pr-12' : 'pl-20 lg:pl-12'}`}>
                   <Image src={image} alt={`${title}-image.jpg`} className="" />
                 </div>
-                <span className="z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-circle-enterprise text-16 text-grey-80">
+                <span className="z-10 mr-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-[1px] border-[#2A2A2D] bg-[#18181B] px-1.5 py-2 text-16 text-grey-80">
                   {index + 1}
                 </span>
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pl-20 lg:pl-12' : 'pr-20 lg:pr-12'}`}>

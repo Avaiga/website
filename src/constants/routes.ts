@@ -10,7 +10,7 @@ export const ROUTE: Record<string, URL | Route<string>> = {
   ABOUT_US: '/about-us',
   DOCUMENTATION: '/',
   ENTERPRISE: '/enterprise',
-  REQUEST_DEMO_LINK: '/',
+  REQUEST_A_DEMO: '/request-a-demo', // https://www.taipy.io/company/book-a-call
   CUSTOMER_STORIES: '/',
   COMMUNITY: '/',
   TERMS: '/',
