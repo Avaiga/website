@@ -71,7 +71,7 @@ module.exports = {
       'gradient-grey':
         'linear-gradient(0deg, #1B1B1D, #1B1B1D), radial-gradient(93.11% 55.91% at 100% 0%, rgba(204, 204, 204, 0.09) 0%, rgba(204, 204, 204, 0) 100%)',
       'gradient-digit':
-        'radial-gradient(676.47% 85.18% at 50% 50%, #FF5F47 0%, #FF3E22 30.13%, rgba(255, 70, 43, 0.30) 100%)',
+        'radial-gradient(96.53% 52.02% at 50% 37%, #FF5F47 0%, #FF3E22 30.13%, rgba(255, 70, 43, 0.3) 100%)',
       'gradient-about-digit':
         'radial-gradient(917.24% 246.32% at 47.18% 11.09%, #151518 0%, rgba(18, 18, 21, 0.72) 45.26%, rgba(17, 17, 19, 0.00) 59.74%)',
       'gradient-hero-digit':
@@ -109,6 +109,7 @@ module.exports = {
         60: '#94949e',
         70: '#afafb6',
         80: '#c7c7d1',
+        85: '#2A2A2D',
         90: '#e2e2e9',
         94: '#ededf2',
         98: '#f9f9fb',
@@ -135,7 +136,6 @@ module.exports = {
     screens: {
       xxl: { max: '1919px' },
       xl: { max: '1439px' },
-      l: { max: '1339px' },
       lg: { max: '1279px' },
       md: { max: '1023px' },
       sm: { max: '767px' },

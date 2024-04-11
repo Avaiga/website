@@ -4,7 +4,7 @@ import TeamMember from '@/images/pages/about-us/team/1-team.png';
 import TeamMember2 from '@/images/pages/about-us/team/2-team.png';
 import TeamMember3 from '@/images/pages/about-us/team/3-team.png';
 import TeamMember4 from '@/images/pages/about-us/team/4-team.png';
-import TeamMember5 from '@/images/pages/about-us/team/5-team.png';
+import TeamMember5 from '@/images/pages/about-us/team/5-team.jpg';
 import TeamMember6 from '@/images/pages/about-us/team/6-team.png';
 import TeamMember7 from '@/images/pages/about-us/team/7-team.jpg';
 import TeamMember8 from '@/images/pages/about-us/team/8-team.png';
@@ -12,7 +12,7 @@ import TeamMember9 from '@/images/pages/about-us/team/9-team.png';
 import TeamMember10 from '@/images/pages/about-us/team/10-team.png';
 import TeamMember11 from '@/images/pages/about-us/team/11-team.png';
 import TeamMember12 from '@/images/pages/about-us/team/12-team.png';
-import TeamMember13 from '@/images/pages/about-us/team/13-team.png';
+import TeamMember13 from '@/images/pages/about-us/team/13-team.jpg';
 
 const teamListData = [
   {
@@ -111,10 +111,10 @@ const teamListData = [
 
 export default function TeamList() {
   return (
-    <ul className="mx-auto mt-[74px] flex w-full max-w-[900px] flex-wrap justify-start gap-x-14 gap-y-[66px] md:mt-16 md:gap-y-[57px]">
+    <ul className="mx-auto mt-[74px] flex w-full max-w-[864px] flex-wrap justify-start gap-x-14 gap-y-[66px] lg:mt-16 lg:gap-y-[57px]">
       {teamListData.map(({ photo, name, position, alt }, index) => (
         <li
-          className="col-gap-4 flex w-full max-w-[183px] flex-col items-center gap-[18px]"
+          className="col-gap-4 flex w-full max-w-[174px] flex-col items-center gap-[18px]"
           key={index}
         >
           <div className="relative h-[72px] w-[72px]">
@@ -127,7 +127,9 @@ export default function TeamList() {
           </div>
           <div className="">
             <div className="flex items-center justify-center gap-1">
-              <span className="text-18 font-medium leading-none tracking-snug">{name}</span>
+              <span className="whitespace-nowrap text-18 font-medium leading-none tracking-snug">
+                {name}
+              </span>
               {/* <Image src={item.flag} width={19} height={19} alt={item.flagAlt} /> */}
             </div>
             <p className="pt-2 text-center text-16 font-light leading-none tracking-snug">

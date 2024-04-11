@@ -59,14 +59,14 @@ const partnersListData: Partner[] = [
     alt: 'Corero',
     width: 161,
     height: 36,
-    secondClass: 'border-r border-b l:border-r-0',
+    secondClass: 'border-r border-b lg:border-r-0',
   },
   {
     logo: Lsdirect,
     alt: 'Lsdirect',
     width: 203,
     height: 40,
-    secondClass: 'border-b l:border-r',
+    secondClass: 'border-b lg:border-r',
   },
   {
     logo: Princeton,
@@ -80,7 +80,7 @@ const partnersListData: Partner[] = [
     alt: 'Bcgx',
     width: 136,
     height: 36,
-    secondClass: 'border-r border-b l:border-r-0',
+    secondClass: 'border-r border-b lg:border-r-0',
   },
   {
     logo: Ttc,
@@ -94,14 +94,14 @@ const partnersListData: Partner[] = [
     alt: 'Predictive Layer',
     width: 196,
     height: 39,
-    secondClass: 'border-b l:border-r',
+    secondClass: 'border-b lg:border-r',
   },
   {
     logo: Kdnuggets,
     alt: 'Kdnuggets',
     width: 135,
     height: 40,
-    secondClass: 'border-r border-b l:border-r-0',
+    secondClass: 'border-r border-b lg:border-r-0',
   },
   {
     logo: Tal,
@@ -129,28 +129,28 @@ const partnersListData: Partner[] = [
     alt: 'Icb',
     width: 50,
     height: 50,
-    secondClass: 'border-r l:border-b',
+    secondClass: 'border-r lg:border-b',
   },
   {
     logo: Nylas,
     alt: 'Nylas',
     width: 143,
     height: 40,
-    secondClass: 'border-r l:border-b',
+    secondClass: 'border-r lg:border-b',
   },
   {
     logo: Ifc,
     alt: 'Ifc',
     width: 157,
     height: 40,
-    secondClass: 'border-r l:border-r-0 l:border-b',
+    secondClass: 'border-r lg:border-r-0 lg:border-b',
   },
   {
     logo: Stevens,
     alt: 'Stevens',
     width: 45,
     height: 57,
-    secondClass: 'l:border-r l:border-l',
+    secondClass: 'lg:border-r lg:border-l',
   },
 ];
 
@@ -158,7 +158,7 @@ export default function PartnersList() {
   const buttonClassName = clsx(styles.border);
 
   return (
-    <ul className="relative mx-auto mt-[58px] flex w-full max-w-[1280px] flex-wrap justify-center overflow-hidden md:mt-11">
+    <ul className="relative mx-auto mt-[58px] flex w-full max-w-[1280px] flex-wrap justify-center overflow-hidden lg:mt-11">
       {partnersListData.map(({ logo: Logo, width, height, alt, secondClass }, index) => (
         <li
           className={clsx(
