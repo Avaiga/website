@@ -30,7 +30,13 @@ function ToolBlock({ logo, title, description, image, gradient, className }: Too
             'w-1/3 sm:flex sm:w-full sm:flex-col': image,
           })}
         >
-          <Image src={logo} alt="" width={40} height={40} className="lg:h-9 lg:w-9 sm:h-8 sm:w-8" />
+          <Image
+            src={logo}
+            alt={`${title}-image.jpg`}
+            width={40}
+            height={40}
+            className="lg:h-9 lg:w-9 sm:h-8 sm:w-8"
+          />
           <h3 className="mt-6 text-20 font-semibold leading-snug lg:text-16 sm:mt-5">{title}</h3>
           <p className="mt-2 text-16 leading-snug text-grey-70 lg:text-14">{description}</p>
         </div>

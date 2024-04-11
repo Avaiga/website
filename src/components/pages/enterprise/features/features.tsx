@@ -49,7 +49,7 @@ function Features() {
                 key={title}
               >
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pr-20 lg:pr-12' : 'pl-20 lg:pl-12'}`}>
-                  <Image src={image} alt={`${title} image`} className="" />
+                  <Image src={image} alt={`${title}-image.jpg`} className="" />
                 </div>
                 <span className="z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-circle-enterprise text-16 text-grey-80">
                   {index + 1}

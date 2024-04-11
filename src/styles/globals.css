@@ -11,6 +11,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .container {
     @apply mx-auto w-full max-w-[1408px] px-8 sm:px-5;

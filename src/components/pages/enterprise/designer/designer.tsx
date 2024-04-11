@@ -4,10 +4,11 @@ import Image, { StaticImageData } from 'next/image';
 
 import { useState } from 'react';
 
-import applicationImage from '@/images/pages/enterprise/application.webp';
-import pythonImage from '@/images/pages/enterprise/python.webp';
-import renderingImage from '@/images/pages/enterprise/rendering.webp';
-import widgetsImage from '@/images/pages/enterprise/widget.webp';
+import { ROUTE } from '@/constants/routes';
+import applicationImage from '@/images/pages/enterprise/designer/application.png';
+import pythonImage from '@/images/pages/enterprise/designer/python.png';
+import renderingImage from '@/images/pages/enterprise/designer/rendering.png';
+import widgetsImage from '@/images/pages/enterprise/designer/widget.png';
 
 import Button from '@/components/shared/button';
 
@@ -17,7 +18,6 @@ interface Feature {
   question: string;
   answer: string;
   image: StaticImageData;
-  initialState?: 'open' | 'closed';
 }
 
 const items: Feature[] = [
@@ -26,7 +26,6 @@ const items: Feature[] = [
     answer:
       'Instead of traditional insertion methods or programming, users can simply drag and drop widgets from the toolbar or sidebar menu onto the page.',
     image: widgetsImage,
-    initialState: 'open' as const,
   },
   {
     question: 'Connect the widgets to Python variables',
@@ -49,10 +48,14 @@ const items: Feature[] = [
 ];
 
 function Designer() {
-  const [currentFeature, setCurrentFeature] = useState(items[0]);
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const handleItemClick = (index: number) => {
+    setOpenIndex(index);
+  };
 
   return (
-    <section className="designer mt-[185px] px-safe lg:mt-[154px]">
+    <section className="designer mt-[185px] scroll-mt-32 px-safe lg:mt-[154px]" id="designer">
       <div className="container flex max-w-[1280px] flex-col items-center gap-x-16">
         <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold">
           Taipy Designer features
@@ -69,14 +72,15 @@ function Designer() {
                 {...feature}
                 key={index}
                 index={index}
-                setCurrentPicture={() => setCurrentFeature(feature)}
+                isOpen={index === openIndex}
+                handleItemClick={() => handleItemClick(index)}
               />
             ))}
           </ul>
           <div className="flex basis-1/2 items-center justify-center lg:pt-4">
             <Image
-              src={currentFeature.image}
-              alt={`Feature ${currentFeature.question}`}
+              src={items[openIndex].image}
+              alt={`${items[openIndex].question}-image.jpg`}
               className="max-h-full w-auto rounded-3xl"
             />
           </div>
@@ -85,6 +89,7 @@ function Designer() {
           className="mt-[70px] w-full max-w-[180px] lg:mt-[51px]"
           size="lg"
           theme="red-filled"
+          href={ROUTE.PRICING}
         >
           See our plans
         </Button>

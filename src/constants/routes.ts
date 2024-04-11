@@ -10,6 +10,7 @@ export const ROUTE: Record<string, URL | Route<string>> = {
   ABOUT_US: '/about-us',
   DOCUMENTATION: '/',
   ENTERPRISE: '/enterprise',
+  REQUEST_DEMO_LINK: '/',
   CUSTOMER_STORIES: '/',
   COMMUNITY: '/',
   TERMS: '/',

@@ -30,7 +30,7 @@ function Enterprise() {
       <Designer />
       <Features />
       <Testimonial
-        quote="Integrating Taipy into our suite of products for the Quick Service Restaurant (QSR) market has marked a significant step forward. The ease with which our development team was able to pick up Taipy was remarkable."
+        quote='"Integrating Taipy into our suite of products for the Quick Service Restaurant (QSR) market has marked a significant step forward. The ease with which our development team was able to pick up Taipy was remarkable."'
         name="Jesselynn Mah"
         position="KnowledgeTouch"
       />

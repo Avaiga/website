@@ -1,7 +1,3 @@
-'use client';
-
-import { useState } from 'react';
-
 import clsx from 'clsx';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
 
@@ -10,44 +6,37 @@ import ArrowIcon from '@/svgs/pages/pricing/faq/new-arrow.inline.svg';
 interface ItemProps {
   question: string;
   answer: string;
-  initialState?: 'open' | 'closed';
   index: number;
-  setCurrentPicture: () => void;
+  isOpen: boolean;
+  handleItemClick: () => void;
 }
 
-function DesignerItem({
-  question,
-  answer,
-  initialState = 'closed',
-  index,
-  setCurrentPicture,
-}: ItemProps) {
-  const [isOpen, setIsOpen] = useState(initialState === 'open');
-
-  const handleOpen = () => {
-    setIsOpen((prev) => !prev);
-    setCurrentPicture();
-  };
-
+function DesignerItem({ question, answer, isOpen, handleItemClick, index }: ItemProps) {
   return (
     <li className="border-b border-grey-20 pb-4 pt-[15px]">
       <button
-        className="group relative flex w-full items-center gap-3 text-left"
+        className={clsx(
+          'group relative flex w-full items-center gap-3 text-left',
+          isOpen ? 'cursor-default' : 'cursor-pointer',
+        )}
         type="button"
         aria-expanded={isOpen}
         aria-controls={index.toString()}
-        onClick={handleOpen}
+        onClick={handleItemClick}
       >
-        <h3 className="text-20 font-medium leading-dense tracking-tight group-hover:text-[#C8CAD0] lg:text-16">
+        <h3
+          className={clsx(
+            'text-20 font-medium leading-dense tracking-tight lg:text-16',
+            isOpen ? 'cursor-default' : 'group-hover:text-[#C8CAD0]',
+          )}
+        >
           {question}
         </h3>
+
         <ArrowIcon
           className={clsx(
-            'ml-auto h-8 w-8 shrink-0 opacity-80 transition-[fill,transform] duration-200 group-hover:opacity-100 lg:h-7 lg:w-7',
-            {
-              'rotate-0': isOpen,
-              'rotate-180': !isOpen,
-            },
+            'ml-auto h-8 w-8 shrink-0 opacity-80 transition-[fill,transform] duration-200 lg:h-7 lg:w-7',
+            isOpen ? ['rotate-0', 'opacity-80'] : ['rotate-180', 'group-hover:opacity-100'],
           )}
           aria-hidden
         />
@@ -55,7 +44,7 @@ function DesignerItem({
       <LazyMotion features={domAnimation}>
         <m.div
           id={index.toString()}
-          initial={initialState}
+          initial="closed"
           animate={isOpen ? 'open' : 'closed'}
           variants={{
             open: {
