@@ -59,7 +59,7 @@ export async function generateMetadata({
   return getMetadata({
     ...SEO_DATA.BLOG,
     title: `${SEO_DATA.BLOG.title} - Page ${page}`,
-    pathname: `${ROUTE.BLOG}/page/${page}`,
+    pathname: `${ROUTE.BLOG}/${page}`,
   });
 }
 

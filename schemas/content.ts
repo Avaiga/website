@@ -171,6 +171,7 @@ export const contentField = defineField({
           { title: 'Golang', value: 'golang' },
           { title: 'JSON', value: 'json' },
           { title: 'Python', value: 'Python' },
+          { title: 'CSS', value: 'css' },
         ],
       },
     },

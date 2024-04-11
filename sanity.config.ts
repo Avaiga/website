@@ -4,6 +4,7 @@ import { table } from '@sanity/table';
 import { visionTool } from '@sanity/vision';
 import { SanityDocument, defineConfig } from 'sanity';
 import { Iframe } from 'sanity-plugin-iframe-pane';
+import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { DefaultDocumentNodeResolver, structureTool } from 'sanity/structure';
 
 import { schemaTypes } from './schemas';
@@ -110,10 +111,19 @@ export default defineConfig({
           ]),
       defaultDocumentNode,
     }),
+    media(),
     visionTool({ defaultApiVersion: apiVersion, defaultDataset: dataset }),
     table(),
     codeInput(),
   ],
+
+  form: {
+    // Don't use this plugin when selecting files only (but allow all other enabled asset sources)
+    file: {
+      assetSources: (previousAssetSources) =>
+        previousAssetSources.filter((assetSource) => assetSource !== mediaAssetSource),
+    },
+  },
 
   schema: {
     types: schemaTypes,

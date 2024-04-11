@@ -16,7 +16,7 @@ import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { getPublishDate } from '@/lib/get-publish-date';
 import { PortableToPlain } from '@/lib/portable-to-plain';
-import { getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
+import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 
 export default async function Post({ params }: { params: { slug: string } }) {
@@ -64,8 +64,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <article className="pt-[92px]">
-        <div className="container grid max-w-[1256px] grid-cols-[180px_704px_180px] gap-x-16">
+      <article className="pt-[92px] xl:pt-[88px] md:pt-[84px] sm:pt-20">
+        <div className="container relative grid max-w-[1256px] grid-cols-[180px_704px_180px] gap-x-16 xl:block xl:max-w-[704px]">
           <div className="col-start-2 col-end-2">
             <Hero
               title={title}
@@ -76,21 +76,23 @@ export default async function Post({ params }: { params: { slug: string } }) {
               category={category}
               slug={slug}
             />
-            <Content content={contentRaw} className="mt-14 lg:mt-12 md:mt-10 sm:mt-8" />
+          </div>
+          <div className="absolute col-start-3 h-full max-w-[180px] xl:static xl:mt-12 xl:h-auto xl:max-w-none md:mt-10 sm:mt-8">
+            <Navigation items={navItems} />
+          </div>
+          <div className="col-start-2 col-end-2 mt-14 xl:mt-7 md:mt-6 sm:mt-5">
+            <Content content={contentRaw} className="" />
             <AuthorAndShare
-              className="border-t border-t-grey-20 pt-8"
+              className="mt-8 border-t border-t-grey-20 pt-8 lg:mt-7 lg:pt-7 md:mt-6 md:pt-6 sm:mt-5 sm:pt-5"
               author={author}
               slug={slug}
               publishedAt={getPublishDate(publishedAt).toUpperCase()}
               title={title}
             />
           </div>
-          <div className="col-start-3">
-            <Navigation items={navItems} />
-          </div>
         </div>
       </article>
-      <section className="related mt-[120px]">
+      <section className="related mt-[120px] lg:mt-[104px] md:mt-[88px] sm:mt-16">
         <div className="container-narrow">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-32 font-semibold leading-none tracking-tight">Related Posts</h2>
@@ -98,7 +100,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
               All posts
             </Link>
           </div>
-          <ul className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:grid-cols-2 sm:grid-cols-1 sm:gap-y-8">
+          <ul className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
             {relatedPosts.map((relatedPost) => (
               <PostItem key={relatedPost._id} post={relatedPost} />
             ))}
@@ -106,13 +108,21 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </div>
       </section>
       <Subscribe
-        className="my-36"
+        className="my-36 lg:my-32 md:my-[104px] sm:my-[72px]"
         tagline="Newsletter"
         title="Stay ahead with our newsletter"
         text="Join Taipy's mailing list and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
       />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+
+  return posts.map(({ slug }) => ({
+    slug: slug.current,
+  }));
 }
 
 export async function generateMetadata({
