@@ -63,28 +63,36 @@ function Applications() {
         <div className="mt-14 grid grid-cols-3 gap-8 lg:mt-12 lg:gap-6 md:mt-14 md:grid-cols-2 md:px-8 sm:mt-6 sm:flex sm:flex-wrap sm:justify-center sm:gap-5 sm:px-0">
           {CARDS.map(({ image, title, description, url }, index) => (
             <div
-              className="card-border flex h-96 rounded-lg text-left lg:aspect-[1.013] lg:h-auto sm:aspect-auto sm:h-[304px] sm:w-full sm:max-w-[320px]"
+              className="card-border-hover flex h-96 cursor-pointer rounded-lg text-left lg:aspect-[1.013] lg:h-auto sm:aspect-auto sm:h-[304px] sm:w-full sm:max-w-[320px]"
               key={index}
             >
               <Link
-                className="relative flex w-full flex-col justify-end rounded-lg bg-grey-10 p-8 hover:bg-[#161618] hover:text-[#C8CAD0] lg:p-6"
+                className="relative flex w-full flex-col justify-end rounded-lg bg-grey-10 p-8 lg:p-6"
                 href={url as unknown as URL}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <Image
-                  className="pointer-events-none absolute left-0 top-0 h-auto w-full"
+                  className="pointer-events-none absolute left-0 top-0 z-10 h-auto w-full"
                   src={image}
                   alt={title}
                 />
-                <h3 className="text-20 font-semibold leading-snug lg:text-16">{title}</h3>
-                <p className="mt-2 text-18 text-grey-70 lg:text-14">{description}</p>
+                <h3 className="relative z-10 text-20 font-semibold leading-snug lg:text-16">
+                  {title}
+                </h3>
+                <p className="relative z-10 mt-2 text-18 text-grey-70 lg:text-14">{description}</p>
               </Link>
             </div>
           ))}
         </div>
         <div className="mt-[50px] flex justify-center lg:mt-10 md:mt-9 sm:mt-6">
-          <Link className="leading-snug" href="/" size="lg" theme="white" arrowTheme="red">
+          <Link
+            className="leading-snug"
+            href="https://docs.taipy.io/en/release-3.0/knowledge_base/demos/"
+            size="lg"
+            theme="white"
+            arrowTheme="red"
+          >
             See all demos
           </Link>
         </div>

@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
+import Link from '@/components/shared/link';
+
 function LargeData() {
   const { ref: otherRef, inView: otherInView } = useInView({ threshold: 0.1 });
   const { ref: taipyRef, inView: taipyInView } = useInView({ threshold: 0.1 });
@@ -15,6 +17,7 @@ function LargeData() {
       title: 'In Taipy',
       description:
         "Effortlessly manage massive datasets with Taipy's built-in decimator for charts, intelligently reducing the number of data points to save time and memory without losing the essence of your data's shape.",
+      readMore: true,
       ref: taipyRef,
       video: {
         mp4: '/videos/pages/home/large-data/large-data-taipy.mp4',
@@ -59,7 +62,7 @@ function LargeData() {
         <h2 className="mb-12 pl-[205px] text-56 font-semibold leading-dense tracking-tight lg:mb-[57px] lg:pl-16 lg:text-48 md:mb-10 md:pl-8 md:text-40 sm:mb-4 sm:pl-0 sm:text-center sm:text-28">
           Large data support
         </h2>
-        {itemsData.map(({ title, description, video, ref }, index) => (
+        {itemsData.map(({ title, description, video, ref, readMore }, index) => (
           <div
             className="mt-10 flex gap-x-9 lg:mt-9 lg:gap-x-8 md:mt-7 md:items-start sm:mb-5 sm:mt-0 sm:flex-wrap"
             key={index}
@@ -86,6 +89,16 @@ function LargeData() {
               <p className="mt-2 text-18 font-light text-grey-70 lg:text-16 md:text-14 sm:hidden">
                 {description}
               </p>
+              {readMore && (
+                <Link
+                  className="mt-4 leading-normal md:mt-3 sm:hidden"
+                  href="https://docs.taipy.io/en/latest/manuals/reference/taipy.gui.data.Decimator/"
+                  size="lg"
+                  arrowTheme="red"
+                >
+                  Read more
+                </Link>
+              )}
             </div>
           </div>
         ))}
