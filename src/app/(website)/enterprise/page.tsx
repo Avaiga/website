@@ -34,7 +34,10 @@ function Enterprise() {
         name="Jesselynn Mah"
         position="KnowledgeTouch"
       />
-      <CTA className="mb-[184px] mt-[208px] lg:mb-[151px] lg:mt-[184px]" isEnterprise />
+      <CTA
+        className="mb-[184px] mt-[208px] lg:mb-[151px] lg:mt-[184px] md:my-[110px]"
+        isEnterprise
+      />
     </>
   );
 }

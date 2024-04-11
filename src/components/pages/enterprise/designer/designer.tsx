@@ -55,17 +55,20 @@ function Designer() {
   };
 
   return (
-    <section className="designer mt-[185px] scroll-mt-32 px-safe lg:mt-[154px]" id="designer">
+    <section
+      className="designer mt-[185px] scroll-mt-32 px-safe lg:mt-[154px] md:mt-[64px]"
+      id="designer"
+    >
       <div className="container flex max-w-[1280px] flex-col items-center gap-x-16">
-        <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold">
+        <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36">
           Taipy Designer features
         </h2>
-        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 lg:leading-snug">
+        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 md:mt-4 md:max-w-[448px] md:leading-normal">
           Get flexible solutions that fit your environment and give you full control of your
           observability data.
         </p>
 
-        <div className="mt-[54px] flex max-w-[1280px] items-center gap-x-16 lg:mt-[46px]">
+        <div className="mt-[54px] flex max-w-[1280px] items-center gap-x-16 lg:mt-[46px] md:mt-[23px] md:max-w-[512px] md:flex-col">
           <ul className="basis-1/2">
             {items.map((feature, index) => (
               <DesignerItem
@@ -77,7 +80,7 @@ function Designer() {
               />
             ))}
           </ul>
-          <div className="flex basis-1/2 items-center justify-center lg:pt-4">
+          <div className="flex basis-1/2 items-center justify-center lg:pt-4 md:hidden">
             <Image
               src={items[openIndex].image}
               alt={`${items[openIndex].question}-image.jpg`}
@@ -86,7 +89,7 @@ function Designer() {
           </div>
         </div>
         <Button
-          className="mt-[70px] w-full max-w-[180px] lg:mt-[51px]"
+          className="mt-[70px] w-full max-w-[180px] lg:mt-[51px] md:mt-[43px] md:text-16"
           size="lg"
           theme="red-filled"
           href={ROUTE.PRICING}

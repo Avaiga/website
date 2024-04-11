@@ -67,12 +67,12 @@ function Logos({ className = '', logos }: LogosProps) {
   return (
     <div
       className={clsx(
-        'container mt-[136px] w-full max-w-[960px] lg:mt-[118px] lg:max-w-[832px]',
+        'container mt-[136px] w-full max-w-[960px] lg:mt-[118px] lg:max-w-[832px] md:mt-[78px] md:max-w-[704px]',
         className,
       )}
     >
       <h3 className="text-center leading-snug text-primary-red">They trust us</h3>
-      <div className="mt-[56px] select-none md:-mb-8">
+      <div className="mt-[56px] select-none md:-mb-8 md:mt-[43px]">
         <LogosWall className="logos-sides-fade" logos={logos} />
       </div>
     </div>

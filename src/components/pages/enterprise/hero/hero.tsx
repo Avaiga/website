@@ -33,7 +33,7 @@ export default function Hero() {
           Request a demo
           <span className="absolute top-[-51px] h-[190px] w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[36px]" />
         </Button>
-        <div className="relative mx-auto mt-16 flex h-[266px] w-full max-w-[960px] justify-between overflow-hidden rounded-lg bg-gradient-card pl-[32px] md:max-w-[832px]">
+        <div className="md:gax-x-[50px] relative mx-auto mt-16 flex h-[266px] w-full max-w-[960px] justify-between overflow-hidden rounded-lg bg-gradient-card pl-[32px] md:max-w-[832px]">
           <span className="rounded-297px absolute right-[50%] top-0 z-[2] h-[60px] w-full max-w-[297px] translate-x-[50%] bg-shadow-red blur-[100px]" />
           <ul className="mt-8 w-full max-w-[321px] text-start md:max-w-[244px]">
             <li className="">
@@ -57,10 +57,10 @@ export default function Hero() {
               fill={true}
               alt="Hero Plug-image.jpg"
             />
-            <div className="absolute left-[55%] top-1/2 flex h-[80px] w-full max-w-[219px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+            <div className="absolute left-[55%] top-1/2 flex h-[80px] w-full max-w-[219px] -translate-x-1/2 -translate-y-1/2 items-center justify-center md:left-[51%] md:top-[48%] md:max-w-[129px]">
               <span className="absolute h-[80px] w-full rounded-[46px] bg-black blur-[24px]" />
               <Button
-                className="z-[2] flex w-full max-w-[187px] items-center justify-center gap-[11px] border-orange-1 px-0 tracking-snug"
+                className="z-[2] flex w-full max-w-[187px] items-center justify-center gap-[11px] border-orange-1 px-0 tracking-snug md:h-[33px]"
                 size="lg"
                 theme="red-outline"
                 href="#designer"

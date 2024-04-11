@@ -1,3 +1,5 @@
+import Image, { StaticImageData } from 'next/image';
+
 import clsx from 'clsx';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
 
@@ -6,14 +8,15 @@ import ArrowIcon from '@/svgs/pages/pricing/faq/new-arrow.inline.svg';
 interface ItemProps {
   question: string;
   answer: string;
+  image: StaticImageData;
   index: number;
   isOpen: boolean;
   handleItemClick: () => void;
 }
 
-function DesignerItem({ question, answer, isOpen, handleItemClick, index }: ItemProps) {
+function DesignerItem({ question, answer, image, isOpen, handleItemClick, index }: ItemProps) {
   return (
-    <li className="border-b border-grey-20 pb-4 pt-[15px]">
+    <li className="border-b border-grey-20 pb-4 pt-[15px] md:pb-[13px] md:pt-5">
       <button
         className={clsx(
           'group relative flex w-full items-center gap-3 text-left',
@@ -63,8 +66,16 @@ function DesignerItem({ question, answer, isOpen, handleItemClick, index }: Item
             height: { duration: 0.3 },
           }}
         >
-          <div className="flex flex-col pb-1.5 pr-[93px] pt-4 text-16  leading-snug text-grey-70 lg:pb-0 lg:pr-16 lg:pt-3.5 lg:text-14">
+          <div className="flex flex-col pb-1.5 pr-[93px] pt-4 text-16  leading-snug text-grey-70 lg:pb-0 lg:pr-16 lg:pt-3.5 lg:text-14 md:pr-8">
             <p>{answer}</p>
+          </div>
+
+          <div>
+            <Image
+              src={image}
+              alt={`${question}-image.jpg`}
+              className="mt-5 hidden max-h-full w-auto rounded-xl md:block"
+            />
           </div>
         </m.div>
       </LazyMotion>

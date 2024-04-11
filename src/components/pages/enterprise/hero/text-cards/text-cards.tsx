@@ -18,7 +18,7 @@ const textCardsData = [
 
 export default function TextCards() {
   return (
-    <ul className="mx-auto mt-[69px] flex max-w-[896px] justify-between text-start lg:mt-[54px] lg:max-w-[768px] lg:gap-x-[128px]">
+    <ul className="mx-auto mt-[69px] flex max-w-[896px] justify-between text-start lg:mt-[54px] lg:max-w-[768px] lg:gap-x-[128px] md:mt-9 md:max-w-[640px] md:gap-x-[66px]">
       {textCardsData.map(({ icon, heading, text }, index) => (
         <li className="w-full max-w-[384px]" key={index}>
           <Image className="" src={icon} width={24} height={24} alt={`${heading}-image.jpg`} />
