@@ -28,7 +28,7 @@ export default function OurHistory() {
           </h2>
         </div>
         <div className="mt-11 flex w-full max-w-[1184px] justify-between gap-2.5 lg:mt-10 lg:gap-[33px] sm:mt-[23px] sm:flex-col sm:gap-[35px]">
-          <div className="w-full max-w-[576px] lg:max-w-[448px]">
+          <div className="w-full max-w-[576px] lg:max-w-[448px] md:max-w-full">
             <HistoryVideo />
             <ul className="mt-[51px] flex w-full max-w-[371px] justify-between lg:mt-[39px] lg:max-w-[354px] md:flex-col md:gap-5 sm:mt-[27px] sm:flex-row">
               <li className="flex w-full max-w-[84px] flex-col gap-[13px] sm:gap-2.5">
