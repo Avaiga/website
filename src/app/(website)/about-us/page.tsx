@@ -18,7 +18,7 @@ function AboutUs() {
       <OurPartners />
       <Contribute />
       <Subscribe
-        className="mb-[203px] mt-[196px] lg:mt-[124px] md:mt-[126px] sm:mb-[57px] sm:mt-[57px]"
+        className="mb-[203px] mt-[196px] lg:mb-[136px] lg:mt-[139px] md:mt-[126px] sm:mb-[57px] sm:mt-[57px]"
         tagline="Integrations"
         title="Subscribe to the Newsletter"
         text="Subscribe to Taipy's newsletter and stay informed of the latest news! We send four mails per year plus a few more for very special announcements."
