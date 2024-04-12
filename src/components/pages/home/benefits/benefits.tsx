@@ -20,7 +20,7 @@ const CARDS = [
   },
   {
     icon: cIcon,
-    title: 'For C-suits',
+    title: 'For C-suites',
     description:
       'Our solution supports your journey, seamlessly extending to augment your influence across the organization.',
   },
