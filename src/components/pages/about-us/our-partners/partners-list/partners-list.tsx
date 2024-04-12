@@ -34,123 +34,108 @@ type ExtendedSVGProps<T extends SVGElement> = SVGProps<T> & {
 interface Partner {
   logo: React.FunctionComponent<ExtendedSVGProps<SVGSVGElement>>;
   alt: string;
-  width: number;
-  height: number;
   secondClass?: string;
+  secondLogoClass?: string;
 }
 
 const partnersListData: Partner[] = [
   {
     logo: Microsoft,
     alt: 'Microsoft',
-    width: 183,
-    height: 39,
-    secondClass: 'border-r border-b',
+    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
+    secondLogoClass: 'w-[183px] md:w-[144px] sm:w-[91px]',
   },
   {
     logo: Mousquetaires,
     alt: 'Mousquetaires',
-    width: 76,
-    height: 54,
-    secondClass: 'border-r border-b',
+    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
+    secondLogoClass: 'w-[76px] md:w-[60px] sm:w-[38px]',
   },
   {
     logo: Corero,
     alt: 'Corero',
-    width: 161,
-    height: 36,
-    secondClass: 'border-r border-b lg:border-r-0',
+    secondClass:
+      'border-r border-b lg:border-r-0 xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
+    secondLogoClass: 'w-[161px] md:w-[127px] sm:w-[80px]',
   },
   {
     logo: Lsdirect,
     alt: 'Lsdirect',
-    width: 203,
-    height: 40,
-    secondClass: 'border-b lg:border-r',
+    secondClass: 'border-b xl:border-b-0 2xs:border-b',
+    secondLogoClass: 'w-[203px] md:w-[160px] sm:w-[101px]',
   },
   {
     logo: Princeton,
     alt: 'Princeton Consultants',
-    width: 171,
-    height: 49,
-    secondClass: 'border-r border-b',
+    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
+    secondLogoClass: 'w-[171px] md:w-[135px] sm:w-[85px]',
   },
   {
     logo: Bcgx,
     alt: 'Bcgx',
-    width: 136,
-    height: 36,
-    secondClass: 'border-r border-b lg:border-r-0',
+    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
+    secondLogoClass: 'w-[136px] md:w-[107px] sm:w-[68px]',
   },
   {
     logo: Ttc,
     alt: 'Ttc',
-    width: 82,
-    height: 55,
-    secondClass: 'border-r border-b',
+    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
+    secondLogoClass: 'w-[82px] md:w-[65px] sm:w-[41px]',
   },
   {
     logo: Knowledge,
     alt: 'Predictive Layer',
-    width: 196,
-    height: 39,
-    secondClass: 'border-b lg:border-r',
+    secondClass: 'border-b xl:border-b-0 2xs:border-b',
+    secondLogoClass: 'w-[196px] md:w-[158px] sm:w-[106px]',
   },
   {
     logo: Kdnuggets,
     alt: 'Kdnuggets',
-    width: 135,
-    height: 40,
-    secondClass: 'border-r border-b lg:border-r-0',
+    secondClass:
+      'border-r border-b lg:border-r-0 xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
+    secondLogoClass: 'w-[135px] md:w-[105px] sm:w-[67px]',
   },
   {
     logo: Tal,
     alt: 'Tal Group',
-    width: 110,
-    height: 55,
-    secondClass: 'border-r border-b',
+    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
+    secondLogoClass: 'w-[110px] md:w-[79px] sm:w-[50px]',
   },
   {
     logo: Datacamp,
     alt: 'Datacamp',
-    width: 168,
-    height: 36,
-    secondClass: 'border-r border-b',
+    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
+    secondLogoClass: 'w-[168px] md:w-[132px] sm:w-[84px]',
   },
   {
     logo: Probtp,
     alt: 'Probtp',
-    width: 164,
-    height: 38,
-    secondClass: 'border-b',
+    secondClass: 'border-b xl:border-b-0 2xs:border-b 2xs:border-b',
+    secondLogoClass: 'w-[164px] md:w-[129px] sm:w-[82px]',
   },
   {
     logo: Icb,
     alt: 'Icb',
-    width: 50,
-    height: 50,
-    secondClass: 'border-r lg:border-b',
+    secondClass: 'border-r xl:border-r-0 2xs:border-b 2xs:border-r',
+    secondLogoClass: 'w-[50px] md:w-[43px] sm:w-[27px]',
   },
   {
     logo: Nylas,
     alt: 'Nylas',
-    width: 143,
-    height: 40,
-    secondClass: 'border-r lg:border-b',
+    secondClass: 'border-r xl:border-r-0 2xs:border-b',
+    secondLogoClass: 'w-[143px] md:w-[113px] sm:w-[71px]',
   },
   {
     logo: Ifc,
     alt: 'Ifc',
-    width: 157,
-    height: 40,
-    secondClass: 'border-r lg:border-r-0 lg:border-b',
+    secondClass: 'border-r xl:border-r-0',
+    secondLogoClass: 'w-[157px] md:w-[124px] sm:w-[78px]',
   },
   {
     logo: Stevens,
     alt: 'Stevens',
-    width: 45,
-    height: 57,
-    secondClass: 'lg:border-r lg:border-l',
+    secondClass: 'border-l xl:border-l-0 2xs:border-l',
+    secondLogoClass: 'w-[45px] md:w-[35px] sm:w-[22px]',
   },
 ];
 
@@ -158,17 +143,17 @@ export default function PartnersList() {
   const buttonClassName = clsx(styles.border);
 
   return (
-    <ul className="relative mx-auto mt-[58px] flex w-full max-w-[1280px] flex-wrap justify-center overflow-hidden lg:mt-11">
-      {partnersListData.map(({ logo: Logo, width, height, alt, secondClass }, index) => (
+    <ul className="relative mx-auto mt-[58px] flex w-full max-w-[1280px] flex-wrap justify-center overflow-hidden lg:mt-11 md:mt-[34px]">
+      {partnersListData.map(({ logo: Logo, alt, secondClass, secondLogoClass }, index) => (
         <li
           className={clsx(
-            'relative flex h-[160px] w-full max-w-[319px] items-center justify-center border-grey-15',
+            'relative flex h-[160px] w-full max-w-[319px] items-center justify-center border-grey-15 md:h-[126px] md:max-w-[256px] sm:h-[80px] sm:max-w-[159px]',
             secondClass,
             buttonClassName,
           )}
           key={index}
         >
-          <Logo className="fill-grey-70" width={width} height={height} alt={alt} />
+          <Logo className={clsx('fill-grey-70', secondLogoClass)} alt={alt} />
         </li>
       ))}
     </ul>
