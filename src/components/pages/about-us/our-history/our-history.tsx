@@ -36,7 +36,7 @@ export default function OurHistory() {
                   Founded in
                 </span>
                 <b className="text-20 font-medium tracking-snug text-grey-94 md:text-18 sm:text-16">
-                  2024
+                  2021
                 </b>
               </li>
               <li className="flex w-full max-w-[198px] flex-col gap-[13px] md:gap-[11px] sm:max-w-[214px] sm:gap-2.5">
@@ -67,7 +67,7 @@ export default function OurHistory() {
               </p>
               <p className="pt-5 text-18 font-light leading-snug text-grey-94 md:pt-2.5 md:text-16">
                 Now Taipy offers a solution to multiple challenges, empowering businesses with
-                interactive, user-centric AI applications.
+                interactive, collaborative and user-centric AI applications.
               </p>
             </div>
             <HistoryList />

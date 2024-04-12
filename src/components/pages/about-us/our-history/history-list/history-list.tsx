@@ -20,7 +20,7 @@ const historyListData: historyListProps[] = [
     logo: CollaborationIcon,
     alt: 'Collaborative data processing',
     heading: 'Collaborative data processing',
-    text: 'Including Data Scientists, Data Engineers, GUI developers, MLOps, as reported by Gartner saying that more than 85% of pilots developed in Python remain pilots.',
+    text: "It is at the heart of Taipy's approach, involving a diverse team of experts including Data Scientists, Data Engineers, GUI developers, and MLOps specialists. Gartner's research underscores the enduring significance of Python in this realm, revealing that over 85% of Python-based pilot projects retain their pilot status.",
   },
   {
     logo: PythonIcon,
@@ -32,7 +32,7 @@ const historyListData: historyListProps[] = [
     logo: UsersIcon,
     alt: 'User-centric approach',
     heading: 'User-centric approach',
-    text: 'A lack of Python tools for both front-end and back-end development. With a fast learning curve and robust application-building capabilities.',
+    text: "User-centricity guides Taipy's approach, which addresses the dearth of Python tools spanning both front-end and back-end development. Python's rapid learning curve and robust application-building capabilities further accentuate its suitability for this purpose.",
   },
 ];
 
