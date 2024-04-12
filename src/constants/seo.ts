@@ -30,4 +30,10 @@ export const SEO_DATA = {
       'Explore all the tutorials, articles, videos, and experiments made by Taipy team or Taipy community',
     pathname: ROUTE.BLOG as string, // /blog
   },
+  BOOK_A_CALL: {
+    title: 'Book a Call | Taipy',
+    description:
+      'Apply now for our mentoring program and connect with us for guidance and support.',
+    pathname: ROUTE.REQUEST_A_DEMO as string, // /book-a-call
+  },
 };
