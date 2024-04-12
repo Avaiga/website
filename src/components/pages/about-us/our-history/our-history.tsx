@@ -67,7 +67,7 @@ export default function OurHistory() {
               </p>
               <p className="pt-5 text-18 font-light leading-snug text-grey-94 md:pt-2.5 md:text-16">
                 Now Taipy offers a solution to multiple challenges, empowering businesses with
-                interactive, user-centric AI applications.
+                interactive, collaborative and user-centric AI applications.
               </p>
             </div>
             <HistoryList />

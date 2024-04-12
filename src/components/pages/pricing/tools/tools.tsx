@@ -87,7 +87,7 @@ const toolBlocks: Tool[] = [
 function Tools() {
   return (
     <section className="tools mt-[168px] lg:mt-[128px] md:mt-[98px] sm:mt-[78px]">
-      <div className="container flex max-w-[1088px] flex-col items-center">
+      <div className="container relative flex max-w-[1088px] flex-col items-center">
         <span className="text-16 leading-normal text-primary-red md:text-14">Features</span>
         <Heading className="mt-4 sm:mt-3" text="Advanced tools for enterprise" />
         <p className="mt-[18px] max-w-[640px] text-center text-18 font-light leading-normal text-grey-70 lg:max-w-[586px] lg:text-16 md:max-w-[495px] md:text-14 sm:mt-3.5 sm:max-w-[293px]">
