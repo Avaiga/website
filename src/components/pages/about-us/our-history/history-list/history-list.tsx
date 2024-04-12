@@ -13,7 +13,6 @@ type historyListProps = {
   alt: string;
   heading: string;
   text: string;
-  secondClassName?: string;
 };
 
 const historyListData: historyListProps[] = [
@@ -22,32 +21,29 @@ const historyListData: historyListProps[] = [
     alt: 'Collaborative data processing',
     heading: 'Collaborative data processing',
     text: 'Including Data Scientists, Data Engineers, GUI developers, MLOps, as reported by Gartner saying that more than 85% of pilots developed in Python remain pilots.',
-    secondClassName: 'md:mt-0',
   },
   {
     logo: PythonIcon,
     alt: 'Python tools for full-stack development',
     heading: 'Python tools for full-stack development',
     text: 'Taipy provides both frontend and backend components, enabling full-stack development in Python. The frontend allows for easy creation of GUI using Markdown language, while the backend schedules tasks and optimizes performance for efficient full-stack development',
-    secondClassName: 'md:mt-[3px]',
   },
   {
     logo: UsersIcon,
     alt: 'User-centric approach',
     heading: 'User-centric approach',
     text: 'A lack of Python tools for both front-end and back-end development. With a fast learning curve and robust application-building capabilities.',
-    secondClassName: 'md:mt-[2px]',
   },
 ];
 
 export default function HistoryList() {
   return (
     <ul className="flex flex-col gap-7 pt-[45px] lg:gap-[23px] md:pt-[36px] sm:gap-[22px] sm:pt-[30px]">
-      {historyListData.map(({ logo: Logo, heading, text, alt, secondClassName }, index) => (
+      {historyListData.map(({ logo: Logo, heading, text, alt }, index) => (
         <li key={index}>
           <div className="flex items-center gap-3 lg:items-start sm:gap-2">
             <Logo
-              className={`${'h-[24px] w-[24px] fill-white lg:mt-1.5 md:h-5 md:w-5 sm:h-4 sm:w-4'} ${secondClassName}`}
+              className="h-[24px] w-[24px] fill-white lg:mt-1.5 md:mt-1 md:h-5 md:w-5 sm:h-4 sm:w-4"
               alt={alt}
             />
             <h3 className="text-24 font-medium leading-normal lg:leading-tight md:text-20 sm:text-16">
