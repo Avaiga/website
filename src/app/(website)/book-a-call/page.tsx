@@ -13,7 +13,7 @@ function Home() {
       <Hero />
       <Calendar />
       <Description />
-      <CTA />
+      <CTA className="my-[120px] md:my-24 sm:mt-20" />
     </>
   );
 }
