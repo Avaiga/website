@@ -42,14 +42,13 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
   return (
     <div
       className={clsx('relative overflow-hidden rounded-lg p-px', {
-        'bg-[conic-gradient(transparent_270deg,rgba(255,70,43,0.4)_320deg,rgba(255,70,43,0.4)_360deg),conic-gradient(rgba(255,70,43,0.4)_35deg,rgba(255,102,26,1)_45deg,rgba(255,70,43,0.6)_55deg,transparent_80deg)]':
-          isEnterprise,
+        'bg-gradient-right-top-orange-hero-border': isEnterprise,
         'bg-gradient-border sm:order-last': isCommunity,
       })}
     >
       <div className="h-full rounded-lg bg-[linear-gradient(191.88deg,#222225_-22.23%,#19191B_34.09%,#111113_106.29%)] p-8 lg:p-[23px] lg:pr-7 sm:p-[22px]">
         {isEnterprise && (
-          <div className="pointer-events-none absolute inset-0 h-full w-full bg-[linear-gradient(199.2deg,rgba(255,55,25,0.4)_-35.25%,rgba(120,37,26,0.4)_-15.75%,rgba(81,32,27,0.4)_3.6%,rgba(24,24,27,0.4)_36.09%)]" />
+          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-right-top-orange-hero" />
         )}
 
         <div className="mx-auto">
@@ -59,10 +58,10 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
               <p className="absolute top-[-18px] text-10 text-grey-70 transition-all ">STARTS AT</p>
             )}
 
-            <h3 className="text-36 font-semibold leading-dense tracking-tight md:text-28">
+            <h3 className="inline-block bg-gradient-to-r from-[#c7c7d1b7] to-white bg-clip-text text-36 font-semibold leading-dense tracking-tight text-transparent md:text-28">
               {isCommunity ? price : `$${price}`}
             </h3>
-            {isEnterprise && <p className="text-16 font-light md:text-14">&nbsp;&nbsp;/monthly</p>}
+            {isEnterprise && <p className="text-16 font-light md:text-14">&nbsp;&nbsp;/month</p>}
           </div>
 
           <ul className="mt-3.5 flex flex-col gap-y-3.5 md:mt-2.5 md:gap-y-2.5 sm:mt-3.5">

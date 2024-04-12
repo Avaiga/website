@@ -13,16 +13,19 @@ function ToolBlock({ logo, title, description, image, gradient, className }: Too
     <li
       className={clsx('overflow-hidden rounded-lg p-px', className, {
         'col-span-2 sm:col-span-full sm:min-h-[287px]': image,
-        'bg-gradient-grey-border': !gradient || gradient === 'right',
-        'bg-gradient-left-bottom-orage-border': gradient === 'left',
-        'bg-gradient-center-bottom-orange-border': gradient === 'center',
+        'bg-gradient-grey-border': !gradient,
+        'bg-gradient-right-bottom-orange-border sm:bg-none': gradient === 'right',
+        'bg-gradient-left-bottom-orage-border md:bg-gradient-right-top-orange-border sm:bg-none':
+          gradient === 'left',
+        'bg-gradient-center-bottom-orange-border sm:order-last': gradient === 'center',
       })}
     >
       <div
         className={clsx('relative flex h-full rounded-lg bg-grey-10 p-8 lg:p-[23px] sm:flex-col', {
-          'bg-gradient-left-bottom-orange': gradient === 'left',
+          'bg-gradient-left-bottom-orange md:bg-gradient-right-top-orange sm:bg-none':
+            gradient === 'left',
           'bg-gradient-center-bottom-orange': gradient === 'center',
-          'bg-gradient-right-bottom-orange': gradient === 'right',
+          'bg-gradient-right-bottom-orange sm:bg-none': gradient === 'right',
         })}
       >
         <div

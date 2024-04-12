@@ -68,6 +68,7 @@ export default function Contribute() {
           href="https://docs.taipy.io/en/latest/contributing/contributing/"
         >
           Learn more
+          <span className="sr-only">about contributing to Taipy</span>
         </Button>
       </div>
     </section>
