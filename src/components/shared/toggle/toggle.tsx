@@ -23,9 +23,9 @@ function Toggle<T extends string>({ items, toggleItem, setToggleItem, className 
       {items.map(({ title }, index) => (
         <Button
           className={clsx(
-            'flex h-9 min-w-[160px] cursor-pointer select-none items-center justify-center gap-x-1.5 rounded-full text-grey-50',
+            'flex h-9 min-w-[160px] cursor-pointer select-none items-center justify-center gap-x-1.5 rounded-full text-grey-50 hover:text-opacity-80 hover:opacity-90',
             {
-              'bg-grey-20 font-medium text-white ': toggleItem === title,
+              'bg-grey-20 font-medium text-white shadow-toggler': toggleItem === title,
             },
           )}
           key={`${title}-${index}`}

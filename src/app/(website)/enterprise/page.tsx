@@ -37,7 +37,7 @@ function Enterprise() {
         position="KnowledgeTouch"
       />
       <CTA
-        className="mb-[184px] mt-[208px] lg:mb-[151px] lg:mt-[184px] md:my-[110px]"
+        className="mb-[184px] mt-[208px] lg:mb-[151px] lg:mt-[184px] md:my-[110px] sm:mb-[84px] sm:mt-[79px]"
         isEnterprise
       />
     </>
