@@ -60,7 +60,10 @@ function Subscribe({
       const response = await sendBrevoFormData({ listId: NEWSLETTER_LIST_ID, email: data.email });
 
       if (!response.ok) {
-        throw new Error('Something went wrong. Please reload the page and try again.');
+        const error = await response.json();
+        throw new Error(
+          error.message ?? 'Something went wrong. Please reload the page and try again.',
+        );
       }
 
       setFormState(STATE.SUCCESS);

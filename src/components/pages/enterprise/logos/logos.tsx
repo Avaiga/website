@@ -43,7 +43,7 @@ function LogosWall({ className, logos }: LogosProps) {
 
           return (
             <li key={idx}>
-              <Logo className="h-10 w-auto md:h-8" />
+              <Logo className="sm:h-6.5 h-10 w-auto md:h-8" />
             </li>
           );
         })}
@@ -54,7 +54,7 @@ function LogosWall({ className, logos }: LogosProps) {
 
           return (
             <li key={idx}>
-              <Logo className="h-10 w-auto md:h-8" />
+              <Logo className="sm:h-6.5 h-10 w-auto md:h-8" />
             </li>
           );
         })}
@@ -71,8 +71,8 @@ function Logos({ className = '', logos }: LogosProps) {
         className,
       )}
     >
-      <h3 className="text-center leading-snug text-primary-red">They trust us</h3>
-      <div className="mt-[56px] select-none md:-mb-8 md:mt-[43px]">
+      <h3 className="text-center leading-snug text-primary-red sm:text-14">They trust us</h3>
+      <div className="mt-[56px] select-none md:-mb-8 md:mt-[43px] sm:mt-[41px]">
         <LogosWall className="logos-sides-fade" logos={logos} />
       </div>
     </div>
