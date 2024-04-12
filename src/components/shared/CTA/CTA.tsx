@@ -55,7 +55,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
           ) : (
             <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[300px] items-center justify-between rounded-full bg-white px-5 md:mt-5 sm:mt-4 sm:max-w-none">
               <span className="text-grey-20">{INPUT_VALUE}</span>
-              <Button disabled={isCopied} onClick={copyHandle}>
+              <Button disabled={isCopied} aria-label="Copy" onClick={copyHandle}>
                 {isCopied ? (
                   <CheckIcon className="h-5 w-5" />
                 ) : (
@@ -91,6 +91,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
                 href={ROUTE.ENTERPRISE}
               >
                 Learn more
+                <span className="sr-only">about Taipy Enterprise</span>
               </Button>
             )}
           </div>

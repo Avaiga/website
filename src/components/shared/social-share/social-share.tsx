@@ -41,7 +41,7 @@ export default function SocialShare({ pathname, title }: SocialShareProps) {
       <ul className="flex items-center gap-x-3.5">
         {links.map(({ icon: Icon, tag: Tag }, index) => (
           <li key={index}>
-            <Tag className="block" url={url} title={title}>
+            <Tag className="block" url={url} title={title} aria-label={title}>
               <Icon className="h-5 w-5 fill-white hover:fill-grey-90 sm:h-[18px] sm:w-[18px]" />
             </Tag>
           </li>

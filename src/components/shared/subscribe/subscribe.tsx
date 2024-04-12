@@ -118,6 +118,7 @@ function Subscribe({
               theme="red-filled"
               size="lg"
               state={formState}
+              aria-label="Subscribe"
             >
               <span className="sm:hidden">Subscribe now</span>
               <SendIcon className="hidden h-[18px] w-5 fill-white sm:ml-0.5 sm:block" />

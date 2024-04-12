@@ -24,7 +24,7 @@ export default function Pagination({
   };
 
   return (
-    <nav className="text-15 text-white" aria-label="pagination">
+    <nav className="text-15 text-white" aria-label="Pagination">
       <ReactPaginate
         breakLabel="..."
         pageRangeDisplayed={1}

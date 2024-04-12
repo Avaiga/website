@@ -22,9 +22,9 @@ export default function TextCards() {
       {textCardsData.map(({ icon, heading, text }, index) => (
         <li className="w-full max-w-[384px]" key={index}>
           <Image className="" src={icon} width={24} height={24} alt={`${heading}-image.jpg`} />
-          <h3 className="mt-4 block text-20 font-medium leading-dense tracking-tight lg:text-18">
+          <h2 className="mt-4 block text-20 font-medium leading-dense tracking-tight lg:text-18">
             {heading}
-          </h3>
+          </h2>
           <p className="lg:text-normal mt-4 font-light leading-normal text-grey-70 lg:mt-[14px] lg:text-14 lg:leading-snug">
             {text}
           </p>

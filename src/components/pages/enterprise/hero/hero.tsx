@@ -33,16 +33,16 @@ export default function Hero() {
           Request a demo
           <span className="absolute top-[-51px] h-[190px] w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[36px]" />
         </Button>
-        <div className="md:gax-x-[50px] relative mx-auto mt-16 flex h-[266px] w-full max-w-[960px] justify-between overflow-hidden rounded-lg bg-gradient-card pl-[32px] md:max-w-[832px]">
+        <div className="md:gax-x-[50px] bg-gradient-card relative mx-auto mt-16 flex h-[266px] w-full max-w-[960px] justify-between overflow-hidden rounded-lg pl-[32px] md:max-w-[832px]">
           <span className="rounded-297px absolute right-[50%] top-0 z-[2] h-[60px] w-full max-w-[297px] translate-x-[50%] bg-shadow-red blur-[100px]" />
           <ul className="mt-8 w-full max-w-[321px] text-start md:max-w-[244px]">
             <li className="">
               <DesignIcon className="h-8 w-8" alt="Hero-image.jpg" />
             </li>
             <li className="pt-[21px]">
-              <h3 className="text-20 font-medium leading-dense tracking-tight lg:text-18">
+              <h2 className="text-20 font-medium leading-dense tracking-tight lg:text-18">
                 Ease of use: Taipy Designer
-              </h3>
+              </h2>
               <p className="pt-4 leading-snug text-grey-70 lg:text-14 md:pt-3.5">
                 Create a user-friendly web interface effortlessly for your Python projects.
                 Streamline your workflow by effortlessly crafting interactive web interfaces without
