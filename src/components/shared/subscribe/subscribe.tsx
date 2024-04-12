@@ -101,7 +101,10 @@ function Subscribe({
         />
         <div className="col-span-6 col-start-5 pb-[126px] pt-[55px] lg:mr-[90px] lg:max-w-[560px] lg:pb-[69px] lg:pt-[45px] md:mr-12 md:max-w-[496px] sm:mr-0">
           <span className="leading-snug text-primary-red md:text-14">{tagline}</span>
-          <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mt-4 md:text-36 sm:text-28">
+          <h2
+            id="subscribe-to-newsletter"
+            className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mt-4 md:text-36 sm:text-28"
+          >
             {title}
           </h2>
           <p className="mt-4 text-18 font-light text-white/80 lg:text-16 md:text-14">{text}</p>
