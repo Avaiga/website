@@ -45,6 +45,7 @@ module.exports = {
       tighter: '-0.06em',
       tight: '-0.04em',
       snug: '-0.02em',
+      normal: '0',
     },
     backgroundImage: {
       ...defaultTheme.backgroundImage,

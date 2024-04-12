@@ -56,19 +56,19 @@ function Designer() {
 
   return (
     <section
-      className="designer mt-[185px] scroll-mt-32 px-safe lg:mt-[154px] md:mt-[64px]"
+      className="designer mt-[187px] scroll-mt-32 px-safe lg:mt-[154px] md:mt-[64px] sm:mt-[79px]"
       id="designer"
     >
       <div className="container flex max-w-[1280px] flex-col items-center gap-x-16">
-        <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36">
+        <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36 sm:text-28">
           Taipy Designer features
         </h2>
-        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 md:mt-4 md:max-w-[448px] md:leading-normal">
+        <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 md:mt-4 md:max-w-[448px] md:leading-normal sm:mt-3 sm:text-14">
           Get flexible solutions that fit your environment and give you full control of your
           observability data.
         </p>
 
-        <div className="mt-[54px] flex max-w-[1280px] items-center gap-x-16 lg:mt-[46px] md:mt-[23px] md:max-w-[512px] md:flex-col">
+        <div className="mt-[54px] flex max-w-[1280px] items-center gap-x-16 lg:mt-[46px] md:mt-[23px] md:max-w-[512px] md:flex-col sm:mt-[20px]">
           <ul className="basis-1/2">
             {items.map((feature, index) => (
               <DesignerItem
@@ -89,7 +89,7 @@ function Designer() {
           </div>
         </div>
         <Button
-          className="mt-[70px] w-full max-w-[180px] lg:mt-[51px] md:mt-[43px] md:text-16"
+          className="mt-[70px] w-full max-w-[180px] lg:mt-[51px] md:mt-[43px] md:text-16 sm:mt-[26px]"
           size="lg"
           theme="red-filled"
           href={ROUTE.PRICING}
