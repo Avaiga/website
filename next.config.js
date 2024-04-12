@@ -7,47 +7,86 @@ module.exports = {
     remotePatterns: [{ hostname: 'cdn.sanity.io' }],
   },
   // TODO: add this before release
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/:all*(woff2)',
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public, max-age=31536000, immutable',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       source: '/images/:all*',
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public, max-age=31536000, immutable',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       source: '/videos/:all*',
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public, max-age=31536000, immutable',
-  //         },
-  //       ],
-  //     },
-  //   ];
-  // },
-  // TODO: add real redirects
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/about',
-  //       destination: '/',
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
+  async headers() {
+    return [
+      {
+        source: '/:all*(woff2)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/images/:all*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/videos/:all*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/legal/legal-notice',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/legal/terms-of-use',
+        destination: '/terms-of-use',
+        permanent: true,
+      },
+      {
+        source: '/contact-us',
+        destination: '/book-a-call',
+        permanent: false,
+      },
+      {
+        source: '/company/contact',
+        destination: '/book-a-call',
+        permanent: false,
+      },
+      {
+        source: '/community/subscribe-to-the-newsletter',
+        destination: '/#subscribe-to-newsletter',
+        permanent: false,
+      },
+      {
+        source: '/company/about-us',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/company/blog',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/company/book-a-call',
+        destination: '/book-a-call',
+        permanent: true,
+      },
+      {
+        source: '/products/pricing',
+        destination: '/pricing',
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config) => {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
 
