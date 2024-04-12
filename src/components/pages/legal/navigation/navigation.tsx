@@ -79,7 +79,7 @@ function Navigation({ items }: NavigationProps) {
 
   return (
     <nav className="sticky top-12 mt-[69px] xl:static xl:top-0 xl:mt-0">
-      <div className="xl:hidden">
+      <div className="no-scrollbars h-auto max-h-screen overflow-x-hidden overflow-y-scroll pb-20 xl:hidden">
         <span className="mb-5 flex items-center text-15 font-medium leading-none tracking-snug text-grey-50 xl:mb-3.5 md:mb-3">
           Table of Contents
         </span>

@@ -12,7 +12,7 @@ function Table({ table, type }: ContentTable) {
   const tableBoby = type === 'withTopHeader' ? rows.slice(1) : rows;
 
   return (
-    <figure className="not-prose md:scrollbar-hidden my-8 md:overflow-x-auto">
+    <figure className="not-prose md:no-scrollbars my-8 md:overflow-x-auto">
       <div className="min-w-full border-x border-t border-grey-20 sm:w-auto sm:min-w-max">
         <table className="my-0 w-full border-separate border-spacing-0">
           {type === 'withTopHeader' && (
