@@ -3,6 +3,7 @@ import LinkedinLogo from '@/svgs/icons/logo-linkedin.inline.svg';
 import TwitterLogo from '@/svgs/icons/logo-x.inline.svg';
 import YoutubeLogo from '@/svgs/icons/logo-youtube.inline.svg';
 
+// @TODO: should be plural
 import { ROUTE } from './routes';
 
 export const MENU = {
@@ -28,6 +29,7 @@ export const MENU = {
         items: [
           { label: 'Blog', href: ROUTE.BLOG },
           { label: 'Documentation', href: ROUTE.DOCUMENTATION },
+          { label: 'Free mentorship', href: ROUTE.MENTORSHIP },
         ],
       },
       {
