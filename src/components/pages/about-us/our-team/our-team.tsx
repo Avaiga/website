@@ -1,5 +1,6 @@
 import TeamList from './team-list';
 
+// TODO: rewrite this
 export default function OurTeam() {
   return (
     <section className="our-team pt-[200px] lg:pt-[146px] md:pt-[128px] sm:pt-[82px]">
