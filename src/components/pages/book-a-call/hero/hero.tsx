@@ -6,7 +6,7 @@ function Hero() {
           Let&apos;s have our first contact
         </span>
         <h1 className="mx-auto mt-6 max-w-[634px] text-48 font-semibold leading-dense tracking-tight lg:text-40 md:mt-4 md:max-w-[368px] md:text-32 sm:max-w-[322px] sm:text-28">
-          Contact us to&nbsp;apply&nbsp;to our mentoring program.
+          Check out for our availability and book a call with us!
         </h1>
       </div>
     </section>
