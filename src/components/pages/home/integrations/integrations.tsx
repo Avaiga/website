@@ -7,20 +7,20 @@ import googleColab from '@/svgs/pages/home/integrations/google-colab.svg';
 
 const CARDS = [
   {
-    icon: googleColab,
-    title: 'Google Colab',
-  },
-  {
     icon: databricks,
     title: 'Databricks',
   },
   {
-    icon: awsSageMaker,
-    title: 'AWS SageMaker',
-  },
-  {
     icon: dataiku,
     title: 'Dataiku',
+  },
+  {
+    icon: googleColab,
+    title: 'Google Colab',
+  },
+  {
+    icon: awsSageMaker,
+    title: 'AWS SageMaker',
   },
 ];
 
