@@ -42,10 +42,10 @@ export default function Contribute() {
           Join Taipy&apos;s development community today! Your contributions are greatly appreciated
           and will be duly acknowledged. Don&apos;t hesitate and be part of the Taipy adventure!
         </p>
-        <ul className="mt-16 flex w-full justify-between gap-4 text-start lg:mt-[49px] md:mt-10 md:flex-col md:items-center md:gap-5 sm:mt-8">
+        <ul className="mx-auto mt-16 flex w-full justify-between gap-4 text-start lg:mt-[49px] lg:max-w-[960px] md:mt-10 md:flex-col md:items-center md:gap-5 sm:mt-8">
           {contributeListData.map(({ secondaryClass, image, alt, heading, text }, index) => (
             <li
-              className="flex h-[385px] w-full max-w-[383px] overflow-hidden rounded-[8px] border border-[#2A2A2D] bg-grey-10 lg:h-[305px] lg:max-w-[304px] md:h-[192px] md:max-w-[647px] sm:h-[322px] sm:flex-wrap sm:gap-0"
+              className="h-[385px] w-full max-w-[383px] overflow-hidden rounded-[8px] border border-[#2A2A2D] bg-grey-10 lg:h-[305px] lg:max-w-[304px] md:flex md:h-[192px] md:max-w-[647px] sm:h-[322px] sm:flex-wrap sm:gap-0"
               key={index}
             >
               <div className="relative h-[263px] w-full overflow-hidden lg:h-[208px] md:max-w-[304px] sm:h-[217px]">
@@ -56,7 +56,7 @@ export default function Contribute() {
                   alt={alt}
                 />
               </div>
-              <div className="w-full md:flex md:max-w-[336px] md:flex-col md:items-center md:justify-center sm:justify-start">
+              <div className="w-full md:flex md:max-w-[336px] md:flex-col md:content-center md:items-center md:justify-center">
                 <div className="w-full p-8 pt-0 lg:p-[25px] lg:pt-0 md:max-w-[232px] md:p-0 sm:min-h-[90px] sm:max-w-[272px]">
                   <h3 className="text-20 font-semibold leading-snug lg:text-16 md:text-20 sm:text-16">
                     {heading}
