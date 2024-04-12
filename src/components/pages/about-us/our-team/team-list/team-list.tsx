@@ -111,13 +111,13 @@ const teamListData = [
 
 export default function TeamList() {
   return (
-    <ul className="mx-auto mt-[74px] flex w-full max-w-[864px] flex-wrap justify-start gap-x-14 gap-y-[66px] lg:mt-16 lg:gap-y-[57px]">
+    <ul className="mx-auto mt-[74px] flex w-full max-w-[864px] flex-wrap justify-start gap-x-14 gap-y-[66px] lg:mt-16 lg:gap-y-[57px] md:mt-[55px] md:max-w-[600px] md:justify-between sm:mt-9 sm:max-w-[315px] sm:gap-x-0 sm:gap-y-[34px]">
       {teamListData.map(({ photo, name, position, alt }, index) => (
         <li
-          className="col-gap-4 flex w-full max-w-[174px] flex-col items-center gap-[18px]"
+          className="col-gap-4 flex w-full max-w-[174px] flex-col items-center gap-[18px] md:max-w-[152px] sm:max-w-[142px] sm:gap-3"
           key={index}
         >
-          <div className="relative h-[72px] w-[72px]">
+          <div className="relative h-[72px] w-[72px] sm:h-14 sm:w-14">
             <Image
               className="rounded-[8px] grayscale-[100%] filter"
               src={photo}
@@ -127,12 +127,12 @@ export default function TeamList() {
           </div>
           <div className="">
             <div className="flex items-center justify-center gap-1">
-              <span className="whitespace-nowrap text-18 font-medium leading-none tracking-snug">
+              <span className="whitespace-nowrap text-18 font-medium leading-none tracking-snug sm:text-16">
                 {name}
               </span>
               {/* <Image src={item.flag} width={19} height={19} alt={item.flagAlt} /> */}
             </div>
-            <p className="pt-2 text-center text-16 font-light leading-none tracking-snug">
+            <p className="pt-2 text-center text-16 font-light leading-none tracking-snug sm:text-13">
               {position}
             </p>
           </div>
