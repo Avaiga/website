@@ -74,7 +74,7 @@ function Navigation({ items }: NavigationProps) {
   }, []);
 
   return (
-    <nav className="sticky top-12 mt-[69px] xl:static xl:top-0 xl:mt-0">
+    <nav className="no-scrollbars sticky top-12 mt-[69px] overflow-x-hidden overflow-y-scroll xl:static xl:top-0 xl:mt-0">
       <span className="mb-5 flex items-center text-15 font-medium leading-none tracking-snug text-grey-50 xl:mb-3.5 md:mb-3">
         <ArticleIcon className="mr-2.5 h-[18px] w-4" />
         In this article

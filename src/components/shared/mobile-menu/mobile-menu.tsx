@@ -1,13 +1,13 @@
 'use client';
 
 import { MENU } from '@/constants/menu';
+import { ROUTE } from '@/constants/routes';
 import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
 
 import Link from '@/components/shared/link';
 
-import GithubLogo from '@/svgs/icons/logo-github.inline.svg';
-
 import Button from '../button';
+import GithubStarCounter from '../github-star-counter';
 
 const ANIMATION_DURATION = 0.2;
 
@@ -50,13 +50,8 @@ function MobileMenu({ isOpen, onClick }: { isOpen: boolean; onClick: () => void 
                 ))}
               </ul>
               <div className="mt-7 grid grid-cols-2 gap-4 sm:mt-0 sm:grid-cols-1">
-                <Button className="gap-x-2" theme="outline" size="lgConst">
-                  <GithubLogo className="h-6 flex-shrink-0 fill-white" />
-                  <span>Star Us</span>
-                  <span className="h-6 w-px bg-white/20" aria-hidden />
-                  <span>6.5k</span>
-                </Button>
-                <Button theme="white-filled" size="lgConst">
+                <GithubStarCounter className="!h-12 !gap-x-2 !text-16" />
+                <Button theme="white-filled" size="lgConst" href={ROUTE.ENTERPRISE}>
                   Enterprise
                 </Button>
               </div>

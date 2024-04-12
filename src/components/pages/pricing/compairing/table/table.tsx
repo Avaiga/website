@@ -39,7 +39,7 @@ export default function Table() {
   }, []);
 
   return (
-    <ul className="scrollbar-hidden relative flex w-full">
+    <ul className="no-scrollbars relative flex w-full">
       {Object.keys(labelList).map((key, parentIndex) => (
         <li
           className={clsx(
