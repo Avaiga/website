@@ -17,42 +17,42 @@ import TeamMember13 from '@/images/pages/about-us/team/13-team.jpg';
 const teamListData = [
   {
     photo: TeamMember,
-    name: 'Vincent Gosselin 🇫🇷',
+    name: 'Vincent Gosselin 🇫🇷',
     position: 'Future Intranet Manager',
     alt: 'Vincent Gosselin',
     flagAlt: 'France flag',
   },
   {
     photo: TeamMember2,
-    name: 'Albert Antoine 🇸🇬',
+    name: 'Albert Antoine 🇸🇬',
     position: 'Head of Marketing',
     alt: 'Albert Antoine',
     flagAlt: 'Greate Britain flag',
   },
   {
     photo: TeamMember3,
-    name: 'Fabien Lelaquais 🇫🇷',
+    name: 'Fabien Lelaquais 🇫🇷',
     position: 'Head of Product',
     alt: 'Fabien Lelaquais',
     flagAlt: 'France flag',
   },
   {
     photo: TeamMember4,
-    name: 'Jean-Robin Medori 🇺🇸',
+    name: 'Jean-Robin Medori 🇺🇸',
     position: 'Chief Architect',
     alt: 'Jean-Robin Medori',
     flagAlt: 'United States flag',
   },
   {
     photo: TeamMember5,
-    name: 'Myriam Delarue 🇫🇷',
+    name: 'Myriam Delarue 🇫🇷',
     position: 'Head of Product',
     alt: 'Myriam Delarue',
     flagAlt: 'Singapore flag',
   },
   {
     photo: TeamMember6,
-    name: 'Desmond Delandro 🇺🇸',
+    name: 'Desmond Delandro 🇺🇸',
     position: 'Chief Architect',
     alt: 'Desmond Delandro',
     flagAlt: 'France flag',
@@ -60,49 +60,49 @@ const teamListData = [
 
   {
     photo: TeamMember7,
-    name: 'Pr. Ngo Bao Chau 🇫🇷',
+    name: 'Pr. Ngo Bao Chau 🇫🇷',
     position: 'Future Intranet Manager',
     alt: 'Pr. Ngo Bao Chau',
     flagAlt: 'Singapore flag',
   },
   {
     photo: TeamMember8,
-    name: 'Vinh Nguyen 🇻🇳',
+    name: 'Vinh Nguyen 🇻🇳',
     position: 'Future Intranet Manager',
     alt: 'Vinh Nguyen',
     flagAlt: 'Singapore flag',
   },
   {
     photo: TeamMember9,
-    name: 'Rym Michaut 🇫🇷',
+    name: 'Rym Michaut 🇫🇷',
     position: 'Future Intranet Manager',
     alt: 'Rym Michaut',
     flagAlt: 'Singapore flag',
   },
   {
     photo: TeamMember10,
-    name: 'Florian Jacta 🇫🇷',
+    name: 'Florian Jacta 🇫🇷',
     position: 'Future Intranet Manager',
     alt: 'Florian Jacta',
     flagAlt: 'Singapore flag',
   },
   {
     photo: TeamMember11,
-    name: 'Marine Gosselin 🇫🇷',
+    name: 'Marine Gosselin 🇫🇷',
     position: 'Future Intranet Manager',
     alt: 'Marine Gosselin',
     flagAlt: 'Singapore flag',
   },
   {
     photo: TeamMember12,
-    name: 'Alexandre Sajus 🇫🇷',
+    name: 'Alexandre Sajus 🇫🇷',
     position: 'Future Intranet Manager',
     alt: 'Alexandre Sajus',
     flagAlt: 'Singapore flag',
   },
   {
     photo: TeamMember13,
-    name: 'Truong Giang Do 🇻🇳',
+    name: 'Truong Giang Do 🇻🇳',
     position: 'Future Intranet Manager',
     alt: 'Truong Giang Do',
     flagAlt: 'Singapore flag',
@@ -111,33 +111,34 @@ const teamListData = [
 
 export default function TeamList() {
   return (
-    <ul className="mx-auto mt-[74px] flex w-full max-w-[864px] flex-wrap justify-start gap-x-14 gap-y-[66px] lg:mt-16 lg:gap-y-[57px] md:mt-[55px] md:max-w-[600px] md:justify-between sm:mt-9 sm:gap-x-0 sm:gap-y-[34px]">
-      {teamListData.map(({ photo, name, position, alt }, index) => (
-        <li
-          className="flex w-full max-w-[174px] flex-col items-center gap-[18px] md:max-w-[152px] sm:max-w-[142px] sm:gap-3"
-          key={index}
-        >
-          <div className="relative h-[72px] w-[72px] sm:h-14 sm:w-14">
-            <Image
-              className="rounded-[8px] grayscale-[100%] filter"
-              src={photo}
-              fill={true}
-              alt={alt}
-            />
-          </div>
-          <div className="">
-            <div className="flex items-center justify-center gap-1">
-              <span className="whitespace-nowrap text-18 font-medium leading-none tracking-snug sm:text-16">
-                {name}
-              </span>
-              {/* <Image src={item.flag} width={19} height={19} alt={item.flagAlt} /> */}
+    <div className="flex justify-center">
+      <ul className="mx-auto mt-[74px] grid grid-cols-4 gap-x-14 gap-y-16 lg:mt-16 lg:gap-14 md:mt-[55px] md:grid-cols-3 sm:mt-9 sm:gap-8 xs:grid-cols-2">
+        {teamListData.map(({ photo, name, position, alt }, index) => (
+          <li
+            className="flex w-full max-w-[174px] flex-col items-center gap-[18px] md:max-w-[152px] sm:max-w-[142px] sm:gap-3"
+            key={index}
+          >
+            <div className="relative h-[72px] w-[72px] sm:h-14 sm:w-14">
+              <Image
+                className="rounded-[8px] grayscale-[100%] filter"
+                src={photo}
+                fill={true}
+                alt={alt}
+              />
             </div>
-            <p className="pt-2 text-center text-16 font-light leading-none tracking-snug sm:text-13">
-              {position}
-            </p>
-          </div>
-        </li>
-      ))}
-    </ul>
+            <div className="">
+              <div className="flex items-center justify-center gap-1">
+                <span className="whitespace-nowrap text-18 font-medium leading-none tracking-snug md:whitespace-normal md:text-center sm:text-16">
+                  {name}
+                </span>
+              </div>
+              <p className="mt-2 text-center text-16 font-light leading-none tracking-snug text-grey-70 sm:text-13">
+                {position}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
