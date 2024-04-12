@@ -10,7 +10,7 @@ export default function OurPartners() {
         <h2 className="pt-4 text-56 font-semibold leading-dense tracking-tight lg:text-48 md:text-40 sm:pt-3 sm:text-28">
           They speak for us
         </h2>
-        <p className="mx-auto w-full max-w-[664px] pt-4 text-18 font-light leading-normal text-grey-70 md:max-w-[609px] sm:max-w-[288px] sm:pt-3 sm:text-16">
+        <p className="mx-auto w-full max-w-[664px] pt-4 text-18 font-light leading-normal text-grey-70 md:max-w-full sm:max-w-full sm:pt-3 sm:text-16">
           Whether standalone or paired, Taipy connects effortlessly with leading data platforms,
           amplifying your application&apos;s potential.
         </p>
