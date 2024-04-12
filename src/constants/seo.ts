@@ -32,8 +32,13 @@ export const SEO_DATA = {
   },
   BOOK_A_CALL: {
     title: 'Book a Call | Taipy',
-    description:
-      'Apply now for our mentoring program and connect with us for guidance and support.',
+    description: 'Check out for our availability and book a call with us!',
     pathname: ROUTE.REQUEST_A_DEMO as string, // /book-a-call
+  },
+  MENTORSHIP: {
+    title: 'Mentorship Program | Taipy',
+    description:
+      'If you are new to open source and Taipy, our informal mentoring program will help you become more familiar with Taipy and the open source environment',
+    pathname: ROUTE.MENTORSHIP as string, // /book-a-call
   },
 };
