@@ -42,100 +42,98 @@ const partnersListData: Partner[] = [
   {
     logo: Microsoft,
     alt: 'Microsoft',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[183px] md:w-[144px] sm:w-[91px]',
+    secondClass: 'border-r border-b',
+    secondLogoClass: 'w-[183px] h-[39px] md:w-[144px] md:h-[31px] sm:w-[91px] sm:h-[20px]',
   },
   {
     logo: Mousquetaires,
     alt: 'Mousquetaires',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[76px] md:w-[60px] sm:w-[38px]',
+    secondClass: 'border-r border-b md:border-r-0',
+    secondLogoClass: 'w-[76px] h-[54px] md:w-[60px] md:h-[43px] sm:w-[38px] sm:h-[27px]',
   },
   {
     logo: Corero,
     alt: 'Corero',
-    secondClass:
-      'border-r border-b lg:border-r-0 xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[161px] md:w-[127px] sm:w-[80px]',
+    secondClass: 'border-r border-b lg:border-r-0 md:border-r',
+    secondLogoClass: 'w-[161px] h-[36px] md:w-[127px] md:h-[28px] sm:w-[80px] sm:h-[18px]',
   },
   {
     logo: Lsdirect,
     alt: 'Lsdirect',
-    secondClass: 'border-b xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[203px] md:w-[160px] sm:w-[101px]',
+    secondClass: 'border-b lg:border-r md:border-r-0',
+    secondLogoClass: 'w-[203px] h-[40px] md:w-[160px] md:h-[32px] sm:w-[101px] sm:h-[20px]',
   },
   {
     logo: Princeton,
     alt: 'Princeton Consultants',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[171px] md:w-[135px] sm:w-[85px]',
+    secondClass: 'border-r border-b',
+    secondLogoClass: 'w-[171px] h-[49px] md:w-[135px] md:h-[39px] sm:w-[85px] sm:h-[24px]',
   },
   {
     logo: Bcgx,
     alt: 'Bcgx',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[136px] md:w-[107px] sm:w-[68px]',
+    secondClass: 'border-r border-b lg:border-r-0',
+    secondLogoClass: 'w-[136px] h-[36px] md:w-[107px] md:h-[28px] sm:w-[68px] sm:h-[18px]',
   },
   {
     logo: Ttc,
     alt: 'Ttc',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[82px] md:w-[65px] sm:w-[41px]',
+    secondClass: 'border-r border-b',
+    secondLogoClass: 'w-[82px] h-[55px] md:w-[65px] md:h-[43px] sm:w-[41px] sm:h-[28px]',
   },
   {
     logo: Knowledge,
     alt: 'Predictive Layer',
-    secondClass: 'border-b xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[196px] md:w-[158px] sm:w-[106px]',
+    secondClass: 'border-b lg:border-r md:border-r-0',
+    secondLogoClass: 'w-[196px] h-[39px] md:w-[158px] md:h-[30px] sm:w-[106px] sm:h-[19px]',
   },
   {
     logo: Kdnuggets,
     alt: 'Kdnuggets',
-    secondClass:
-      'border-r border-b lg:border-r-0 xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[135px] md:w-[105px] sm:w-[67px]',
+    secondClass: 'border-r border-b lg:border-r-0 md:border-r',
+    secondLogoClass: 'w-[135px] h-[40px] md:w-[105px] md:h-[42px] sm:w-[67px] sm:h-[20px]',
   },
   {
     logo: Tal,
     alt: 'Tal Group',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[110px] md:w-[79px] sm:w-[50px]',
+    secondClass: 'border-r border-b md:border-r-0',
+    secondLogoClass: 'w-[110px] h-[55px] md:w-[79px] md:h-[44px] sm:w-[50px] sm:h-[28px]',
   },
   {
     logo: Datacamp,
     alt: 'Datacamp',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[168px] md:w-[132px] sm:w-[84px]',
+    secondClass: 'border-r border-b',
+    secondLogoClass: 'w-[168px] h-[36px] md:w-[132px] md:h-[28px] sm:w-[84px] sm:h-[18px]',
   },
   {
     logo: Probtp,
     alt: 'Probtp',
-    secondClass: 'border-b xl:border-b-0 2xs:border-b 2xs:border-b',
-    secondLogoClass: 'w-[164px] md:w-[129px] sm:w-[82px]',
+    secondClass: 'border-b md:border-r-0',
+    secondLogoClass: 'w-[164px] h-[38px] md:w-[129px] md:h-[30px] sm:w-[82px] sm:h-[19px]',
   },
   {
     logo: Icb,
     alt: 'Icb',
-    secondClass: 'border-r xl:border-r-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[50px] md:w-[43px] sm:w-[27px]',
+    secondClass: 'border-r lg:border-b',
+    secondLogoClass: 'w-[50px] h-[50px] md:w-[43px] md:h-[43px] sm:w-[27px] sm:h-[27px]',
   },
   {
     logo: Nylas,
     alt: 'Nylas',
-    secondClass: 'border-r xl:border-r-0 2xs:border-b',
-    secondLogoClass: 'w-[143px] md:w-[113px] sm:w-[71px]',
+    secondClass: 'border-r lg:border-b md:border-r-0',
+    secondLogoClass: 'w-[143px] h-[40px] md:w-[113px] md:h-[32px] sm:w-[71px] sm:h-[20px]',
   },
   {
     logo: Ifc,
     alt: 'Ifc',
-    secondClass: 'border-r xl:border-r-0',
-    secondLogoClass: 'w-[157px] md:w-[124px] sm:w-[78px]',
+    secondClass: 'border-r lg:border-r-0 lg:border-b md:border-b-0',
+    secondLogoClass: 'w-[157px] h-[40px] md:w-[124px] md:h-[32px] sm:w-[78px] sm:h-[20px]',
   },
   {
     logo: Stevens,
     alt: 'Stevens',
-    secondClass: 'border-l xl:border-l-0 2xs:border-l',
-    secondLogoClass: 'w-[45px] md:w-[35px] sm:w-[22px]',
+    secondClass: 'lg:border-r lg:border-l md:border-r-0',
+    secondLogoClass: 'w-[45px] h-[57px] md:w-[35px] md:h-[45px] sm:w-[22px] sm:h-[28px]',
   },
 ];
 
@@ -153,7 +151,7 @@ export default function PartnersList() {
           )}
           key={index}
         >
-          <Logo className={clsx('fill-grey-70', secondLogoClass)} alt={alt} />
+          <Logo className={`${'fill-grey-70'} ${secondLogoClass}`} alt={alt} />
         </li>
       ))}
     </ul>

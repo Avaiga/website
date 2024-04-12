@@ -111,10 +111,10 @@ const teamListData = [
 
 export default function TeamList() {
   return (
-    <ul className="mx-auto mt-[74px] flex w-full max-w-[864px] flex-wrap justify-start gap-x-14 gap-y-[66px] lg:mt-16 lg:gap-y-[57px] md:mt-[55px] md:max-w-[600px] md:justify-between sm:mt-9 sm:gap-x-0 sm:gap-y-[34px]">
+    <ul className="mx-auto mt-[74px] flex w-full max-w-[864px] flex-wrap justify-start gap-x-14 gap-y-[66px] lg:mt-16 lg:gap-y-[57px] md:mt-[55px] md:max-w-[600px] md:justify-between sm:mt-9 sm:max-w-[315px] sm:gap-x-0 sm:gap-y-[34px]">
       {teamListData.map(({ photo, name, position, alt }, index) => (
         <li
-          className="flex w-full max-w-[174px] flex-col items-center gap-[18px] md:max-w-[152px] sm:max-w-[142px] sm:gap-3"
+          className="col-gap-4 flex w-full max-w-[174px] flex-col items-center gap-[18px] md:max-w-[152px] sm:max-w-[142px] sm:gap-3"
           key={index}
         >
           <div className="relative h-[72px] w-[72px] sm:h-14 sm:w-14">
