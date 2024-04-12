@@ -1,3 +1,5 @@
+import { SEO_DATA } from '@/constants/seo';
+
 import Benefits from '@/components/pages/enterprise/benefits/benefits';
 import Designer from '@/components/pages/enterprise/designer';
 import Features from '@/components/pages/enterprise/features';
@@ -45,9 +47,5 @@ function Enterprise() {
 export default Enterprise;
 
 export async function generateMetadata() {
-  return getMetadata({
-    title: 'Taipy',
-    description: 'Enterprise',
-    pathname: '/enterprise',
-  });
+  return getMetadata(SEO_DATA.ENTERPRISE);
 }

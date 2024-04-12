@@ -3,17 +3,18 @@
 import Image from 'next/image';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { BUTTON_SUCCESS_TIMEOUT_MS } from '@/constants/forms';
+import { BUTTON_SUCCESS_TIMEOUT_MS, NEWSLETTER_LIST_ID, STATE } from '@/constants/forms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import clsx from 'clsx';
 import * as yup from 'yup';
 
 import Button from '@/components/shared/button';
-import { BUTTON_STATES } from '@/components/shared/button/button';
 
 import { ClassName } from '@/types/classname';
+
+import { emailRegexp, sendBrevoFormData } from '@/lib/forms';
 
 import SendIcon from '@/svgs/icons/send.inline.svg';
 import bg from '@/svgs/pages/home/subscribe/bg.svg';
@@ -24,11 +25,15 @@ interface SubscribeProps extends ClassName {
   text: string;
 }
 
+interface FormFields {
+  email: string;
+}
+
 const validationSchema = yup.object().shape({
   email: yup
     .string()
     .trim()
-    .email('Please enter a valid email')
+    .matches(emailRegexp, { message: 'Please enter a valid email' })
     .required('Email is a required field'),
 });
 
@@ -38,29 +43,46 @@ function Subscribe({
   text,
   className = 'mt-[196px] lg:mt-[124px] md:mt-[92px]',
 }: SubscribeProps) {
-  const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
+  const [formState, setFormState] = useState<STATE>(STATE.DEFAULT);
+  const [serverError, setServerError] = useState<null | string>(null);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({ resolver: yupResolver(validationSchema) });
+  } = useForm<FormFields>({ resolver: yupResolver(validationSchema) });
 
-  const onSubmit = async () => {
-    setButtonState(BUTTON_STATES.LOADING);
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    setFormState(STATE.LOADING);
 
     try {
-      setTimeout(() => {
-        setButtonState(BUTTON_STATES.SUCCESS);
-      }, 2000);
+      const response = await sendBrevoFormData({ listId: NEWSLETTER_LIST_ID, email: data.email });
+
+      if (!response.ok) {
+        throw new Error('Something went wrong. Please reload the page and try again.');
+      }
+
+      setFormState(STATE.SUCCESS);
+      reset();
 
       setTimeout(() => {
-        setButtonState(BUTTON_STATES.DEFAULT);
-        reset();
+        setFormState(STATE.DEFAULT);
       }, BUTTON_SUCCESS_TIMEOUT_MS);
-    } catch (error) {
-      setButtonState(BUTTON_STATES.DEFAULT);
+    } catch (err) {
+      setFormState(STATE.ERROR);
+
+      if (err instanceof Error) {
+        setServerError(err?.message ?? err);
+
+        setTimeout(() => {
+          setServerError(null);
+        }, BUTTON_SUCCESS_TIMEOUT_MS);
+      }
+
+      setTimeout(() => {
+        setFormState(STATE.DEFAULT);
+      }, BUTTON_SUCCESS_TIMEOUT_MS);
     }
   };
 
@@ -95,7 +117,8 @@ function Subscribe({
               className="absolute right-0 top-0 !min-w-[178px] md:!min-w-[164px] sm:!min-w-11 sm:px-0"
               theme="red-filled"
               size="lg"
-              state={buttonState}
+              state={formState}
+              aria-label="Subscribe"
             >
               <span className="sm:hidden">Subscribe now</span>
               <SendIcon className="hidden h-[18px] w-5 fill-white sm:ml-0.5 sm:block" />
@@ -103,6 +126,11 @@ function Subscribe({
             {errors?.email?.message !== '' && (
               <span className="absolute left-0 top-[calc(100%+8px)] text-14 leading-tight tracking-snug text-primary-red">
                 {errors?.email?.message}
+              </span>
+            )}
+            {serverError !== null && (
+              <span className="absolute left-0 top-[calc(100%+8px)] text-14 leading-tight tracking-snug text-primary-red">
+                {serverError}
               </span>
             )}
           </form>

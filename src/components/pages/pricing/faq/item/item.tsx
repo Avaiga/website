@@ -36,7 +36,7 @@ function Item({
         className="relative flex w-full items-start gap-3 text-left after:absolute after:-inset-y-3.5 after:left-0 after:w-full sm:gap-[9px]"
         type="button"
         aria-expanded={isOpen}
-        aria-controls={index.toString()}
+        aria-controls={`question-${index}`}
         onClick={handleOpen}
       >
         <h3 className="text-18 font-medium md:text-16">{question}</h3>
@@ -49,6 +49,7 @@ function Item({
       </button>
       <LazyMotion features={domAnimation}>
         <m.div
+          id={`question-${index}`}
           initial={initialState}
           animate={isOpen ? 'open' : 'closed'}
           variants={{

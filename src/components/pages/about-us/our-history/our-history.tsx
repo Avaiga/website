@@ -33,7 +33,7 @@ export default function OurHistory() {
             <ul className="mt-[51px] flex w-full max-w-[371px] justify-between lg:mt-[35px] lg:max-w-[354px]">
               <li className="flex w-full max-w-[84px] flex-col gap-[13px]">
                 <span className="text-16 font-normal leading-snug text-grey-50">Founded in</span>
-                <b className="text-20 font-medium tracking-snug text-grey-94">2024</b>
+                <b className="text-20 font-medium tracking-snug text-grey-94">2021</b>
               </li>
               <li className="flex w-full max-w-[198px] flex-col gap-[13px]">
                 <span className="text-16 font-normal leading-snug text-grey-50">Microhubs</span>
@@ -58,7 +58,7 @@ export default function OurHistory() {
               </p>
               <p className="pt-5 text-18 font-light leading-snug text-grey-94">
                 Now Taipy offers a solution to multiple challenges, empowering businesses with
-                interactive, user-centric AI applications.
+                interactive, collaborative and user-centric AI applications.
               </p>
             </div>
             <HistoryList />

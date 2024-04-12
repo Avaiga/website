@@ -102,11 +102,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
               All posts
             </Link>
           </div>
-          <ul className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
+          <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
             {relatedPosts.map((relatedPost) => (
               <PostItem key={relatedPost._id} post={relatedPost} />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
       <Subscribe
