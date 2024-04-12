@@ -68,8 +68,8 @@ function Hero() {
             muted
             autoPlay
           >
-            <source src="/videos/pages/home/hero/hero.webm" type="video/webm" />
-            <source src="/videos/pages/home/hero/hero.mp4" type="video/mp4" />
+            <source src="/videos/pages/home/hero/hero-current.webm" type="video/webm" />
+            <source src="/videos/pages/home/hero/hero-current.mp4" type="video/mp4" />
           </video>
         </div>
         <Logos />
