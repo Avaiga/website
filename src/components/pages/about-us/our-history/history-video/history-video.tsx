@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import VideoBg from '@/images/pages/about-us/history/video-mask.png';
+import VideoBg from '@/images/pages/about-us/history/video-mask.jpg';
 
 import Button from '@/components/shared/button';
 
@@ -18,7 +18,12 @@ export default function HistoryVideo() {
         Watch the video
         <PlayIcon className="h-3 w-2.5" />
       </Button>
-      <Image className="object-cover" src={VideoBg} fill={true} alt="Video Background" />
+      <Image
+        className="rounded-[8px] object-cover"
+        src={VideoBg}
+        fill={true}
+        alt="Video Background"
+      />
     </div>
   );
 }

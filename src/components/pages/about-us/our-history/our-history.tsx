@@ -27,7 +27,7 @@ export default function OurHistory() {
             The history of Taipy
           </h2>
         </div>
-        <div className="mlgd:mt-10 mt-11 flex w-full max-w-[1184px] justify-between gap-2.5 ">
+        <div className="mt-11 flex w-full max-w-[1184px] justify-between gap-2.5 lg:mt-10 ">
           <div className="w-full max-w-[576px] lg:max-w-[448px]">
             <HistoryVideo />
             <ul className="mt-[51px] flex w-full max-w-[371px] justify-between lg:mt-[35px] lg:max-w-[354px]">
@@ -38,9 +38,9 @@ export default function OurHistory() {
               <li className="flex w-full max-w-[198px] flex-col gap-[13px]">
                 <span className="text-16 font-normal leading-snug text-grey-50">Microhubs</span>
                 <div className="flex flex-col gap-[12px]">
-                  {microhubsData.map((item, index) => (
+                  {microhubsData.map(({ text }, index) => (
                     <div key={index} className="text-20 font-medium tracking-snug text-grey-94">
-                      {item.text}
+                      {text}
                     </div>
                   ))}
                 </div>
