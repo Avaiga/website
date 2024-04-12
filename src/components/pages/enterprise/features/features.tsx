@@ -18,14 +18,14 @@ const items: Feature[] = [
     image: scenarioImage,
   },
   {
-    title: 'Telemetry',
-    text: 'Ensure your applications are not just running but thriving. Gain critical insights into performance & health, enabling proactive optimizations & maintenance.',
-    image: telemetryImage,
-  },
-  {
     title: 'Distributed computing',
     text: 'Unlock unparalleled scalability and performance across multiple machines. Ideal for handling large datasets and complex computations efficiently.',
     image: distributedImage,
+  },
+  {
+    title: 'Telemetry',
+    text: 'Ensure your applications are not just running but thriving. Gain critical insights into performance & health, enabling proactive optimizations & maintenance.',
+    image: telemetryImage,
   },
 ];
 

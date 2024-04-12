@@ -34,7 +34,7 @@ export default function Hero() {
           Request a demo
           <span className="absolute top-[-51px] h-[190px] w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[36px]" />
         </Button>
-        <div className="bg-gradient-card relative mx-auto mt-16 flex w-full max-w-[960px] justify-between overflow-hidden rounded-lg bg-gradient-grey-10 pl-[32px] lg:items-center lg:gap-x-[32px] lg:pb-3 md:mt-[60px] md:max-w-[832px] md:gap-x-[50px] md:pb-0 sm:mt-[52px] sm:flex-col sm:items-start sm:pl-6">
+        <div className="relative mx-auto mt-16 flex w-full max-w-[960px] justify-between overflow-hidden rounded-lg bg-gradient-grey-10 pl-[32px] lg:items-center lg:gap-x-[32px] lg:pb-3 md:mt-[60px] md:max-w-[832px] md:gap-x-[50px] md:pb-0 sm:mt-[52px] sm:flex-col sm:items-start sm:pl-6">
           <span className="rounded-297px absolute right-[50%] top-0 z-[2] h-[60px] w-full max-w-[297px] translate-x-[50%] bg-shadow-red blur-[100px]" />
           <div className="mb-8 mt-8 w-full max-w-[321px] text-start md:max-w-[244px] sm:mb-7 sm:mt-6 sm:max-w-[272px]">
             <DesignIcon className="h-8 w-8 sm:h-5 sm:w-5" alt="Hero-image.jpg" />
