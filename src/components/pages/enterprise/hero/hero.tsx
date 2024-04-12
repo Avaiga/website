@@ -38,9 +38,9 @@ export default function Hero() {
           <span className="rounded-297px absolute right-[50%] top-0 z-[2] h-[60px] w-full max-w-[297px] translate-x-[50%] bg-shadow-red blur-[100px]" />
           <div className="mb-8 mt-8 w-full max-w-[321px] text-start md:max-w-[244px] sm:mb-7 sm:mt-6 sm:max-w-[272px]">
             <DesignIcon className="h-8 w-8 sm:h-5 sm:w-5" alt="Hero-image.jpg" />
-            <h3 className="pt-6 text-20 font-medium leading-dense tracking-tight lg:text-18 sm:pt-3 sm:text-16 sm:leading-normal sm:tracking-normal">
+            <h2 className="pt-6 text-20 font-medium leading-dense tracking-tight lg:text-18 sm:pt-3 sm:text-16 sm:leading-normal sm:tracking-normal">
               Ease of use: Taipy Designer
-            </h3>
+            </h2>
             <p className="pt-4 leading-snug text-grey-70 lg:text-14 md:pt-3.5 sm:pt-2">
               Create a user-friendly web interface effortlessly for your Python projects. Streamline
               your workflow by effortlessly crafting interactive web interfaces without the need for

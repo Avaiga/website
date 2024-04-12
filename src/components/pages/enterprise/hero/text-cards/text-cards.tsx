@@ -28,9 +28,9 @@ export default function TextCards() {
             height={24}
             alt={`${heading}-image.jpg`}
           />
-          <h2 className="mt-4 block text-20 font-medium leading-dense tracking-tight lg:text-18 sm:text-16 sm:font-semibold sm:tracking-normal">
+          <h3 className="mt-4 block text-20 font-medium leading-dense tracking-tight lg:text-18 sm:text-16 sm:font-semibold sm:tracking-normal">
             {heading}
-          </h2>
+          </h3>
           <p className="lg:text-normal mt-4 font-light leading-normal text-grey-70 lg:mt-[14px] lg:text-14 lg:leading-snug sm:mt-2.5">
             {text}
           </p>
