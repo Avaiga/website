@@ -20,8 +20,10 @@ function LargeData() {
       readMore: true,
       ref: taipyRef,
       video: {
-        mp4: '/videos/pages/home/large-data/large-data-taipy.mp4',
-        webm: '/videos/pages/home/large-data/large-data-taipy.webm',
+        // -c:v libvpx-vp9 -crf 40 -vf scale=1720:-2 -deadline best -an
+        webm: '/videos/pages/home/large-data/taipy-current.webm',
+        // -c:v libx265 -crf 32 -vf scale=1720:-2 -preset veryslow -tag:v hvc1 -movflags faststart -an
+        mp4: '/videos/pages/home/large-data/taipy-current.mp4',
         ref: taipyVideoRef,
       },
     },
@@ -31,8 +33,10 @@ function LargeData() {
         'Struggle with sluggish performance and excessive memory usage, as every data point demands processing. Large datasets become cumbersome, complicating the user experience and data analysis.',
       ref: otherRef,
       video: {
-        mp4: '/videos/pages/home/large-data/large-data-other.mp4',
-        webm: '/videos/pages/home/large-data/large-data-other.webm',
+        // -c:v libvpx-vp9 -crf 40 -vf scale=1720:-2 -deadline best -an
+        webm: '/videos/pages/home/large-data/other-current.webm',
+        // -c:v libx265 -crf 32 -vf scale=1720:-2 -preset veryslow -tag:v hvc1 -movflags faststart -an
+        mp4: '/videos/pages/home/large-data/other-current.mp4',
         ref: otherVideoRef,
       },
     },
@@ -79,8 +83,8 @@ function LargeData() {
                   playsInline
                   muted
                 >
-                  <source src={video.mp4} type="video/mp4" />
                   <source src={video.webm} type="video/webm" />
+                  <source src={video.mp4} type="video/mp4" />
                 </video>
               </div>
             </div>

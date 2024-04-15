@@ -45,8 +45,10 @@ function Optimize() {
                   playsInline
                   muted
                 >
-                  <source src="/videos/pages/home/optimize/optimize-taipy.mp4" type="video/mp4" />
-                  <source src="/videos/pages/home/optimize/optimize-taipy.webm" type="video/webm" />
+                  {/* -c:v libvpx-vp9 -crf 40 -vf scale=1088:-2 -deadline best -an */}
+                  <source src="/videos/pages/home/optimize/taipy-current.webm" type="video/webm" />
+                  {/* -c:v libx265 -crf 32 -vf scale=1088:-2 -preset veryslow -tag:v hvc1 -movflags faststart -an */}
+                  <source src="/videos/pages/home/optimize/taipy-current.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -61,8 +63,10 @@ function Optimize() {
                 playsInline
                 muted
               >
-                <source src="/videos/pages/home/optimize/optimize-other.mp4" type="video/mp4" />
-                <source src="/videos/pages/home/optimize/optimize-other.webm" type="video/webm" />
+                {/* -c:v libvpx-vp9 -crf 40 -vf scale=1088:-2 -deadline best -an */}
+                <source src="/videos/pages/home/optimize/other-current.webm" type="video/webm" />
+                {/* -c:v libx265 -crf 32 -vf scale=1088:-2 -preset veryslow -tag:v hvc1 -movflags faststart -an */}
+                <source src="/videos/pages/home/optimize/other-current.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
