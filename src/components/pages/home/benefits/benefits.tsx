@@ -10,7 +10,7 @@ const CARDS = [
     icon: dataScienceIcon,
     title: 'For Data Scientists',
     description:
-      'Effortlessly visualize ML/AI models with Taipy. Integrates seamlessly with Streamlit and Gradio for quick insights.',
+      "Take advantage of Taipy's scenario to experiment with your machine learning processes, tweak parameters, and assess the differences in results",
   },
   {
     icon: pythonIcon,
@@ -20,15 +20,15 @@ const CARDS = [
   },
   {
     icon: cIcon,
-    title: 'For C-suites',
+    title: 'For C-suite',
     description:
-      'Our solution supports your journey, seamlessly extending to augment your influence across the organization.',
+      'Taipy boosts productivity across your teams and connects Data Scientists, IT Devs, DevOps, and End-Users, enabling your organization to build more successful applications.',
   },
   {
     icon: businessAnalystIcon,
     title: 'For Business Analysts',
     description:
-      'Integrate smoothly for deeper insights and informed decision-making across your organization.',
+      'Using Taipy Designer, create your custom Data Dashboard directly over Python with simple drag-and-drop functionality.',
   },
 ];
 
