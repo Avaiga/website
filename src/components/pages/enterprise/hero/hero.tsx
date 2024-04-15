@@ -43,8 +43,8 @@ export default function Hero() {
             </h2>
             <p className="pt-4 leading-snug text-grey-70 lg:text-14 md:pt-3.5 sm:pt-2">
               Create a user-friendly web interface effortlessly for your Python projects. Streamline
-              your workflow by effortlessly crafting interactive web interfaces without the need for
-              a single line of code
+              your workflow by easily crafting interactive web interfaces without the need for a
+              single line of code
             </p>
           </div>
           <div className="relative flex w-full max-w-[511px] items-end lg:max-w-[490px] sm:pb-2">
