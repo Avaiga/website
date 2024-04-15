@@ -20,7 +20,7 @@ const CARDS = [
   },
   {
     icon: cIcon,
-    title: 'For C-suite',
+    title: 'For Decision Makers',
     description:
       'Taipy boosts productivity across your teams and connects Data Scientists, IT Devs, DevOps, and End-Users, enabling your organization to build more successful applications.',
   },
