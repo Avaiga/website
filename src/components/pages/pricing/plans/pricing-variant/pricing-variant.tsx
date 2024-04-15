@@ -33,7 +33,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
         'License for up to 2 developers with annual user deployment options',
         '24x5 support provided with 2 business hours guaranteed response times',
       ],
-      price: isMonthly ? 700 : 560,
+      price: isMonthly ? 700 : `8,400`,
     },
   };
 
