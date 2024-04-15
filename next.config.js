@@ -6,7 +6,6 @@ module.exports = {
     formats: ['image/webp'],
     remotePatterns: [{ hostname: 'cdn.sanity.io' }],
   },
-  // TODO: add this before release
   async headers() {
     return [
       {

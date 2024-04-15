@@ -46,27 +46,30 @@ function DesignerItem({ question, answer, image, isOpen, handleItemClick, index 
       </button>
       <LazyMotion features={domAnimation}>
         <m.div
+          className={clsx('grid', {
+            'pb-1.5 pt-4 lg:pb-0 lg:pt-3.5 sm:pt-2.5': isOpen,
+          })}
           id={index.toString()}
           initial="closed"
           animate={isOpen ? 'open' : 'closed'}
           variants={{
             open: {
               opacity: 1,
-              height: 'auto',
+              gridTemplateRows: '1fr',
               pointerEvents: 'auto',
             },
             closed: {
               opacity: 0,
-              height: 0,
+              gridTemplateRows: '0fr',
               pointerEvents: 'none',
             },
           }}
           transition={{
             opacity: { duration: 0.2 },
-            height: { duration: 0.3 },
+            gridTemplateRows: { duration: 0.3 },
           }}
         >
-          <div className="flex flex-col pb-1.5 pr-[93px] pt-4 text-16  leading-snug text-grey-70 lg:pb-0 lg:pr-16 lg:pt-3.5 lg:text-14 md:pr-8 sm:pr-2.5 sm:pt-2.5">
+          <div className="flex h-full flex-col overflow-hidden pr-[93px] text-16 leading-snug text-grey-70 lg:pr-16 lg:text-14 md:pr-8 sm:pr-2.5">
             <p>{answer}</p>
           </div>
 
