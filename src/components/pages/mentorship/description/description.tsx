@@ -11,11 +11,11 @@ const CARDS = [
   },
   {
     icon: lampIcon,
-    text: 'If you are new to open source and Taipy, our informal mentoring program will help you become more familiar with Taipy and the open source environment.',
+    text: 'If you are new to Taipy, our informal mentoring program will help you become more familiar with it.',
   },
   {
     icon: calendarIcon,
-    text: "The mentoring duration varies from weeks to months based on each case. We'll assist in selecting an engaging topic or you can choose your own.",
+    text: 'Join our Community Engineer to discover what Taipy can bring in to your Python coding journey!',
   },
 ];
 
