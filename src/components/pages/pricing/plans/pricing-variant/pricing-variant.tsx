@@ -63,7 +63,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
             </h3>
             {isEnterprise && (
               <p className="text-16 font-light md:text-14">
-                &nbsp;&nbsp;/`${isMonthly ? 'month' : 'year'}`
+                &nbsp;&nbsp;/{isMonthly ? 'month' : 'year'}`
               </p>
             )}
           </div>
