@@ -57,8 +57,9 @@ function Applications() {
           Build anything, use&nbsp;Python&nbsp;only
         </h2>
         <p className="mx-auto mt-6 max-w-3xl text-center text-18 font-light text-grey-70 lg:mt-5 lg:max-w-[646px] lg:text-16 md:mt-4 md:max-w-[503px] md:text-14 sm:mt-3">
-          Taipy holds no opinions on what&apos;s and how&apos;s. Build simple pilots, large-scale
-          complex apps, or anything in between. Explore demos for inspiration.
+          Taipy is flexible about the &quot;what&quot; and the &quot;how&quot;. Construct
+          straightforward pilots, develop large-scale complex applications, or anything in between.
+          Check out demos for inspiration.
         </p>
         <div className="mt-14 grid grid-cols-3 gap-8 lg:mt-12 lg:gap-6 md:mt-14 md:grid-cols-2 md:px-8 sm:mt-6 sm:flex sm:flex-wrap sm:justify-center sm:gap-5 sm:px-0">
           {CARDS.map(({ image, title, description, url }, index) => (

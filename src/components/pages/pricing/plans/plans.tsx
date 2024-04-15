@@ -29,7 +29,6 @@ function Plans() {
           setToggleItem={setCurrentPlan}
         />
         <div className="mt-[11px] grid grid-cols-2 gap-x-8 lg:mt-2 lg:gap-x-6 sm:grid-cols-1 sm:gap-y-[22px]">
-          <h2 className="sr-only">Taipy pricing variants</h2>
           <PricingVariant type="community" plan={currentPlan} />
           <PricingVariant type="enterprise" plan={currentPlan} />
         </div>

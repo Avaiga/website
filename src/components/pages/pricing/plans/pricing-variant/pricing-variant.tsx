@@ -33,7 +33,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
         'License for up to 2 developers with annual user deployment options',
         '24x5 support provided with 2 business hours guaranteed response times',
       ],
-      price: isMonthly ? 700 : 560,
+      price: isMonthly ? 700 : `8,400`,
     },
   };
 
@@ -61,7 +61,11 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
             <h3 className="inline-block bg-gradient-to-r from-[#c7c7d1b7] to-white bg-clip-text text-36 font-semibold leading-dense tracking-tight text-transparent md:text-28">
               {isCommunity ? price : `$${price}`}
             </h3>
-            {isEnterprise && <p className="text-16 font-light md:text-14">&nbsp;&nbsp;/month</p>}
+            {isEnterprise && (
+              <p className="text-16 font-light md:text-14">
+                &nbsp;&nbsp;/{isMonthly ? 'month' : 'year'}`
+              </p>
+            )}
           </div>
 
           <ul className="mt-3.5 flex flex-col gap-y-3.5 md:mt-2.5 md:gap-y-2.5 sm:mt-3.5">

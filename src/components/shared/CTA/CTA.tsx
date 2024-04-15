@@ -71,7 +71,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
               Taipy Enterprise
             </h3>
             <p className="mt-3.5 text-18 font-light lg:mt-3 lg:text-16 md:text-14 sm:mt-2.5">
-              Provide security to your app by providing authentication and authorization features
+              When security, simplicity, and efficiency begin to matter.
             </p>
 
             {isEnterprise ? (

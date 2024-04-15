@@ -34,7 +34,7 @@ const CARDS = [
   },
   {
     title: 'Customize styles.',
-    description: 'Enjoy variety of predefined themes or build your own.',
+    description: 'Enjoy a variety of predefined themes or build your own.',
     image: {
       url: customizeStyles,
       width: 250,
