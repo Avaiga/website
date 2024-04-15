@@ -71,9 +71,6 @@ function DesignerItem({ question, answer, image, isOpen, handleItemClick, index 
         >
           <div className="flex h-full flex-col overflow-hidden pr-[93px] text-16 leading-snug text-grey-70 lg:pr-16 lg:text-14 md:pr-8 sm:pr-2.5">
             <p>{answer}</p>
-          </div>
-
-          <div>
             <Image
               src={image}
               alt={`${question}-image.jpg`}
