@@ -69,9 +69,15 @@ function Hero() {
             autoPlay
           >
             {/* -c:v libvpx-vp9 -crf 40 -vf scale=1464:-2 -deadline best -an */}
-            <source src="/videos/pages/home/hero/hero-current.webm" type="video/webm" />
+            <source
+              src="/videos/pages/home/hero/hero-current.webm?updated=20240416160806"
+              type="video/webm"
+            />
             {/* -c:v libx265 -crf 32 -vf scale=1464:-2 -preset veryslow -tag:v hvc1 -movflags faststart -an */}
-            <source src="/videos/pages/home/hero/hero-current.mp4" type="video/mp4" />
+            <source
+              src="/videos/pages/home/hero/hero-current.mp4?updated=20240416160806"
+              type="video/mp4"
+            />
           </video>
         </div>
         <Logos />
