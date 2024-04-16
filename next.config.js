@@ -37,6 +37,14 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/events/taipy-tech-talk',
+        destination: 'https://taipy-website.webflow.io/events/taipy-tech-talk',
+      },
+    ];
+  },
   async redirects() {
     return [
       {
