@@ -92,6 +92,16 @@ module.exports = {
         destination: '/pricing',
         permanent: true,
       },
+      {
+        source: '/posts/:path*',
+        destination: '/blog/:path*',
+        permanent: true,
+      },
+      {
+        source: '/community-contributions/:path*',
+        destination: '/blog/:path*',
+        permanent: true,
+      },
     ];
   },
   webpack: (config) => {
