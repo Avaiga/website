@@ -91,7 +91,7 @@ function Subscribe({
 
   return (
     <section className={clsx('subscribe overflow-hidden px-safe', className)}>
-      <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end">
+      <div className="container relative grid max-w-[1388px] grid-cols-12 gap-x-[52px] lg:flex lg:justify-end sm:justify-center">
         <Image
           className="pointer-events-none absolute left-8 top-0 -z-10 lg:left-16 lg:h-full lg:w-auto lg:max-w-none md:left-[-88px] sm:left-[-70px]"
           width={1324}

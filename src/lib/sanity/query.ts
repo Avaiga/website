@@ -78,6 +78,7 @@ export const commonCustomerStoryFieldsFragment = gql`
     _id
     publishedAt
     title
+    lead
     slug {
       current
     }
@@ -117,6 +118,29 @@ export const commonPostFieldsWithRelatedFragment = gql`
 
   fragment commonPostFieldsWithRelated on Post {
     ...commonPostFields
+    lead
+    contentRaw
+    related {
+      ...commonPostFields
+    }
+    seo {
+      metaTitle
+      metaDescription
+      socialImage {
+        asset {
+          _id
+        }
+      }
+    }
+  }
+`;
+
+export const commonCustomerStoryFieldsWithRelatedFragment = gql`
+  ${commonCustomerStoryFieldsFragment}
+  ${commonPostFieldsFragment}
+
+  fragment commonCustomerStoryFieldsWithRelated on CustomerStory {
+    ...commonCustomerStoryFields
     lead
     contentRaw
     related {
@@ -179,6 +203,44 @@ export const postQuery = gql`
   query Post($slug: String!) {
     allPost(where: { slug: { current: { eq: $slug } } }) {
       ...commonPostFieldsWithRelated
+    }
+  }
+`;
+
+export const allCustomerStoryQuery = gql`
+  ${commonCustomerStoryFieldsWithRelatedFragment}
+
+  query CustomerStories {
+    allCustomerStory(sort: { publishedAt: DESC }) {
+      ...commonCustomerStoryFieldsWithRelated
+    }
+  }
+`;
+
+export const allCustomerStoryWithLimitationsQuery = gql`
+  ${commonCustomerStoryFieldsFragment}
+
+  query CustomerStories($where: CustomerStoryFilter, $offset: Int, $limit: Int) {
+    allCustomerStory(sort: { publishedAt: DESC }, offset: $offset, limit: $limit, where: $where) {
+      ...commonCustomerStoryFields
+    }
+  }
+`;
+
+export const countCustomerStoryQuery = gql`
+  query CountCustomerStories($where: CustomerStoryFilter) {
+    allCustomerStory(where: $where) {
+      _id
+    }
+  }
+`;
+
+export const customerStoryQuery = gql`
+  ${commonCustomerStoryFieldsWithRelatedFragment}
+
+  query CustomerStory($slug: String!) {
+    allCustomerStory(where: { slug: { current: { eq: $slug } } }) {
+      ...commonCustomerStoryFieldsWithRelated
     }
   }
 `;

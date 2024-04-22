@@ -1,19 +1,32 @@
 import { GraphQLClient } from 'graphql-request';
 
-import { Category, Legal, Post, SingleCategory, SingleLegal, SinglePost } from '@/types/blog';
+import {
+  Category,
+  CustomerStory,
+  Legal,
+  Post,
+  SingleCategory,
+  SingleCustomerStory,
+  SingleLegal,
+  SinglePost,
+} from '@/types/blog';
 
 import {
   allCategoryQuery,
+  allCustomerStoryQuery,
+  allCustomerStoryWithLimitationsQuery,
   allLegalQuery,
   allPostQuery,
   allPostWithLimitationsQuery,
   categoryQuery,
+  countCustomerStoryQuery,
   countPostQuery,
+  customerStoryQuery,
   legalQuery,
   postQuery,
   promotedPostQuery,
 } from '@/lib/sanity/query';
-import { BLOG_POST_PER_PAGE } from '@/lib/sanity/utils';
+import { BLOG_POST_PER_PAGE, CUSTOMER_STORY_PER_PAGE } from '@/lib/sanity/utils';
 
 const graphQLClient = new GraphQLClient(process.env.NEXT_PUBLIC_SANITY_GRAPHQL_URL!);
 
@@ -115,7 +128,7 @@ export const getPostBySlug = async (
 export const getRelatedPosts = async ({ postId }: { postId: string }): Promise<Post[]> => {
   return await graphQLClient
     .request<{ allPost: Post[] }>(allPostWithLimitationsQuery, {
-      where: {
+      where: postId && {
         _id: {
           neq: postId,
         },
@@ -126,10 +139,56 @@ export const getRelatedPosts = async ({ postId }: { postId: string }): Promise<P
     .then((data) => data.allPost);
 };
 
+export const getAllRelatedPosts = async (): Promise<Post[]> => {
+  return await graphQLClient
+    .request<{ allPost: Post[] }>(allPostWithLimitationsQuery, {
+      offset: 0,
+      limit: 3,
+    })
+    .then((data) => data.allPost);
+};
+
 export const getPromotedPost = async (): Promise<Post | null> =>
   await graphQLClient
     .request<{ allPost: Post[] }>(promotedPostQuery)
     .then((data) => data.allPost)
+    .then((data) => data[0] || null);
+
+export const getAllCustomerStories = async (): Promise<SingleCustomerStory[]> =>
+  await graphQLClient
+    .request<{ allCustomerStory: SingleCustomerStory[] }>(allCustomerStoryQuery)
+    .then((data) => data.allCustomerStory);
+
+export const getCustomerStories = async (options: { page: number }): Promise<CustomerStory[]> =>
+  await graphQLClient
+    .request<{ allCustomerStory: CustomerStory[] }>(allCustomerStoryWithLimitationsQuery, {
+      offset: options?.page ? CUSTOMER_STORY_PER_PAGE * options.page - CUSTOMER_STORY_PER_PAGE : 0,
+      limit: options?.page ? CUSTOMER_STORY_PER_PAGE : null,
+    })
+    .then((data) => data.allCustomerStory);
+
+export const countCustomerStories = async (): Promise<number> =>
+  await graphQLClient
+    .request<{ allCustomerStory: { _id: string }[] }>(countCustomerStoryQuery)
+    .then((data) => data.allCustomerStory.length);
+
+export const getCustomerStoryBySlug = async (
+  slug: string,
+  options?: {
+    isDraftMode: boolean;
+  },
+): Promise<SingleCustomerStory | null> =>
+  await graphQLClient
+    .request<{ allCustomerStory: SingleCustomerStory[] }>(
+      customerStoryQuery,
+      { slug },
+      options?.isDraftMode
+        ? {
+            Authorization: `Bearer ${process.env.SANITY_PREVIEW_SECRET}`,
+          }
+        : undefined,
+    )
+    .then((data) => data.allCustomerStory)
     .then((data) => data[0] || null);
 
 export const getLegalPages = async (): Promise<Legal[]> =>

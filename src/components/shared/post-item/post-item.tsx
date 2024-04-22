@@ -16,9 +16,15 @@ interface PostItemProps {
   post: Post;
   isFull?: boolean;
   isPriorityLoad?: boolean;
+  isRelated?: boolean;
 }
 
-export default function PostItem({ post, isFull = false, isPriorityLoad = false }: PostItemProps) {
+export default function PostItem({
+  post,
+  isFull = false,
+  isPriorityLoad = false,
+  isRelated = false,
+}: PostItemProps) {
   const { slug, title, cover, category, author, publishedAt, lead } = post;
 
   return (
@@ -60,10 +66,12 @@ export default function PostItem({ post, isFull = false, isPriorityLoad = false 
         </CategoryLabel>
         <Link className="text-white" href={`${ROUTES.BLOG}/${slug.current}`}>
           <h1
-            className={clsx('sm:text-18', {
+            className={clsx({
               'text-40 font-semibold leading-tight tracking-tight lg:text-36 md:text-32 sm:font-medium sm:leading-snug sm:tracking-[0px]':
                 isFull,
               'line-clamp-3 text-18 font-medium leading-snug': !isFull,
+              'sm:text-18': !isRelated,
+              'md:text-16': isRelated,
             })}
           >
             {title}

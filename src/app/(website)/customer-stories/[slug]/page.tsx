@@ -6,8 +6,8 @@ import { ROUTES } from '@/constants/routes';
 
 import AuthorAndShare from '@/components/pages/article/author-and-share';
 import Content from '@/components/pages/article/content';
-import Hero from '@/components/pages/article/hero';
 import Navigation from '@/components/pages/article/navigation';
+import ArticleHeader from '@/components/shared/article-header';
 import Link from '@/components/shared/link';
 import PostItem from '@/components/shared/post-item';
 import Subscribe from '@/components/shared/subscribe';
@@ -16,19 +16,23 @@ import { getAnchorFromText } from '@/lib/get-anchor-from-text';
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { getPublishDate } from '@/lib/get-publish-date';
 import { portableToPlain } from '@/lib/portable-to-plain';
-import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/sanity/client';
+import {
+  getAllCustomerStories,
+  getCustomerStoryBySlug,
+  getRelatedPosts,
+} from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 
-export default async function Post({ params }: { params: { slug: string } }) {
+export default async function CustomerStory({ params }: { params: { slug: string } }) {
   const { isEnabled: isDraftMode } = draftMode();
 
-  const post = await getPostBySlug(params.slug, { isDraftMode });
+  const post = await getCustomerStoryBySlug(params.slug, { isDraftMode });
 
   if (!post) {
     notFound();
   }
 
-  const { title, lead, cover, publishedAt, contentRaw, slug, category, related } = post;
+  const { title, lead, cover, publishedAt, contentRaw, slug, related } = post;
   let { author } = post;
 
   let relatedPosts = related;
@@ -67,14 +71,18 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <article className="pt-[92px] xl:pt-[88px] md:pt-[84px] sm:pt-20">
         <div className="container relative grid max-w-[1256px] grid-cols-[180px_704px_180px] gap-x-16 xl:block xl:max-w-[704px]">
           <div className="col-start-2 col-end-2">
-            <Hero
+            <ArticleHeader
               title={title}
               lead={lead}
               cover={cover}
               author={author}
               publishedAt={publishedAt}
-              category={category}
+              category={{
+                title: 'Customer Story',
+                slug: ROUTES.CUSTOMER_STORIES as string,
+              }}
               slug={slug}
+              breadcrumbs={[{ title: 'Customer stories', url: ROUTES.CUSTOMER_STORIES }, { title }]}
             />
           </div>
           {navItems.length > 0 && (
@@ -104,7 +112,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
           <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
             {relatedPosts.map((relatedPost) => (
-              <PostItem key={relatedPost._id} post={relatedPost} />
+              <PostItem key={relatedPost._id} post={relatedPost} isRelated />
             ))}
           </div>
         </div>
@@ -120,7 +128,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts();
+  const posts = await getAllCustomerStories();
 
   return posts.map(({ slug }) => ({
     slug: slug.current,
@@ -134,7 +142,7 @@ export async function generateMetadata({
 }): Promise<Metadata | null> {
   const { isEnabled: isDraftMode } = draftMode();
 
-  const post = await getPostBySlug(params.slug, { isDraftMode });
+  const post = await getCustomerStoryBySlug(params.slug, { isDraftMode });
 
   if (!post) {
     return null;
@@ -158,7 +166,7 @@ export async function generateMetadata({
   return getMetadata({
     title: seo?.metaTitle || title,
     description,
-    pathname: `${ROUTES.BLOG}/${slug.current}/`,
+    pathname: `${ROUTES.CUSTOMER_STORIES}/${slug.current}/`,
     imagePath,
   });
 }

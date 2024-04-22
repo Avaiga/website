@@ -3,7 +3,7 @@ import type { Route } from 'next';
 export const ROUTES: Record<string, URL | Route<string>> = {
   INDEX: '/',
   BLOG: '/blog',
-  TESTIMONIALS: '/testimonials',
+  CUSTOMER_STORIES: '/customer-stories',
   BLOG_CATEGORY: '/blog/category',
   PRIVACY: '/privacy-policy', // https://www.taipy.io/legal/privacy-policy
   BANNER: '/taipy-tech-talk', // https://www.taipy.io/events/taipy-tech-talk

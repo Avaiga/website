@@ -1,6 +1,13 @@
+import { Route } from 'next';
+
 import { SanityAsset, SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { TableValue } from '@sanity/table';
 import { PortableTextBlock } from 'sanity';
+
+export type Breadcrumb = {
+  title: string;
+  url?: URL | Route<string>;
+};
 
 export type Author = {
   _id: string;
@@ -97,7 +104,25 @@ export type Post = {
 };
 
 export type SinglePost = Post & {
+  contentRaw: PortableTextBlock[];
+  related: Post[];
+  seo: SEO | null;
+};
+
+export type CustomerStory = {
+  _id: string;
+  publishedAt: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  cover: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
+  companyLogo: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
+  author: Author;
   lead: string;
+};
+
+export type SingleCustomerStory = CustomerStory & {
   contentRaw: PortableTextBlock[];
   related: Post[];
   seo: SEO | null;

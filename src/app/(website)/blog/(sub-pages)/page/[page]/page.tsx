@@ -4,8 +4,8 @@ import { redirect } from 'next/navigation';
 import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 
-import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/posts-list';
+import Pagination from '@/components/shared/pagination';
 
 import { getMetadata } from '@/lib/get-metadata';
 import { countPosts, getPosts } from '@/lib/sanity/client';
