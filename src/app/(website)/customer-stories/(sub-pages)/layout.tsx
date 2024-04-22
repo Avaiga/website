@@ -33,7 +33,12 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
             <h2 className="text-32 font-semibold leading-none tracking-tight">
               See what&apos;s happening at Taipy&apos;s
             </h2>
-            <Link className="shrink-0" href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
+            <Link
+              className="shrink-0 text-16 md:text-14"
+              href={ROUTES.BLOG}
+              theme="white"
+              arrowTheme="red"
+            >
               All posts
             </Link>
           </div>

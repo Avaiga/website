@@ -104,13 +104,18 @@ async function CustomerStory({ params }: { params: { slug: string } }) {
       </article>
       <section className="related mt-[120px] lg:mt-[104px] md:mt-[88px] sm:mt-16">
         <div className="container-narrow">
-          <div className="mb-8 flex items-center justify-between">
+          <div className="mb-8 flex items-center justify-between gap-x-4">
             <h2 className="text-32 font-semibold leading-none tracking-tight">Related Posts</h2>
-            <Link href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
+            <Link
+              className="shrink-0 text-16 md:text-14"
+              href={ROUTES.BLOG}
+              theme="white"
+              arrowTheme="red"
+            >
               All posts
             </Link>
           </div>
-          <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
+          <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-[19px] sm:grid-cols-1 sm:gap-y-7">
             {relatedPosts.map((relatedPost) => (
               <PostItem key={relatedPost._id} post={relatedPost} isRelated />
             ))}
