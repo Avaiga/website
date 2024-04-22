@@ -43,7 +43,7 @@ function MobileMenu({ isOpen, onClick }: { isOpen: boolean; onClick: () => void 
               <ul className="w-full border-t border-t-[#202027]">
                 {MENU.header.map(({ label, href }, index) => (
                   <li className="-mt-px border-b border-b-[#202027]" key={index}>
-                    <Link className="py-[24px]" href={href} size="xl">
+                    <Link className="w-full py-[24px]" href={href} size="xl">
                       {label}
                     </Link>
                   </li>
