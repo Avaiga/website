@@ -80,7 +80,11 @@ export default function PostItem({
         {isFull && (
           <p className="text-18 font-light leading-normal text-grey-70 sm:hidden">{lead}</p>
         )}
-        <AuthorAndDate author={author} publishedAt={getPublishDate(publishedAt).toUpperCase()} />
+        <AuthorAndDate
+          author={author}
+          publishedAt={getPublishDate(publishedAt).toUpperCase()}
+          isRelated={isRelated}
+        />
       </div>
     </article>
   );

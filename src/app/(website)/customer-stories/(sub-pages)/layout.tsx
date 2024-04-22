@@ -29,15 +29,15 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
       </section>
       <section className="related mt-[168px] lg:mt-[140px] md:mt-24 sm:mt-[72px]">
         <div className="container-narrow">
-          <div className="mb-8 flex items-center justify-between">
+          <div className="mb-8 flex items-center justify-between gap-x-4">
             <h2 className="text-32 font-semibold leading-none tracking-tight">
               See what&apos;s happening at Taipy&apos;s
             </h2>
-            <Link href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
+            <Link className="shrink-0" href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
               All posts
             </Link>
           </div>
-          <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
+          <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-[19px] sm:grid-cols-1 sm:gap-y-7">
             {relatedPosts.map((relatedPost) => (
               <PostItem key={relatedPost._id} post={relatedPost} isRelated />
             ))}

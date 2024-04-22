@@ -21,7 +21,7 @@ function CustomerStoryItem({ post, isPriorityLoad = false }: CustomerStoryItemPr
           <div className="relative h-10 w-auto lg:h-9 sm:h-6">
             <Image
               className="object-contain object-left"
-              src={urlForImage(companyLogo).height(40).url()}
+              src={urlForImage(companyLogo).height(80).url()}
               alt="Company logo"
               priority={isPriorityLoad}
               fill
