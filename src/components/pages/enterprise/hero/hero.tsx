@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import HeroPlug from '@/images/pages/enterprise/hero/hero-plug.png';
 import HeroPlugMobile from '@/images/pages/enterprise/hero/hero-plug.png';
 
@@ -29,7 +29,7 @@ export default function Hero() {
           className="relative mt-6 w-full max-w-[180px] lg:mt-7 sm:mt-[22px]"
           size="lgConst"
           theme="red-filled"
-          href={ROUTE.REQUEST_A_DEMO}
+          href={ROUTES.REQUEST_A_DEMO}
         >
           Request a demo
           <span className="absolute top-[-51px] h-[190px] w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[36px]" />

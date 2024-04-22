@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 
 import Breadcrumbs from '@/components/shared/breadcrumbs';
 import CategoryLabel from '@/components/shared/category-label';
@@ -20,12 +20,12 @@ type HeroProps = Pick<
 function Hero({ title, lead, cover, author, publishedAt, category, slug }: HeroProps) {
   return (
     <>
-      <Breadcrumbs items={[{ title: 'Blog', url: ROUTE.BLOG }, { title }]} />
+      <Breadcrumbs items={[{ title: 'Blog', url: ROUTES.BLOG }, { title }]} />
 
       <div className="mt-12 xl:mt-10">
         <CategoryLabel
           className="md:h-[26px] md:text-12"
-          url={category ? `${ROUTE.BLOG_CATEGORY}/${category.slug.current}` : ROUTE.BLOG}
+          url={category ? `${ROUTES.BLOG_CATEGORY}/${category.slug.current}` : ROUTES.BLOG}
         >
           {category ? category.titleShort : 'All posts'}
         </CategoryLabel>

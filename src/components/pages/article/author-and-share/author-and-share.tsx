@@ -1,4 +1,4 @@
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 
 import AuthorAndDate from '@/components/shared/author-and-date';
@@ -17,7 +17,7 @@ function AuthorAndShare({ publishedAt, author, slug, title, className }: AuthorA
       className={clsx('flex justify-between sm:flex-wrap sm:gap-x-2 sm:gap-y-[18px]', className)}
     >
       <AuthorAndDate author={author} publishedAt={publishedAt} />
-      <SocialShare pathname={`${ROUTE.BLOG}/${slug.current}`} title={title} />
+      <SocialShare pathname={`${ROUTES.BLOG}/${slug.current}`} title={title} />
     </div>
   );
 }

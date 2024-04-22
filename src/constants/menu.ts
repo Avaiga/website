@@ -4,47 +4,47 @@ import TwitterLogo from '@/svgs/icons/logo-x.inline.svg';
 import YoutubeLogo from '@/svgs/icons/logo-youtube.inline.svg';
 
 // @TODO: should be plural
-import { ROUTE } from './routes';
+import { ROUTES } from './routes';
 
 export const MENU = {
   header: [
-    { label: 'Blog', href: ROUTE.BLOG },
-    { label: 'About', href: ROUTE.ABOUT_US },
-    { label: 'Pricing', href: ROUTE.PRICING },
-    { label: 'Docs', href: ROUTE.DOCUMENTATION },
+    { label: 'Blog', href: ROUTES.BLOG },
+    { label: 'About', href: ROUTES.ABOUT_US },
+    { label: 'Pricing', href: ROUTES.PRICING },
+    { label: 'Docs', href: ROUTES.DOCUMENTATION },
   ],
   footer: {
     main: [
       {
         title: 'Taipy',
         items: [
-          { label: 'Home', href: ROUTE.INDEX },
-          { label: 'About us', href: ROUTE.ABOUT_US },
-          { label: 'Enterprise', href: ROUTE.ENTERPRISE },
-          { label: 'Pricing', href: ROUTE.PRICING },
+          { label: 'Home', href: ROUTES.INDEX },
+          { label: 'About us', href: ROUTES.ABOUT_US },
+          { label: 'Enterprise', href: ROUTES.ENTERPRISE },
+          { label: 'Pricing', href: ROUTES.PRICING },
         ],
       },
       {
         title: 'Resources',
         items: [
-          { label: 'Blog', href: ROUTE.BLOG },
-          { label: 'Documentation', href: ROUTE.DOCUMENTATION },
-          { label: 'Free mentorship', href: ROUTE.MENTORSHIP },
+          { label: 'Blog', href: ROUTES.BLOG },
+          { label: 'Documentation', href: ROUTES.DOCUMENTATION },
+          { label: 'Free mentorship', href: ROUTES.MENTORSHIP },
         ],
       },
       {
         title: 'Legal',
         items: [
-          { label: 'Terms of service', href: ROUTE.TERMS },
-          { label: 'Privacy policy', href: ROUTE.PRIVACY },
+          { label: 'Terms of service', href: ROUTES.TERMS },
+          { label: 'Privacy policy', href: ROUTES.PRIVACY },
         ],
       },
     ],
     social: [
-      { label: 'Twitter', href: ROUTE.TWITTER, icon: TwitterLogo },
-      { label: 'LinkedIn', href: ROUTE.LINKEDIN, icon: LinkedinLogo },
-      { label: 'GitHub', href: ROUTE.GITHUB, icon: GithubLogo },
-      { label: 'YouTube', href: ROUTE.YOUTUBE, icon: YoutubeLogo },
+      { label: 'Twitter', href: ROUTES.TWITTER, icon: TwitterLogo },
+      { label: 'LinkedIn', href: ROUTES.LINKEDIN, icon: LinkedinLogo },
+      { label: 'GitHub', href: ROUTES.GITHUB, icon: GithubLogo },
+      { label: 'YouTube', href: ROUTES.YOUTUBE, icon: YoutubeLogo },
     ],
   },
 };

@@ -73,6 +73,45 @@ export const commonPostFieldsFragment = gql`
   }
 `;
 
+export const commonCustomerStoryFieldsFragment = gql`
+  fragment commonCustomerStoryFields on CustomerStory {
+    _id
+    publishedAt
+    title
+    slug {
+      current
+    }
+    cover {
+      asset {
+        _id
+        altText
+        metadata {
+          lqip
+        }
+      }
+    }
+    companyLogo {
+      asset {
+        _id
+        altText
+        metadata {
+          lqip
+        }
+      }
+    }
+    author {
+      _id
+      name
+      image {
+        asset {
+          _id
+          altText
+        }
+      }
+    }
+  }
+`;
+
 export const commonPostFieldsWithRelatedFragment = gql`
   ${commonPostFieldsFragment}
 

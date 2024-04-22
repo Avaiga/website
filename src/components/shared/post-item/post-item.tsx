@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 
 import AuthorAndDate from '@/components/shared/author-and-date';
@@ -31,7 +31,7 @@ export default function PostItem({ post, isFull = false, isPriorityLoad = false 
     >
       <div className="w-full">
         {cover && (
-          <Link href={`${ROUTE.BLOG}/${slug.current}`}>
+          <Link href={`${ROUTES.BLOG}/${slug.current}`}>
             <Image
               className="aspect-video w-full rounded-lg object-cover"
               src={urlForImage(cover).width(1296).height(728).url()}
@@ -53,12 +53,12 @@ export default function PostItem({ post, isFull = false, isPriorityLoad = false 
       >
         <CategoryLabel
           className={clsx({ 'lg:h-[26px] md:text-12 sm:h-[22px] sm:text-11': isFull })}
-          url={category ? `${ROUTE.BLOG_CATEGORY}/${category.slug.current}` : ROUTE.BLOG}
+          url={category ? `${ROUTES.BLOG_CATEGORY}/${category.slug.current}` : ROUTES.BLOG}
           size={isFull ? 'md' : 'sm'}
         >
           {category ? category.titleShort : 'All posts'}
         </CategoryLabel>
-        <Link className="text-white" href={`${ROUTE.BLOG}/${slug.current}`}>
+        <Link className="text-white" href={`${ROUTES.BLOG}/${slug.current}`}>
           <h1
             className={clsx('sm:text-18', {
               'text-40 font-semibold leading-tight tracking-tight lg:text-36 md:text-32 sm:font-medium sm:leading-snug sm:tracking-[0px]':

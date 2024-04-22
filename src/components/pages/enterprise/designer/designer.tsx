@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import { useState } from 'react';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import applicationImage from '@/images/pages/enterprise/designer/application.png';
 import pythonImage from '@/images/pages/enterprise/designer/python.png';
 import renderingImage from '@/images/pages/enterprise/designer/rendering.png';
@@ -92,7 +92,7 @@ function Designer() {
           className="mt-[70px] w-full max-w-[180px] lg:mt-[51px] md:mt-[43px] md:text-16 sm:mt-[26px]"
           size="lg"
           theme="red-filled"
-          href={ROUTE.PRICING}
+          href={ROUTES.PRICING}
         >
           See our plans
         </Button>

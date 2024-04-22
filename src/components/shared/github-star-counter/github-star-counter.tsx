@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 
 import { ClassName } from '@/types/classname';
@@ -61,7 +61,7 @@ function GithubStarCounter({ className }: ClassName) {
         className={clsx('gap-x-2.5 pl-2 pr-3', className)}
         theme="outline"
         size="sm"
-        href={ROUTE.GITHUB}
+        href={ROUTES.GITHUB}
         target="_blank"
         rel="noopener noreferrer"
       >
