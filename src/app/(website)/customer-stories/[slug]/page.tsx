@@ -91,7 +91,7 @@ async function CustomerStory({ params }: { params: { slug: string } }) {
             </div>
           )}
           <div className="col-start-2 col-end-2 mt-14 xl:mt-7 md:mt-6 sm:mt-5">
-            <Content content={contentRaw} />
+            <Content className="customer-story" content={contentRaw} />
             <AuthorAndShare
               className="mt-8 border-t border-t-grey-20 pt-8 lg:mt-7 lg:pt-7 md:mt-6 md:pt-6 sm:mt-5 sm:pt-5"
               author={author}

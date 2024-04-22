@@ -15,7 +15,7 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
     <>
       <section className="pt-40 lg:pt-[136px] md:pt-[120px] sm:pt-[104px]">
         <div className="container text-center">
-          <span className="leading-snug text-primary-red md:text-14">They speak for us</span>
+          <span className="leading-snug text-primary-red sm:text-14">They speak for us</span>
           <h1 className="mt-4 text-64 font-medium leading-dense tracking-tight lg:mt-3.5 lg:text-48 md:text-40 sm:mt-3 sm:text-28">
             Customer Stories
           </h1>

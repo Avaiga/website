@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { ROUTES } from '@/constants/routes';
+
 import Link from '@/components/shared/link';
 
 import { CustomerStory } from '@/types/blog';
@@ -36,7 +38,7 @@ function CustomerStoryItem({ post, isPriorityLoad = false }: CustomerStoryItemPr
         </p>
         <Link
           className="text-16 leading-snug"
-          href={`/testimonials/${slug.current}`}
+          href={`${ROUTES.CUSTOMER_STORIES}/${slug.current}`}
           theme="white"
           arrowTheme="red"
         >
