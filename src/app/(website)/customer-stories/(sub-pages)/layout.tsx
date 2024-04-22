@@ -8,7 +8,7 @@ import Subscribe from '@/components/shared/subscribe';
 
 import { getAllRelatedPosts } from '@/lib/sanity/client';
 
-export default async function BlogSubPagesLayout({ children }: { children: ReactNode }) {
+async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode }) {
   const relatedPosts = await getAllRelatedPosts();
 
   return (
@@ -53,3 +53,5 @@ export default async function BlogSubPagesLayout({ children }: { children: React
     </>
   );
 }
+
+export default CustomerStoriesSubPagesLayout;

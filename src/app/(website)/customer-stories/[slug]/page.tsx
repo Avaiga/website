@@ -23,7 +23,7 @@ import {
 } from '@/lib/sanity/client';
 import { urlForImage } from '@/lib/sanity/image';
 
-export default async function CustomerStory({ params }: { params: { slug: string } }) {
+async function CustomerStory({ params }: { params: { slug: string } }) {
   const { isEnabled: isDraftMode } = draftMode();
 
   const post = await getCustomerStoryBySlug(params.slug, { isDraftMode });
@@ -126,6 +126,8 @@ export default async function CustomerStory({ params }: { params: { slug: string
     </>
   );
 }
+
+export default CustomerStory;
 
 export async function generateStaticParams() {
   const posts = await getAllCustomerStories();
