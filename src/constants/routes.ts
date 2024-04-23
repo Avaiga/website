@@ -18,4 +18,5 @@ export const ROUTE: Record<string, URL | Route<string>> = {
   LINKEDIN: new URL('https://www.linkedin.com/company/taipy-io/'),
   GITHUB: new URL('https://github.com/Avaiga/taipy'),
   YOUTUBE: new URL('https://www.youtube.com/channel/UCYZyGVj-fPgUSITZnsOQoDg'),
+  DISCORD: new URL('https://discord.gg/hS95mtBnrj'),
 };
