@@ -1,28 +1,8 @@
-import { Route } from 'next';
-
 import { SanityAsset, SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { TableValue } from '@sanity/table';
 import { PortableTextBlock } from 'sanity';
 
-export type Breadcrumb = {
-  title: string;
-  url?: URL | Route<string>;
-};
-
-export type Author = {
-  _id: string;
-  image: {
-    asset: {
-      _id: string;
-      altText: string | null;
-      metadata: {
-        lqip: string;
-      };
-    };
-  } | null;
-  name: string;
-  position?: string;
-};
+import { Author } from './shared';
 
 export type Category = {
   _id: string;

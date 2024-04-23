@@ -1,6 +1,6 @@
 export const BLOG_POST_PER_PAGE = 15;
 
-export const CUSTOMER_STORY_PER_PAGE = 5;
+export const CUSTOMER_STORY_PER_PAGE = 10;
 
 type DataWithSlug = { slug: { current: string } };
 

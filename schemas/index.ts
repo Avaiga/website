@@ -1,7 +1,7 @@
 import { author } from './author';
 import { category } from './category';
 import { customBlockquote, customNotice, customTable, customYoutube } from './content';
-import { customerStory } from './customerStory';
+import { customerStory } from './customer-story';
 import { legal } from './legal';
 import { post } from './post';
 import { seo } from './seo';

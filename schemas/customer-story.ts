@@ -40,11 +40,18 @@ export const customerStory = defineType({
       group: 'content',
     }),
     defineField({
+      name: 'companyName',
+      type: 'string',
+      title: 'Company name',
+      validation: (rule: StringRule) => rule.required(),
+      group: 'content',
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       title: 'Slug',
       options: {
-        source: 'title',
+        source: 'companyName',
       },
       validation: (rule: SlugRule) => rule.required(),
       group: 'content',

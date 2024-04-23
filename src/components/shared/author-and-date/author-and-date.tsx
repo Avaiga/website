@@ -2,19 +2,23 @@ import Image from 'next/image';
 
 import clsx from 'clsx';
 
-import { Author } from '@/types/blog';
+import { Author } from '@/types/shared';
 
 import { urlForImage } from '@/lib/sanity/image';
+
+type AuthorAndDateProps = {
+  author: Author;
+  publishedAt: string;
+  isRelated?: boolean;
+  isPriority?: boolean;
+};
 
 function AuthorAndDate({
   author,
   publishedAt,
   isRelated = false,
-}: {
-  author: Author;
-  publishedAt: string;
-  isRelated?: boolean;
-}) {
+  isPriority = false,
+}: AuthorAndDateProps) {
   return (
     <div className="flex items-center">
       {author.image && (
@@ -26,6 +30,7 @@ function AuthorAndDate({
           alt={author.name}
           width={32}
           height={32}
+          priority={isPriority}
         />
       )}
       <span
@@ -40,6 +45,7 @@ function AuthorAndDate({
         className={clsx('text-14 leading-none tracking-snug text-grey-50', {
           'md:text-12': isRelated,
         })}
+        dateTime={publishedAt}
       >
         {publishedAt}
       </time>

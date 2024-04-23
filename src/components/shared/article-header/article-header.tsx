@@ -5,7 +5,8 @@ import { ROUTES } from '@/constants/routes';
 import Breadcrumbs from '@/components/shared/breadcrumbs';
 import CategoryLabel from '@/components/shared/category-label';
 
-import { Breadcrumb, SinglePost } from '@/types/blog';
+import { SinglePost } from '@/types/blog';
+import { Breadcrumb } from '@/types/shared';
 
 import { getPublishDate } from '@/lib/get-publish-date';
 import { urlForImage } from '@/lib/sanity/image';
@@ -56,6 +57,7 @@ function ArticleHeader({
           slug={slug}
           publishedAt={getPublishDate(publishedAt).toUpperCase()}
           title={title}
+          isPriority
         />
         {cover && (
           <Image
@@ -66,6 +68,7 @@ function ArticleHeader({
             height={396}
             placeholder={cover.asset?.metadata?.lqip ? 'blur' : 'empty'}
             blurDataURL={cover.asset?.metadata?.lqip ?? ''}
+            priority
           />
         )}
       </div>

@@ -30,9 +30,9 @@ async function BlogPage({ params }: BlogPageProps) {
 
   return (
     <>
-      <h1 className="sr-only">Taipy Blog</h1>
+      <h1 className="sr-only">Taipy Blog - Page ${page}</h1>
       <PostsList posts={posts} />
-      <Pagination currentPage={page} pageCount={pageCount} path={`${ROUTES.BLOG}`} />
+      <Pagination currentPage={page} pageCount={pageCount} path={ROUTES.BLOG as string} />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 
-import TestimonialItem from '@/components/pages/customer-stories/customer-story-item';
+import CustomerStoryItem from '@/components/pages/customer-stories/customer-story-item';
 import Pagination from '@/components/shared/pagination';
 
 import { getMetadata } from '@/lib/get-metadata';
@@ -19,7 +19,7 @@ async function CustomerStories() {
   return (
     <>
       {posts.map((post, index) => (
-        <TestimonialItem key={post._id} post={post} isPriorityLoad={index < 3} />
+        <CustomerStoryItem key={post._id} post={post} isPriorityLoad={index < 3} />
       ))}
       {pageCount !== 1 && (
         <Pagination currentPage={1} pageCount={pageCount} path={`${ROUTES.CUSTOMER_STORIES}`} />

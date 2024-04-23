@@ -29,12 +29,12 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
       </section>
       <section className="related mt-[168px] lg:mt-[140px] md:mt-24 sm:mt-[72px]">
         <div className="container-narrow">
-          <div className="mb-8 flex items-center justify-between gap-x-4">
-            <h2 className="text-32 font-semibold leading-none tracking-tight">
+          <div className="mb-8 flex items-center justify-between gap-x-4 lg:mb-7">
+            <h2 className="text-32 font-semibold leading-none tracking-tight md:text-24">
               See what&apos;s happening at Taipy&apos;s
             </h2>
             <Link
-              className="shrink-0 text-16 md:text-14"
+              className="shrink-0 text-16 md:text-14 sm:text-16"
               href={ROUTES.BLOG}
               theme="white"
               arrowTheme="red"

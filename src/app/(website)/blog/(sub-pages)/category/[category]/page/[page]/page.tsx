@@ -41,9 +41,9 @@ async function BlogPage({ params }: BlogPageProps) {
 
   return (
     <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12 sm:gap-y-8">
-      <h1 className="sr-only">Taipy Blog</h1>
+      <h1 className="sr-only">Taipy Blog - Page ${page}</h1>
       <PostsList posts={posts} />
-      <Pagination currentPage={page} pageCount={pageCount} path={`${ROUTES.BLOG}`} />
+      <Pagination currentPage={page} pageCount={pageCount} path={ROUTES.BLOG as string} />
     </div>
   );
 }

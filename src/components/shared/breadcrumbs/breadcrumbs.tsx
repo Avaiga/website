@@ -2,8 +2,8 @@ import clsx from 'clsx';
 
 import Link from '@/components/shared/link';
 
-import { Breadcrumb } from '@/types/blog';
 import { ClassName } from '@/types/classname';
+import { Breadcrumb } from '@/types/shared';
 
 interface BreadcrumbsProps extends ClassName {
   items: Breadcrumb[];
