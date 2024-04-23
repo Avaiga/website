@@ -1,3 +1,4 @@
+import DiscordLogo from '@/svgs/icons/logo-discord.inline.svg';
 import GithubLogo from '@/svgs/icons/logo-github.inline.svg';
 import LinkedinLogo from '@/svgs/icons/logo-linkedin.inline.svg';
 import TwitterLogo from '@/svgs/icons/logo-x.inline.svg';
@@ -45,6 +46,7 @@ export const MENU = {
       { label: 'LinkedIn', href: ROUTE.LINKEDIN, icon: LinkedinLogo },
       { label: 'GitHub', href: ROUTE.GITHUB, icon: GithubLogo },
       { label: 'YouTube', href: ROUTE.YOUTUBE, icon: YoutubeLogo },
+      { label: 'Discord', href: ROUTE.DISCORD, icon: DiscordLogo },
     ],
   },
 };
