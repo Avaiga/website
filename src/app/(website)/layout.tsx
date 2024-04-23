@@ -1,8 +1,11 @@
 import type { Viewport } from 'next';
 import Script from 'next/script';
 
+import Banner from '@/components/shared/banner';
 import Footer from '@/components/shared/footer';
 import Header from '@/components/shared/header/header';
+
+import { getBanner } from '@/lib/sanity/client';
 
 import '@/styles/globals.css';
 
@@ -14,7 +17,9 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+async function RootLayout({ children }: { children: React.ReactNode }) {
+  const banner = await getBanner();
+
   return (
     <html
       lang="en"
@@ -37,8 +42,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        {/* TODO: Integrate banner data with sanity */}
-        {/* <Banner /> */}
+        {banner && (
+          <Banner title={banner.title} linkText={banner.linkText} linkUrl={banner.linkUrl} />
+        )}
         <div className="relative flex min-h-screen flex-col">
           <Header />
           <main>{children}</main>
@@ -48,3 +54,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
+export default RootLayout;
