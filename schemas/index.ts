@@ -1,4 +1,5 @@
 import { author } from './author';
+import { banner } from './banner';
 import { category } from './category';
 import { customBlockquote, customNotice, customTable, customYoutube } from './content';
 import { customerStory } from './customer-story';
@@ -17,4 +18,5 @@ export const schemaTypes = [
   customerStory,
   post,
   legal,
+  banner,
 ];

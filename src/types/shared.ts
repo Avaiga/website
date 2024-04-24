@@ -29,3 +29,11 @@ export type Author = {
   name: string;
   position?: string;
 };
+export type Banner = {
+  _id: string;
+  name: string;
+  title: string;
+  linkText: string;
+  linkUrl: string;
+  isPublished: boolean;
+};

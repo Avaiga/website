@@ -89,25 +89,6 @@ export type SinglePost = Post & {
   seo: SEO | null;
 };
 
-export type CustomerStory = {
-  _id: string;
-  publishedAt: string;
-  title: string;
-  slug: {
-    current: string;
-  };
-  cover: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
-  companyLogo: Omit<SanityImageObject, 'asset'> & { asset: SanityAsset };
-  author: Author;
-  lead: string;
-};
-
-export type SingleCustomerStory = CustomerStory & {
-  contentRaw: PortableTextBlock[];
-  related: Post[];
-  seo: SEO | null;
-};
-
 export type SEO = {
   metaTitle: string | null;
   metaDescription: string | null;

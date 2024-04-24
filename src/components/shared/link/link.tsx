@@ -51,7 +51,7 @@ function Link<T extends string>({
 
   const arrow = (
     <span
-      className={clsx('ml-1', {
+      className={clsx('ml-1 shrink-0', {
         'text-primary-red': arrowTheme === 'red',
         'text-[#50C2F3]': arrowTheme === 'blue',
       })}

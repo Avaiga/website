@@ -4,7 +4,7 @@ import { ROUTES } from '@/constants/routes';
 
 import Link from '@/components/shared/link';
 
-import { CustomerStory } from '@/types/blog';
+import { CustomerStory } from '@/types/customer-story';
 
 import { urlForImage } from '@/lib/sanity/image';
 

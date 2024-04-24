@@ -1,15 +1,8 @@
 import { GraphQLClient } from 'graphql-request';
 
-import {
-  Category,
-  CustomerStory,
-  Legal,
-  Post,
-  SingleCategory,
-  SingleCustomerStory,
-  SingleLegal,
-  SinglePost,
-} from '@/types/blog';
+import { Category, Legal, Post, SingleCategory, SingleLegal, SinglePost } from '@/types/blog';
+import { CustomerStory, SingleCustomerStory } from '@/types/customer-story';
+import { Banner } from '@/types/shared';
 
 import {
   allCategoryQuery,
@@ -18,6 +11,7 @@ import {
   allLegalQuery,
   allPostQuery,
   allPostWithLimitationsQuery,
+  bannerQuery,
   categoryQuery,
   countCustomerStoryQuery,
   countPostQuery,
@@ -198,4 +192,10 @@ export const getLegalPageBySlug = async (slug: string): Promise<SingleLegal | nu
   await graphQLClient
     .request<{ allLegal: SingleLegal[] }>(legalQuery, { slug })
     .then((data) => data.allLegal)
+    .then((data) => data[0] || null);
+
+export const getBanner = async (): Promise<Banner | null> =>
+  await graphQLClient
+    .request<{ allBanner: Banner[] }>(bannerQuery)
+    .then((data) => data.allBanner)
     .then((data) => data[0] || null);

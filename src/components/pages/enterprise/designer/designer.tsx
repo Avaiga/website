@@ -64,10 +64,9 @@ function Designer() {
           No-code, full control
         </h2>
         <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 md:mt-4 md:max-w-[448px] md:leading-normal sm:mt-3 sm:text-14">
-          Focus on results with all the sophistication hidden behind convenient drag-and-drop
+          Focus on results with all the sophistication hidden behind a convenient drag-and-drop
           editor.
         </p>
-
         <div className="mt-[54px] flex max-w-[1280px] items-center gap-x-16 lg:mt-[46px] md:mt-[23px] md:max-w-[512px] md:flex-col sm:mt-[20px]">
           <ul className="basis-1/2">
             {items.map((feature, index) => (

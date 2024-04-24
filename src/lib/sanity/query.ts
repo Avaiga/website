@@ -279,3 +279,13 @@ export const legalQuery = gql`
     }
   }
 `;
+
+export const bannerQuery = gql`
+  query Banner {
+    allBanner(where: { isPublished: { eq: true } }, limit: 1) {
+      title
+      linkText
+      linkUrl
+    }
+  }
+`;
