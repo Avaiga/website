@@ -17,10 +17,10 @@ function CustomerStoryItem({ post, isPriorityLoad = false }: CustomerStoryItemPr
   const { title, cover, companyLogo, slug, lead } = post;
 
   return (
-    <article className="mb-[88px] flex items-center gap-x-16 lg:mb-[72px] lg:gap-x-8 md:flex-col-reverse">
-      <div className="md:mt-10 sm:mt-6">
+    <article className="mb-[88px] flex items-center gap-x-16 lg:mb-[72px] lg:gap-x-8 md:mb-0 md:flex-col-reverse">
+      <div className="md:mt-7 sm:mt-6">
         {companyLogo && (
-          <div className="relative h-10 w-auto lg:h-9 sm:h-6">
+          <div className="relative h-10 w-auto lg:h-9 md:h-6">
             <Link href={`${ROUTES.CUSTOMER_STORIES}/${slug.current}`}>
               <Image
                 className="object-contain object-left"
@@ -32,10 +32,10 @@ function CustomerStoryItem({ post, isPriorityLoad = false }: CustomerStoryItemPr
             </Link>
           </div>
         )}
-        <h1 className="mt-9 text-24 font-medium leading-tight lg:mt-6 md:mt-5 sm:mt-4 sm:text-18">
+        <h1 className="mt-9 text-24 font-medium leading-tight lg:mt-6 md:mt-[18px] sm:mt-4 sm:text-18">
           {title}
         </h1>
-        <p className="mb-6 mt-4 text-18 font-light text-grey-80 md:mb-[18px] md:mt-3.5 sm:mb-4 sm:mt-2.5 sm:text-16">
+        <p className="mb-6 mt-4 text-18 font-light text-grey-80 md:mt-3 sm:mb-[18px] sm:mt-2.5 sm:text-16">
           {lead}
         </p>
         <Link
