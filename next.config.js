@@ -58,11 +58,6 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/contact-us',
-        destination: '/book-a-call',
-        permanent: false,
-      },
-      {
         source: '/company/contact',
         destination: '/book-a-call',
         permanent: false,
