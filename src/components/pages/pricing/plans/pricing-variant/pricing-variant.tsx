@@ -55,7 +55,7 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
           <p className="text-16 font-medium leading-snug">{title}</p>
           <div className="relative mt-9 flex items-end">
             {isEnterprise && (
-              <p className="absolute top-[-18px] text-10 text-grey-70 transition-all ">STARTS AT</p>
+              <p className="absolute top-[-18px] text-10 text-grey-70 transition-all">STARTS AT</p>
             )}
 
             <h3 className="inline-block bg-gradient-to-r from-[#c7c7d1b7] to-white bg-clip-text text-36 font-semibold leading-dense tracking-tight text-transparent md:text-28">

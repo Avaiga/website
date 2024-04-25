@@ -51,7 +51,7 @@ export default function Table() {
           key={key}
         >
           <span className="text-16 font-medium leading-snug sm:text-14">{labelList[key]}</span>
-          <ul className="mt-[25px] flex w-full grow flex-col font-light text-grey-70 ">
+          <ul className="mt-[25px] flex w-full grow flex-col font-light text-grey-70">
             {PLANS.cols.map((item, index) => {
               const value: { [key: string]: string | boolean } = item;
               if (parentIndex === 0) {

@@ -24,7 +24,7 @@ const locationsData = [
 
 function Locations() {
   return (
-    <section className="locations mt-[176px] px-safe lg:mt-[135px] md:mt-[146px] sm:mt-[131px]">
+    <section className="locations mt-44 px-safe lg:mt-[135px] md:mt-[146px] sm:mt-[131px]">
       <div className="container">
         <h2 className="text-center text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36 sm:text-24">
           Locate where we&apos;re based

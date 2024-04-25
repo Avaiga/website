@@ -38,6 +38,7 @@ function Hero() {
           </div>
           <div className="col-span-4 col-start-7 flex flex-col gap-y-[104px] lg:col-span-3 lg:col-start-6 lg:gap-y-20 md:col-span-full md:gap-y-12 sm:gap-y-10">
             <div>
+              {/* TODO: create universal ui-component for quote */}
               <blockquote>
                 <Image
                   className="w-10 lg:w-9 sm:w-[30px]"
@@ -53,14 +54,14 @@ function Hero() {
                 </p>
               </blockquote>
               <div className="mt-3.5 flex items-center gap-x-3.5">
-                <div className="flex items-center gap-x-1 ">
+                <div className="flex items-center gap-x-1">
                   <span className="font-medium leading-tight tracking-snug text-grey-70 sm:text-14">
                     Jesselynn Mah
                   </span>
                   <div
                     className="mx-1.5 h-[3px] w-[3px] rounded-full bg-grey-30"
                     aria-hidden="true"
-                   />
+                  />
                   <span className="leading-tight tracking-snug text-grey-60 sm:text-14">
                     KnowledgeTouch
                   </span>

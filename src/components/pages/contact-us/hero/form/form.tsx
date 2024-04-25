@@ -48,7 +48,7 @@ function Form() {
 
   return (
     <form
-      className="relative z-10 w-full gap-6 rounded-3xl bg-grey-10 px-8 py-10 lg:px-[28px] md:py-9 sm:px-[18px] sm:pb-[29px] sm:pt-6"
+      className="relative z-10 w-full gap-6 rounded-3xl bg-grey-10 px-8 py-10 lg:px-7 md:py-9 sm:px-[18px] sm:pb-[29px] sm:pt-6"
       noValidate
       onSubmit={handleSubmit(onSubmit)}
     >
@@ -120,7 +120,7 @@ function Form() {
           </div>
         </label>
         <label className="col-span-full">
-          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94 ">
+          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94">
             Message
           </span>
           <div className="mt-2">
@@ -135,7 +135,7 @@ function Form() {
       <label className="mt-4 flex cursor-pointer items-center gap-x-3 sm:mt-2">
         <div className="relative flex">
           <input
-            className="remove-autocomplete-styles relative h-6 w-6 items-center rounded border border-grey-30 bg-grey-20 transition-colors duration-200 hover:border-grey-50 md:h-[18px] md:w-[18px] "
+            className="remove-autocomplete-styles relative h-6 w-6 items-center rounded border border-grey-30 bg-grey-20 transition-colors duration-200 hover:border-grey-50 md:h-[18px] md:w-[18px]"
             type="checkbox"
             placeholder=""
             {...register('newsletter')}
@@ -146,14 +146,14 @@ function Form() {
         </span>
       </label>
       <div className="mt-5 flex items-center justify-between sm:mt-4 sm:flex-col-reverse">
-        <p className="max-w-[288px] text-15 font-light leading-snug tracking-snug text-grey-70 sm:mt-3.5 sm:text-center sm:text-14">
+        <p className="max-w-72 text-15 font-light leading-snug tracking-snug text-grey-70 sm:mt-3.5 sm:text-center sm:text-14">
           By submitting this, I confirm that I have read and understood the&nbsp;
-          <Link className="font-medium text-secondary-blue " href={ROUTE.PRIVACY}>
+          <Link className="font-medium text-secondary-blue" href={ROUTE.PRIVACY}>
             Privacy Policy.
           </Link>
         </p>
         <Button
-          className="w-[256px] lg:w-[184px] md:w-[256px] sm:w-[284px]"
+          className="w-64 lg:w-[184px] md:w-64 sm:w-72 2xs:w-full"
           size="lg"
           theme="red-filled"
         >
