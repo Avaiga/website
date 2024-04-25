@@ -32,9 +32,11 @@ function CustomerStoryItem({ post, isPriorityLoad = false }: CustomerStoryItemPr
             </Link>
           </div>
         )}
-        <h1 className="mt-9 text-24 font-medium leading-tight lg:mt-6 md:mt-[18px] sm:mt-4 sm:text-18">
-          {title}
-        </h1>
+        <Link href={`${ROUTES.CUSTOMER_STORIES}/${slug.current}`}>
+          <h1 className="mt-9 text-24 font-medium leading-tight lg:mt-6 md:mt-[18px] sm:mt-4 sm:text-18">
+            {title}
+          </h1>
+        </Link>
         <p className="mb-6 mt-4 text-18 font-light text-grey-80 md:mt-3 sm:mb-[18px] sm:mt-2.5 sm:text-16">
           {lead}
         </p>

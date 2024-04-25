@@ -25,7 +25,7 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
         </div>
       </section>
       <section className="testimonial-list mt-[90px] lg:mt-[72px] md:mt-14 sm:mt-9">
-        <div className="container-narrow md:grid md:grid-cols-2 md:items-start md:gap-x-6 xs:grid-cols-1">
+        <div className="container-narrow md:grid md:grid-cols-2 md:items-start md:gap-x-6 xs:grid-cols-1 xs:gap-y-14">
           {children}
         </div>
       </section>
