@@ -55,4 +55,6 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
+export const revalidate = 60;
+
 export default RootLayout;
