@@ -80,7 +80,7 @@ function Logos({ className = '', logos, isWide = true }: LogosProps) {
       className={clsx(
         'container w-full max-w-[960px] lg:max-w-[832px] md:max-w-[704px]',
         className,
-        { 'mt-8 sm:mt-6': !isWide, 'mt-[136px] lg:mt-[118px] md:mt-[78px]': isWide },
+        { 'mt-8 px-2 sm:mt-6': !isWide, 'mt-[136px] lg:mt-[118px] md:mt-[78px]': isWide },
       )}
     >
       <h3
