@@ -41,4 +41,9 @@ export const SEO_DATA = {
       'If you are new to open source and Taipy, our informal mentoring program will help you become more familiar with Taipy and the open source environment',
     pathname: ROUTE.MENTORSHIP as string, // /book-a-call
   },
+  COMMUNITY: {
+    title: 'Community | Taipy',
+    description: 'Be part of Taipy&apos;s adventure!',
+    pathname: ROUTE.COMMUNITY as string, // /community
+  },
 };
