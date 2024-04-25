@@ -47,7 +47,7 @@ function Hero() {
                   height={40}
                   alt=""
                 />
-                <p className="mt-[18px] text-24 font-light leading-normal tracking-tight text-white lg:text-20 sm:mt-3.5 sm:text-18 sm:tracking-normal">
+                <p className="mt-[18px] text-24 font-light leading-normal tracking-tight text-white lg:text-20 md:mt-5 sm:mt-3.5 sm:text-18 sm:tracking-normal">
                   Integrating Taipy into our suite of products for the Quick Service Restaurant
                   (QSR) market has marked a significant step forward. The ease with which our
                   development team was able to pick up Taipy was remarkable.

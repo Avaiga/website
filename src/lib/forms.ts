@@ -18,3 +18,46 @@ export const sendBrevoFormData = async ({ listId, email }: { listId: number; ema
 
   return response;
 };
+
+export const sendBrevoFullFormData = async ({
+  listId,
+  email,
+  firstName,
+  lastName,
+  company,
+  jobTitle,
+  message,
+  checkAgree,
+}: {
+  listId: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+  company: string;
+  jobTitle: string;
+  message: string;
+  checkAgree: boolean;
+}) => {
+  const response = await fetch(`https://api.brevo.com/v3/contacts`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'api-key': process.env.NEXT_PUBLIC_BREVO_API_KEY!,
+    },
+    body: JSON.stringify({
+      email,
+      listIds: [listId],
+      attributes: {
+        FNAME: firstName,
+        LNAME: lastName,
+        JOB_TITLE: jobTitle,
+        COMPANY_NAME: company,
+        MESSAGE: message,
+        AGREE_TO_PROCEED: checkAgree,
+      },
+    }),
+  });
+
+  return response;
+};

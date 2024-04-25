@@ -1,5 +1,7 @@
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
+import { BUTTON_SUCCESS_TIMEOUT_MS, FORM_REQUEST_LIST_ID, STATE } from '@/constants/forms';
 import { ROUTE } from '@/constants/routes';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -7,17 +9,64 @@ import * as yup from 'yup';
 import Button from '@/components/shared/button';
 import Link from '@/components/shared/link';
 
-// import { emailRegexp, sendBrevoFormData } from '@/lib/forms';
+import { emailRegexp, sendBrevoFullFormData } from '@/lib/forms';
 
-interface FormFields {
+import FormItem from './form-field';
+
+interface FormProps {
   firstName: string;
   lastName: string;
   email: string;
   company: string;
   jobTitle: string;
   message: string;
-  newsletter: boolean;
+  checkAgree: boolean;
 }
+
+const fieldsData = [
+  {
+    className: 'sm:col-span-full',
+    label: 'First Name',
+    type: 'text' as const,
+    placeholder: 'Angel',
+    fieldName: 'firstName',
+  },
+  {
+    className: 'sm:col-span-full',
+    label: 'Last Name',
+    type: 'text' as const,
+    placeholder: 'Philips',
+    fieldName: 'lastName',
+  },
+  {
+    className: 'sm:col-span-full',
+    label: 'Work Email',
+    type: 'email' as const,
+    placeholder: 'name@company.com',
+    fieldName: 'email',
+  },
+  {
+    className: 'sm:col-span-full',
+    label: 'Company',
+    type: 'text' as const,
+    placeholder: 'Company',
+    fieldName: 'company',
+  },
+  {
+    className: 'col-span-full',
+    label: 'Job Title',
+    type: 'text' as const,
+    placeholder: 'CEO',
+    fieldName: 'jobTitle',
+  },
+  {
+    className: 'col-span-full',
+    label: 'Message',
+    type: 'textarea' as const,
+    placeholder: 'Type your query',
+    fieldName: 'message',
+  },
+];
 
 const validationSchema = yup.object().shape({
   firstName: yup
@@ -30,20 +79,68 @@ const validationSchema = yup.object().shape({
     .trim()
     .required('Last Name is required')
     .max(50, 'Last Name must not exceed 50 characters'),
-  email: yup.string().trim().required('Email is required').email('Email is invalid'),
+  email: yup
+    .string()
+    .trim()
+    .required('Email is required')
+    .matches(emailRegexp, { message: 'Enter a valid email' }),
   company: yup.string().trim().required('Company is required'),
   jobTitle: yup.string().trim().required('Job title is required'),
   message: yup.string().required('Message is required'),
-  newsletter: yup.boolean().required('consent is required to proceed with the application'),
+  checkAgree: yup.boolean().oneOf([true], 'Agreement is required').required(),
 });
 
 function Form() {
-  const { register, handleSubmit } = useForm<FormFields>({
-    resolver: yupResolver(validationSchema),
-  });
-  /* eslint-disable */
-  const onSubmit = (data: any) => {
-    // console.log(data); will change to real logic after implementing a submiting event
+  const [formState, setFormState] = useState<STATE>(STATE.DEFAULT);
+  const [serverError, setServerError] = useState<null | string>(null);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormProps>({ resolver: yupResolver(validationSchema), mode: 'onBlur' });
+
+  const onSubmit: SubmitHandler<FormProps> = async (data) => {
+    setFormState(STATE.LOADING);
+
+    try {
+      const response = await sendBrevoFullFormData({
+        listId: FORM_REQUEST_LIST_ID,
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        company: data.company,
+        jobTitle: data.jobTitle,
+        message: data.message,
+        checkAgree: data.checkAgree,
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(
+          error.message ?? 'Something went wrong. Please reload the page and try again.',
+        );
+      }
+
+      setFormState(STATE.SUCCESS);
+      reset();
+
+      setTimeout(() => {
+        setFormState(STATE.DEFAULT);
+      }, BUTTON_SUCCESS_TIMEOUT_MS);
+    } catch (err) {
+      setFormState(STATE.ERROR);
+      if (err instanceof Error) {
+        setServerError(err?.message ?? err);
+        setTimeout(() => {
+          setServerError(null);
+        }, BUTTON_SUCCESS_TIMEOUT_MS);
+      }
+      setTimeout(() => {
+        setFormState(STATE.DEFAULT);
+      }, BUTTON_SUCCESS_TIMEOUT_MS);
+    }
   };
 
   return (
@@ -53,99 +150,38 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="grid grid-cols-2 gap-x-5 gap-y-6 lg:gap-x-5 md:gap-y-6 sm:gap-y-5">
-        {/* TODO: create universal ui-component for input */}
-        <label className="sm:col-span-full">
-          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94">
-            First Name
-          </span>
-          <div className="mt-2 items-start">
-            <input
-              className="remove-autocomplete-styles h-10 w-full rounded border border-grey-30 bg-grey-20 px-3 text-15 font-light leading-none tracking-snug text-grey-70 transition-colors duration-200 placeholder:text-grey-60"
-              type="text"
-              placeholder="Angel"
-              {...register('firstName')}
-            />
-          </div>
-        </label>
-        <label className="sm:col-span-full">
-          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94">
-            Last Name
-          </span>
-          <div className="mt-2">
-            <input
-              className="remove-autocomplete-styles h-10 w-full rounded border border-grey-30 bg-grey-20 px-3 text-15 font-light leading-none tracking-snug text-grey-70 transition-colors duration-200 placeholder:text-grey-60"
-              type="text"
-              placeholder="Philips"
-              {...register('lastName')}
-            />
-          </div>
-        </label>
-        <label className="sm:col-span-full">
-          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94">
-            Work Email
-          </span>
-          <div className="mt-2">
-            <input
-              className="remove-autocomplete-styles h-10 w-full rounded border border-grey-30 bg-grey-20 px-3 text-15 font-light leading-none tracking-snug text-grey-70 transition-colors duration-200 placeholder:text-grey-60"
-              type="email"
-              placeholder="name@company.com"
-              {...register('email')}
-            />
-          </div>
-        </label>
-        <label className="sm:col-span-full">
-          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94">
-            Company
-          </span>
-          <div className="mt-2">
-            <input
-              className="remove-autocomplete-styles h-10 w-full rounded border border-grey-30 bg-grey-20 px-3 text-15 font-light leading-none tracking-snug text-grey-70 transition-colors duration-200 placeholder:text-grey-60"
-              type="text"
-              placeholder="Company"
-              {...register('company')}
-            />
-          </div>
-        </label>
-        <label className="col-span-full">
-          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94">
-            Job Title
-          </span>
-          <div className="mt-2">
-            <input
-              className="remove-autocomplete-styles h-10 w-full rounded border border-grey-30 bg-grey-20 px-3 text-15 font-light leading-none tracking-snug text-grey-70 transition-colors duration-200 placeholder:text-grey-60"
-              type="text"
-              placeholder="CEO"
-              {...register('jobTitle')}
-            />
-          </div>
-        </label>
-        <label className="col-span-full">
-          <span className="block text-14 font-medium leading-none tracking-snug text-grey-94">
-            Message
-          </span>
-          <div className="mt-2">
-            <textarea
-              className="remove-autocomplete-styles min-h-[171px] w-full rounded border border-grey-30 bg-grey-20 px-3 py-3 text-15 font-light leading-none tracking-snug text-grey-70 transition-colors duration-200 placeholder:text-grey-60 sm:min-h-[80px]"
-              placeholder="Type your query"
-              {...register('message')}
-            ></textarea>
-          </div>
-        </label>
+        {fieldsData.map(({ label, type, placeholder, fieldName, className }) => (
+          <FormItem
+            key={fieldName}
+            label={label}
+            type={type}
+            placeholder={placeholder}
+            register={register}
+            fieldName={fieldName}
+            errors={errors}
+            className={className}
+          />
+        ))}
       </div>
-      <label className="mt-4 flex cursor-pointer items-center gap-x-3 sm:mt-2">
+      <label className="mt-4 flex cursor-pointer items-center gap-x-3 sm:mt-3.5">
         <div className="relative flex">
           <input
             className="remove-autocomplete-styles relative h-6 w-6 items-center rounded border border-grey-30 bg-grey-20 transition-colors duration-200 hover:border-grey-50 md:h-[18px] md:w-[18px]"
             type="checkbox"
             placeholder=""
-            {...register('newsletter')}
+            {...register('checkAgree')}
           />
+          {errors?.checkAgree?.message !== '' && (
+            <span className="absolute left-0 top-[calc(100%+2px)] whitespace-nowrap text-12 leading-tight tracking-snug text-primary-red">
+              {errors?.checkAgree?.message}
+            </span>
+          )}
         </div>
         <span className="block text-15 font-light leading-snug tracking-snug text-grey-70 sm:text-14">
           I agree to receive further communications from taipy.io
         </span>
       </label>
-      <div className="mt-5 flex items-center justify-between sm:mt-4 sm:flex-col-reverse">
+      <div className="relative mt-5 flex items-center justify-between lg:mt-6 sm:mt-4 sm:flex-col-reverse">
         <p className="max-w-72 text-15 font-light leading-snug tracking-snug text-grey-70 sm:mt-3.5 sm:text-center sm:text-14">
           By submitting this, I confirm that I have read and understood the&nbsp;
           <Link className="font-medium text-secondary-blue" href={ROUTE.PRIVACY}>
@@ -153,12 +189,18 @@ function Form() {
           </Link>
         </p>
         <Button
-          className="w-64 lg:w-[184px] md:w-64 sm:w-72 2xs:w-full"
+          className="w-64 shadow-btn lg:w-[184px] md:w-64 sm:w-72 2xs:w-full"
           size="lg"
           theme="red-filled"
+          state={formState}
         >
           Submit
         </Button>
+        {serverError !== null && (
+          <span className="absolute right-0 top-[calc(100%+8px)] text-14 leading-tight tracking-snug text-primary-red">
+            {serverError}
+          </span>
+        )}
       </div>
     </form>
   );
