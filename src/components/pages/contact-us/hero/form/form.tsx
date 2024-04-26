@@ -26,42 +26,42 @@ interface FormProps {
 const fieldsData = [
   {
     className: 'sm:col-span-full',
-    label: 'First Name',
+    label: 'First Name *',
     type: 'text' as const,
     placeholder: 'Angel',
     fieldName: 'firstName',
   },
   {
     className: 'sm:col-span-full',
-    label: 'Last Name',
+    label: 'Last Name *',
     type: 'text' as const,
     placeholder: 'Philips',
     fieldName: 'lastName',
   },
   {
     className: 'sm:col-span-full',
-    label: 'Work Email',
+    label: 'Work Email *',
     type: 'email' as const,
     placeholder: 'name@company.com',
     fieldName: 'email',
   },
   {
     className: 'sm:col-span-full',
-    label: 'Company',
+    label: 'Company *',
     type: 'text' as const,
     placeholder: 'Company',
     fieldName: 'company',
   },
   {
     className: 'col-span-full',
-    label: 'Job Title',
+    label: 'Job Title *',
     type: 'text' as const,
     placeholder: 'CEO',
     fieldName: 'jobTitle',
   },
   {
     className: 'col-span-full',
-    label: 'Message',
+    label: 'Message *',
     type: 'textarea' as const,
     placeholder: 'Type your query',
     fieldName: 'message',
@@ -166,7 +166,11 @@ function Form() {
       <label className="mt-4 flex cursor-pointer items-center gap-x-3 sm:mt-3.5">
         <div className="relative flex">
           <input
-            className="remove-autocomplete-styles relative h-6 w-6 items-center rounded border border-grey-30 bg-grey-20 transition-colors duration-200 hover:border-grey-50 md:h-[18px] md:w-[18px]"
+            className="remove-autocomplete-styles relative h-6 w-6 appearance-none rounded 
+            border border-grey-20 bg-grey-70/5 transition-colors duration-200 before:absolute 
+            before:inset-0 
+            before:z-10 before:bg-center before:bg-no-repeat checked:border-grey-20 checked:before:bg-[url('/images/svgs/check.svg')] 
+            checked:before:bg-[length:16px_16px] hover:border-grey-30  focus:outline-none md:h-[18px] md:w-[18px] md:checked:before:bg-[length:12px_12px]"
             type="checkbox"
             placeholder=""
             {...register('checkAgree')}
