@@ -16,9 +16,13 @@ function AuthorAndDate({ author, publishedAt }: { author: Author; publishedAt: s
           height={32}
         />
       )}
-      <span className="ml-2.5 text-14 leading-none tracking-snug text-grey-94">{author.name}</span>
+      <span className="ml-2.5 line-clamp-2 text-14 leading-none tracking-snug text-grey-94">
+        {author.name}
+      </span>
       <div className="mx-1.5 h-[3px] w-[3px] rounded-full bg-grey-30" aria-hidden />
-      <time className="text-14 leading-none tracking-snug text-grey-50">{publishedAt}</time>
+      <time className="whitespace-nowrap text-14 leading-none tracking-snug text-grey-50">
+        {publishedAt}
+      </time>
     </div>
   );
 }
