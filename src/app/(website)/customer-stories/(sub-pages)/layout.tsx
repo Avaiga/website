@@ -33,7 +33,7 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
         <div className="container-narrow">
           <div className="mb-8 flex items-center justify-between gap-x-4 lg:mb-7">
             <h2 className="text-32 font-semibold leading-none tracking-tight md:text-24">
-              See what&apos;s happening at Taipy&apos;s
+              Read more about Taipy
             </h2>
             <Link
               className="shrink-0 text-16 md:text-14 sm:text-16"
