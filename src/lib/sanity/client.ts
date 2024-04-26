@@ -107,7 +107,7 @@ export const getPostBySlug = async (
       { slug },
       options?.isDraftMode
         ? {
-            Authorization: `Bearer ${process.env.SANITY_PREVIEW_SECRET}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SANITY_PREVIEW_SECRET}`,
           }
         : undefined,
     )
