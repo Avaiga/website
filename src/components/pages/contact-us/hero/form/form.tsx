@@ -7,11 +7,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 import Button from '@/components/shared/button';
+import ErrorTooltip from '@/components/shared/error-tooltip';
 import Link from '@/components/shared/link';
 
 import { emailRegexp, sendBrevoFullFormData } from '@/lib/forms';
 
-import FormItem from './form-field';
+import FormField from './form-field';
 
 interface FormProps {
   firstName: string;
@@ -27,42 +28,42 @@ const fieldsData = [
   {
     className: 'sm:col-span-full',
     label: 'First Name *',
-    type: 'text' as const,
+    type: 'text',
     placeholder: 'Angel',
     fieldName: 'firstName',
   },
   {
     className: 'sm:col-span-full',
     label: 'Last Name *',
-    type: 'text' as const,
+    type: 'text',
     placeholder: 'Philips',
     fieldName: 'lastName',
   },
   {
     className: 'sm:col-span-full',
     label: 'Work Email *',
-    type: 'email' as const,
+    type: 'email',
     placeholder: 'name@company.com',
     fieldName: 'email',
   },
   {
     className: 'sm:col-span-full',
     label: 'Company *',
-    type: 'text' as const,
+    type: 'text',
     placeholder: 'Company',
     fieldName: 'company',
   },
   {
     className: 'col-span-full',
     label: 'Job Title *',
-    type: 'text' as const,
+    type: 'text',
     placeholder: 'CEO',
     fieldName: 'jobTitle',
   },
   {
     className: 'col-span-full',
     label: 'Message *',
-    type: 'textarea' as const,
+    type: 'textarea',
     placeholder: 'Type your query',
     fieldName: 'message',
   },
@@ -99,7 +100,7 @@ function Form() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormProps>({ resolver: yupResolver(validationSchema), mode: 'onBlur' });
+  } = useForm<FormProps>({ resolver: yupResolver(validationSchema), mode: 'all' });
 
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
     setFormState(STATE.LOADING);
@@ -122,7 +123,6 @@ function Form() {
           error.message ?? 'Something went wrong. Please reload the page and try again.',
         );
       }
-
       setFormState(STATE.SUCCESS);
       reset();
 
@@ -151,7 +151,7 @@ function Form() {
     >
       <div className="grid grid-cols-2 gap-x-5 gap-y-6 lg:gap-x-5 md:gap-y-6 sm:gap-y-5">
         {fieldsData.map(({ label, type, placeholder, fieldName, className }) => (
-          <FormItem
+          <FormField
             key={fieldName}
             label={label}
             type={type}
@@ -166,23 +166,23 @@ function Form() {
       <label className="mt-4 flex cursor-pointer items-center gap-x-3 sm:mt-3.5">
         <div className="relative flex">
           <input
-            className="remove-autocomplete-styles relative h-6 w-6 appearance-none rounded 
-            border border-grey-20 bg-grey-70/5 transition-colors duration-200 before:absolute 
+            className={`remove-autocomplete-styles relative h-6 w-6 appearance-none rounded 
+            border  bg-grey-70/5 transition-colors duration-200 before:absolute 
             before:inset-0 
             before:z-10 before:bg-center before:bg-no-repeat checked:border-grey-20 checked:before:bg-[url('/images/svgs/check.svg')] 
-            checked:before:bg-[length:16px_16px] hover:border-grey-30  focus:outline-none md:h-[18px] md:w-[18px] md:checked:before:bg-[length:12px_12px]"
+            checked:before:bg-[length:16px_16px] focus:outline-none md:h-[18px] md:w-[18px] md:checked:before:bg-[length:12px_12px] ${
+              errors?.checkAgree?.message
+                ? 'border-primary-red'
+                : 'border-grey-20 hover:border-grey-30 '
+            }`}
             type="checkbox"
             placeholder=""
             {...register('checkAgree')}
           />
-          {errors?.checkAgree?.message !== '' && (
-            <span className="absolute left-0 top-[calc(100%+2px)] whitespace-nowrap text-12 leading-tight tracking-snug text-primary-red">
-              {errors?.checkAgree?.message}
-            </span>
-          )}
+          <ErrorTooltip message={errors?.checkAgree?.message} />
         </div>
-        <span className="block text-15 font-light leading-snug tracking-snug text-grey-70 sm:text-14">
-          I agree to receive further communications from taipy.io
+        <span className="block text-15 font-light leading-snug tracking-snug text-grey-70 sm:text-14 ">
+          I agree to receive further communications from taipy.io *
         </span>
       </label>
       <div className="relative mt-5 flex items-center justify-between lg:mt-6 sm:mt-4 sm:flex-col-reverse">

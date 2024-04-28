@@ -1,8 +1,10 @@
 import React from 'react';
 
+import ErrorTooltip from '@/components/shared/error-tooltip';
+
 type FormFieldProps = {
   label: string;
-  type: 'text' | 'email' | 'textarea';
+  type: string;
   placeholder: string;
   // eslint-disable-next-line
   register: Function;
@@ -20,10 +22,10 @@ function FormField({
   errors,
   className,
 }: FormFieldProps) {
-  const isError = errors[fieldName]?.message;
+  const errorMessage = errors[fieldName]?.message;
 
-  const sharedStyles = `remove-autocomplete-styles appearance-none focus:outline-none w-full rounded border bg-grey-70/5 px-3 text-15 font-light leading-none tracking-snug text-white transition-colors duration-200 placeholder:text-grey-70 ${
-    isError ? 'border-primary-red' : 'border-grey-20 hover:border-grey-30 focus:border-grey-40'
+  const sharedStyles = `remove-autocomplete-styles appearance-none w-full rounded border bg-grey-70/5 px-3 text-15 font-light leading-none tracking-snug text-white transition-colors duration-200 placeholder:text-grey-70 focus:outline-none ${
+    errorMessage ? 'border-primary-red' : 'border-grey-20 hover:border-grey-30 focus:border-grey-40'
   }`;
 
   return (
@@ -33,23 +35,24 @@ function FormField({
       </span>
       <div className="relative mt-2">
         {type !== 'textarea' ? (
-          <input
-            className={`${sharedStyles} h-10`}
-            type={type}
-            placeholder={placeholder}
-            {...register(fieldName)}
-          />
+          <>
+            <input
+              className={`${sharedStyles} h-10`}
+              type={type}
+              placeholder={placeholder}
+              {...register(fieldName)}
+            />
+            <ErrorTooltip message={errorMessage} />
+          </>
         ) : (
-          <textarea
-            className={`${sharedStyles} block min-h-[171px] py-3 sm:min-h-20`}
-            placeholder={placeholder}
-            {...register(fieldName)}
-          />
-        )}
-        {isError && (
-          <span className="absolute left-0 top-[calc(100%+2px)] whitespace-nowrap text-12 leading-tight tracking-snug text-primary-red">
-            {errors[fieldName]?.message}
-          </span>
+          <>
+            <textarea
+              className={`${sharedStyles} block min-h-[171px] py-3 sm:min-h-20`}
+              placeholder={placeholder}
+              {...register(fieldName)}
+            />
+            <ErrorTooltip message={errorMessage} />
+          </>
         )}
       </div>
     </label>
