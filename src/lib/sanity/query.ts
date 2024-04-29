@@ -105,6 +105,16 @@ export const allPostQuery = gql`
   }
 `;
 
+export const latestPostsQuery = gql`
+  ${commonPostFieldsWithRelatedFragment}
+
+  query LatestPosts {
+    allPost(sort: { publishedAt: DESC }, limit: 3) {
+      ...commonPostFieldsWithRelated
+    }
+  }
+`;
+
 export const allPostWithLimitationsQuery = gql`
   ${commonPostFieldsFragment}
 
