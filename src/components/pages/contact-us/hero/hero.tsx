@@ -1,10 +1,8 @@
 'use client';
 
-import Image from 'next/image';
-
-import quoteIcon from '@/images/pages/contact-us/quote-sign.svg';
-
 import Logos from '@/components/shared/logos';
+
+import QuoteIcon from '@/svgs/icons/quote-sign.inline.svg';
 
 import Form from './form';
 
@@ -40,13 +38,7 @@ function Hero() {
             <div>
               {/* TODO: create universal ui-component for quote */}
               <blockquote>
-                <Image
-                  className="w-10 lg:w-9 sm:w-[30px]"
-                  src={quoteIcon}
-                  width={40}
-                  height={40}
-                  alt=""
-                />
+                <QuoteIcon className="w-10 lg:w-9 sm:w-[30px]" width={40} height={40} aria-hidden />
                 <p className="mt-[18px] text-24 font-light leading-normal tracking-tight text-white lg:text-20 md:mt-5 sm:mt-3.5 sm:text-18 sm:tracking-normal">
                   Integrating Taipy into our suite of products for the Quick Service Restaurant
                   (QSR) market has marked a significant step forward. The ease with which our

@@ -169,7 +169,7 @@ function Form() {
             className={`remove-autocomplete-styles relative h-6 w-6 appearance-none rounded 
             border  bg-grey-70/5 transition-colors duration-200 before:absolute 
             before:inset-0 
-            before:z-10 before:bg-center before:bg-no-repeat checked:border-grey-20 checked:before:bg-[url('/images/svgs/check.svg')] 
+            before:z-10 before:bg-center before:bg-no-repeat checked:border-grey-20 checked:before:bg-[url('/images/svgs/check-icon.svg')] 
             checked:before:bg-[length:16px_16px] focus:outline-none md:h-[18px] md:w-[18px] md:checked:before:bg-[length:12px_12px] ${
               errors?.checkAgree?.message
                 ? 'border-primary-red'
