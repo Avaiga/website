@@ -7,44 +7,36 @@ import info from '@/images/pages/community/benefits/info.svg';
 import mic from '@/images/pages/community/benefits/mic.svg';
 import palette from '@/images/pages/community/benefits/palette.svg';
 
-import Link from '@/components/shared/link';
-
 const benefitsData = [
   {
     icon: palette,
     title: 'Create content',
     description: 'Help others discover Taipy with videos and blog articles.',
-    link: '/',
   },
   {
     icon: mic,
     title: 'Present at meetups',
     description: 'Share your experience and represent Taipy in public meetups.',
-    link: '/',
   },
   {
     icon: bug,
     title: 'Report bugs',
     description: 'Identify any bugs within the codebase and submit pull requests to rectify them',
-    link: '/',
   },
   {
     icon: bulb,
     title: 'Submit new ideas',
     description: 'Suggest features, integrations, or SDKs for our roadmap.',
-    link: '/',
   },
   {
     icon: docs,
     title: 'Improve documentation',
     description: 'Share your experience and represent Taipy in public',
-    link: '/',
   },
   {
     icon: info,
     title: 'Helping others',
     description: 'Support developers with their projects and contributions',
-    link: '/',
   },
 ];
 
@@ -56,7 +48,7 @@ function Benefits() {
           Other ways to help
         </h2>
         <div className="mt-14 grid grid-cols-6 gap-x-20 gap-y-[52px] lg:gap-x-24 lg:gap-y-[50px] md:mt-[49px] md:gap-x-[70px] md:gap-y-[42px] sm:mt-11 sm:gap-x-4 sm:gap-y-10">
-          {benefitsData.map(({ icon, title, description, link }, index) => (
+          {benefitsData.map(({ icon, title, description }, index) => (
             <div key={index} className="col-span-2 md:col-span-3 xs:col-span-full">
               <Image
                 className="mb-[26px] w-10 shrink-0 lg:mb-[22px] lg:w-9 md:mb-3 sm:w-8"
@@ -71,14 +63,6 @@ function Benefits() {
               <p className="mb-2.5 text-18 font-light text-grey-70 lg:text-16 md:mb-1.5 sm:pr-11 sm:text-14">
                 {description}
               </p>
-              <Link
-                className="text-16 leading-snug sm:text-14"
-                href={link}
-                theme="white"
-                arrowTheme="red"
-              >
-                Learn more
-              </Link>
             </div>
           ))}
         </div>
