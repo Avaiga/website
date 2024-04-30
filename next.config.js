@@ -102,6 +102,16 @@ module.exports = {
         destination: '/blog/:path*',
         permanent: true,
       },
+      {
+        source: '/testimonials/success-story-sales-forecast',
+        destination: '/customer-stories',
+        permanent: true,
+      },
+      {
+        source: '/company/testimonials',
+        destination: '/customer-stories/knowledge-touch',
+        permanent: true,
+      },
     ];
   },
   webpack: (config) => {
