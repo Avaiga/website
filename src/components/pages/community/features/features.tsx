@@ -24,6 +24,7 @@ const imagesData = [
   {
     alt: 'systems',
     text: 'Integration with external <br>execution systems',
+    additionalText: '... and many more!',
     image: systems,
   },
 ];
@@ -43,16 +44,22 @@ function Features() {
           them your very own project.
         </p>
         <div className="mx-auto mt-12 grid w-full max-w-[960px] grid-cols-12 gap-8 lg:mt-9 lg:max-w-[896px] lg:gap-6 md:mt-9 sm:mt-8 sm:gap-5">
-          {imagesData.map(({ alt, image, text }, index) => (
+          {imagesData.map(({ alt, image, text, additionalText }, index) => (
             <div
               className="col-span-6 aspect-[1.45] overflow-hidden rounded-[8px] lg:aspect-[1.36] md:aspect-[1.26] sm:col-span-full sm:aspect-[1.415]"
               key={index}
             >
-              <div className="relative h-full p-7 lg:p-6 sm:p-5">
+              <div className="relative flex h-full flex-col justify-between p-7 lg:p-6 sm:p-5">
                 <p
                   className="text-18 font-medium leading-snug text-white lg:text-16 sm:text-14"
                   dangerouslySetInnerHTML={{ __html: text }}
                 />
+
+                {additionalText && (
+                  <p className="mt-auto self-end text-18 font-medium leading-snug text-white lg:text-16 sm:text-14">
+                    {additionalText}
+                  </p>
+                )}
                 <Image
                   className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full object-cover"
                   src={image}

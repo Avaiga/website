@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import bgImage from '@/images/pages/community/hero/illustration.webp';
+import bgImage from '@/images/pages/community/hero/illustration.png';
 
 import Button from '@/components/shared/button';
 

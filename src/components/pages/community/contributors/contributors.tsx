@@ -1,52 +1,52 @@
 import Image from 'next/image';
 
-import albertAntoine from '@/images/pages/about-us/team/albert-antoine.jpg';
-import desmondDelandro from '@/images/pages/about-us/team/desmond-delandro.jpg';
-import fabienLelaquais from '@/images/pages/about-us/team/fabien-lelaquais.jpg';
-import jeanRobinMedori from '@/images/pages/about-us/team/jean-robin-medori.jpg';
-import myriamDelarue from '@/images/pages/about-us/team/myriam-delarue.jpg';
-import prNgoBaoChau from '@/images/pages/about-us/team/pr-ngo-bao-chau.jpg';
-import vincentGosselin from '@/images/pages/about-us/team/vincent-gosselin.jpg';
+import zSia from '@/images/pages/community/contributors/1.jpg';
+import aBaranwal from '@/images/pages/community/contributors/2.jpg';
+import eNarro from '@/images/pages/community/contributors/3.jpg';
+import gMaraboutDemazure from '@/images/pages/community/contributors/4.jpg';
+import jBBraun from '@/images/pages/community/contributors/5.jpg';
+import nDavid from '@/images/pages/community/contributors/6.jpg';
+import iLustig from '@/images/pages/community/contributors/7.jpg';
 
 // TODO: import real photos
 const teamListData = [
   {
-    photo: vincentGosselin,
-    name: 'Zaccheus Sia 🇫🇷',
+    photo: zSia,
+    name: 'Zaccheus Sia 🇫🇷',
     position: 'Application Developer',
   },
   {
-    photo: albertAntoine,
-    name: 'Anmol Baranwal 🇸🇬',
+    photo: aBaranwal,
+    name: 'Anmol Baranwal 🇸🇬',
     position: 'Software Developer & Open-Source Advocate',
   },
   {
-    photo: fabienLelaquais,
-    name: 'Eric Narro 🇫🇷',
+    photo: eNarro,
+    name: 'Eric Narro 🇫🇷',
     position: 'Data Analyst',
   },
   {
-    photo: prNgoBaoChau,
-    name: 'Grégoire Marabout-Demazure 🇫🇷',
+    photo: gMaraboutDemazure,
+    name: 'Grégoire Marabout-Demazure 🇫🇷',
     position: 'CTO & Software Engineer',
   },
   {
-    photo: jeanRobinMedori,
-    name: 'Jean-Baptiste Braun 🇫🇷',
+    photo: jBBraun,
+    name: 'Jean-Baptiste Braun 🇫🇷',
     position: 'Lead Data Engineer',
   },
   {
-    photo: myriamDelarue,
-    name: 'Nevo David 🇹🇭',
+    photo: nDavid,
+    name: 'Nevo David 🇹🇭',
     position: 'Full-stack engineer',
   },
   {
-    photo: desmondDelandro,
-    name: 'Irv Lustig 🇺🇸',
+    photo: iLustig,
+    name: 'Irv Lustig 🇺🇸',
     position: 'Certified Analytics Practitione',
   },
 ];
-
+// TODO: create shared component for that
 function Contributors() {
   return (
     <section className="contributors mt-[180px] lg:mt-[142px] md:mt-[129px] sm:mt-[42px]">
@@ -68,7 +68,7 @@ function Contributors() {
                 src={photo}
                 alt={name}
               />
-              <div className="flex flex-col gap-2 sm:gap-1.5">
+              <div className="flex flex-col gap-2 sm:max-w-[171px] sm:gap-1.5">
                 <span className="text-18 font-medium leading-tight tracking-snug md:text-16">
                   {name}
                 </span>

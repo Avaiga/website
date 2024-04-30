@@ -31,6 +31,7 @@ export const MENU = {
           { label: 'Blog', href: ROUTE.BLOG },
           { label: 'Documentation', href: ROUTE.DOCUMENTATION },
           { label: 'Free mentorship', href: ROUTE.MENTORSHIP },
+          { label: 'Community', href: ROUTE.COMMUNITY },
         ],
       },
       {
