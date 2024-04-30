@@ -61,10 +61,11 @@ export default function Hero() {
                 className="z-[2] flex w-full max-w-[187px] items-center justify-center gap-[11px] border-orange-1 px-0 tracking-snug md:h-[33px]"
                 size="lg"
                 theme="red-outline"
-                href="#designer"
+                href="https://youtu.be/on16VRlamZE"
+                target="_blank"
               >
-                Learn more
-                <PlayIcon className="hidden h-1.5 w-[7px] shrink-0" />
+                Watch the video
+                <PlayIcon className="h-1.5 w-[7px] shrink-0" />
               </Button>
             </div>
           </div>
