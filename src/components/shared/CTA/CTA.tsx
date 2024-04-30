@@ -28,7 +28,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
   }
 
   return (
-    <section className={clsx('cta px-safe', className)}>
+    <section className={clsx('cta px-safe', className)} id="CTA">
       <div className="container-narrow grid max-w-[1088px] grid-cols-2 gap-x-8 text-center md:max-w-lg md:grid-cols-1 md:gap-y-5">
         <div
           className={clsx(

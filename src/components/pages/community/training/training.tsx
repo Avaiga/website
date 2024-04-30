@@ -40,7 +40,7 @@ function Training() {
             className="mt-8 md:absolute md:top-full md:w-[152px] sm:mt-6 sm:w-[141px]"
             size="lg"
             theme="red-filled"
-            href="/"
+            href="#CTA"
           >
             Get started
           </Button>

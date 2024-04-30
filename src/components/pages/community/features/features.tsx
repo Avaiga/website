@@ -59,7 +59,6 @@ function Features() {
                   className="text-18 font-medium leading-snug text-white lg:text-16 sm:text-14"
                   dangerouslySetInnerHTML={{ __html: text }}
                 />
-
                 {additionalText && (
                   <p className="mt-auto self-end text-18 font-medium leading-snug text-white lg:text-16 sm:text-14">
                     {additionalText}
