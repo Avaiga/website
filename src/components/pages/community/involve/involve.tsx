@@ -33,7 +33,10 @@ const locationsData = [
 
 function Involve() {
   return (
-    <section className="involve mt-[92px] lg:mt-[26px] md:mt-[16px] sm:mt-[55px]">
+    <section
+      className="involve mt-[92px] scroll-mt-32 lg:mt-[26px] md:mt-[16px] sm:mt-[55px]"
+      id="involve"
+    >
       <div className="container">
         <h2 className="text-center text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-32 sm:text-28">
           Get involved: start, engage, contribute

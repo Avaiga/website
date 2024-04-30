@@ -20,13 +20,8 @@ function Hero() {
             Join Taipy&apos;s development community, contribute code, innovate, and get recognized!
           </p>
           <div className="mt-9 flex gap-[21px] lg:mt-8 sm:mt-6">
-            <Button
-              className="w-[231px] sm:w-[187px]"
-              size="lg"
-              theme="red-filled"
-              href={ROUTE.REQUEST_A_DEMO}
-            >
-              Show me how to start
+            <Button className="w-[231px] sm:w-[187px]" size="lg" theme="red-filled" href="#involve">
+              Start contributing
             </Button>
             <Button
               className="w-[190px] gap-x-2.5 px-3 sm:w-[119px]"
