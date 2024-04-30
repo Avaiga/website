@@ -4,28 +4,33 @@ import integration from '@/images/pages/community/features/integration.webp';
 import more from '@/images/pages/community/features/more.webp';
 import provide from '@/images/pages/community/features/provide.webp';
 import systems from '@/images/pages/community/features/systems.webp';
+import clsx from 'clsx';
 
 const imagesData = [
   {
     alt: 'integration',
     text: 'Integration with data <br> visualisation packages',
     image: integration,
+    className: 'object-right-bottom',
   },
   {
     alt: 'provide',
     text: 'Provide more features to the table <br>graphical objects',
     image: provide,
+    className: 'object-left-bottom',
   },
   {
     alt: 'more',
     text: 'More predefined data nodes',
     image: more,
+    className: 'object-right-top',
   },
   {
     alt: 'systems',
     text: 'Integration with external <br>execution systems',
     additionalText: '... and many more!',
     image: systems,
+    className: 'object-left-top',
   },
 ];
 
@@ -44,7 +49,7 @@ function Features() {
           them your very own project.
         </p>
         <div className="mx-auto mt-12 grid w-full max-w-[960px] grid-cols-12 gap-8 lg:mt-9 lg:max-w-[896px] lg:gap-6 md:mt-9 sm:mt-8 sm:gap-5">
-          {imagesData.map(({ alt, image, text, additionalText }, index) => (
+          {imagesData.map(({ alt, image, text, additionalText, className }, index) => (
             <div
               className="col-span-6 aspect-[1.45] overflow-hidden rounded-[8px] lg:aspect-[1.36] md:aspect-[1.26] sm:col-span-full sm:aspect-[1.415]"
               key={index}
@@ -61,7 +66,10 @@ function Features() {
                   </p>
                 )}
                 <Image
-                  className="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full object-cover"
+                  className={clsx(
+                    'pointer-events-none absolute left-0 top-0 -z-10 h-full w-full object-cover',
+                    className,
+                  )}
                   src={image}
                   width={464}
                   height={320}
