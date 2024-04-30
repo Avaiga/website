@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { ROUTE } from '@/constants/routes';
 import bgImage from '@/images/pages/community/hero/illustration.png';
 
 import Button from '@/components/shared/button';
@@ -19,14 +20,19 @@ function Hero() {
             Join Taipy&apos;s development community, contribute code, innovate, and get recognized!
           </p>
           <div className="mt-9 flex gap-[21px] lg:mt-8 sm:mt-6">
-            <Button className="w-[231px] sm:w-[187px]" size="lg" theme="red-filled" href="/">
+            <Button
+              className="w-[231px] sm:w-[187px]"
+              size="lg"
+              theme="red-filled"
+              href={ROUTE.REQUEST_A_DEMO}
+            >
               Show me how to start
             </Button>
             <Button
               className="w-[190px] gap-x-2.5 px-3 sm:w-[119px]"
               size="lg"
               theme="outline"
-              href="/"
+              href={ROUTE.GITHUB}
             >
               <GithubLogo className="h-6 flex-shrink-0 fill-white" />
               <p>

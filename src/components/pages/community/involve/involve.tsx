@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { ROUTE } from '@/constants/routes';
 import discordIcon from '@/images/pages/community/invoke/discord.svg';
 import docsIcon from '@/images/pages/community/invoke/doc.svg';
 import githubIcon from '@/images/pages/community/invoke/github.svg';
@@ -11,21 +12,21 @@ const locationsData = [
     icon: docsIcon,
     heading: 'Documentation',
     text: 'Embark on your journey by creating your personalized account',
-    link: '/',
+    link: ROUTE.DOCUMENTATION,
     linkText: 'Get started',
   },
   {
     icon: discordIcon,
     heading: 'Join Discord',
     text: 'Immerse yourself in the community by joining our dedicated server',
-    link: '/',
+    link: ROUTE.DISCORD,
     linkText: 'Join discord',
   },
   {
     icon: githubIcon,
     heading: 'Fork And Work',
     text: 'Discover an issue within our project and make a valuable contribution',
-    link: '/',
+    link: ROUTE.GITHUB,
     linkText: 'Find an issue',
   },
 ];
