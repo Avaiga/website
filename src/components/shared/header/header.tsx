@@ -42,7 +42,7 @@ function Header() {
     <>
       <header ref={headerEl} className="absolute left-0 right-0 top-0 z-50 h-16 px-safe pt-safe">
         <div className="container-narrow flex h-full items-center justify-between lg:justify-start md:justify-between">
-          <Link href="/">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <span className="sr-only">Taipy</span>
             <Image
               className="h-7 sm:h-6 sm:w-auto"
