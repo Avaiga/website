@@ -38,6 +38,20 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
               src="https://tag.clearbitscripts.com/v1/pk_1733d1e9903ce4818fec6c5fdd8118cf/tags.js"
               referrerPolicy="strict-origin-when-cross-origin"
             />
+            <Script strategy="beforeInteractive" id="axeptio_overlay">
+              {`
+            window.axeptioSettings = {
+              clientId: "6630e24fbbf25171c10a2e12",
+              cookiesVersion: "taipy-en-EU",
+            };
+            
+            (function(d, s) {
+              var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+              e.async = true; e.src = "//static.axept.io/sdk.js";
+              t.parentNode.insertBefore(e, t);
+            })(document, "script");
+            `}
+            </Script>
           </>
         )}
       </head>
