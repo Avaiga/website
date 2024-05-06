@@ -49,7 +49,9 @@ function AuthorAndDate({
           'md:text-12': isRelated,
         })}
         dateTime={publishedAt}
-      />
+      >
+        {publishedAt}
+      </time>
     </div>
   );
 }
