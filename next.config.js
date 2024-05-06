@@ -104,12 +104,12 @@ module.exports = {
       },
       {
         source: '/testimonials/success-story-sales-forecast',
-        destination: '/customer-stories',
+        destination: '/customer-stories/knowledge-touch',
         permanent: true,
       },
       {
         source: '/company/testimonials',
-        destination: '/customer-stories/knowledge-touch',
+        destination: '/customer-stories',
         permanent: true,
       },
     ];
