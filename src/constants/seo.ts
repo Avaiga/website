@@ -42,9 +42,8 @@ export const SEO_DATA = {
     pathname: ROUTE.MENTORSHIP as string, // /book-a-call
   },
   CONTACT_US: {
-    title: 'Contact Us | Taipy',
-    description:
-      'Have a question, seek for support? Just send us an email, and we will be sure to respond promptly.',
+    title: 'Contact Taipy',
+    description: `Have a question, seek for support? Just send us an email, and we'll be sure to respond promptly.`,
     pathname: ROUTE.CONTACT_US as string, // /contact-us
   },
 };
