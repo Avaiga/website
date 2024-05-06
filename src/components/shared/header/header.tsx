@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { MENU } from '@/constants/menu';
 import { ROUTES } from '@/constants/routes';
@@ -18,6 +18,8 @@ import GithubStarCounter from '../github-star-counter';
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [headerOffset, setHeaderOffset] = useState(0);
+  const headerEl = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -29,13 +31,18 @@ function Header() {
     }
   }, [isMobileMenuOpen]);
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen((prevIsOpen) => !prevIsOpen);
+  const toggleMobileMenu = () => {
+    const headerHeight = headerEl.current?.offsetHeight ?? 0;
+    const headerTopOffset = headerEl.current?.getBoundingClientRect().top ?? 0;
+    setHeaderOffset(headerHeight + headerTopOffset);
+    setIsMobileMenuOpen((prevIsOpen) => !prevIsOpen);
+  };
 
   return (
     <>
-      <header className="absolute left-0 right-0 top-0 z-50 h-16 px-safe pt-safe">
+      <header ref={headerEl} className="absolute left-0 right-0 top-0 z-50 h-16 px-safe pt-safe">
         <div className="container-narrow flex h-full items-center justify-between lg:justify-start md:justify-between">
-          <Link href="/">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <span className="sr-only">Taipy</span>
             <Image
               className="h-7 sm:h-6 sm:w-auto"
@@ -77,7 +84,11 @@ function Header() {
         </div>
       </header>
 
-      <MobileMenu isOpen={isMobileMenuOpen} onClick={toggleMobileMenu} />
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        headerOffset={headerOffset}
+        onClick={toggleMobileMenu}
+      />
     </>
   );
 }

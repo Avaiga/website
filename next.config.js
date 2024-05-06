@@ -110,6 +110,10 @@ module.exports = {
       {
         source: '/company/testimonials',
         destination: '/customer-stories',
+        permanent: true,},
+      {
+        source: '/about-taipy/:path*',
+        destination: '/about-us',
         permanent: true,
       },
     ];

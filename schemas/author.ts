@@ -14,7 +14,7 @@ export const author = defineType({
       options: {
         hotspot: false,
       },
-      validation: (rule: ImageRule) => rule.required(),
+      validation: (rule: ImageRule) => rule,
     }),
     defineField({
       name: 'name',

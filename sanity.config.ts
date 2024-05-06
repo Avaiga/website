@@ -23,6 +23,7 @@ interface ExtendedSanityDocument extends SanityDocument {
 }
 
 function getPreviewUrl(doc: ExtendedSanityDocument, categoryUrl: string = '') {
+// TODO: setup preview like this https://www.sanity.io/docs/preview-url-secret
   const host = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
   const url = new URL('/api/preview', host);
 

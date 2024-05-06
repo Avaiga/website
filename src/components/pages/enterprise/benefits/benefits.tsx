@@ -8,7 +8,7 @@ const CARDS = [
     icon: easyUseIcon,
     title: 'Ease of use',
     description:
-      'Offers a no-code, drag-and-drop interface for building GUIs, making it accessible to users without any programming background.',
+      'Offers a low-code, drag-and-drop interface for building GUIs, making it accessible to users without any programming background.',
   },
   {
     icon: collaborationIcon,
