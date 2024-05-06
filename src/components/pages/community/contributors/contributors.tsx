@@ -7,6 +7,7 @@ import gMaraboutDemazure from '@/images/pages/community/contributors/4.jpg';
 import jBBraun from '@/images/pages/community/contributors/5.jpg';
 import nDavid from '@/images/pages/community/contributors/6.jpg';
 import iLustig from '@/images/pages/community/contributors/7.jpg';
+import fPearl from '@/images/pages/community/contributors/8.jpg';
 
 // TODO: import real photos
 const teamListData = [
@@ -44,6 +45,11 @@ const teamListData = [
     photo: iLustig,
     name: 'Irv Lustig 🇺🇸',
     position: 'Certified Analytics Practitione',
+  },
+  {
+    photo: fPearl,
+    name: 'Forcha Pearl 🇨🇲',
+    position: 'Software Engineer',
   },
 ];
 // TODO: create shared component for that

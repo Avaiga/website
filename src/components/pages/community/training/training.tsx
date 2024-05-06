@@ -1,3 +1,4 @@
+import { ROUTE } from '@/constants/routes';
 import iconLayout from '@/images/pages/community/training/number-layout.svg';
 
 import Button from '@/components/shared/button';
@@ -11,10 +12,10 @@ const trainingData = [
   {
     title: 'Start your project with your mentor.',
     description:
-      'Onboard and start working on your project under the supervision of your mentor for at least two weeks. Get trained by the bests!',
+      'Onboard and start working on your project under the supervision of your mentor for at least two weeks. Get trained by the best!',
   },
   {
-    title: 'Go on autonomously, success and go further.',
+    title: 'Go on autonomously, succeed, and go further.',
     description:
       'After onboarding, continue to work autonomously, fulfill your project or start another one! You will be able to contact your mentor throughout the project.',
   },
@@ -29,7 +30,7 @@ function Training() {
             Join the Community
           </span>
           <h2 className="mt-5 max-w-[430px] text-40 font-medium leading-dense tracking-tight lg:max-w-[394px] lg:text-36 md:max-w-[428px] md:text-center md:text-32 sm:mt-3.5 sm:max-w-[280px] sm:text-28">
-            Get personalized training with an expert mentor!
+            Get personalized onboarding with an expert mentor!
           </h2>
           <p className="mt-4 max-w-[544px] text-18 font-light leading-snug tracking-snug text-grey-70 lg:max-w-[457px] lg:text-16 md:text-center md:text-14 sm:mt-3">
             Join Taipy&apos;s development community today! Your contributions are greatly
@@ -40,7 +41,7 @@ function Training() {
             className="mt-8 md:absolute md:top-full md:w-[152px] sm:mt-6 sm:w-[141px]"
             size="lg"
             theme="red-filled"
-            href="#CTA"
+            href={ROUTE.MENTORSHIP}
           >
             Get started
           </Button>

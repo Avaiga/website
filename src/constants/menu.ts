@@ -23,7 +23,6 @@ export const MENU = {
           { label: 'About us', href: ROUTE.ABOUT_US },
           { label: 'Enterprise', href: ROUTE.ENTERPRISE },
           { label: 'Pricing', href: ROUTE.PRICING },
-          { label: 'Contact us', href: ROUTE.CONTACT_US },
         ],
       },
       {

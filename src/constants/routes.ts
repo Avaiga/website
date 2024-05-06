@@ -13,7 +13,6 @@ export const ROUTE: Record<string, URL | Route<string>> = {
   MENTORSHIP: '/mentorship',
   ENTERPRISE: '/enterprise',
   COMMUNITY: '/community',
-  CONTACT_US: '/contact-us',
   TERMS: '/terms-of-use', // https://www.taipy.io/legal/terms-of-use
   COMPANY: '/',
   TWITTER: new URL('https://twitter.com/Taipy_io'),

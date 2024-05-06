@@ -11,7 +11,7 @@ const locationsData = [
   {
     icon: docsIcon,
     heading: 'Documentation',
-    text: 'Embark on your journey by creating your personalized account',
+    text: 'Get familiar with our library',
     link: ROUTE.DOCUMENTATION,
     linkText: 'Get started',
   },
@@ -20,13 +20,13 @@ const locationsData = [
     heading: 'Join Discord',
     text: 'Immerse yourself in the community by joining our dedicated server',
     link: ROUTE.DISCORD,
-    linkText: 'Join discord',
+    linkText: 'Join Discord',
   },
   {
     icon: githubIcon,
     heading: 'Fork And Work',
     text: 'Discover an issue within our project and make a valuable contribution',
-    link: ROUTE.GITHUB,
+    link: 'https://github.com/Avaiga/taipy/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22',
     linkText: 'Find an issue',
   },
 ];
@@ -52,7 +52,13 @@ function Involve() {
                 <p className="mb-5 mt-3 text-center text-16 font-light leading-normal text-grey-70 lg:mt-2.5 lg:text-14 sm:mb-3.5 sm:mt-2">
                   {text}
                 </p>
-                <Link className="text-15 leading-snug" href={link} theme="white" arrowTheme="red">
+                <Link
+                  className="text-15 leading-snug"
+                  href={link}
+                  theme="white"
+                  arrowTheme="red"
+                  target="_blank"
+                >
                   {linkText}
                 </Link>
               </div>

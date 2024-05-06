@@ -28,6 +28,7 @@ function Hero() {
               size="lg"
               theme="outline"
               href={ROUTE.GITHUB}
+              target="_blank"
             >
               <GithubLogo className="h-6 flex-shrink-0 fill-white" />
               <p>
