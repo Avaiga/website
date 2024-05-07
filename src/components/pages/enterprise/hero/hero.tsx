@@ -17,8 +17,8 @@ export default function Hero() {
       <div className="container-narrow max-w-[1024px] text-center lg:max-w-[896px] ">
         <p className="leading-snug text-primary-red sm:text-14">Taipy Enterprise Edition</p>
         <h1 className="mx-auto pt-5 text-48 font-semibold leading-dense tracking-tight lg:max-w-[832px] lg:text-40 md:max-w-[640px] md:pt-3.5 md:text-32 sm:text-28">
-          We help organizations increase efficiency, cut costs, increase profits, and make better
-          business decisions.
+          We help organizations increase efficiency, boost profits, and make better business
+          decisions.
         </h1>
         <p className="mx-auto max-w-[642px] pt-5 leading-snug opacity-80 lg:max-w-[576px] md:pt-4 sm:pt-[14px] sm:text-14">
           Technology you can trust. Built on Python with decades of industry expertise, we never
@@ -61,10 +61,11 @@ export default function Hero() {
                 className="z-[2] flex w-full max-w-[187px] items-center justify-center gap-[11px] border-orange-1 px-0 tracking-snug md:h-[33px]"
                 size="lg"
                 theme="red-outline"
-                href="#designer"
+                href="https://www.youtube.com/watch?v=y3VPT6IPvC4"
+                target="_blank"
               >
-                Learn more
-                <PlayIcon className="hidden h-1.5 w-[7px] shrink-0" />
+                Watch the video
+                <PlayIcon className="h-1.5 w-[7px] shrink-0" />
               </Button>
             </div>
           </div>

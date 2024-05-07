@@ -61,7 +61,7 @@ function Designer() {
     >
       <div className="container flex max-w-[1280px] flex-col items-center gap-x-16">
         <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36 sm:text-28">
-          No-code, full control
+          Low-code, full control
         </h2>
         <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 md:mt-4 md:max-w-[448px] md:leading-normal sm:mt-3 sm:text-14">
           Focus on results with all the sophistication hidden behind a convenient drag-and-drop
