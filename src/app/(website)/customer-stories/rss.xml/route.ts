@@ -3,24 +3,24 @@ import { ROUTES } from '@/constants/routes';
 import Rss from 'rss';
 
 import { portableToPlain } from '@/lib/portable-to-plain';
-import { getAllPosts } from '@/lib/sanity/client';
+import { getAllCustomerStories } from '@/lib/sanity/client';
 
 const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
 
 export async function GET() {
-  const allBlogPosts = await getAllPosts();
+  const allBlogPosts = await getAllCustomerStories();
 
   const feed = new Rss({
     language: 'en',
-    title: `Blog — Taipy`,
-    description: 'The latest product updates from Taipy',
-    feed_url: `${SITE_URL}/${ROUTES.BLOG}/rss.xml`,
+    title: `Customer Stories — Taipy`,
+    description: 'See how Taipy help companies working efficiently with large data',
+    feed_url: `${SITE_URL}/${ROUTES.CUSTOMER_STORIES}/rss.xml`,
     site_url: SITE_URL!,
   });
 
   allBlogPosts.forEach((post) => {
-    const { category, slug, lead, publishedAt, title, author, contentRaw } = post;
-    const url = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}${ROUTES.BLOG}/${slug.current}`;
+    const { slug, lead, publishedAt, title, author, contentRaw } = post;
+    const url = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}${ROUTES.CUSTOMER_STORIES}/${slug.current}`;
 
     feed.item({
       guid: url,
@@ -29,7 +29,7 @@ export async function GET() {
       url,
       date: new Date(publishedAt),
       author: author.name,
-      categories: category ? [category.title] : ['All posts'],
+      categories: ['Customer Stories'],
       custom_elements: [{ 'content:encoded': portableToPlain(contentRaw) }],
     });
   });

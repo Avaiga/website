@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 
-import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/posts-list';
+import Pagination from '@/components/shared/pagination';
 
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { countPosts, getCategoryBySlug, getPostsByCategorySlug } from '@/lib/sanity/client';
@@ -23,7 +23,7 @@ async function BlogPage({ params }: BlogPageProps) {
   const page = parseInt(params.page, 10);
 
   if (Number.isNaN(page) || page === 1) {
-    return redirect(ROUTE.BLOG as string);
+    return redirect(ROUTES.BLOG as string);
   }
 
   const categoryData = await getCategoryBySlug(params.category);
@@ -41,9 +41,9 @@ async function BlogPage({ params }: BlogPageProps) {
 
   return (
     <div className="col-span-10 col-start-3 grid gap-y-[54px] lg:col-span-full lg:gap-y-12 sm:gap-y-8">
-      <h1 className="sr-only">Taipy Blog</h1>
+      <h1 className="sr-only">Taipy Blog - Page ${page}</h1>
       <PostsList posts={posts} />
-      <Pagination currentPage={page} pageCount={pageCount} path={`${ROUTE.BLOG}`} />
+      <Pagination currentPage={page} pageCount={pageCount} path={ROUTES.BLOG as string} />
     </div>
   );
 }
@@ -94,7 +94,7 @@ export async function generateMetadata({
     title,
     description,
     imagePath,
-    pathname: `${ROUTE.BLOG_CATEGORY}/${category}/page/${page}`,
+    pathname: `${ROUTES.BLOG_CATEGORY}/${category}/page/${page}`,
   });
 }
 

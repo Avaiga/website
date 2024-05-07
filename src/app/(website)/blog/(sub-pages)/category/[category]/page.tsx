@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 
-import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/posts-list';
+import Pagination from '@/components/shared/pagination';
 
 import { DEFAULT_IMAGE_PATH, getMetadata } from '@/lib/get-metadata';
 import { countPosts, getCategoryBySlug, getPostsByCategorySlug } from '@/lib/sanity/client';
@@ -42,7 +42,7 @@ async function Category({ params }: CategoryProps) {
         <Pagination
           currentPage={1}
           pageCount={pageCount}
-          path={`${ROUTE.BLOG_CATEGORY}/${params.category}`}
+          path={`${ROUTES.BLOG_CATEGORY}/${params.category}`}
         />
       )}
     </>
@@ -74,7 +74,7 @@ export async function generateMetadata({
     title,
     description,
     imagePath,
-    pathname: `${ROUTE.BLOG_CATEGORY}/${category}`,
+    pathname: `${ROUTES.BLOG_CATEGORY}/${category}`,
   });
 }
 

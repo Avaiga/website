@@ -1,7 +1,7 @@
 'use client';
 
 import { MENU } from '@/constants/menu';
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
 
 import Link from '@/components/shared/link';
@@ -62,7 +62,7 @@ function MobileMenu({
               </ul>
               <div className="mt-7 grid grid-cols-2 gap-4 sm:mt-0 sm:grid-cols-1">
                 <GithubStarCounter className="!h-12 !gap-x-2 !text-16" />
-                <Button theme="white-filled" size="lgConst" href={ROUTE.ENTERPRISE}>
+                <Button theme="white-filled" size="lgConst" href={ROUTES.ENTERPRISE}>
                   Enterprise
                 </Button>
               </div>

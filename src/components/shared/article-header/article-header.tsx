@@ -1,33 +1,49 @@
 import Image from 'next/image';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 
 import Breadcrumbs from '@/components/shared/breadcrumbs';
 import CategoryLabel from '@/components/shared/category-label';
 
 import { SinglePost } from '@/types/blog';
+import { Breadcrumb } from '@/types/shared';
 
 import { getPublishDate } from '@/lib/get-publish-date';
 import { urlForImage } from '@/lib/sanity/image';
 
-import AuthorAndShare from '../author-and-share';
+import AuthorAndShare from '../../pages/article/author-and-share';
 
-type HeroProps = Pick<
+type ArticleHeaderProps = Pick<
   SinglePost,
-  'title' | 'lead' | 'cover' | 'author' | 'publishedAt' | 'category' | 'slug'
->;
+  'title' | 'lead' | 'cover' | 'author' | 'publishedAt' | 'slug'
+> & {
+  category?: {
+    slug: string;
+    title: string;
+  };
+  breadcrumbs: Breadcrumb[];
+};
 
-function Hero({ title, lead, cover, author, publishedAt, category, slug }: HeroProps) {
+function ArticleHeader({
+  title,
+  lead,
+  cover,
+  author,
+  publishedAt,
+  category,
+  slug,
+  breadcrumbs,
+}: ArticleHeaderProps) {
   return (
     <>
-      <Breadcrumbs items={[{ title: 'Blog', url: ROUTE.BLOG }, { title }]} />
+      <Breadcrumbs items={breadcrumbs} />
 
       <div className="mt-12 xl:mt-10">
         <CategoryLabel
           className="md:h-[26px] md:text-12"
-          url={category ? `${ROUTE.BLOG_CATEGORY}/${category.slug.current}` : ROUTE.BLOG}
+          url={category ? category.slug : ROUTES.BLOG}
         >
-          {category ? category.titleShort : 'All posts'}
+          {category ? category.title : 'All posts'}
         </CategoryLabel>
         <h1 className="mt-3.5 text-40 font-semibold leading-tight tracking-tight xl:text-36 md:mt-3 md:text-32 sm:mt-2 sm:text-28">
           {title}
@@ -41,6 +57,7 @@ function Hero({ title, lead, cover, author, publishedAt, category, slug }: HeroP
           slug={slug}
           publishedAt={getPublishDate(publishedAt).toUpperCase()}
           title={title}
+          isPriority
         />
         {cover && (
           <Image
@@ -51,6 +68,7 @@ function Hero({ title, lead, cover, author, publishedAt, category, slug }: HeroP
             height={396}
             placeholder={cover.asset?.metadata?.lqip ? 'blur' : 'empty'}
             blurDataURL={cover.asset?.metadata?.lqip ?? ''}
+            priority
           />
         )}
       </div>
@@ -58,4 +76,4 @@ function Hero({ title, lead, cover, author, publishedAt, category, slug }: HeroP
   );
 }
 
-export default Hero;
+export default ArticleHeader;

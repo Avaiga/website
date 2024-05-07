@@ -13,10 +13,10 @@ import {
 import { getPublishDate } from '../src/lib/get-publish-date';
 import { contentField } from './content';
 
-export const post = defineType({
-  name: 'post',
+export const customerStory = defineType({
+  name: 'customerStory',
   type: 'document',
-  title: 'Post',
+  title: 'Customer Story',
   icon: DocumentTextIcon,
   groups: [
     {
@@ -40,11 +40,18 @@ export const post = defineType({
       group: 'content',
     }),
     defineField({
+      name: 'companyName',
+      type: 'string',
+      title: 'Company name',
+      validation: (rule: StringRule) => rule.required(),
+      group: 'content',
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       title: 'Slug',
       options: {
-        source: 'title',
+        source: 'companyName',
       },
       validation: (rule: SlugRule) => rule.required(),
       group: 'content',
@@ -69,6 +76,17 @@ export const post = defineType({
       group: 'content',
     }),
     defineField({
+      name: 'companyLogo',
+      title: 'Company logo',
+      type: 'image',
+      options: {
+        hotspot: false,
+      },
+      description: 'This image will be used as a company logo',
+      validation: (rule: ImageRule) => rule.required(),
+      group: 'content',
+    }),
+    defineField({
       name: 'lead',
       type: 'string',
       title: 'Lead paragraph',
@@ -84,14 +102,6 @@ export const post = defineType({
       validation: (rule: ReferenceRule) => rule.required(),
     }),
     defineField({
-      name: 'category',
-      type: 'reference',
-      title: 'Category',
-      to: [{ type: 'category' }],
-      group: 'content',
-      validation: (rule: ReferenceRule) => rule.required(),
-    }),
-    defineField({
       name: 'related',
       type: 'array',
       title: 'Related Posts',
@@ -103,13 +113,6 @@ export const post = defineType({
       ],
       group: 'content',
       validation: (rule: ArrayRule<ReferenceRule>) => rule.min(3),
-    }),
-    defineField({
-      name: 'featured',
-      type: 'boolean',
-      title: 'Featured',
-      initialValue: false,
-      group: 'content',
     }),
     defineField({
       name: 'seo',
