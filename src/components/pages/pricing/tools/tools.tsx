@@ -62,7 +62,7 @@ const toolBlocks: Tool[] = [
   {
     logo: serverRackIcon,
     title: 'Data management',
-    description: 'MongoDB support for efficient data handling.',
+    description: 'Robust scenario data management.',
   },
   {
     logo: speedIndicatorIcon,
@@ -79,7 +79,7 @@ const toolBlocks: Tool[] = [
   {
     logo: roadmapIcon,
     title: 'Job Scheduler',
-    description: 'Efficient task scheduling and parallel execution.',
+    description: 'Executes scenarios according to a defined schedule.',
     gradient: 'left',
   },
 ];

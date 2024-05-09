@@ -38,14 +38,14 @@ export const PLANS = {
       isRowTitle: false,
       features: 'Authentication',
       сommunity: false,
-      enterprise: 'SSO',
+      enterprise: true,
     },
     {
       rows: '1',
       isRowTitle: false,
       features: 'Authorization',
       сommunity: false,
-      enterprise: 'ACL',
+      enterprise: true,
     },
     {
       rows: '1',
@@ -57,7 +57,7 @@ export const PLANS = {
     {
       rows: '2',
       isRowTitle: false,
-      features: 'Data management',
+      features: 'Scenario data management',
       сommunity: 'SQLite, filesystem',
       enterprise: 'MongoDB',
     },

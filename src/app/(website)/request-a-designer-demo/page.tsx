@@ -13,7 +13,7 @@ function Home() {
         tagline="Let's have our first contact"
         headerText="Check our availability and book a call with us"
       />
-      <Calendar calLink="team/taipy-sales/30-min-header-sales-request" />
+      <Calendar calLink="team/taipy-sales/request-a-demo-for-taipy-designer" />
       <Subscribe
         className="my-[120px] md:my-24 sm:mt-20"
         tagline="Integrations"
