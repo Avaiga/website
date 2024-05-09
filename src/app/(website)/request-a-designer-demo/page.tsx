@@ -1,7 +1,7 @@
 import { SEO_DATA } from '@/constants/seo';
 
-import Hero from '@/components/shared/book-a-call-header';
 import Calendar from '@/components/shared/calendar';
+import PageHeader from '@/components/shared/page-header';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';
@@ -9,7 +9,7 @@ import { getMetadata } from '@/lib/get-metadata';
 function Home() {
   return (
     <>
-      <Hero
+      <PageHeader
         tagline="Let's have our first contact"
         headerText="Check our availability and book a call with us"
       />
@@ -26,6 +26,7 @@ function Home() {
 
 export default Home;
 
+// TODO: change meta data to correct
 export async function generateMetadata() {
   return getMetadata(SEO_DATA.BOOK_A_CALL);
 }

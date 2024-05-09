@@ -1,9 +1,9 @@
-interface BookACallHeaderProps {
+interface PageHeaderProps {
   tagline: string;
   headerText: string;
 }
 
-function BookACallHeader({ tagline, headerText }: BookACallHeaderProps) {
+function PageHeader({ tagline, headerText }: PageHeaderProps) {
   return (
     <section className="hero pt-32 lg:pt-28 md:pt-20">
       <div className="container text-center">
@@ -16,4 +16,4 @@ function BookACallHeader({ tagline, headerText }: BookACallHeaderProps) {
   );
 }
 
-export default BookACallHeader;
+export default PageHeader;
