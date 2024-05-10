@@ -100,7 +100,7 @@ function Form() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormProps>({ resolver: yupResolver(validationSchema), mode: 'all' });
+  } = useForm<FormProps>({ resolver: yupResolver(validationSchema) });
 
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
     setFormState(STATE.LOADING);
