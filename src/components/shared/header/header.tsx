@@ -78,7 +78,7 @@ function Header() {
                     </Link>
                     {items && (
                       <div className="group-hover:opacity-1 invisible absolute -left-3.5 bottom-0 translate-y-full pt-3 opacity-0 transition-[opacity,visibility] duration-200 group-hover:visible group-hover:opacity-100">
-                        <ul className="flex min-w-[162px] max-w-[420px] flex-col gap-3 rounded-[4px] border border-grey-15 bg-grey-10 p-3.5 pr-[18px] shadow-header">
+                        <ul className="flex min-w-40 max-w-[420px] flex-col gap-3 rounded-[4px] border border-grey-15 bg-grey-10 p-3.5 pr-4 shadow-header">
                           {items &&
                             items.map(
                               ({ label: childLabel, href: childHref, icon: Icon }, index) => (
