@@ -75,6 +75,6 @@ html {
   .remove-autocomplete-styles:-webkit-autofill,
   .remove-autocomplete-styles:-webkit-autofill:hover,
   .remove-autocomplete-styles:-webkit-autofill:focus {
-    transition: background-color 5000s;
+    transition: background-color 50000s, color 600000s;
   }
 }
