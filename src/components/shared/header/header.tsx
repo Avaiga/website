@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { MENU } from '@/constants/menu';
 import { ROUTES } from '@/constants/routes';
+import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
 import Burger from '@/components/shared/header/burger';
@@ -58,13 +59,48 @@ function Header() {
             aria-label="Global"
           >
             <ul className="flex gap-x-7 md:hidden">
-              {MENU.header.map(({ label, href }, index) => (
-                <li key={index}>
-                  <Link href={href} size="sm" theme="white">
-                    {label}
-                  </Link>
-                </li>
-              ))}
+              {MENU.header.map(({ href, label, items }, parentIndex) => {
+                return (
+                  <li className={clsx(items && 'group relative')} key={parentIndex}>
+                    <Link
+                      className={clsx(
+                        'relative leading-none transition-colors duration-200 group-hover:text-grey-80 group-hover:before:rotate-180',
+                        {
+                          "pr-3.5 before:absolute before:right-0 before:top-1/2 before:h-[5px] before:w-2 before:-translate-y-1/2 before:bg-[url('/images/svgs/small-arrow.inline.svg')] before:transition-colors before:duration-200":
+                            items,
+                        },
+                      )}
+                      href={href}
+                      size="sm"
+                      theme="white"
+                    >
+                      {label}
+                    </Link>
+                    {items && (
+                      <div className="group-hover:opacity-1 invisible absolute -left-3.5 bottom-0 translate-y-full pt-3 opacity-0 transition-[opacity,visibility] duration-200 group-hover:visible group-hover:opacity-100">
+                        <ul className="flex min-w-[162px] max-w-[420px] flex-col gap-3 rounded-[4px] border border-grey-15 bg-grey-10 p-3.5 pr-[18px] shadow-header">
+                          {items &&
+                            items.map(
+                              ({ label: childLabel, href: childHref, icon: Icon }, index) => (
+                                <li key={index}>
+                                  <Link
+                                    className="flex items-center gap-1.5 fill-grey-50 text-grey-70 hover:fill-white hover:text-white"
+                                    href={childHref}
+                                  >
+                                    <Icon className="transition-fill w-5 shrink-0 duration-200" />
+                                    <span className="text-14 font-normal leading-dense transition-colors duration-200">
+                                      {childLabel}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ),
+                            )}
+                        </ul>
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             <div className="flex gap-5">

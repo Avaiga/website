@@ -56,9 +56,9 @@ function Features() {
                       : 'pl-20 lg:pl-12 md:pl-[15px] sm:p-0'
                   }`}
                 >
-                  <Image src={image} alt={`${title}-image.jpg`} className="" />
+                  <Image src={image} alt={`${title}-image.jpg`} />
                 </div>
-                <span className="z-10 mr-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-[1px] border-[#2A2A2D] bg-[#18181B] px-1.5 py-2 text-16 text-grey-80 sm:hidden">
+                <span className="z-10 mr-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#2A2A2D] bg-[#18181B] px-1.5 py-2 text-16 text-grey-80 sm:hidden">
                   {index + 1}
                 </span>
                 <div
