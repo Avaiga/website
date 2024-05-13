@@ -64,9 +64,9 @@ function Header() {
                   <li className={clsx(items && 'group relative')} key={parentIndex}>
                     <Link
                       className={clsx(
-                        'relative leading-none transition-colors duration-200 group-hover:text-grey-80 group-hover:before:rotate-180',
+                        'relative leading-none transition-colors duration-200 group-hover:text-grey-80 group-hover:before:rotate-0',
                         {
-                          "pr-3.5 before:absolute before:right-0 before:top-1/2 before:h-[5px] before:w-2 before:-translate-y-1/2 before:bg-[url('/images/svgs/small-arrow.inline.svg')] before:transition-colors before:duration-200":
+                          "pr-3.5 before:absolute before:right-0 before:top-1/2 before:h-[5px] before:w-2 before:-translate-y-1/2 before:rotate-180 before:bg-[url('/images/svgs/small-arrow.inline.svg')] before:transition-colors before:duration-200":
                             items,
                         },
                       )}
