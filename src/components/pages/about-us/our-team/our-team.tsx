@@ -160,8 +160,11 @@ export default function OurTeam() {
               />
               <div className="flex flex-col items-center gap-2 lg:gap-1.5 md:gap-[3px]">
                 <span className="text-18 font-medium leading-tight tracking-snug md:text-16">
-                  {name}&nbsp;
-                  <img className="ml-1.5 inline w-3.5 md:ml-1" src={countryIcon} alt="" />
+                  {name}
+                  <span className="whitespace-nowrap">
+                    &nbsp;
+                    <img className="ml-1.5 inline w-3.5 md:ml-1" src={countryIcon} alt="" />
+                  </span>
                 </span>
                 <p className="font-light leading-none tracking-snug text-grey-70 md:text-14 sm:text-13">
                   {position}
