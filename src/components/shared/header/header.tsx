@@ -59,9 +59,9 @@ function Header() {
             aria-label="Global"
           >
             <ul className="flex gap-x-7 md:hidden">
-              {MENU.header.map(({ href, label, items }, parentIndex) => {
+              {MENU.header.map(({ href, label, items }, index) => {
                 return (
-                  <li className={clsx(items && 'group relative')} key={parentIndex}>
+                  <li className={clsx(items && 'group relative')} key={index}>
                     <Link
                       className={clsx(
                         'relative leading-none transition-colors duration-200 group-hover:text-grey-80 group-hover:before:rotate-0',
@@ -77,24 +77,23 @@ function Header() {
                       {label}
                     </Link>
                     {items && (
-                      <div className="group-hover:opacity-1 invisible absolute -left-3.5 bottom-0 translate-y-full pt-3 opacity-0 transition-[opacity,visibility] duration-200 group-hover:visible group-hover:opacity-100">
-                        <ul className="flex min-w-40 max-w-[420px] flex-col gap-3 rounded-[4px] border border-grey-15 bg-grey-10 p-3.5 pr-4 shadow-header">
-                          {items &&
-                            items.map(
-                              ({ label: childLabel, href: childHref, icon: Icon }, index) => (
-                                <li key={index}>
-                                  <Link
-                                    className="flex items-center gap-1.5 fill-grey-50 text-grey-70 hover:fill-white hover:text-white"
-                                    href={childHref}
-                                  >
-                                    <Icon className="transition-fill w-5 shrink-0 duration-200" />
-                                    <span className="text-14 font-normal leading-dense transition-colors duration-200">
-                                      {childLabel}
-                                    </span>
-                                  </Link>
-                                </li>
-                              ),
-                            )}
+                      <div className="invisible absolute -left-3.5 bottom-0 translate-y-full pt-3 opacity-0 transition-[opacity,visibility] duration-100 group-hover:visible group-hover:opacity-100">
+                        <ul className="flex min-w-40 max-w-[420px] flex-col gap-3 rounded-[4px] border border-grey-15 bg-grey-10 p-3.5 shadow-submenu">
+                          {items.map(
+                            ({ label: childLabel, href: childHref, icon: Icon }, childIndex) => (
+                              <li key={childIndex}>
+                                <Link
+                                  className="flex items-center gap-1.5 fill-grey-50 text-grey-70 hover:fill-white hover:text-white"
+                                  href={childHref}
+                                >
+                                  <Icon className="transition-fill w-5 shrink-0 duration-100" />
+                                  <span className="text-14 font-normal leading-dense transition-colors duration-100">
+                                    {childLabel}
+                                  </span>
+                                </Link>
+                              </li>
+                            ),
+                          )}
                         </ul>
                       </div>
                     )}

@@ -99,7 +99,7 @@ module.exports = {
     boxShadow: {
       btn: '0 8px 20px 0 rgba(255, 70, 43, 0.32)',
       toggler: '0 6px 6px rgba(0, 0, 0, 0.23)',
-      header: '2px 33px 73px 1px rgba(24, 24, 27, 1);',
+      submenu: '2px 33px 73px 1px rgba(24, 24, 27, 1);',
     },
 
     colors: ({ colors }) => ({
