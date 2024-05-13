@@ -144,13 +144,13 @@ export default function OurTeam() {
         <h2 className="mt-4 text-48 font-medium leading-dense tracking-tight lg:text-44 md:text-36 sm:mt-3.5 sm:text-28">
           A great team bringing together AI veterans and talented young developers
         </h2>
-        <p className="mx-auto mt-4 max-w-[680px] text-18 font-light leading-snug tracking-snug text-grey-70 sm:mt-3 sm:max-w-[296px] sm:text-16">
+        <p className="mx-auto mt-4 max-w-[680px] text-18 font-light leading-snug tracking-snug text-grey-70 lg:mt-[18px] sm:mt-3 sm:max-w-[296px] sm:text-16">
           We are committed to helping organizations gain visibility into their IT infrastructure
           providing a platform that is flexible and easy to use.
         </p>
-        <ul className="mt-[70px] grid grid-cols-4 gap-x-11 gap-y-16 lg:mt-[62px] lg:gap-x-10 lg:gap-y-12 md:mt-[54px] md:grid-cols-3 md:gap-x-14 md:gap-y-16 sm:mt-11 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-10">
+        <ul className="mt-[70px] grid grid-cols-4 gap-x-11 gap-y-16 lg:mt-16 lg:gap-x-10 lg:gap-y-[54px] md:mt-[54px] md:grid-cols-3 md:gap-x-14 md:gap-y-16 sm:mt-11 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-9">
           {teamListData.map(({ photo, name, position, countryIcon }, index) => (
-            <li className="flex flex-col items-center gap-[18px] md:gap-4 sm:gap-3" key={index}>
+            <li className="flex flex-col items-center gap-[18px] md:gap-4 sm:gap-2.5" key={index}>
               <Image
                 className="w-[72px] rounded-[8px] border border-grey-20 grayscale-[100%] filter sm:w-14"
                 width={72}
@@ -158,10 +158,10 @@ export default function OurTeam() {
                 src={photo}
                 alt={name}
               />
-              <div className="flex flex-col items-center gap-2 md:gap-1.5">
+              <div className="flex flex-col items-center gap-2 lg:gap-1.5 md:gap-[3px]">
                 <span className="text-18 font-medium leading-tight tracking-snug md:text-16">
                   {name}&nbsp;
-                  <img className="ml-1.5 inline w-3.5" src={countryIcon} alt="" />
+                  <img className="ml-1.5 inline w-3.5 md:ml-1" src={countryIcon} alt="" />
                 </span>
                 <p className="font-light leading-none tracking-snug text-grey-70 md:text-14 sm:text-13">
                   {position}
