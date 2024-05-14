@@ -65,7 +65,7 @@ function GithubStarCounter({ className }: ClassName) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <GithubLogo className="h-[18px] flex-shrink-0 fill-white" />
+        <GithubLogo className="h-[18px] flex-shrink-0 fill-white md:h-6" />
         <span>Star Us</span>
         <span className="h-5 w-px bg-white/20" aria-hidden />
         <span>{starsCount ? `${(parseInt(starsCount, 10) / 1000).toFixed(1)}k` : '...'}</span>
