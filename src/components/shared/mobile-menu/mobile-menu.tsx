@@ -11,8 +11,6 @@ import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
 
 import Link from '@/components/shared/link';
 
-import ArrowIcon from '@/svgs/icons/small-arrow.inline.svg';
-
 import Button from '../button';
 import GithubStarCounter from '../github-star-counter';
 
@@ -74,27 +72,23 @@ function MobileMenu({
               style={{ '--header-offset': `${headerOffset}px` } as React.CSSProperties}
               className="flex w-full flex-col bg-[linear-gradient(180deg,#0B0B0E_10%,#18181B_100%)] px-8 pb-7 pt-16 text-left lg:pt-[var(--header-offset)] sm:min-h-full sm:justify-between sm:px-5 sm:pb-5"
             >
-              <ul className="mt-[2px] w-full sm:mt-5">
+              <ul className="mt-[2px] w-full">
                 {MENU.header.map(({ href, label, items }, index) => {
                   return (
-                    <li className="border-b border-b-grey-15 text-white" key={index}>
+                    <li className="border-b border-b-grey-15/60 text-white" key={index}>
                       <Link
-                        className="relative flex w-full items-center py-[13px] font-medium leading-snug"
+                        className={clsx(
+                          'relative inline-flex w-full items-center py-[13px] font-medium leading-snug',
+                          {
+                            "before:absolute before:right-0 before:top-1/2 before:h-[5px] before:w-2 before:-translate-y-1/2 before:bg-[url('/images/svgs/small-arrow.inline.svg')] before:transition-transform before:duration-200":
+                              items,
+                            'before:rotate-180': isSubmenuOpen,
+                          },
+                        )}
                         href={href}
-                        theme="white"
                         onClick={(e) => handleClick(e, items)}
                       >
                         {label}
-                        {items && (
-                          <ArrowIcon
-                            className={clsx(
-                              'ml-auto h-[5px] rotate-180 transition-transform duration-200',
-                              {
-                                '-rotate-0': isSubmenuOpen,
-                              },
-                            )}
-                          />
-                        )}
                       </Link>
 
                       {items && (
@@ -113,11 +107,11 @@ function MobileMenu({
                                   childIndex,
                                 ) => (
                                   <li
-                                    className="before:absolute before:left-0 before:h-[1px] before:w-full before:bg-grey-15"
+                                    className="before:absolute before:left-0 before:h-[1px] before:w-full before:bg-grey-15/60"
                                     key={childIndex}
                                   >
                                     <Link
-                                      className="relative flex w-full items-center gap-1.5 py-3.5 leading-tight "
+                                      className="flex w-full items-center gap-1.5 py-3.5"
                                       href={childHref}
                                     >
                                       <Icon className="w-5 shrink-0 fill-grey-60" />
