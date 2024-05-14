@@ -105,25 +105,25 @@ const teamListData = [
     countryIcon: VN,
   },
   {
-    photo: fredericLefevereLaoide, // frederic-lefevere-laoide
+    photo: fredericLefevereLaoide,
     name: 'Frédéric Lefévère-Laoide',
     position: 'Senior Software Engineer',
     countryIcon: FR,
   },
   {
-    photo: longNguyenDinh, // long-nguyen-dinh
+    photo: longNguyenDinh,
     name: 'Long Nguyen Dinh',
     position: 'Software Engineer',
     countryIcon: VN,
   },
   {
-    photo: toanQuach, // toan-quach
+    photo: toanQuach,
     name: 'Toan Quach',
     position: 'Backend Engineer',
     countryIcon: VN,
   },
   {
-    photo: namNguyen, // nam-nguyen
+    photo: namNguyen,
     name: 'Nam Nguyen',
     position: 'Software Engineer',
     countryIcon: VN,
@@ -158,12 +158,19 @@ export default function OurTeam() {
                 src={photo}
                 alt={name}
               />
-              <div className="flex flex-col items-center gap-2 lg:gap-1.5 md:gap-[3px]">
+              <div className="flex flex-col gap-2 lg:gap-1.5 md:gap-[3px]">
                 <span className="text-18 font-medium leading-tight tracking-snug md:text-16">
                   {name}
                   <span className="whitespace-nowrap">
                     &nbsp;
-                    <img className="ml-1.5 inline w-3.5 md:ml-1" src={countryIcon} alt="" />
+                    <img
+                      className="ml-1.5 inline w-3.5 md:ml-1"
+                      src={countryIcon}
+                      width={14}
+                      height={18}
+                      alt=""
+                      loading="lazy"
+                    />
                   </span>
                 </span>
                 <p className="font-light leading-none tracking-snug text-grey-70 md:text-14 sm:text-13">

@@ -26,7 +26,6 @@ function Home() {
 
 export default Home;
 
-// TODO: change meta data to correct
 export async function generateMetadata() {
-  return getMetadata(SEO_DATA.BOOK_A_CALL);
+  return getMetadata(SEO_DATA.REQUEST_A_QUOTE);
 }

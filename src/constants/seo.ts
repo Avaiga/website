@@ -40,6 +40,18 @@ export const SEO_DATA = {
     description: 'Check out for our availability and book a call with us!',
     pathname: ROUTES.REQUEST_A_DEMO as string, // /book-a-call
   },
+  // TODO: change meta data to correct
+  REQUEST_A_DESIGNER_DEMO: {
+    title: 'Request a Designer Demo | Taipy',
+    description: 'Check out for our availability and book a call with us!',
+    pathname: ROUTES.REQUEST_A_DESIGNER_DEMO as string, // /request-a-designer-demo
+  },
+  // TODO: change meta data to correct
+  REQUEST_A_QUOTE: {
+    title: 'Request a Quote | Taipy',
+    description: 'Check out for our availability and book a call with us!',
+    pathname: ROUTES.REQUEST_A_QUOTE as string, // /request-a-quote
+  },
   MENTORSHIP: {
     title: 'Mentorship Program | Taipy',
     description:
