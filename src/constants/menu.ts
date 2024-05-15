@@ -32,24 +32,24 @@ export const MENU = {
           icon: DocsIcon,
         },
         {
-          label: 'Release Notes',
-          href: ROUTES.DOCUMENTATION_RELNOTES,
-          icon: ImportantIcon,
-        },
-        {
           label: 'Manuals',
           href: ROUTES.DOCUMENTATION_MANUALS,
           icon: FolderIcon,
         },
         {
-          label: 'Contributing',
-          href: ROUTES.DOCUMENTATION_CONTRIBUTING,
-          icon: StarIcon,
-        },
-        {
           label: 'Gallery',
           href: ROUTES.DOCUMENTATION_GALLERY,
           icon: BlocksIcon,
+        },
+        {
+          label: 'Release Notes',
+          href: ROUTES.DOCUMENTATION_RELNOTES,
+          icon: ImportantIcon,
+        },
+        {
+          label: 'Contributing',
+          href: ROUTES.DOCUMENTATION_CONTRIBUTING,
+          icon: StarIcon,
         },
       ],
     },
