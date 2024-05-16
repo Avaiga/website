@@ -40,16 +40,15 @@ export const SEO_DATA = {
     description: 'Check out for our availability and book a call with us!',
     pathname: ROUTES.REQUEST_A_DEMO as string, // /book-a-call
   },
-  // TODO: change meta data to correct
   REQUEST_A_DESIGNER_DEMO: {
-    title: 'Request a Designer Demo | Taipy',
-    description: 'Check out for our availability and book a call with us!',
+    title: 'What is Taipy Designer? Ask our team',
+    description:
+      'Want to create a user-friendly web interface effortlessly for your Python projects? Look no further, Taipy Designer is crafted for you. Our team will show you how it works',
     pathname: ROUTES.REQUEST_A_DESIGNER_DEMO as string, // /request-a-designer-demo
   },
-  // TODO: change meta data to correct
   REQUEST_A_QUOTE: {
-    title: 'Request a Quote | Taipy',
-    description: 'Check out for our availability and book a call with us!',
+    title: 'Put your project into production with security, simplicity, and efficiency',
+    description: 'Leverage a huge variety of Taipy’s features to level up your data and AI project',
     pathname: ROUTES.REQUEST_A_QUOTE as string, // /request-a-quote
   },
   MENTORSHIP: {

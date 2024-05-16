@@ -142,7 +142,8 @@ export default function OurTeam() {
       <div className="container max-w-[928px] text-center lg:max-w-[942px] md:max-w-[682px]">
         <span className="leading-snug text-primary-red">Our team</span>
         <h2 className="mt-4 text-48 font-medium leading-dense tracking-tight lg:text-44 md:text-36 sm:mt-3.5 sm:text-28">
-          A great team bringing together AI veterans and talented young developers
+          A management team that combines years of industry experience with todays innovative
+          technologies
         </h2>
         <p className="mx-auto mt-4 max-w-[680px] text-18 font-light leading-snug tracking-snug text-grey-70 lg:mt-[18px] sm:mt-3 sm:max-w-[296px] sm:text-16">
           We are committed to helping organizations gain visibility into their IT infrastructure
