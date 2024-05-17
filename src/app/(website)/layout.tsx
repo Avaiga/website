@@ -50,17 +50,17 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
                     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
                 }
 
-                function loadPlausible(srcUrl, dataDomain) {
+                function loadPlausible() {
                     const script = document.createElement('script'); 
-                    script.src = srcUrl; 
-                    script.setAttribute('data-domain', dataDomain); 
+                    script.src = 'https://plausible.io/js/script.tagged-events.js'; 
+                    script.setAttribute('data-domain', 'taipy.io'); 
                     document.head.appendChild(script); 
                 }
 
-                function loadClearbit(srcUrl, referrerPolicy) {
+                function loadClearbit() {
                   const script = document.createElement('script'); 
-                  script.src = srcUrl; 
-                  script.setAttribute('referrerpolicy', referrerPolicy); 
+                  script.src = 'https://tag.clearbitscripts.com/v1/pk_1733d1e9903ce4818fec6c5fdd8118cf/tags.js'; 
+                  script.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin'); 
                   document.head.appendChild(script); 
                 }
 
@@ -71,10 +71,10 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
                       loadHotjar();
                     }
                     if (choices.plausible) {
-                      loadPlausible('https://plausible.io/js/script.tagged-events.js', 'taipy.io');
+                      loadPlausible();
                     }
                     if (choices.clearbit) {
-                      loadClearbit('https://tag.clearbitscripts.com/v1/pk_1733d1e9903ce4818fec6c5fdd8118cf/tags.js', 'strict-origin-when-cross-origin');
+                      loadClearbit();
                     }
                   });
                 });
