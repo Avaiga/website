@@ -90,6 +90,8 @@ function Header() {
                                 <Link
                                   className="flex items-center gap-1.5 fill-grey-50 text-grey-70 hover:fill-white hover:text-white"
                                   href={childHref}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                 >
                                   <Icon className="transition-fill w-5 shrink-0 duration-100" />
                                   <span className="text-14 font-normal leading-dense transition-colors duration-100">

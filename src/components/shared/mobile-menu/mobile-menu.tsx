@@ -113,6 +113,8 @@ function MobileMenu({
                                     <Link
                                       className="flex w-full items-center gap-1.5 py-3.5"
                                       href={childHref}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
                                     >
                                       <Icon className="w-5 shrink-0 fill-grey-60" />
                                       <span className="text-15 font-normal leading-dense">
