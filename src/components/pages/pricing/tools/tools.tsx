@@ -61,7 +61,7 @@ const toolBlocks: Tool[] = [
   },
   {
     logo: serverRackIcon,
-    title: 'Data management',
+    title: 'Scenario data management',
     description: 'Robust scenario data management.',
   },
   {
