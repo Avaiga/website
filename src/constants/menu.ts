@@ -37,8 +37,8 @@ export const MENU = {
           icon: FolderIcon,
         },
         {
-          label: 'Gallery',
-          href: ROUTES.DOCUMENTATION_GALLERY,
+          label: 'Apps Examples',
+          href: ROUTES.DOCUMENTATION_APPS_EXAMPLES,
           icon: BlocksIcon,
         },
         {
@@ -53,7 +53,7 @@ export const MENU = {
         },
       ],
     },
-    { label: 'Apps Examples', href: ROUTES.APPS_EXAMPLES },
+    { label: 'Apps Examples', href: ROUTES.DOCUMENTATION_APPS_EXAMPLES },
   ],
   footer: {
     main: [
