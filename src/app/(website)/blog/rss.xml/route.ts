@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import Rss from 'rss';
 
 import { portableToPlain } from '@/lib/portable-to-plain';
@@ -14,13 +14,13 @@ export async function GET() {
     language: 'en',
     title: `Blog — Taipy`,
     description: 'The latest product updates from Taipy',
-    feed_url: `${SITE_URL}/${ROUTE.BLOG}/rss.xml`,
+    feed_url: `${SITE_URL}/${ROUTES.BLOG}/rss.xml`,
     site_url: SITE_URL!,
   });
 
   allBlogPosts.forEach((post) => {
     const { category, slug, lead, publishedAt, title, author, contentRaw } = post;
-    const url = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}${ROUTE.BLOG}/${slug.current}`;
+    const url = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}${ROUTES.BLOG}/${slug.current}`;
 
     feed.item({
       guid: url,

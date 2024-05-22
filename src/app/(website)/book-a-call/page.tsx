@@ -1,7 +1,7 @@
 import { SEO_DATA } from '@/constants/seo';
 
-import Hero from '@/components/pages/book-a-call/hero';
 import Calendar from '@/components/shared/calendar';
+import PageHeader from '@/components/shared/page-header';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';
@@ -9,7 +9,10 @@ import { getMetadata } from '@/lib/get-metadata';
 function Home() {
   return (
     <>
-      <Hero />
+      <PageHeader
+        tagline="Let's have our first contact"
+        headerText="Check our availability and book a call with us"
+      />
       <Calendar calLink="team/taipy-sales/30-min-header-sales-request" />
       <Subscribe
         className="my-[120px] md:my-24 sm:mt-20"

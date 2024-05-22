@@ -22,8 +22,8 @@ interface ExtendedSanityDocument extends SanityDocument {
   };
 }
 
+function getPreviewUrl(doc: ExtendedSanityDocument, categoryUrl: string = '') {
 // TODO: setup preview like this https://www.sanity.io/docs/preview-url-secret
-function getPreviewUrl(doc: ExtendedSanityDocument) {
   const host = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
   const url = new URL('/api/preview', host);
 
@@ -31,7 +31,7 @@ function getPreviewUrl(doc: ExtendedSanityDocument) {
 
   url.searchParams.append(
     'redirect_url',
-    new URL(`/blog${doc?.slug?.current ? `/${doc.slug.current}` : ''}`, host).toString(),
+    new URL(`${categoryUrl}/${doc?.slug?.current ? `/${doc.slug.current}` : ''}`, host).toString(),
   );
 
   return url.toString();
@@ -45,7 +45,21 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, { schemaType
         S.view
           .component(Iframe)
           .options({
-            url: (doc: ExtendedSanityDocument) => getPreviewUrl(doc),
+            url: (doc: ExtendedSanityDocument) => getPreviewUrl(doc, '/blog'),
+            showDisplayUrl: false,
+            reload: {
+              button: true,
+            },
+          })
+          .title('Preview'),
+      ]);
+    case 'customerStory':
+      return S.document().views([
+        S.view.form(),
+        S.view
+          .component(Iframe)
+          .options({
+            url: (doc: ExtendedSanityDocument) => getPreviewUrl(doc, '/customer-stories'),
             showDisplayUrl: false,
             reload: {
               button: true,

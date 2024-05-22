@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 
 import Heading from '@/components/pages/pricing/heading/heading';
 import Button from '@/components/shared/button';
@@ -34,7 +34,7 @@ function Plans() {
         </div>
         <Button
           className="md:font-14 relative mt-2.5 w-full max-w-[180px] leading-snug lg:mt-1 md:mt-2 md:max-w-[160px]"
-          href={ROUTE.REQUEST_A_DEMO}
+          href={ROUTES.REQUEST_A_QUOTE}
           size="lg"
           theme="red-filled"
         >

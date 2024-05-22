@@ -1,8 +1,8 @@
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 
-import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/posts-list';
+import Pagination from '@/components/shared/pagination';
 
 import { getMetadata } from '@/lib/get-metadata';
 import { countPosts, getPosts, getPromotedPost } from '@/lib/sanity/client';
@@ -24,7 +24,7 @@ async function Blog() {
         posts={promotedPost ? [promotedPost, ...posts] : posts}
         withFeatured={!!promotedPost}
       />
-      <Pagination currentPage={1} pageCount={pageCount} path={`${ROUTE.BLOG}`} />
+      <Pagination currentPage={1} pageCount={pageCount} path={`${ROUTES.BLOG}`} />
     </>
   );
 }

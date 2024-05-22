@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 
 import Link from '@/components/shared/link';
@@ -50,7 +50,7 @@ function Sidebar({ categories }: CategoriesListProps) {
                       slug.current !== currentCategorySlug,
                   },
                 )}
-                href={slug.current ? `${ROUTE.BLOG_CATEGORY}/${slug.current}` : ROUTE.BLOG}
+                href={slug.current ? `${ROUTES.BLOG_CATEGORY}/${slug.current}` : ROUTES.BLOG}
               >
                 {titleShort}
               </Link>

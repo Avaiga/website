@@ -102,6 +102,7 @@ module.exports = {
       btn: '0 8px 20px 0 rgba(255, 70, 43, 0.32)',
       toggler: '0 6px 6px rgba(0, 0, 0, 0.23)',
       icon: '0px 0px 10px 4px rgba(255, 55, 26, 0.8)',
+      submenu: '2px 33px 73px 1px rgba(24, 24, 27, 1);',
     },
 
     colors: ({ colors }) => ({
