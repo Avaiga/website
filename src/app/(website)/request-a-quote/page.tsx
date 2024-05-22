@@ -13,7 +13,7 @@ function Home() {
         tagline="Let's have our first contact"
         headerText="Check our availability and book a call with us"
       />
-      <Calendar calLink="team/taipy-sales/30-min-header-sales-request" />
+      <Calendar calLink="team/taipy-sales/30-min-call" />
       <Subscribe
         className="my-[120px] md:my-24 sm:mt-20"
         tagline="Integrations"
@@ -27,5 +27,5 @@ function Home() {
 export default Home;
 
 export async function generateMetadata() {
-  return getMetadata(SEO_DATA.BOOK_A_CALL);
+  return getMetadata(SEO_DATA.REQUEST_A_QUOTE);
 }

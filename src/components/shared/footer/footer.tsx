@@ -42,7 +42,13 @@ function Footer() {
         <div className="mt-[62px] flex items-end justify-between lg:mt-[60px] md:mt-11 md:flex-wrap">
           <div className="flex gap-x-6 md:mb-5 md:w-full md:border-b md:border-b-grey-10 md:pb-7 sm:gap-x-5">
             {MENU.footer.social.map(({ href, icon: Icon, label }, index) => (
-              <Link href={href} key={index} aria-label={label}>
+              <Link
+                href={href}
+                key={index}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icon className="h-5 w-5 fill-white hover:fill-grey-90" />
               </Link>
             ))}

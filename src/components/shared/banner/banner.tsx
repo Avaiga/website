@@ -18,6 +18,7 @@ function Banner({ title, linkText, linkUrl }: BannerProps) {
             'after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[linear-gradient(90deg,rgba(91,192,243,0)_0%,rgba(91,192,243,0.3)_56.75%,rgba(91,192,243,0)_109.09%)]',
           )}
           href={linkUrl}
+          prefetch={false}
           arrowTheme="blue"
         >
           <span className="shrink truncate xs:w-full xs:text-wrap xs:text-center">{title}</span>

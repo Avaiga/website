@@ -47,7 +47,7 @@ export default function Compairing() {
         style={contentStyle}
         className="h-[--content-height] overflow-hidden transition-[height] duration-500"
       >
-        <section className="choose-version mt-[165px] bg-transparent text-white px-safe lg:mt-[126px] md:mt-[96px] sm:mt-[77px]">
+        <section className="choose-version mt-24 bg-transparent text-white px-safe lg:mt-[72px] md:mt-16 sm:mt-12">
           <div className="container max-w-[768px] md:max-w-[704px]">
             <Heading text="Comparison table" />
             <div className="mt-11 grid grid-cols-12 lg:mt-[34px] md:mt-[30px] sm:mt-[21px]">

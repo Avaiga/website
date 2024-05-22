@@ -11,6 +11,8 @@ export const ROUTES: Record<string, URL | Route<string>> = {
   ABOUT_US: '/about-us',
   DOCUMENTATION: 'https://docs.taipy.io/en/latest/',
   REQUEST_A_DEMO: '/book-a-call',
+  REQUEST_A_QUOTE: '/request-a-quote',
+  REQUEST_A_DESIGNER_DEMO: '/request-a-designer-demo',
   MENTORSHIP: '/mentorship',
   ENTERPRISE: '/enterprise',
   TERMS: '/terms-of-use', // https://www.taipy.io/legal/terms-of-use
