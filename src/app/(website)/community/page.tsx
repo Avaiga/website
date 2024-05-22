@@ -2,7 +2,6 @@ import { SEO_DATA } from '@/constants/seo';
 
 import Benefits from '@/components/pages/community/benefits';
 import Contributors from '@/components/pages/community/contributors';
-import Features from '@/components/pages/community/features';
 import Hero from '@/components/pages/community/hero';
 import Involve from '@/components/pages/community/involve';
 import LatestPosts from '@/components/pages/community/latest-posts';
@@ -17,7 +16,6 @@ function Community() {
     <>
       <Hero />
       <Involve />
-      <Features />
       <Training />
       <Subscribe
         tagline="Integrations"

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import bgImage from '@/images/pages/community/hero/illustration.png';
 
 import Button from '@/components/shared/button';
@@ -27,7 +27,7 @@ function Hero() {
               className="w-[190px] gap-x-2.5 px-3 sm:w-[119px]"
               size="lg"
               theme="outline"
-              href={ROUTE.GITHUB}
+              href={ROUTES.GITHUB}
               target="_blank"
             >
               <GithubLogo className="h-6 flex-shrink-0 fill-white" />

@@ -1,4 +1,4 @@
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import iconLayout from '@/images/pages/community/training/number-layout.svg';
 
 import Button from '@/components/shared/button';
@@ -41,7 +41,7 @@ function Training() {
             className="mt-8 md:absolute md:top-full md:w-[152px] sm:mt-6 sm:w-[141px]"
             size="lg"
             theme="red-filled"
-            href={ROUTE.MENTORSHIP}
+            href={ROUTES.MENTORSHIP}
           >
             Get started
           </Button>

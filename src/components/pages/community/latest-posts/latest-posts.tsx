@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 
 import Link from '@/components/shared/link';
 import PostItem from '@/components/shared/post-item';
@@ -26,7 +26,7 @@ export default async function LatestPosts() {
           <h2 className="text-32 font-semibold leading-none tracking-tight md:text-24">
             Latest blog posts
           </h2>
-          <Link href={ROUTE.BLOG} size="md" theme="white" arrowTheme="red">
+          <Link href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
             All posts
           </Link>
         </div>
@@ -79,7 +79,7 @@ export async function generateMetadata({
   return getMetadata({
     title: seo?.metaTitle || title,
     description,
-    pathname: `${ROUTE.BLOG}/${slug.current}/`,
+    pathname: `${ROUTES.BLOG}/${slug.current}/`,
     imagePath,
   });
 }

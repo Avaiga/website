@@ -60,6 +60,6 @@ export const SEO_DATA = {
   COMMUNITY: {
     title: 'Community | Taipy',
     description: "Be part of Taipy's adventure!",
-    pathname: ROUTE.COMMUNITY as string, // /community
+    pathname: ROUTES.COMMUNITY as string, // /community
   },
 };
