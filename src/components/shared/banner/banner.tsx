@@ -10,7 +10,7 @@ interface BannerProps {
 
 function Banner({ title, linkText, linkUrl }: BannerProps) {
   return (
-    <div className="banner bg-[linear-gradient(90deg,rgba(91,192,243,0)_0%,rgba(91,192,243,0.2)_56.75%,rgba(91,192,243,0)_109.09%)] px-safe pt-safe">
+    <div className="banner relative z-50 bg-[#0B0B0E] bg-[linear-gradient(90deg,rgba(91,192,243,0)_0%,rgba(91,192,243,0.2)_56.75%,rgba(91,192,243,0)_109.09%)] px-safe pt-safe">
       <div className="container-narrow">
         <Link
           className={clsx(

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { MENU } from '@/constants/menu';
 import { ROUTES } from '@/constants/routes';
+import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
 import Burger from '@/components/shared/header/burger';
@@ -40,7 +41,12 @@ function Header() {
 
   return (
     <>
-      <header ref={headerEl} className="absolute left-0 right-0 top-0 z-50 h-16 px-safe pt-safe">
+      <header
+        ref={headerEl}
+        className={clsx('absolute left-0 right-0 top-0 z-50 h-16 px-safe pt-safe', {
+          'bg-[#0B0B0E]': isMobileMenuOpen,
+        })}
+      >
         <div className="container-narrow flex h-full items-center justify-between lg:justify-start md:justify-between">
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <span className="sr-only">Taipy</span>
@@ -58,13 +64,49 @@ function Header() {
             aria-label="Global"
           >
             <ul className="flex gap-x-7 md:hidden">
-              {MENU.header.map(({ label, href }, index) => (
-                <li key={index}>
-                  <Link href={href} size="sm" theme="white">
-                    {label}
-                  </Link>
-                </li>
-              ))}
+              {MENU.header.map(({ href, label, items }, index) => {
+                return (
+                  <li className={clsx(items && 'group relative')} key={index}>
+                    <Link
+                      className={clsx(
+                        'relative leading-none transition-colors duration-200 group-hover:text-grey-80 group-hover:before:rotate-180',
+                        {
+                          "pr-3.5 before:absolute before:right-0 before:top-1/2 before:h-[5px] before:w-2 before:-translate-y-1/2 before:bg-[url('/images/svgs/small-arrow.inline.svg')] before:transition-all before:duration-200":
+                            items,
+                        },
+                      )}
+                      href={href}
+                      size="sm"
+                      theme="white"
+                    >
+                      {label}
+                    </Link>
+                    {items && (
+                      <div className="invisible absolute -left-3.5 bottom-0 translate-y-full pt-3 opacity-0 transition-[opacity,visibility] duration-100 group-hover:visible group-hover:opacity-100">
+                        <ul className="flex min-w-40 max-w-[420px] flex-col gap-3 rounded-[4px] border border-grey-15 bg-grey-10 p-3.5 shadow-submenu">
+                          {items.map(
+                            ({ label: childLabel, href: childHref, icon: Icon }, childIndex) => (
+                              <li key={childIndex}>
+                                <Link
+                                  className="flex items-center gap-1.5 fill-grey-50 text-grey-70 hover:fill-white hover:text-white"
+                                  href={childHref}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <Icon className="transition-fill w-5 shrink-0 duration-100" />
+                                  <span className="text-14 font-normal leading-dense transition-colors duration-100">
+                                    {childLabel}
+                                  </span>
+                                </Link>
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             <div className="flex gap-5">
@@ -87,7 +129,7 @@ function Header() {
       <MobileMenu
         isOpen={isMobileMenuOpen}
         headerOffset={headerOffset}
-        onClick={toggleMobileMenu}
+        hideMobileMenu={() => setIsMobileMenuOpen(false)}
       />
     </>
   );

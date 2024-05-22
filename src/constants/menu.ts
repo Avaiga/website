@@ -1,10 +1,15 @@
+import BlocksIcon from '@/svgs/icons/header/blocks.inline.svg';
+import DocsIcon from '@/svgs/icons/header/docs.inline.svg';
+import FolderIcon from '@/svgs/icons/header/folder.inline.svg';
+import ImportantIcon from '@/svgs/icons/header/important.inline.svg';
+import LaunchIcon from '@/svgs/icons/header/launch.inline.svg';
+import StarIcon from '@/svgs/icons/header/star.inline.svg';
 import DiscordLogo from '@/svgs/icons/logo-discord.inline.svg';
 import GithubLogo from '@/svgs/icons/logo-github.inline.svg';
 import LinkedinLogo from '@/svgs/icons/logo-linkedin.inline.svg';
 import TwitterLogo from '@/svgs/icons/logo-x.inline.svg';
 import YoutubeLogo from '@/svgs/icons/logo-youtube.inline.svg';
 
-// @TODO: should be plural
 import { ROUTES } from './routes';
 
 export const MENU = {
@@ -12,7 +17,43 @@ export const MENU = {
     { label: 'Blog', href: ROUTES.BLOG },
     { label: 'About', href: ROUTES.ABOUT_US },
     { label: 'Pricing', href: ROUTES.PRICING },
-    { label: 'Docs', href: ROUTES.DOCUMENTATION },
+    {
+      label: 'Docs',
+      href: ROUTES.DOCUMENTATION,
+      items: [
+        {
+          label: 'Getting Started',
+          href: ROUTES.DOCUMENTATION_GETTING_STARTED,
+          icon: LaunchIcon,
+        },
+        {
+          label: 'Tutorials',
+          href: ROUTES.DOCUMENTATION_TUTORIALS,
+          icon: DocsIcon,
+        },
+        {
+          label: 'Manuals',
+          href: ROUTES.DOCUMENTATION_MANUALS,
+          icon: FolderIcon,
+        },
+        {
+          label: 'Apps Examples',
+          href: ROUTES.DOCUMENTATION_APPS_EXAMPLES,
+          icon: BlocksIcon,
+        },
+        {
+          label: 'Release Notes',
+          href: ROUTES.DOCUMENTATION_RELNOTES,
+          icon: ImportantIcon,
+        },
+        {
+          label: 'Contributing',
+          href: ROUTES.DOCUMENTATION_CONTRIBUTING,
+          icon: StarIcon,
+        },
+      ],
+    },
+    { label: 'Apps Examples', href: ROUTES.DOCUMENTATION_APPS_EXAMPLES },
   ],
   footer: {
     main: [
