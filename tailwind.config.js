@@ -94,11 +94,14 @@ module.exports = {
         'linear-gradient(to bottom, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 29.3761%, rgba(42, 42, 45, 0.4) 100%)',
       'gradient-hero-digit':
         'radial-gradient(95.97% 100% at 50% 0%, rgba(255, 92, 77, 0.00) 28.79%, #FF5C4D 100%)',
+      'digit-gradient':
+        'radial-gradient(95.66% 103.97% at 4.88% 100.06%, #BCBCC3 0%, #A2A2A9 91.59%)',
     },
 
     boxShadow: {
       btn: '0 8px 20px 0 rgba(255, 70, 43, 0.32)',
       toggler: '0 6px 6px rgba(0, 0, 0, 0.23)',
+      icon: '0px 0px 10px 4px rgba(255, 55, 26, 0.8)',
       submenu: '2px 33px 73px 1px rgba(24, 24, 27, 1);',
     },
 

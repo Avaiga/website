@@ -21,6 +21,7 @@ export const ROUTES: Record<string, URL | Route<string>> = {
   REQUEST_A_DESIGNER_DEMO: '/request-a-designer-demo',
   MENTORSHIP: '/mentorship',
   ENTERPRISE: '/enterprise',
+  COMMUNITY: '/community',
   TERMS: '/terms-of-use', // https://www.taipy.io/legal/terms-of-use
   COMPANY: '/',
   TWITTER: new URL('https://twitter.com/Taipy_io'),

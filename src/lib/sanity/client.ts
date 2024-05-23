@@ -15,6 +15,7 @@ import {
   categoryQuery,
   countCustomerStoryQuery,
   countPostQuery,
+  latestPostsQuery,
   customerStoryQuery,
   legalQuery,
   postQuery,
@@ -133,6 +134,12 @@ export const getRelatedPosts = async ({ postId }: { postId: string }): Promise<P
     .then((data) => data.allPost);
 };
 
+
+export const getLatestPosts = async (): Promise<SinglePost[]> =>
+  await graphQLClient
+    .request<{ allPost: SinglePost[] }>(latestPostsQuery)
+    .then((data) => data.allPost);
+
 export const getAllRelatedPosts = async (): Promise<Post[]> => {
   return await graphQLClient
     .request<{ allPost: Post[] }>(allPostWithLimitationsQuery, {
@@ -141,6 +148,7 @@ export const getAllRelatedPosts = async (): Promise<Post[]> => {
     })
     .then((data) => data.allPost);
 };
+
 
 export const getPromotedPost = async (): Promise<Post | null> =>
   await graphQLClient
