@@ -21,8 +21,7 @@ export default function Hero() {
           SSO, ACL, Scalability and Robustness
         </h1>
         <p className="mx-auto max-w-[642px] pt-5 leading-snug opacity-80 lg:max-w-[576px] md:pt-4 sm:pt-[14px] sm:text-14">
-          Built on Python with decades of industry expertise. You can count on us to deliver
-          products that address your needs today and in the future.
+          Built on Python with decades of industry expertise.
         </p>
         <Button
           className="relative mt-6 w-full max-w-[180px] lg:mt-7 sm:mt-[22px]"
@@ -43,7 +42,7 @@ export default function Hero() {
             <p className="pt-4 leading-snug text-grey-70 lg:text-14 md:pt-3.5 sm:pt-2">
               Create a user-friendly web interface effortlessly for your Python projects. Streamline
               your workflow by easily crafting interactive web interfaces without the need for a
-              single line of code
+              single line of code.
             </p>
           </div>
           <div className="relative flex w-full max-w-[511px] items-end lg:max-w-[490px] sm:pb-2">

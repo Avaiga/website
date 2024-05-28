@@ -40,7 +40,7 @@ function Benefits() {
       <div className="container relative flex max-w-[1280px] gap-x-16 lg:max-w-[1024px] lg:gap-x-8 md:max-w-[640px] md:flex-col md:items-center md:gap-y-10 sm:gap-y-[46px]">
         <div className="max-w-[384px] shrink-0 grow lg:max-w-[352px] md:max-w-[576px] md:text-center">
           <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36 sm:text-28">
-            Taipy Designer added value
+            Taipy Enterprise added value
           </h2>
           <p className="mt-6 text-18 text-grey-70 lg:mt-5 lg:text-16 lg:font-light md:mt-4 sm:mt-3 sm:text-14">
             Taipy Designer gives you ease of use, flexibility, collaboration, and faster time to
