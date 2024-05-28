@@ -9,6 +9,7 @@ export const ROUTES: Record<string, URL | Route<string>> = {
   BANNER: '/taipy-tech-talk', // https://www.taipy.io/events/taipy-tech-talk
   PRICING: '/pricing',
   ABOUT_US: '/about-us',
+  CONTACT_US: '/contact-us',
   DOCUMENTATION: 'https://docs.taipy.io/en/latest/',
   DOCUMENTATION_APPS_EXAMPLES: 'https://docs.taipy.io/en/latest/gallery/',
   DOCUMENTATION_CONTRIBUTING: 'https://docs.taipy.io/en/latest/contributing/contributing/',

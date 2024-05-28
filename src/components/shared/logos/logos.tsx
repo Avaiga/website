@@ -32,9 +32,10 @@ const allLogos: LogoComponents = {
 interface LogosProps {
   className?: string;
   logos: string[];
+  isWide?: boolean;
 }
 
-function LogosWall({ className, logos }: LogosProps) {
+function LogosWall({ className, logos, isWide }: LogosProps) {
   return (
     <div className={clsx('logos', className)}>
       <ul className="logos-content">
@@ -43,7 +44,12 @@ function LogosWall({ className, logos }: LogosProps) {
 
           return (
             <li key={idx}>
-              <Logo className="sm:h-6.5 h-10 w-auto md:h-8" />
+              <Logo
+                className={clsx('sm:h-6.5 h-10 w-auto', {
+                  'md:h-12 sm:h-10': !isWide,
+                  'md:h-8': isWide,
+                })}
+              />
             </li>
           );
         })}
@@ -54,7 +60,12 @@ function LogosWall({ className, logos }: LogosProps) {
 
           return (
             <li key={idx}>
-              <Logo className="sm:h-6.5 h-10 w-auto md:h-8" />
+              <Logo
+                className={clsx('sm:h-6.5 h-10 w-auto ', {
+                  'md:h-12 sm:h-10': !isWide,
+                  'md:h-8': isWide,
+                })}
+              />
             </li>
           );
         })}
@@ -63,17 +74,29 @@ function LogosWall({ className, logos }: LogosProps) {
   );
 }
 
-function Logos({ className = '', logos }: LogosProps) {
+function Logos({ className = '', logos, isWide = true }: LogosProps) {
   return (
     <div
       className={clsx(
-        'container mt-[136px] w-full max-w-[960px] lg:mt-[118px] lg:max-w-[832px] md:mt-[78px] md:max-w-[704px]',
+        'container w-full max-w-[960px] lg:max-w-[832px] md:max-w-[704px]',
         className,
+        { 'mt-8 px-2 sm:mt-6': !isWide, 'mt-[136px] lg:mt-[118px] md:mt-[78px]': isWide },
       )}
     >
-      <h3 className="text-center leading-snug text-primary-red sm:text-14">They trust us</h3>
-      <div className="mt-[56px] select-none md:-mb-8 md:mt-[43px] sm:mt-[41px]">
-        <LogosWall className="logos-sides-fade" logos={logos} />
+      <h3
+        className={clsx('text-center leading-snug text-primary-red sm:text-14', {
+          hidden: !isWide,
+        })}
+      >
+        They trust us
+      </h3>
+      <div
+        className={clsx('select-none md:-mb-8', {
+          'mt-2': !isWide,
+          'mt-[56px] md:mt-[43px] sm:mt-[41px]': isWide,
+        })}
+      >
+        <LogosWall className="logos-sides-fade" logos={logos} isWide={isWide} />
       </div>
     </div>
   );

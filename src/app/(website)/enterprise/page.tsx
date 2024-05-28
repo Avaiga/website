@@ -4,9 +4,9 @@ import Benefits from '@/components/pages/enterprise/benefits/benefits';
 import Designer from '@/components/pages/enterprise/designer';
 import Features from '@/components/pages/enterprise/features';
 import Hero from '@/components/pages/enterprise/hero';
-import Logos from '@/components/pages/enterprise/logos/logos';
 import Testimonial from '@/components/pages/enterprise/testimonial';
 import CTA from '@/components/shared/CTA/CTA';
+import Logos from '@/components/shared/logos/logos';
 
 import { getMetadata } from '@/lib/get-metadata';
 

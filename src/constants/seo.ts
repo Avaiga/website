@@ -62,4 +62,9 @@ export const SEO_DATA = {
     description: "Be part of Taipy's adventure!",
     pathname: ROUTES.COMMUNITY as string, // /community
   },
+  CONTACT_US: {
+    title: 'Contact Taipy',
+    description: `Have a question, seek for support? Just send us an email, and we'll be sure to respond promptly.`,
+    pathname: ROUTES.CONTACT_US as string, // /contact-us
+  },
 };
