@@ -65,6 +65,6 @@ export const SEO_DATA = {
   CONTACT_US: {
     title: 'Contact Taipy',
     description: `Have a question, seek for support? Just send us an email, and we'll be sure to respond promptly.`,
-    pathname: ROUTE.CONTACT_US as string, // /contact-us
+    pathname: ROUTES.CONTACT_US as string, // /contact-us
   },
 };

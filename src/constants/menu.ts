@@ -60,12 +60,12 @@ export const MENU = {
       {
         title: 'Taipy',
         items: [
-          { label: 'Home', href: ROUTE.INDEX },
-          { label: 'About us', href: ROUTE.ABOUT_US },
-          { label: 'Enterprise', href: ROUTE.ENTERPRISE },
-          { label: 'Pricing', href: ROUTE.PRICING },
+          { label: 'Home', href: ROUTES.INDEX },
+          { label: 'About us', href: ROUTES.ABOUT_US },
+          { label: 'Enterprise', href: ROUTES.ENTERPRISE },
+          { label: 'Pricing', href: ROUTES.PRICING },
           { label: 'Customer Stories', href: ROUTES.CUSTOMER_STORIES },
-          { label: 'Contact us', href: ROUTE.CONTACT_US },
+          { label: 'Contact us', href: ROUTES.CONTACT_US },
         ],
       },
       {

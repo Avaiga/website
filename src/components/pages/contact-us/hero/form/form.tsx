@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { BUTTON_SUCCESS_TIMEOUT_MS, FORM_REQUEST_LIST_ID, STATE } from '@/constants/forms';
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
@@ -188,7 +188,7 @@ function Form() {
       <div className="relative mt-5 flex items-center justify-between lg:mt-6 sm:mt-4 sm:flex-col-reverse">
         <p className="max-w-72 text-15 font-light leading-snug tracking-snug text-grey-70 sm:mt-3.5 sm:text-center sm:text-14">
           By submitting this, I confirm that I have read and understood the&nbsp;
-          <Link className="font-medium text-secondary-blue" href={ROUTE.PRIVACY}>
+          <Link className="font-medium text-secondary-blue" href={ROUTES.PRIVACY}>
             Privacy Policy.
           </Link>
         </p>
