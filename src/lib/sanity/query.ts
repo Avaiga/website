@@ -73,6 +73,46 @@ export const commonPostFieldsFragment = gql`
   }
 `;
 
+export const commonCustomerStoryFieldsFragment = gql`
+  fragment commonCustomerStoryFields on CustomerStory {
+    _id
+    publishedAt
+    title
+    lead
+    slug {
+      current
+    }
+    cover {
+      asset {
+        _id
+        altText
+        metadata {
+          lqip
+        }
+      }
+    }
+    companyLogo {
+      asset {
+        _id
+        altText
+        metadata {
+          lqip
+        }
+      }
+    }
+    author {
+      _id
+      name
+      image {
+        asset {
+          _id
+          altText
+        }
+      }
+    }
+  }
+`;
+
 export const commonPostFieldsWithRelatedFragment = gql`
   ${commonPostFieldsFragment}
 
@@ -95,11 +135,44 @@ export const commonPostFieldsWithRelatedFragment = gql`
   }
 `;
 
+export const commonCustomerStoryFieldsWithRelatedFragment = gql`
+  ${commonCustomerStoryFieldsFragment}
+  ${commonPostFieldsFragment}
+
+  fragment commonCustomerStoryFieldsWithRelated on CustomerStory {
+    ...commonCustomerStoryFields
+    lead
+    contentRaw
+    related {
+      ...commonPostFields
+    }
+    seo {
+      metaTitle
+      metaDescription
+      socialImage {
+        asset {
+          _id
+        }
+      }
+    }
+  }
+`;
+
 export const allPostQuery = gql`
   ${commonPostFieldsWithRelatedFragment}
 
   query Posts {
     allPost(sort: { publishedAt: DESC }) {
+      ...commonPostFieldsWithRelated
+    }
+  }
+`;
+
+export const latestPostsQuery = gql`
+  ${commonPostFieldsWithRelatedFragment}
+
+  query LatestPosts {
+    allPost(sort: { publishedAt: DESC }, limit: 3) {
       ...commonPostFieldsWithRelated
     }
   }
@@ -144,6 +217,44 @@ export const postQuery = gql`
   }
 `;
 
+export const allCustomerStoryQuery = gql`
+  ${commonCustomerStoryFieldsWithRelatedFragment}
+
+  query CustomerStories {
+    allCustomerStory(sort: { publishedAt: DESC }) {
+      ...commonCustomerStoryFieldsWithRelated
+    }
+  }
+`;
+
+export const allCustomerStoryWithLimitationsQuery = gql`
+  ${commonCustomerStoryFieldsFragment}
+
+  query CustomerStories($where: CustomerStoryFilter, $offset: Int, $limit: Int) {
+    allCustomerStory(sort: { publishedAt: DESC }, offset: $offset, limit: $limit, where: $where) {
+      ...commonCustomerStoryFields
+    }
+  }
+`;
+
+export const countCustomerStoryQuery = gql`
+  query CountCustomerStories($where: CustomerStoryFilter) {
+    allCustomerStory(where: $where) {
+      _id
+    }
+  }
+`;
+
+export const customerStoryQuery = gql`
+  ${commonCustomerStoryFieldsWithRelatedFragment}
+
+  query CustomerStory($slug: String!) {
+    allCustomerStory(where: { slug: { current: { eq: $slug } } }) {
+      ...commonCustomerStoryFieldsWithRelated
+    }
+  }
+`;
+
 export const allLegalQuery = gql`
   query Legals {
     allLegal {
@@ -175,6 +286,16 @@ export const legalQuery = gql`
           }
         }
       }
+    }
+  }
+`;
+
+export const bannerQuery = gql`
+  query Banner {
+    allBanner(where: { isPublished: { eq: true } }, limit: 1) {
+      title
+      linkText
+      linkUrl
     }
   }
 `;

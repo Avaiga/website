@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
@@ -46,7 +46,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
           {isEnterprise ? (
             <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 md:mt-5 sm:mt-4">
               <Link
-                href={ROUTE.PRICING}
+                href={ROUTES.PRICING}
                 className="whitespace-nowrap px-[47px] py-[13px] font-semibold leading-snug text-black transition-colors duration-300"
               >
                 See pricing
@@ -77,7 +77,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
             {isEnterprise ? (
               <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 md:mt-5 sm:mt-4">
                 <Link
-                  href={ROUTE.REQUEST_A_DEMO}
+                  href={ROUTES.REQUEST_A_DEMO}
                   className="whitespace-nowrap px-[47px] py-[13px] font-semibold leading-snug text-black transition-colors duration-300"
                 >
                   Request a demo
@@ -88,7 +88,7 @@ function CTA({ isEnterprise = false, className = 'my-[202px] lg:my-32 md:my-24 s
                 className="mt-6 w-full max-w-[180px] md:max-w-40 sm:mt-5"
                 size="lg"
                 theme="white-filled"
-                href={ROUTE.ENTERPRISE}
+                href={ROUTES.ENTERPRISE}
               >
                 Learn more
                 <span className="sr-only">about Taipy Enterprise</span>

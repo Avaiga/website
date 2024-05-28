@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 
 import AuthorAndShare from '@/components/pages/article/author-and-share';
 import Content from '@/components/pages/article/content';
-import Hero from '@/components/pages/article/hero';
 import Navigation from '@/components/pages/article/navigation';
+import ArticleHeader from '@/components/shared/article-header';
 import Link from '@/components/shared/link';
 import PostItem from '@/components/shared/post-item';
 import Subscribe from '@/components/shared/subscribe';
@@ -67,14 +67,18 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <article className="pt-[92px] xl:pt-[88px] md:pt-[84px] sm:pt-20">
         <div className="container relative grid max-w-[1256px] grid-cols-[180px_704px_180px] gap-x-16 xl:block xl:max-w-[704px]">
           <div className="col-start-2 col-end-2">
-            <Hero
+            <ArticleHeader
               title={title}
               lead={lead}
               cover={cover}
               author={author}
               publishedAt={publishedAt}
-              category={category}
+              category={{
+                slug: `${ROUTES.BLOG_CATEGORY}/${category.slug.current}`,
+                title: category.titleShort,
+              }}
               slug={slug}
+              breadcrumbs={[{ title: 'Blog', url: ROUTES.BLOG }, { title }]}
             />
           </div>
           {navItems.length > 0 && (
@@ -98,13 +102,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <div className="container-narrow">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-32 font-semibold leading-none tracking-tight">Related Posts</h2>
-            <Link href={ROUTE.BLOG} size="md" theme="white" arrowTheme="red">
+            <Link href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
               All posts
             </Link>
           </div>
           <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
             {relatedPosts.map((relatedPost) => (
-              <PostItem key={relatedPost._id} post={relatedPost} />
+              <PostItem key={relatedPost._id} post={relatedPost} isRelated />
             ))}
           </div>
         </div>
@@ -158,7 +162,7 @@ export async function generateMetadata({
   return getMetadata({
     title: seo?.metaTitle || title,
     description,
-    pathname: `${ROUTE.BLOG}/${slug.current}/`,
+    pathname: `${ROUTES.BLOG}/${slug.current}/`,
     imagePath,
   });
 }

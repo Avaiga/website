@@ -1,13 +1,9 @@
-import { Route } from 'next';
+import clsx from 'clsx';
 
 import Link from '@/components/shared/link';
 
 import { ClassName } from '@/types/classname';
-
-interface Breadcrumb {
-  title: string;
-  url?: URL | Route<string>;
-}
+import { Breadcrumb } from '@/types/shared';
 
 interface BreadcrumbsProps extends ClassName {
   items: Breadcrumb[];
@@ -18,7 +14,12 @@ function Breadcrumbs({ items, className }: BreadcrumbsProps) {
     <nav className={className}>
       <ol className="flex gap-x-2.5">
         {items.map(({ title, url }, index) => (
-          <li className="text-15 leading-snug" key={index}>
+          <li
+            className={clsx('text-15 leading-snug', {
+              'shrink-0': url,
+            })}
+            key={index}
+          >
             {url ? (
               <Link href={url} theme="orange">
                 {title}

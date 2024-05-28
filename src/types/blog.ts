@@ -2,20 +2,7 @@ import { SanityAsset, SanityImageObject } from '@sanity/image-url/lib/types/type
 import { TableValue } from '@sanity/table';
 import { PortableTextBlock } from 'sanity';
 
-export type Author = {
-  _id: string;
-  image: {
-    asset: {
-      _id: string;
-      altText: string | null;
-      metadata: {
-        lqip: string;
-      };
-    };
-  } | null;
-  name: string;
-  position?: string;
-};
+import { Author } from './shared';
 
 export type Category = {
   _id: string;
@@ -97,7 +84,6 @@ export type Post = {
 };
 
 export type SinglePost = Post & {
-  lead: string;
   contentRaw: PortableTextBlock[];
   related: Post[];
   seo: SEO | null;

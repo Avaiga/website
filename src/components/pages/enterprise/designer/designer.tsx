@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import { useState } from 'react';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import applicationImage from '@/images/pages/enterprise/designer/application.png';
 import pythonImage from '@/images/pages/enterprise/designer/python.png';
 import renderingImage from '@/images/pages/enterprise/designer/rendering.png';
@@ -61,7 +61,7 @@ function Designer() {
     >
       <div className="container flex max-w-[1280px] flex-col items-center gap-x-16">
         <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36 sm:text-28">
-          No-code, full control
+          Low-code, full control
         </h2>
         <p className="mt-5 max-w-[656px] text-center text-18 leading-snug text-grey-70 lg:text-16 md:mt-4 md:max-w-[448px] md:leading-normal sm:mt-3 sm:text-14">
           Focus on results with all the sophistication hidden behind a convenient drag-and-drop
@@ -91,7 +91,7 @@ function Designer() {
           className="mt-[70px] w-full max-w-[180px] lg:mt-[51px] md:mt-[43px] md:text-16 sm:mt-[26px]"
           size="lg"
           theme="red-filled"
-          href={ROUTE.PRICING}
+          href={ROUTES.PRICING}
         >
           See our plans
         </Button>

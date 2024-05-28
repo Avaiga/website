@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
-import { ROUTE } from '@/constants/routes';
+import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 
-import Pagination from '@/components/pages/blog/pagination/pagination';
 import PostsList from '@/components/pages/blog/posts-list';
+import Pagination from '@/components/shared/pagination';
 
 import { getMetadata } from '@/lib/get-metadata';
 import { countPosts, getPosts } from '@/lib/sanity/client';
@@ -21,7 +21,7 @@ async function BlogPage({ params }: BlogPageProps) {
   const page = parseInt(params.page, 10);
 
   if (Number.isNaN(page) || page === 1) {
-    return redirect(ROUTE.BLOG as string);
+    return redirect(ROUTES.BLOG as string);
   }
 
   const [postCount, posts] = await Promise.all([countPosts(), getPosts({ page })]);
@@ -30,9 +30,9 @@ async function BlogPage({ params }: BlogPageProps) {
 
   return (
     <>
-      <h1 className="sr-only">Taipy Blog</h1>
+      <h1 className="sr-only">Taipy Blog - Page ${page}</h1>
       <PostsList posts={posts} />
-      <Pagination currentPage={page} pageCount={pageCount} path={`${ROUTE.BLOG}`} />
+      <Pagination currentPage={page} pageCount={pageCount} path={ROUTES.BLOG as string} />
     </>
   );
 }
@@ -59,7 +59,7 @@ export async function generateMetadata({
   return getMetadata({
     ...SEO_DATA.BLOG,
     title: `${SEO_DATA.BLOG.title} - Page ${page}`,
-    pathname: `${ROUTE.BLOG}/${page}`,
+    pathname: `${ROUTES.BLOG}/${page}`,
   });
 }
 
