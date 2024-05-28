@@ -17,13 +17,12 @@ export default function Hero() {
       <div className="container-narrow max-w-[1024px] text-center lg:max-w-[896px]">
         <p className="leading-snug text-primary-red sm:text-14">Taipy Enterprise Edition</p>
         <h1 className="mx-auto pt-5 text-48 font-semibold leading-dense tracking-tight lg:max-w-[832px] lg:text-40 md:max-w-[640px] md:pt-3.5 md:text-32 sm:text-28">
-          We help organizations increase efficiency, boost profits, and make better business
-          decisions.
+          Taipy enterprise for customers that require mission-critical enterprise Support, SSO, ACL,
+          Scalability and Robustness
         </h1>
         <p className="mx-auto max-w-[642px] pt-5 leading-snug opacity-80 lg:max-w-[576px] md:pt-4 sm:pt-[14px] sm:text-14">
-          Technology you can trust. Built on Python with decades of industry expertise, we never
-          stop innovating. You can count on us to deliver products that address your needs today and
-          in the future.
+          Built on Python with decades of industry expertise. You can count on us to deliver
+          products that address your needs today and in the future.
         </p>
         <Button
           className="relative mt-6 w-full max-w-[180px] lg:mt-7 sm:mt-[22px]"
@@ -31,7 +30,7 @@ export default function Hero() {
           theme="red-filled"
           href={ROUTES.REQUEST_A_DEMO}
         >
-          Request a demo
+          Book a call
           <span className="absolute top-[-51px] h-[190px] w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[36px]" />
         </Button>
         <div className="relative mx-auto mt-16 flex w-full max-w-[960px] justify-between overflow-hidden rounded-lg bg-gradient-grey-10 pl-[32px] lg:items-center lg:gap-x-[32px] lg:pb-3 md:mt-[60px] md:max-w-[832px] md:gap-x-[50px] md:pb-0 sm:mt-[52px] sm:flex-col sm:items-start sm:pl-6">
