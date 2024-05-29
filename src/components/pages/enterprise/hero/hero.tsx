@@ -26,7 +26,7 @@ export default function Hero() {
           in the future.
         </p>
         <Button
-          className="relative mt-6 w-full max-w-[180px] lg:mt-7 sm:mt-[22px]"
+          className="plausible-event-name=Click+RequestADemoBtn+BookACall relative mt-6 w-full max-w-[180px] lg:mt-7 sm:mt-[22px]"
           size="lgConst"
           theme="red-filled"
           href={ROUTES.REQUEST_A_DEMO}

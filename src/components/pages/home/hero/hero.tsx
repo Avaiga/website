@@ -33,7 +33,7 @@ function Hero() {
         </p>
         <div className="relative mt-[42px] flex justify-center gap-x-8 lg:mt-7 md:gap-x-6 sm:mt-6 sm:gap-x-5">
           <Button
-            className="w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
+            className="plausible-event-name=Click+RequestADemoBtn+BookACall w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
             href={ROUTES.REQUEST_A_DEMO}
             size="lg"
             theme="red-filled"

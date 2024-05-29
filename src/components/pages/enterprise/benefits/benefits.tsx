@@ -48,7 +48,7 @@ function Benefits() {
             applications.
           </p>
           <Button
-            className="mt-8 h-[46px] w-full max-w-[188px] lg:mt-7 md:absolute md:left-1/2 md:top-full md:-translate-x-1/2 md:transform sm:mt-[22px]"
+            className="plausible-event-name=Click+RequestADemoBtn+RequestADesignerDemo mt-8 h-[46px] w-full max-w-[188px] lg:mt-7 md:absolute md:left-1/2 md:top-full md:-translate-x-1/2 md:transform sm:mt-[22px]"
             size="lg"
             theme="red-filled"
             href={ROUTES.REQUEST_A_DESIGNER_DEMO}
