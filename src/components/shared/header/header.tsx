@@ -60,7 +60,7 @@ function Header() {
             />
           </Link>
           <nav
-            className="lg:translate-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:relative lg:inset-0 lg:ml-16 lg:translate-x-0 lg:translate-y-0"
+            className="lg:translate-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:relative lg:bottom-0 lg:left-0 lg:right-0 lg:top-0 lg:ml-16 lg:translate-x-0 lg:translate-y-0"
             aria-label="Global"
           >
             <ul className="flex gap-x-7 md:hidden">
