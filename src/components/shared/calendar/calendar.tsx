@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from 'react';
 
+import type { PrefillAndIframeAttrsConfig } from '@calcom/embed-core';
 import Cal from '@calcom/embed-react';
 
 /* eslint-disable */
 function Calendar({ calLink }: { calLink: string }) {
-  const [config, setConfig] = useState({
+  const [config, setConfig] = useState<PrefillAndIframeAttrsConfig>({
     theme: 'dark',
     initialPagePath: '',
     'utm-campaign': '',
