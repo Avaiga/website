@@ -7,8 +7,8 @@ import Cal from '@calcom/embed-react';
 
 /* eslint-disable */
 function Calendar({ calLink }: { calLink: string }) {
-  const [config, setConfig] = useState<PrefillAndIframeAttrsConfig>({
-    theme: 'dark',
+  // TODO: in case of more tasks with getting utm from url, move the logic into hooks
+  const [analyticsData, setAnalyticsData] = useState<PrefillAndIframeAttrsConfig>({
     initialPagePath: '',
     'utm-campaign': '',
     'utm-medium': '',
@@ -23,7 +23,7 @@ function Calendar({ calLink }: { calLink: string }) {
       const url = new URL(initialPageUrl);
       const urlParams = new URLSearchParams(url.search);
 
-      setConfig((prev) => ({
+      setAnalyticsData((prev) => ({
         ...prev,
         initialPagePath: url.pathname,
         'utm-campaign': urlParams.get('utm_campaign') || '',
@@ -41,7 +41,8 @@ function Calendar({ calLink }: { calLink: string }) {
         <Cal
           calLink="pixel-point-devs/15min"
           config={{
-            ...config,
+            ...analyticsData,
+            theme: 'dark',
           }}
         />
         {/* Only for review and test reasons */}
