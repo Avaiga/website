@@ -38,7 +38,7 @@ function Plans() {
           size="lg"
           theme="red-filled"
         >
-          Redirect with affilate
+          Get a quote
         </Button>
       </div>
     </section>

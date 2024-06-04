@@ -18,7 +18,7 @@ function RedirectComponent() {
   }, [url, router]);
 
   return (
-    <div className="flex min-h-96 items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center">
       <LoadingIcon className="w-10 animate-spin" />
     </div>
   );
