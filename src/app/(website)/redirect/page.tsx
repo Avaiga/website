@@ -4,6 +4,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Suspense, useEffect } from 'react';
 
+import LoadingIcon from '@/svgs/icons/loading.inline.svg';
+
 function RedirectComponent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -16,8 +18,8 @@ function RedirectComponent() {
   }, [url, router]);
 
   return (
-    <div className="fixed left-0 top-0 z-[9999] h-full w-full bg-white text-transparent">
-      Redirect
+    <div className="flex min-h-96 items-center justify-center">
+      <LoadingIcon className="w-10 animate-spin" />
     </div>
   );
 }
