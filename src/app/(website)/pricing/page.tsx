@@ -3,7 +3,6 @@ import { SEO_DATA } from '@/constants/seo';
 import Compairing from '@/components/pages/pricing/compairing';
 import Faq from '@/components/pages/pricing/faq';
 import Plans from '@/components/pages/pricing/plans';
-import Tools from '@/components/pages/pricing/tools';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';
@@ -12,7 +11,6 @@ function Pricing() {
   return (
     <>
       <Plans />
-      <Tools />
       <Compairing />
       <Faq />
       <Subscribe
