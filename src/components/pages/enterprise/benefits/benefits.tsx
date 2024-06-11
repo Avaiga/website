@@ -43,7 +43,7 @@ function Benefits() {
             Taipy Enterprise added value
           </h2>
           <p className="mt-6 text-18 text-grey-70 lg:mt-5 lg:text-16 lg:font-light md:mt-4 sm:mt-3 sm:text-14">
-            Taipy Designer gives you ease of use, flexibility, collaboration, and faster time to
+            Taipy Enterprise gives you ease of use, flexibility, collaboration, and faster time to
             value, which is an ever-increasing need for today&#39;s Data/AI and Decision Support
             applications.
           </p>

@@ -93,7 +93,7 @@ function Designer() {
           theme="red-filled"
           href={ROUTES.PRICING}
         >
-          See our plans
+          See Pricing
         </Button>
       </div>
     </section>
