@@ -66,6 +66,9 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
 
                 void 0 === window._axcb && (window._axcb = []);
                 window._axcb.push(function (axeptio) {
+                  axeptio.on("ready", function() {
+                    document.querySelector("div#axeptio_overlay").style.zIndex = "30";
+                  });
                   axeptio.on("cookies:complete", function (choices) {
                     if (choices.hotjar) {
                       loadHotjar();

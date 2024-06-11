@@ -21,9 +21,13 @@ function Banner({ title, linkText, linkUrl }: BannerProps) {
           prefetch={false}
           arrowTheme="blue"
         >
-          <span className="shrink truncate xs:w-full xs:text-wrap xs:text-center">{title}</span>
+          <span className="shrink truncate xs:w-full xs:whitespace-normal xs:text-center">
+            {title}
+          </span>
           <span className="mx-3.5 h-4 w-px bg-white/10 xs:hidden" aria-hidden />
-          <span className="shrink truncate font-semibold xs:ml-1">{linkText}</span>
+          <span className="shrink truncate font-semibold xs:ml-1 xs:whitespace-normal">
+            {linkText}
+          </span>
         </Link>
       </div>
     </div>

@@ -139,6 +139,7 @@ function MobileMenu({
                   theme="white-filled"
                   size="lgConst"
                   href={ROUTES.ENTERPRISE}
+                  onClick={hideMobileMenu}
                 >
                   Enterprise
                 </Button>
