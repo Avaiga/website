@@ -8,6 +8,13 @@ export const PLANS = {
     {
       rows: '1',
       isRowTitle: true,
+      features: 'Customer Support',
+      сommunity: 'Community',
+      enterprise: 'dedicated support with SLA',
+    },
+    {
+      rows: '1',
+      isRowTitle: true,
       features: 'Ease of use',
       сommunity: '',
       enterprise: '',
@@ -18,13 +25,6 @@ export const PLANS = {
       features: 'Taipy Designer',
       сommunity: false,
       enterprise: true,
-    },
-    {
-      rows: '3',
-      isRowTitle: true,
-      features: 'Customer Support',
-      сommunity: 'Community',
-      enterprise: 'dedicated support with SLA',
     },
     {
       rows: '1',
