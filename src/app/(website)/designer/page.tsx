@@ -33,6 +33,7 @@ function Designer() {
       <Hero />
       <Features
         className="mt-[79px]"
+        rowsGap="gap-y-11"
         heading="Your business advantage"
         subheading="Focus on results with all the sophistication hidden behind a convenient drag-and-drop editor."
         items={items}

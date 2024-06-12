@@ -32,7 +32,7 @@ function Hero() {
             </Button>
           </div>
         </div>
-        <div className="relative -mr-8 h-[450px]">
+        <div className="relative -mr-8 flex h-[450px] items-center">
           <Image width={704} height={450} src={bgImage} alt="" priority />
           <div className="absolute bottom-[35%] left-1/2 flex max-w-[256px] -translate-x-1/2">
             <span className="absolute left-1/2 top-1/2 h-[135px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black blur-[24px]" />
