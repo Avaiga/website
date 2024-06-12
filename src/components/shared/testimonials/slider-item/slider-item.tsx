@@ -18,7 +18,7 @@ function SliderItem({ text, authorName, authorTitle }: TestimonialItem) {
       </blockquote>
 
       <figcaption className="mt-8 flex items-center gap-x-4 text-start leading-tight text-white md:mt-[29px] sm:mt-6">
-        <QuoteIcon className="h-[36px] w-[36px]" width={72} height={72} aria-hidden />
+        <QuoteIcon width={36} height={36} aria-hidden />
         <div className="flex flex-col gap-y-0.5">
           <p className="text-16 leading-snug">{authorName}</p>
           <p className="text-14 font-light not-italic leading-snug text-grey-70">{authorTitle}</p>

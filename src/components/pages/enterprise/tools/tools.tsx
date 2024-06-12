@@ -1,7 +1,5 @@
 'use client';
 
-import type { Route } from 'next';
-
 import { ROUTES } from '@/constants/routes';
 
 import paintIcon from '@/svgs/pages/enterprise/tools/paint.svg';
@@ -16,30 +14,18 @@ import userFocusIcon from '@/svgs/pages/enterprise/tools/user-focus.svg';
 
 import ToolBlock from './tool-block';
 
-const gradient = {
-  left: 'left',
-  center: 'center',
-  right: 'right',
-} as const;
-
-interface Link {
-  linkText: string;
-  href: URL | Route<string>;
+export enum Gradient {
+  Left = 'left',
+  Center = 'center',
+  Right = 'right',
 }
 
-export type Tool = {
-  logo: string;
-  title: string;
-  description: string;
-  link?: Link;
-  gradient?: keyof typeof gradient;
-};
-
-const toolBlocks: Tool[] = [
+const toolBlocks = [
   {
     logo: supportIcon,
     title: 'Customer support',
     description: 'Personalized assistance and ticketing system.',
+    gradient: Gradient.Left,
   },
   {
     logo: paintIcon,
@@ -49,11 +35,13 @@ const toolBlocks: Tool[] = [
       linkText: 'Learn more',
       href: ROUTES.ABOUT_US,
     },
+    gradient: Gradient.Center,
   },
   {
     logo: passwordIcon,
     title: 'Authentication',
     description: 'Applications security with SSO feature.',
+    gradient: Gradient.Right,
   },
   {
     logo: userFocusIcon,
@@ -69,19 +57,16 @@ const toolBlocks: Tool[] = [
     logo: speedIndicatorIcon,
     title: 'Distributed computing',
     description: 'Optimal performance and scalability.',
-    gradient: 'right',
   },
   {
     logo: surveyIcon,
     title: 'Telemetry',
     description: 'Valuable insights into application performance.',
-    gradient: 'center',
   },
   {
     logo: roadmapIcon,
     title: 'Job Scheduler',
     description: 'Efficient task scheduling and parallel execution.',
-    gradient: 'left',
   },
   {
     logo: routeIcon,
@@ -95,24 +80,16 @@ function Tools() {
     <section className="tools mt-6 lg:mt-14 md:mt-12 sm:mt-10">
       <div className="container relative flex max-w-[1088px] flex-col items-center">
         <ul className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px] lg:gap-x-6 lg:gap-y-6 md:mt-8 md:max-w-[640px] md:grid-cols-2 sm:mt-6 sm:grid-cols-1 sm:gap-y-5">
-          {toolBlocks.map(({ title, description, logo, link }, index) => {
-            const gradientState: { [key: number]: keyof typeof gradient } = {
-              0: gradient.left,
-              1: gradient.center,
-              2: gradient.right,
-            };
-
-            return (
-              <ToolBlock
-                gradient={gradientState[index]}
-                title={title}
-                description={description}
-                logo={logo}
-                link={link}
-                key={index}
-              />
-            );
-          })}
+          {toolBlocks.map(({ title, description, logo, link, gradient }, index) => (
+            <ToolBlock
+              gradient={gradient}
+              title={title}
+              description={description}
+              logo={logo}
+              link={link}
+              key={index}
+            />
+          ))}
         </ul>
       </div>
     </section>

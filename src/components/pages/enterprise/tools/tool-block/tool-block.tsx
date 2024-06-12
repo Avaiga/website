@@ -1,14 +1,25 @@
+import type { Route } from 'next';
 import Image from 'next/image';
 
 import clsx from 'clsx';
 
 import Link from '@/components/shared/link';
 
-import type { ClassName } from '@/types/classname';
+import { Gradient } from '../tools';
 
-import type { Tool } from '../tools';
+interface Link {
+  linkText: string;
+  href: URL | Route<string>;
+}
 
-type ToolBlockProps = ClassName & Tool;
+interface ToolBlockProps {
+  logo: string;
+  title: string;
+  description: string;
+  link?: Link;
+  gradient?: Gradient;
+  className?: string;
+}
 
 function ToolBlock({ logo, title, description, link, gradient, className }: ToolBlockProps) {
   return (
