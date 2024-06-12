@@ -67,4 +67,9 @@ export const SEO_DATA = {
     description: `Have a question, seek for support? Just send us an email, and we'll be sure to respond promptly.`,
     pathname: ROUTES.CONTACT_US as string, // /contact-us
   },
+  DESIGNER: {
+    title: 'Designer',
+    description: `Have a question, seek for support? Just send us an email, and we'll be sure to respond promptly.`,
+    pathname: ROUTES.DESIGNER as string, // /designer
+  },
 };
