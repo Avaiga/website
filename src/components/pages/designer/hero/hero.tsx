@@ -36,7 +36,7 @@ function Hero() {
         </div>
         <div className="relative -mr-8 flex items-center lg:mr-0 md:mt-11 md:max-w-[640px] sm:mt-[68px] sm:max-w-[460px]">
           <Image className="md:-mt-12" width={704} height={450} src={bgImage} alt="" priority />
-          <div className="absolute bottom-[35%] left-1/2 flex max-w-[256px] -translate-x-1/2 md:bottom-[40%] sm:bottom-[45%]">
+          <div className="absolute bottom-[35%] left-1/2 flex max-w-64 -translate-x-1/2 md:bottom-[40%] sm:bottom-[45%]">
             <span className="absolute left-1/2 top-1/2 h-[135px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black blur-[24px] sm:h-[62px] sm:w-[168px]" />
             <Button
               className="z-[2] flex h-[66px] w-[256px] items-center justify-center gap-3 rounded-full border-orange-1 text-22 tracking-snug md:h-[60px] md:w-[230px] md:text-20 sm:h-[30px] sm:w-[116px] sm:text-10"
