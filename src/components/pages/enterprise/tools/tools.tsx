@@ -1,7 +1,5 @@
 'use client';
 
-import { ROUTES } from '@/constants/routes';
-
 import paintIcon from '@/svgs/pages/enterprise/tools/paint.svg';
 import passwordIcon from '@/svgs/pages/enterprise/tools/password.svg';
 import roadmapIcon from '@/svgs/pages/enterprise/tools/roadmap.svg';
@@ -33,7 +31,7 @@ const toolBlocks = [
     description: 'Simple drag-n-drop builder.',
     link: {
       linkText: 'Learn more',
-      href: ROUTES.ABOUT_US,
+      href: '#',
     },
     gradient: Gradient.Center,
   },
