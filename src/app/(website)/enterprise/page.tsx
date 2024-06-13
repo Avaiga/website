@@ -12,6 +12,9 @@ import Testimonials from '@/components/shared/testimonials';
 
 import { getMetadata } from '@/lib/get-metadata';
 
+import knowledgeTouchIcon from '@/svgs/pages/enterprise/knowledge-touch.svg';
+import lesMousquetairesIcon from '@/svgs/pages/enterprise/les-mousquetaires.svg';
+
 const logos = [
   'bird',
   'brain',
@@ -30,11 +33,13 @@ const sliderItems = [
     text: 'Integrating Taipy into our suite of products for the Quick Service Restaurant (QSR) market has marked a significant step forward. The ease with which our development team was able to pick up Taipy was remarkable.',
     authorName: 'Jesselynn Mah',
     authorTitle: 'KnowledgeTouch',
+    logo: knowledgeTouchIcon,
   },
   {
-    text: 'I’ve got to say, diving into the CFM project with Taipy was a game-changer for us. It’s this Python platform that really sits at the heart of everything we’ve done. The cool part? We got our front-end and back-end up and running incredibly fast, and that’s saying something because we were pretty new to Taipy. It’s kind of amazing. And when you pair Taipy with Databricks, it’s like they’re two pieces of a puzzle that just fit perfectly together. We’re already looking at how we can use them for our next big AI and data projects. They just work so well together!',
+    text: 'Diving into the CFM project with Taipy was a game-changer. We got our front-end and back-end up and running incredibly fast. It’s kind of amazing. And when you pair Taipy with Databricks, it’s like they’re two pieces of a puzzle that just fit perfectly together. We’re already looking at how we can use them for our next big AI and data projects.',
     authorName: 'Stephane Leray',
-    authorTitle: 'Manager at STIME Datalabs',
+    authorTitle: 'Group les Mousquetaires',
+    logo: lesMousquetairesIcon,
   },
 ];
 

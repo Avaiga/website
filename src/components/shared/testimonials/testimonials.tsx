@@ -18,6 +18,7 @@ export interface TestimonialItem {
   text: string;
   authorName: string;
   authorTitle: string;
+  logo: string;
 }
 
 interface TestimonialsProps {

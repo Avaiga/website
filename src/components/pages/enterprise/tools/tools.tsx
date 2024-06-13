@@ -63,7 +63,7 @@ const toolBlocks = [
   },
   {
     logo: roadmapIcon,
-    title: 'Job Scheduler',
+    title: 'Scheduler',
     description: 'Efficient task scheduling and parallel execution.',
   },
   {
