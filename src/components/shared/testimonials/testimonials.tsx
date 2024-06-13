@@ -59,7 +59,6 @@ function Testimonials({ items, className }: TestimonialsProps) {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 768,
