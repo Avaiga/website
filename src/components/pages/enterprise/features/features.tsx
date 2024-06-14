@@ -34,10 +34,10 @@ function Features() {
     <section className="features mt-[185px] px-safe lg:mt-[151px] md:mt-[110px] sm:mt-[82px]">
       <div className="container flex max-w-[1024px] flex-col items-center lg:max-w-[960px]">
         <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36 sm:text-28">
-          Taipy has so much more to offer
+          Taipy Enterprise has so much more to offer
         </h2>
         <p className="mt-5 max-w-[656px] text-center text-18 leading-snug tracking-snug text-grey-70 lg:text-18 md:mt-4 md:max-w-[640px] sm:mt-3 sm:text-14 sm:tracking-normal">
-          Leverage a huge variety of features to level up your data and AI game!
+          Leverage the main features to level up your data and AI game!
         </p>
         <div className="relative mt-[72px] flex max-w-[1280px] items-center md:mt-[60px] sm:mt-[35px]">
           <span className="absolute left-1/2 top-0 z-10 h-full w-1 -translate-x-1/2 bg-[url('/images/svgs/line.inline.svg')] bg-repeat-y before:absolute before:left-1/2 before:h-[120px] before:w-[30px] before:-translate-x-1/2 before:bg-gradient-to-b before:from-black before:to-transparent after:absolute after:bottom-0 after:left-1/2 after:h-[120px] after:w-[30px] after:-translate-x-1/2 after:bg-gradient-to-t after:from-black after:to-transparent sm:hidden" />
