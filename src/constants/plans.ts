@@ -6,13 +6,6 @@ export const PLANS = {
   },
   cols: [
     {
-      rows: '3',
-      isRowTitle: false,
-      features: 'Customer Support',
-      сommunity: 'Community',
-      enterprise: 'dedicated support with SLA',
-    },
-    {
       rows: '1',
       isRowTitle: true,
       features: 'Customer Support',
