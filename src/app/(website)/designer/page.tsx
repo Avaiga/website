@@ -27,6 +27,7 @@ const items = [
     image: styleImage,
   },
 ];
+
 function Designer() {
   return (
     <>
