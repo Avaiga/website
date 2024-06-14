@@ -15,6 +15,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.testimonials ul.slick-dots > li {
+  width: initial;
+  height: initial;
+}
+
+.testimonials .slick-list .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.testimonials li.slick-active > div {
+  background-color: #ff371a;
+  border: none;
+}
+
 @layer components {
   .container {
     @apply mx-auto w-full max-w-[1408px] px-8 sm:px-5;

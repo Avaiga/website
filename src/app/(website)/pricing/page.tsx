@@ -1,8 +1,8 @@
 import { SEO_DATA } from '@/constants/seo';
 
-import Compairing from '@/components/pages/pricing/compairing';
 import Faq from '@/components/pages/pricing/faq';
 import Plans from '@/components/pages/pricing/plans';
+import Compairing from '@/components/shared/compairing';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';

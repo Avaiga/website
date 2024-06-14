@@ -16,7 +16,7 @@ const benefitsData = [
   },
   {
     icon: collaborationIcon,
-    title: 'Collaboration',
+    title: 'Scalability',
     description:
       'Everyone in the organization can access, visualize, and interact with operational data in real-time to make insightful business decisions.',
   },
@@ -36,15 +36,15 @@ const benefitsData = [
 
 function Benefits() {
   return (
-    <section className="benefits mt-[223px] px-safe lg:mt-[184px] md:mt-[154px] md:pb-[72px] sm:mt-[129px] sm:pb-[66px]">
+    <section className="benefits mt-[184px] px-safe lg:mt-[184px] md:mt-[154px] md:pb-[72px] sm:mt-[129px] sm:pb-[66px]">
       <div className="container relative flex max-w-[1280px] gap-x-16 lg:max-w-[1024px] lg:gap-x-8 md:max-w-[640px] md:flex-col md:items-center md:gap-y-10 sm:gap-y-[46px]">
         <div className="max-w-[384px] shrink-0 grow lg:max-w-[352px] md:max-w-[576px] md:text-center">
           <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-40 lg:font-semibold md:text-36 sm:text-28">
-            Taipy Designer added value
+            Taipy Enterprise added value
           </h2>
           <p className="mt-6 text-18 text-grey-70 lg:mt-5 lg:text-16 lg:font-light md:mt-4 sm:mt-3 sm:text-14">
-            Taipy Designer gives you ease of use, flexibility, collaboration, and faster time to
-            value, which is an ever-increasing need for today&#39;s Data/AI and Decision Support
+            Taipy Enterprise gives you ease of use, flexibility, collaboration, and faster time to
+            value, which is an ever-increasing need for today&apos;s Data/AI and Decision Support
             applications.
           </p>
           <Button
