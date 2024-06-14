@@ -20,6 +20,11 @@ html {
   height: initial;
 }
 
+.testimonials .slick-list .slick-track {
+  display: flex;
+  align-items: center;
+}
+
 .testimonials li.slick-active > div {
   background-color: #ff371a;
   border: none;
