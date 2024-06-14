@@ -51,7 +51,7 @@ function Hero() {
         </div>
         <div className="relative mt-[-9px] lg:mt-7 md:mt-0 md:px-4 sm:mt-2">
           <Image
-            className="scrren-image relative mx-auto xl:h-auto xl:w-[760px] lg:w-[556px] md:w-[656px] sm:left-1/2 sm:m-0 sm:w-[392px] sm:max-w-none sm:-translate-x-1/2"
+            className="relative mx-auto xl:h-auto xl:w-[760px] lg:w-[556px] md:w-[656px] sm:left-1/2 sm:m-0 sm:w-[392px] sm:max-w-none sm:-translate-x-1/2"
             src={screen}
             width={944}
             height={577}

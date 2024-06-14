@@ -14,7 +14,7 @@ const items = [
   {
     title: 'Drag and drop widgets on the canvas',
     text: 'Instead of traditional insertion methods or programming, users can simply drag and drop widgets from the toolbar on the canvas.',
-    image: connectImage,
+    image: widgetsImage,
   },
   {
     title: 'Connect widgets to your Python variables',
@@ -24,7 +24,7 @@ const items = [
   {
     title: 'Style your graphics in a click',
     text: 'Define your own look and feel with a few clicks, no CSS needed.',
-    image: widgetsImage,
+    image: connectImage,
   },
 ];
 function Designer() {
@@ -38,7 +38,7 @@ function Designer() {
         subheading="Focus on results with all the sophistication hidden behind a convenient drag-and-drop editor."
         items={items}
       />
-      <CTAButton offsets="mt-2" />
+      <CTAButton className="mt-2 md:hidden" />
       <CTA
         className="mb-[184px] mt-[183px] lg:mb-[151px] lg:mt-[184px] md:my-[110px] sm:mb-[84px] sm:mt-[79px]"
         isEnterprise

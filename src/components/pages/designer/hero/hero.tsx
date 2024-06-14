@@ -39,13 +39,13 @@ function Hero() {
           <div className="absolute bottom-[35%] left-1/2 flex max-w-64 -translate-x-1/2 md:bottom-[40%] sm:bottom-[45%]">
             <span className="absolute left-1/2 top-1/2 h-[135px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black blur-[24px] sm:h-[62px] sm:w-[168px]" />
             <Button
-              className="z-[2] flex h-[66px] w-[256px] items-center justify-center gap-3 rounded-full border-orange-1 text-22 tracking-snug md:h-[60px] md:w-[230px] md:text-20 sm:h-[30px] sm:w-[116px] sm:text-10"
+              className="z-[2] flex h-[66px] w-[256px] items-center justify-center gap-3 rounded-full border-orange-1 text-22 tracking-snug md:h-[60px] md:w-[230px] md:text-20 sm:h-9 sm:w-[152px] sm:text-14"
               theme="red-outline"
               href="https://www.youtube.com/watch?v=y3VPT6IPvC4"
               target="_blank"
             >
               Watch the video
-              <PlayIcon className="w-2 shrink-0 sm:w-1" />
+              <PlayIcon className="w-2 shrink-0 sm:w-1.5" />
             </Button>
           </div>
         </div>
