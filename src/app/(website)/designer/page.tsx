@@ -19,12 +19,12 @@ const items = [
   {
     title: 'Connect widgets to your Python variables',
     text: 'Connect widgets to your Python variables for instant data visuals and rendering.',
-    image: styleImage,
+    image: connectImage,
   },
   {
     title: 'Style your graphics in a click',
     text: 'Define your own look and feel with a few clicks, no CSS needed.',
-    image: connectImage,
+    image: styleImage,
   },
 ];
 function Designer() {
