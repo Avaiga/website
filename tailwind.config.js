@@ -53,31 +53,31 @@ module.exports = {
         'linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%), linear-gradient(182.49deg, rgba(255, 255, 255, 0.5) -7.22%, rgba(255, 255, 255, 0.0498282) 2.63%, rgba(255, 255, 255, 0) 4.07%)',
       'gradient-grey-border':
         'radial-gradient(circle, rgba(42,42,45,1) 0%, rgba(139,139,139,0.2) 30%)',
-      'gradient-center-bottom-orange-border':
-        'conic-gradient(from 90deg at 55% 53%, #71C4FF00 1%, rgba(255, 102, 26, 0.25) 22%, #71C4FF00 56%, #71C4FF00 62%), linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
+      'gradient-center-top-orange-border':
+        'conic-gradient(from 270deg at 55% 53%, #71C4FF00 1%, rgba(255, 102, 26, 0.25) 22%, #71C4FF00 56%, #71C4FF00 62%), linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
       'gradient-left-bottom-orage-border':
         'conic-gradient(from 150deg at 50% 50%, #71C4FF00 4%, rgba(255, 102, 26, 0.25) 24%, #71C4FF00 34%, #71C4FF00 56%), linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
       'gradient-right-top-orage-border':
         'conic-gradient(from 330deg at 50% 50%, #71C4FF00 4%, rgba(255, 102, 26, 0.25) 24%, #71C4FF00 34%, #71C4FF00 56%), linear-gradient(0deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
       'gradient-right-top-orange-border':
         'conic-gradient(from -9deg at 50% 50%, #71C4FF00 4%, rgba(255, 102, 26, 0.15) 24%, #71C4FF00 34%, #71C4FF00 56%),  linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
-      'gradient-right-bottom-orange-border':
-        'conic-gradient(from 50deg at 50% 50%, #71C4FF00 4%, rgba(255, 102, 26, 0.15) 24%, #71C4FF00 34%, #71C4FF00 56%),  linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
+      'gradient-left-top-orange-border':
+        'conic-gradient(from 230deg at 50% 50%, #71C4FF00 4%, rgba(255, 102, 26, 0.15) 24%, #71C4FF00 34%, #71C4FF00 56%),  linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
 
-      'gradient-center-bottom-orange':
-        'linear-gradient(180deg, rgba(255, 102, 26, 0) 35%, rgba(255, 55, 26, 0.05) 100%)',
+      'gradient-center-top-orange':
+        'linear-gradient(0deg, rgba(255, 102, 26, 0) 35%, rgba(255, 55, 26, 0.05) 100%)',
       'gradient-center-bottom-orange-pricing':
         'linear-gradient(180deg, rgba(255, 102, 26, 0) 35%, rgba(255, 55, 26, 0.1) 100%)',
-      'gradient-left-bottom-orange':
-        'linear-gradient(242.12deg, rgba(255, 102, 26, 0) 65%, rgba(255, 55, 26, 0.05) 100%)',
+      'gradient-right-top-orange':
+        'linear-gradient(60deg, rgba(255, 102, 26, 0) 65%, rgba(255, 55, 26, 0.05) 100%)',
       'gradient-left-bottom-orange-pricing':
         'linear-gradient(221deg, rgba(255, 102, 26, 0) 69%, rgba(255, 55, 26, 0.1) 100%)',
       'gradient-right-bottom-orange':
         'linear-gradient(117.88deg, rgba(255, 102, 26, 0) 75%, rgba(255, 55, 26, 0.05) 100%)',
       'gradient-right-bottom-orange-pricing':
         'linear-gradient(142deg, rgba(255, 102, 26, 0) 69%, rgba(255, 55, 26, 0.1) 100%)',
-      'gradient-right-top-orange':
-        'linear-gradient(62.12deg, rgba(255, 102, 26, 0) 65%, rgba(255, 55, 26, 0.05) 100%)',
+      'gradient-left-top-orange':
+        'linear-gradient(330deg, rgba(255, 102, 26, 0) 65%, rgba(255, 55, 26, 0.05) 100%)',
       'gradient-right-top-orange-hero':
         'linear-gradient(28deg, rgba(255, 102, 26, 0) 53%, rgba(255, 55, 26, 0.2) 100%)',
       'gradient-right-top-orange-hero-border':
