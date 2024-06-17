@@ -1,12 +1,15 @@
 import { SEO_DATA } from '@/constants/seo';
+import distributedImage from '@/images/pages/enterprise/features/distributed.png';
+import scenarioImage from '@/images/pages/enterprise/features/scenario.png';
+import telemetryImage from '@/images/pages/enterprise/features/telemetry.png';
 
 import Benefits from '@/components/pages/enterprise/benefits/benefits';
-import Features from '@/components/pages/enterprise/features';
 import Hero from '@/components/pages/enterprise/hero';
 import Tools from '@/components/pages/enterprise/tools';
 import CTA from '@/components/shared/CTA';
 import Compairing from '@/components/shared/compairing';
 import CTAButton from '@/components/shared/cta-button';
+import Features from '@/components/shared/features';
 import Logos from '@/components/shared/logos';
 import Testimonials from '@/components/shared/testimonials';
 
@@ -43,6 +46,24 @@ const sliderItems = [
   },
 ];
 
+const items = [
+  {
+    title: 'Scenario management',
+    text: 'Native scenario management enables end-users to conduct detailed what-if analyses, tracking executions and data sources for visualization, comparison, and KPI tracking. This enhances user experience, monitors activity, fosters collaboration between data Scientists and end-users, and boosts user acceptance.',
+    image: scenarioImage,
+  },
+  {
+    title: 'Distributed computing',
+    text: 'Unlock unparalleled scalability and performance across multiple machines. Ideal for handling large datasets and complex computations efficiently.',
+    image: distributedImage,
+  },
+  {
+    title: 'Telemetry',
+    text: 'Ensure your applications are not just running but thriving. Gain critical insights into performance & health, enabling proactive optimizations & maintenance.',
+    image: telemetryImage,
+  },
+];
+
 function Enterprise() {
   return (
     <>
@@ -51,7 +72,11 @@ function Enterprise() {
       <Logos className="mt-[186px]" logos={logos} />
       <CTAButton />
       <Benefits />
-      <Features />
+      <Features
+        heading="Taipy Enterprise has so much more to offer"
+        subheading="Leverage the main features to level up your data and AI game!"
+        items={items}
+      />
       <Compairing />
       <Testimonials items={sliderItems} />
       <CTA

@@ -67,4 +67,9 @@ export const SEO_DATA = {
     description: `Have a question, seek for support? Just send us an email, and we'll be sure to respond promptly.`,
     pathname: ROUTES.CONTACT_US as string, // /contact-us
   },
+  DESIGNER: {
+    title: 'Low code Drag-and-Drop Python app builder',
+    description: `Explore Taipy Designer, the cutting-edge drag-and-drop GUI builder designed for Python developers. Create dynamic GUIs effortlessly with a WYSIWYG environment. Connect widgets to your Python variables, style graphics with ease, and focus on results with our sophisticated yet convenient editor. Request a demo and watch the video now!`,
+    pathname: ROUTES.DESIGNER as string, // /designer
+  },
 };

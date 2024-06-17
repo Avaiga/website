@@ -75,6 +75,7 @@ export const MENU = {
           { label: 'Documentation', href: ROUTES.DOCUMENTATION },
           { label: 'Free mentorship', href: ROUTES.MENTORSHIP },
           { label: 'Community', href: ROUTES.COMMUNITY },
+          { label: 'Designer', href: ROUTES.DESIGNER },
         ],
       },
       {
