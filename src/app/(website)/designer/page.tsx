@@ -37,6 +37,11 @@ function Designer() {
         rowsGap="gap-y-11"
         heading="Your business advantage"
         subheading="Focus on results with all the sophistication hidden behind a convenient drag-and-drop editor."
+        imageProps={{
+          width: 384,
+          height: 228,
+          quality: 95,
+        }}
         items={items}
       />
       <CTAButton className="mt-2 md:hidden" />

@@ -8,12 +8,19 @@ interface Feature {
   image: StaticImageData;
 }
 
+interface ImageProps {
+  width: number;
+  height: number;
+  quality: number;
+}
+
 interface FeaturesProps {
   items: Feature[];
   heading: string;
   subheading: string;
   className?: string;
   rowsGap?: string;
+  imageProps?: ImageProps;
 }
 
 function Features({
@@ -22,7 +29,10 @@ function Features({
   subheading,
   className,
   rowsGap = 'gap-y-16 md:gap-y-[47px]',
+  imageProps = { width: 384, height: 208, quality: 75 },
 }: FeaturesProps) {
+  const { width, height, quality } = imageProps;
+
   return (
     <section
       className={clsx(
@@ -54,7 +64,13 @@ function Features({
                       : 'pl-20 lg:pl-12 md:pl-[15px] sm:p-0'
                   }`}
                 >
-                  <Image src={image} alt={`${title}-image.jpg`} />
+                  <Image
+                    src={image}
+                    alt={`${title}-image.jpg`}
+                    width={width}
+                    height={height}
+                    quality={quality}
+                  />
                 </div>
                 <span className="z-10 mr-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#2A2A2D] bg-[#18181B] px-1.5 py-2 text-16 text-grey-80 sm:hidden">
                   {index + 1}

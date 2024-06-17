@@ -65,7 +65,6 @@ export const MENU = {
           { label: 'Enterprise', href: ROUTES.ENTERPRISE },
           { label: 'Pricing', href: ROUTES.PRICING },
           { label: 'Customer Stories', href: ROUTES.CUSTOMER_STORIES },
-          { label: 'Designer', href: ROUTES.DESIGNER },
           { label: 'Contact us', href: ROUTES.CONTACT_US },
         ],
       },
@@ -76,6 +75,7 @@ export const MENU = {
           { label: 'Documentation', href: ROUTES.DOCUMENTATION },
           { label: 'Free mentorship', href: ROUTES.MENTORSHIP },
           { label: 'Community', href: ROUTES.COMMUNITY },
+          { label: 'Designer', href: ROUTES.DESIGNER },
         ],
       },
       {
