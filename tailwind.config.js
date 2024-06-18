@@ -64,7 +64,6 @@ module.exports = {
         'conic-gradient(from -9deg at 50% 50%, #71C4FF00 4%, rgba(255, 102, 26, 0.15) 24%, #71C4FF00 34%, #71C4FF00 56%),  linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
       'gradient-left-top-orange-border':
         'conic-gradient(from 230deg at 50% 50%, #71C4FF00 4%, rgba(255, 102, 26, 0.15) 24%, #71C4FF00 34%, #71C4FF00 56%),  linear-gradient(180deg, #2A2A2D 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
-
       'gradient-center-top-orange':
         'linear-gradient(0deg, rgba(255, 102, 26, 0) 35%, rgba(255, 55, 26, 0.05) 100%)',
       'gradient-center-bottom-orange-pricing':
@@ -81,8 +80,12 @@ module.exports = {
         'linear-gradient(330deg, rgba(255, 102, 26, 0) 65%, rgba(255, 55, 26, 0.05) 100%)',
       'gradient-right-top-orange-hero':
         'linear-gradient(28deg, rgba(255, 102, 26, 0) 53%, rgba(255, 55, 26, 0.2) 100%)',
+      'gradient-right-top-blue':
+        'linear-gradient(28deg, rgba(255, 102, 26, 0) 53%, rgba(85, 193, 246, 0.2) 100%)',
       'gradient-right-top-orange-hero-border':
         'conic-gradient(transparent 270deg,rgba(255,70,43,0.3) 320deg,rgba(255,70,43,0.3) 360deg),conic-gradient(rgba(255,70,43,0.3) 35deg,rgba(255,102,26,0.3) 45deg,rgba(255,70,43,0.3) 55deg,rgba(139,139,139,0.2) 80deg)',
+      'gradient-right-top-blue-border':
+        'conic-gradient(transparent 270deg, rgba(85, 193, 246, 0.3) 320deg, rgba(85, 193, 246, 0.3) 360deg), conic-gradient(rgba(85, 193, 246, 0.3) 35deg, rgba(85, 193, 246, 0.3) 45deg, rgba(85, 193, 246, 0.3) 55deg, rgba(139, 139, 139, 0.2) 80deg)',
       'gradient-grey-10':
         'linear-gradient(0deg, #18181B, #18181B), radial-gradient(93.11% 55.91% at 100% 0%, rgba(148, 148, 148, 0.06) 0%, rgba(149, 149, 149, 0) 100%)',
       'gradient-grey':
@@ -118,6 +121,7 @@ module.exports = {
       },
       secondary: {
         blue: '#72bff1',
+        'blue-65': '#55C1F6',
       },
       orange: {
         1: '#ff462b',

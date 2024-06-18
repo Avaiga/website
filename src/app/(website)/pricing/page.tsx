@@ -11,7 +11,7 @@ function Pricing() {
   return (
     <>
       <Plans />
-      <Compairing />
+      <Compairing offsets="mt-[175px] lg:mt-[126px] md:mt-24 sm:mt-20" />
       <Faq />
       <Subscribe
         tagline="Newsletter"
