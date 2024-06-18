@@ -83,7 +83,7 @@ function PricingVariant({ type }: PricingVariantProps) {
               {isBusiness ? `$${price}` : price}
             </h3>
             {isBusiness && (
-              <p className="relative bottom-0.5 text-16 font-light md:bottom-0 md:left-1.5 md:text-14">
+              <p className="relative bottom-0.5 left-1.5 text-16 font-light md:bottom-0 md:text-14">
                 /{'month, billed annualy'}
               </p>
             )}
