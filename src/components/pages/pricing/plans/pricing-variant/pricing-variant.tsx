@@ -117,7 +117,7 @@ function PricingVariant({ type }: PricingVariantProps) {
             >
               Get a quote
               {isBusiness && (
-                <span className="absolute top-[-33px] h-[128px] w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[24px]" />
+                <span className="absolute top-[-33px] h-32 w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[24px]" />
               )}
             </Button>
           )}

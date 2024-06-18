@@ -1,5 +1,3 @@
-'use client';
-
 import Heading from '@/components/pages/pricing/heading';
 
 import PricingVariant from './pricing-variant';
