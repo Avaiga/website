@@ -30,7 +30,7 @@ const toolBlocks = [
   {
     logo: paintIcon,
     title: 'Taipy Designer',
-    description: 'Simple drag-n-drop builder.',
+    description: 'A drag-n-Drop GUI builder on top of Python code.',
     link: {
       linkText: 'Learn more',
       href: ROUTES.DESIGNER,
