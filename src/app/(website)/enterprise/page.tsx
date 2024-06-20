@@ -33,7 +33,7 @@ const logos = [
 
 const sliderItems = [
   {
-    text: 'Diving into the CFM project with Taipy was a game-changer. We got our front-end and back-end up and running incredibly fast. It’s kind of amazing. And when you pair Taipy with Databricks, it’s like they’re two pieces of a puzzle that just fit perfectly together. We’re already looking at how we can use them for our next big AI and data projects.',
+    text: 'Implementing the CFM project with Taipy was a game-changer. We got our front-end and back-end up and running incredibly fast. It’s kind of amazing. And when you pair Taipy with Databricks, it’s like they’re two pieces of a puzzle that just fit perfectly together. We’re already looking at how we can use them for our next big AI and data projects.',
     authorName: 'Stephane Leray',
     authorTitle: 'Group les Mousquetaires',
     logo: lesMousquetairesIcon,
