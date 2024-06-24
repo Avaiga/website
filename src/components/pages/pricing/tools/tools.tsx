@@ -34,7 +34,7 @@ const toolBlocks: Tool[] = [
   {
     logo: paintIcon,
     title: 'Taipy Designer',
-    description: 'A drag-n-Drop GUI builder on top of Python code.',
+    description: 'A drag-n-Drop GUI builder on top of your Python code.',
     image: {
       src: playgroundImage,
       alt: 'Taipy playground',
