@@ -83,6 +83,7 @@ export const MENU = {
         items: [
           { label: 'Terms of service', href: ROUTES.TERMS },
           { label: 'Privacy policy', href: ROUTES.PRIVACY },
+          { label: 'Taipy Designer Agreement', href: ROUTES.DESIGNER_LICENSE },
         ],
       },
     ],

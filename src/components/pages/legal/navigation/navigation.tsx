@@ -18,11 +18,10 @@ interface NavigationItem {
 
 interface NavigationProps {
   items: NavigationItem[];
+  currentAnchorGarPx?: number;
 }
 
-const CURRENT_ANCHOR_GAP_PX = 200;
-
-function Navigation({ items }: NavigationProps) {
+function Navigation({ items, currentAnchorGarPx = 200 }: NavigationProps) {
   const titles = useRef<HTMLElement[]>([]);
   const [currentAnchor, setCurrentAnchor] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +37,7 @@ function Navigation({ items }: NavigationProps) {
 
   const updateCurrentAnchor = useCallback(() => {
     const currentTitleIdx = titles.current.findIndex(
-      (anchor) => anchor.getBoundingClientRect().top - CURRENT_ANCHOR_GAP_PX >= 0,
+      (anchor) => anchor.getBoundingClientRect().top - currentAnchorGarPx >= 0,
     );
 
     const idx =
