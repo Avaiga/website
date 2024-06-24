@@ -21,7 +21,6 @@ function PricingVariant({ type, plan }: PricingVariantProps) {
       title: 'Taipy Community',
       description: [
         'Taipy Open-source',
-        'Unlimited access to Taipy community',
         'Support provided through the community of developers and contributors',
       ],
       price: 'FREE',
