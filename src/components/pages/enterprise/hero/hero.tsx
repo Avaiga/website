@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section className="hero pt-[113px] lg:pt-[102px] md:pt-[81px] sm:pt-[91px]">
       <div className="container-narrow max-w-[1024px] text-center lg:max-w-[896px]">
-        <p className="leading-snug text-primary-red sm:text-14">Taipy Enterprise Edition</p>
+        <p className="leading-snug text-primary-red sm:text-14">Taipy Enterprise edition</p>
         <h1 className="mx-auto pt-5 text-48 font-semibold leading-dense tracking-tight lg:max-w-[832px] lg:text-40 md:max-w-[640px] md:pt-3.5 md:text-32 sm:text-28">
           Taipy Enterprise for customers requiring mission-critical Support,
           SSO, ACL, Scalability & Robustness
