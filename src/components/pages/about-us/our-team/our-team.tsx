@@ -13,7 +13,6 @@ import florianJacta from '@/images/pages/about-us/team/florian-jacta.jpg';
 import fredericLefevereLaoide from '@/images/pages/about-us/team/frederic-lefevere-laoide.jpg';
 import jeanRobinMedori from '@/images/pages/about-us/team/jean-robin-medori.jpg';
 import longNguyenDinh from '@/images/pages/about-us/team/long-nguyen-dinh.jpg';
-import marineGosselin from '@/images/pages/about-us/team/marine-gosselin.jpg';
 import myriamDelarue from '@/images/pages/about-us/team/myriam-delarue.jpg';
 import namNguyen from '@/images/pages/about-us/team/nam-nguyen.jpg';
 import nevoDavid from '@/images/pages/about-us/team/nevo-david.jpg';
@@ -47,7 +46,7 @@ const teamListData = [
     photo: jeanRobinMedori,
     name: 'Jean-Robin Medori',
     position: 'CPO',
-    countryIcon: US,
+    countryIcon: FR,
   },
   {
     photo: myriamDelarue,
@@ -84,12 +83,6 @@ const teamListData = [
     photo: florianJacta,
     name: 'Florian Jacta',
     position: 'Community Success Engineer',
-    countryIcon: FR,
-  },
-  {
-    photo: marineGosselin,
-    name: 'Marine Gosselin',
-    position: 'Developer Advocate',
     countryIcon: FR,
   },
   {
