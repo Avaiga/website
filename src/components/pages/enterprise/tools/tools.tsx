@@ -32,7 +32,7 @@ const toolBlocks = [
     title: 'Taipy Designer',
     description: 'A drag-n-Drop GUI builder on top of Python code.',
     link: {
-      linkText: 'Learn more',
+      linkText: 'Try it now',
       href: ROUTES.DESIGNER,
     },
     gradient: Gradient.Center,

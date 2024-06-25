@@ -10,7 +10,7 @@ export const SEO_DATA = {
   ENTERPRISE: {
     title: 'Enterprise | Taipy',
     description:
-      'Explore our premium offer and take your business to the next level with Taipy Enterprise Edition!',
+      'Explore our premium offer and take your business to the next level with Taipy Enterprise edition!',
     pathname: ROUTES.ENTERPRISE as string, // /enterprise
   },
   PRICING: {
