@@ -4,7 +4,7 @@ import styleImage from '@/images/pages/designer/style.png';
 import widgetsImage from '@/images/pages/designer/widgets.png';
 
 import Hero from '@/components/pages/designer/hero';
-import CTA from '@/components/shared/CTA/CTA';
+import CTA from '@/components/shared/CTA';
 import CTAButton from '@/components/shared/cta-button';
 import Features from '@/components/shared/features';
 
@@ -47,7 +47,7 @@ function Designer() {
       <CTAButton className="mt-2 md:hidden" />
       <CTA
         className="mb-[184px] mt-[183px] lg:mb-[151px] lg:mt-[184px] md:my-[110px] sm:mb-[84px] sm:mt-[79px]"
-        isEnterprise
+        isDesigner
       />
     </>
   );
