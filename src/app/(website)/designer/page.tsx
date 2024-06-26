@@ -1,3 +1,4 @@
+import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 import connectImage from '@/images/pages/designer/connect.png';
 import styleImage from '@/images/pages/designer/style.png';
@@ -44,7 +45,12 @@ function Designer() {
         }}
         items={items}
       />
-      <CTAButton className="mt-2 md:hidden" />
+      <CTAButton
+        className="mt-2 md:hidden"
+        to={ROUTES.TRIAL_DESIGNER_FORM}
+        buttonText="Try it for free"
+        isOpenInNewTab
+      />
       <CTA
         className="mb-[184px] mt-[183px] lg:mb-[151px] lg:mt-[184px] md:my-[110px] sm:mb-[84px] sm:mt-[79px]"
         isDesigner

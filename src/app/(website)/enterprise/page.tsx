@@ -1,3 +1,4 @@
+import { ROUTES } from '@/constants/routes';
 import { SEO_DATA } from '@/constants/seo';
 import distributedImage from '@/images/pages/enterprise/features/distributed.png';
 import scenarioImage from '@/images/pages/enterprise/features/scenario.png';
@@ -70,7 +71,7 @@ function Enterprise() {
       <Hero />
       <Tools />
       <Logos className="mt-[186px]" logos={logos} />
-      <CTAButton />
+      <CTAButton to={ROUTES.PRICING} buttonText="See pricing" />
       <Benefits />
       <Features
         heading="Taipy Enterprise has so much more to offer"
