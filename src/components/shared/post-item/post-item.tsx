@@ -44,6 +44,7 @@ export default function PostItem({
               width={648}
               height={364}
               alt={title}
+              quality={85}
               priority={isPriorityLoad}
               placeholder={cover.asset?.metadata?.lqip ? 'blur' : 'empty'}
               blurDataURL={cover.asset?.metadata?.lqip ?? ''}
