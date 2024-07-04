@@ -23,7 +23,7 @@ export const page = defineType({
           to: [{ type: 'post' }],
         },
       ],
-      validation: (rule: ArrayRule<ReferenceRule>) => rule.min(1),
+      validation: (rule: ArrayRule<ReferenceRule>) => rule.min(3),
     }),
   ],
 });

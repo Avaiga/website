@@ -20,7 +20,7 @@ async function RelatedPosts() {
             All posts
           </Link>
         </div>
-        <div className="grid grid-cols-3 gap-x-8 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
+        <div className="grid grid-cols-3 gap-x-8 gap-y-9 lg:gap-x-6 md:gap-x-5 sm:grid-cols-1 sm:gap-y-7">
           {allPosts?.map((relatedPost) => (
             <PostItem key={relatedPost._id} post={relatedPost} isRelated />
           ))}
