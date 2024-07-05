@@ -15,11 +15,11 @@ async function RelatedPosts({ relatedPosts }: { relatedPosts: SinglePage[] }) {
   return (
     <section className="related mt-[200px] lg:mt-[104px] md:mt-[88px] sm:mt-16">
       <div className="container max-w-7xl">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-8 flex items-end justify-between gap-3">
           <h2 className="text-48 font-semibold leading-dense tracking-tight lg:text-40 md:text-36 sm:text-28">
             See what&apos;s happening at Taipy&apos;s
           </h2>
-          <Link href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
+          <Link className="shrink-0" href={ROUTES.BLOG} size="md" theme="white" arrowTheme="red">
             All posts
           </Link>
         </div>
