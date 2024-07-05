@@ -24,6 +24,7 @@ export const ROUTES: Record<string, URL | Route<string>> = {
   ENTERPRISE: '/enterprise',
   COMMUNITY: '/community',
   DESIGNER: '/designer',
+  TRIAL_DESIGNER_FORM: new URL('https://forms.gle/dh9JLndzU2c6sHKL6'),
   DESIGNER_LICENSE: '/taipy-designer-evaluation-license-agreement',
   TERMS: '/terms-of-use', // https://www.taipy.io/legal/terms-of-use
   COMPANY: '/',
