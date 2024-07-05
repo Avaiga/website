@@ -3,10 +3,13 @@ import { ROUTES } from '@/constants/routes';
 import Link from '@/components/shared/link';
 import PostItem from '@/components/shared/post-item';
 
-import { getPages } from '@/lib/sanity/client';
+import { SinglePage } from '@/types/blog';
 
-async function RelatedPosts() {
-  const relatedPosts = await getPages();
+async function RelatedPosts({ relatedPosts }: { relatedPosts: SinglePage[] }) {
+  if (!relatedPosts || relatedPosts.length === 0) {
+    return null;
+  }
+
   const allPosts = relatedPosts[0].posts;
 
   return (

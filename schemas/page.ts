@@ -16,7 +16,7 @@ export const page = defineType({
     defineField({
       name: 'posts',
       type: 'array',
-      title: 'Chosen Posts',
+      title: 'Related Posts',
       of: [
         {
           type: 'reference',
