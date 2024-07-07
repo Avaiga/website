@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import Scalability from '@/svgs/pages/enterprise/hero/scalability-icon.svg';
-import User from '@/svgs/pages/enterprise/hero/users-icon.svg';
+import Scalability from '@/svgs/pages/pricing/hero/scalability-icon.svg';
+import User from '@/svgs/pages/pricing/hero/users-icon.svg';
 
 const textCardsData = [
   {

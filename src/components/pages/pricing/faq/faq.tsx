@@ -41,10 +41,10 @@ const items = [
 
 function Faq() {
   return (
-    <section className="faq mt-[165px] lg:mt-[128px] md:mt-[96px] sm:mt-[80px]">
-      <div className="container max-w-[1024px] lg:max-w-[896px] md:max-w-[704px]">
+    <section className="faq mt-[183px] lg:mt-[128px] md:mt-[96px] sm:mt-[80px]">
+      <div className="container max-w-[896px] md:max-w-[704px]">
         <Heading text="Frequently asked questions" />
-        <ul className="mt-[30px] lg:mt-6 md:mt-[18px] sm:mt-[10px]">
+        <ul className="mt-10 lg:mt-6 md:mt-[18px] sm:mt-[10px]">
           {items.map((item, index) => (
             <Item {...item} key={index} index={index} />
           ))}

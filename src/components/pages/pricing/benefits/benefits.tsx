@@ -2,10 +2,10 @@ import { ROUTES } from '@/constants/routes';
 
 import Button from '@/components/shared/button';
 
-import collaborationIcon from '@/svgs/pages/enterprise/collaboration.inline.svg';
-import easyUseIcon from '@/svgs/pages/enterprise/easy-use-icon.inline.svg';
-import flexIcon from '@/svgs/pages/enterprise/flexibility.inline.svg';
-import speedIcon from '@/svgs/pages/enterprise/speed.inline.svg';
+import collaborationIcon from '@/svgs/pages/pricing/collaboration.inline.svg';
+import easyUseIcon from '@/svgs/pages/pricing/easy-use-icon.inline.svg';
+import flexIcon from '@/svgs/pages/pricing/flexibility.inline.svg';
+import speedIcon from '@/svgs/pages/pricing/speed.inline.svg';
 
 const benefitsData = [
   {

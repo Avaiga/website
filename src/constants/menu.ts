@@ -16,7 +16,6 @@ export const MENU = {
   header: [
     { label: 'Blog', href: ROUTES.BLOG },
     { label: 'About', href: ROUTES.ABOUT_US },
-    { label: 'Pricing', href: ROUTES.PRICING },
     {
       label: 'Docs',
       href: ROUTES.DOCUMENTATION,
@@ -62,7 +61,6 @@ export const MENU = {
         items: [
           { label: 'Home', href: ROUTES.INDEX },
           { label: 'About us', href: ROUTES.ABOUT_US },
-          { label: 'Enterprise', href: ROUTES.ENTERPRISE },
           { label: 'Pricing', href: ROUTES.PRICING },
           { label: 'Customer Stories', href: ROUTES.CUSTOMER_STORIES },
           { label: 'Contact us', href: ROUTES.CONTACT_US },

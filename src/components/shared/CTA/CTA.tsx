@@ -79,7 +79,7 @@ function CTA({
             <p className="mt-3.5 text-18 font-light lg:mt-3 lg:text-16 md:text-14 sm:mt-2.5">
               {isDesigner
                 ? 'Create dynamic GUIs on top of your Python code effortlessly with a drag-and-drop builder'
-                : 'Taipy When security, simplicity, and efficiency begin to matter.'}
+                : 'When security, simplicity, and efficiency begin to matter.'}
             </p>
             {isEnterprise || isDesigner ? (
               <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 md:mt-5 sm:mt-4">
@@ -95,9 +95,9 @@ function CTA({
                 className="mt-6 w-full max-w-[180px] md:max-w-40 sm:mt-5"
                 size="lg"
                 theme="white-filled"
-                href={ROUTES.ENTERPRISE}
+                href={ROUTES.REQUEST_A_DEMO}
               >
-                Learn more
+                Request a demo
                 <span className="sr-only">about Taipy Enterprise</span>
               </Button>
             )}

@@ -119,8 +119,8 @@ function Header() {
           </nav>
           <div className="flex gap-x-2.5 lg:grow lg:justify-end md:hidden">
             <GithubStarCounter />
-            <Button theme="white-filled" size="sm" href={ROUTES.ENTERPRISE}>
-              Enterprise
+            <Button theme="white-filled" size="sm" href={ROUTES.PRICING}>
+              Pricing
             </Button>
           </div>
         </div>
