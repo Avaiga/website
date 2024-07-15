@@ -16,6 +16,19 @@ interface LogoComponents {
   [key: string]: React.FunctionComponent<SVGProps<SVGSVGElement>>;
 }
 
+const logos = [
+  'bird',
+  'brain',
+  'co',
+  'icb',
+  'layers',
+  'les',
+  'microsoft',
+  'predictive',
+  'princeton',
+  'tal-group',
+];
+
 const allLogos: LogoComponents = {
   bird: BirdLogo,
   brain: BrainLogo,
@@ -31,11 +44,10 @@ const allLogos: LogoComponents = {
 
 interface LogosProps {
   className?: string;
-  logos: string[];
   isWide?: boolean;
 }
 
-function LogosWall({ className, logos, isWide }: LogosProps) {
+function LogosWall({ className, isWide }: LogosProps) {
   return (
     <div className={clsx('logos', className)}>
       <ul className="logos-content">
@@ -74,7 +86,7 @@ function LogosWall({ className, logos, isWide }: LogosProps) {
   );
 }
 
-function Logos({ className = '', logos, isWide = true }: LogosProps) {
+function Logos({ className = '', isWide = true }: LogosProps) {
   return (
     <div
       className={clsx(
@@ -96,7 +108,7 @@ function Logos({ className = '', logos, isWide = true }: LogosProps) {
           'mt-[56px] md:mt-[43px] sm:mt-[41px]': isWide,
         })}
       >
-        <LogosWall className="logos-sides-fade" logos={logos} isWide={isWide} />
+        <LogosWall className="logos-sides-fade" isWide={isWide} />
       </div>
     </div>
   );

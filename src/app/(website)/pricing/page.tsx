@@ -34,25 +34,13 @@ const items = [
     image: telemetryImage,
   },
 ];
-const logos = [
-  'bird',
-  'brain',
-  'co',
-  'icb',
-  'layers',
-  'les',
-  'microsoft',
-  'predictive',
-  'princeton',
-  'tal-group',
-];
 
 function Pricing() {
   return (
     <>
       <Hero />
       <Tools />
-      <Logos className="mt-[186px]" logos={logos} />
+      <Logos className="mt-[186px]" />
       <Plans />
       <Benefits />
       <Features
