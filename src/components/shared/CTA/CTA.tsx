@@ -50,10 +50,10 @@ function CTA({
             Build Python production-ready data & AI web applications
           </p>
           {isEnterprise || isDesigner ? (
-            <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 md:mt-5 sm:mt-4">
+            <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 transition-colors duration-300 hover:bg-[#E4E5E8] md:mt-5 sm:mt-4">
               <Link
                 href={ROUTES.PRICING}
-                className="whitespace-nowrap px-[47px] py-[13px] font-semibold leading-snug text-black transition-colors duration-300"
+                className="whitespace-nowrap px-[47px] py-[13px] font-semibold leading-snug text-black"
               >
                 See pricing
               </Link>
@@ -82,7 +82,7 @@ function CTA({
                 : 'When security, simplicity, and efficiency begin to matter.'}
             </p>
             {isEnterprise || isDesigner ? (
-              <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 md:mt-5 sm:mt-4">
+              <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 transition-colors duration-300 hover:bg-[#E4E5E8] md:mt-5 sm:mt-4">
                 <Link
                   className="whitespace-nowrap px-[47px] py-[13px] font-semibold leading-snug text-black transition-colors duration-300"
                   href={linkHref}
