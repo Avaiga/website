@@ -4,6 +4,7 @@ import { category } from './category';
 import { customBlockquote, customNotice, customTable, customYoutube } from './content';
 import { customerStory } from './customer-story';
 import { legal } from './legal';
+import { page } from './page';
 import { post } from './post';
 import { seo } from './seo';
 
@@ -19,4 +20,5 @@ export const schemaTypes = [
   post,
   legal,
   banner,
+  page,
 ];

@@ -107,3 +107,12 @@ export enum NoticeTypes {
   WARNING = 'warning',
   ATTENTION = 'attention',
 }
+
+export type SinglePage = {
+  title: string;
+  posts: Post[];
+};
+
+export type PageQueryResult = {
+  allPage: SinglePage[];
+};

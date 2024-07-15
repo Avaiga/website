@@ -1,6 +1,15 @@
 import { GraphQLClient } from 'graphql-request';
 
-import { Category, Legal, Post, SingleCategory, SingleLegal, SinglePost } from '@/types/blog';
+import {
+  Category,
+  Legal,
+  PageQueryResult,
+  Post,
+  SingleCategory,
+  SingleLegal,
+  SinglePage,
+  SinglePost,
+} from '@/types/blog';
 import { CustomerStory, SingleCustomerStory } from '@/types/customer-story';
 import { Banner } from '@/types/shared';
 
@@ -15,9 +24,10 @@ import {
   categoryQuery,
   countCustomerStoryQuery,
   countPostQuery,
-  latestPostsQuery,
   customerStoryQuery,
+  latestPostsQuery,
   legalQuery,
+  pageQuery,
   postQuery,
   promotedPostQuery,
 } from '@/lib/sanity/query';
@@ -134,7 +144,6 @@ export const getRelatedPosts = async ({ postId }: { postId: string }): Promise<P
     .then((data) => data.allPost);
 };
 
-
 export const getLatestPosts = async (): Promise<SinglePost[]> =>
   await graphQLClient
     .request<{ allPost: SinglePost[] }>(latestPostsQuery)
@@ -148,7 +157,6 @@ export const getAllRelatedPosts = async (): Promise<Post[]> => {
     })
     .then((data) => data.allPost);
 };
-
 
 export const getPromotedPost = async (): Promise<Post | null> =>
   await graphQLClient
@@ -207,3 +215,6 @@ export const getBanner = async (): Promise<Banner | null> =>
     .request<{ allBanner: Banner[] }>(bannerQuery)
     .then((data) => data.allBanner)
     .then((data) => data[0] || null);
+
+export const getPages = async (): Promise<SinglePage[]> =>
+  await graphQLClient.request<PageQueryResult>(pageQuery).then((data) => data.allPage);

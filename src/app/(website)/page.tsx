@@ -8,11 +8,15 @@ import LargeData from '@/components/pages/home/large-data';
 import Learn from '@/components/pages/home/learn';
 import Optimize from '@/components/pages/home/optimize';
 import CTA from '@/components/shared/CTA';
+import RelatedPosts from '@/components/shared/related-posts';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';
+import { getPages } from '@/lib/sanity/client';
 
-function Home() {
+async function Home() {
+  const relatedPosts = await getPages();
+
   return (
     <>
       <Hero />
@@ -28,6 +32,7 @@ function Home() {
       <Integrations />
       <Benefits />
       <Applications />
+      <RelatedPosts relatedPosts={relatedPosts} />
       <CTA />
     </>
   );
@@ -38,3 +43,5 @@ export default Home;
 export async function generateMetadata() {
   return getMetadata(SEO_DATA.INDEX);
 }
+
+export const revalidate = 60;
