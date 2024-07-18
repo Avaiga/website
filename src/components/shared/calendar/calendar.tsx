@@ -38,15 +38,7 @@ function Calendar({ calLink }: { calLink: string }) {
   return (
     <section className="calendar mt-[72px] lg:mt-16 md:mt-14">
       <div className="container min-h-[490px]">
-        <Cal
-          calLink="pixel-point-devs/15min"
-          config={{
-            ...analyticsData,
-            theme: 'dark',
-          }}
-        />
-        {/* Only for review and test reasons */}
-        {/* <Cal calLink={calLink} config={{ theme: 'dark' }} /> */}
+        <Cal calLink={calLink} config={{ theme: 'dark' }} />
       </div>
     </section>
   );
