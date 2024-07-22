@@ -6,19 +6,6 @@ import QuoteIcon from '@/svgs/icons/quote-sign.inline.svg';
 
 import Form from './form';
 
-const logos = [
-  'bird',
-  'brain',
-  'co',
-  'icb',
-  'layers',
-  'les',
-  'microsoft',
-  'predictive',
-  'princeton',
-  'tal-group',
-];
-
 function Hero() {
   return (
     <section className="hero pt-32 lg:pt-28 md:pt-[104px] sm:pt-24">
@@ -65,7 +52,7 @@ function Hero() {
                 They trust us
                 <hr className="grow text-grey-30" />
               </span>
-              <Logos logos={logos} isWide={false} className="mb-5 sm:mb-0" />
+              <Logos isWide={false} className="mb-5 sm:mb-0" />
             </div>
           </div>
         </div>

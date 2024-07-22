@@ -2,15 +2,15 @@
 
 import { ROUTES } from '@/constants/routes';
 
-import paintIcon from '@/svgs/pages/enterprise/tools/paint.svg';
-import passwordIcon from '@/svgs/pages/enterprise/tools/password.svg';
-import roadmapIcon from '@/svgs/pages/enterprise/tools/roadmap.svg';
-import routeIcon from '@/svgs/pages/enterprise/tools/route.svg';
-import serverRackIcon from '@/svgs/pages/enterprise/tools/server-rack.svg';
-import speedIndicatorIcon from '@/svgs/pages/enterprise/tools/speed-indicator.svg';
-import supportIcon from '@/svgs/pages/enterprise/tools/support.svg';
-import surveyIcon from '@/svgs/pages/enterprise/tools/survey.svg';
-import userFocusIcon from '@/svgs/pages/enterprise/tools/user-focus.svg';
+import paintIcon from '@/svgs/pages/pricing/tools/paint.svg';
+import passwordIcon from '@/svgs/pages/pricing/tools/password.svg';
+import roadmapIcon from '@/svgs/pages/pricing/tools/roadmap.svg';
+import routeIcon from '@/svgs/pages/pricing/tools/route.svg';
+import serverRackIcon from '@/svgs/pages/pricing/tools/server-rack.svg';
+import speedIndicatorIcon from '@/svgs/pages/pricing/tools/speed-indicator.svg';
+import supportIcon from '@/svgs/pages/pricing/tools/support.svg';
+import surveyIcon from '@/svgs/pages/pricing/tools/survey.svg';
+import userFocusIcon from '@/svgs/pages/pricing/tools/user-focus.svg';
 
 import ToolBlock from './tool-block';
 
@@ -38,10 +38,15 @@ const toolBlocks = [
     gradient: Gradient.Center,
   },
   {
+    logo: routeIcon,
+    title: 'Scenario management',
+    description: 'Unlimited amount of scenarios.',
+    gradient: Gradient.Right,
+  },
+  {
     logo: passwordIcon,
     title: 'Authentication',
     description: 'Applications security with SSO feature.',
-    gradient: Gradient.Right,
   },
   {
     logo: userFocusIcon,
@@ -68,18 +73,13 @@ const toolBlocks = [
     title: 'Scheduler',
     description: 'Efficient task scheduling and parallel execution.',
   },
-  {
-    logo: routeIcon,
-    title: 'Scenario management',
-    description: 'Unlimited amount of scenarios.',
-  },
 ];
 
 function Tools() {
   return (
     <section className="tools mt-6 lg:mt-14 md:mt-12 sm:mt-10">
       <div className="container relative flex max-w-[1088px] flex-col items-center">
-        <ul className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px] lg:gap-x-6 lg:gap-y-6 md:mt-8 md:max-w-[640px] md:grid-cols-2 sm:mt-6 sm:grid-cols-1 sm:gap-y-5">
+        <ul className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px] lg:gap-x-6 lg:gap-y-6 md:mt-8 md:max-w-[640px] md:grid-cols-2 xs:mt-6 xs:grid-cols-1 xs:gap-y-5">
           {toolBlocks.map(({ title, description, logo, link, gradient }, index) => (
             <ToolBlock
               gradient={gradient}

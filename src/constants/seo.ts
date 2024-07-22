@@ -7,12 +7,6 @@ export const SEO_DATA = {
       'From simple pilots to production-ready web applications in no times. No more compromise on performance, customization, and scalability.',
     pathname: ROUTES.INDEX as string, // /
   },
-  ENTERPRISE: {
-    title: 'Enterprise | Taipy',
-    description:
-      'Explore our premium offer and take your business to the next level with Taipy Enterprise edition!',
-    pathname: ROUTES.ENTERPRISE as string, // /enterprise
-  },
   PRICING: {
     title: 'License Fees | Taipy',
     description: 'Compare Taipy editions and license fees, or ask for a custom quote!',

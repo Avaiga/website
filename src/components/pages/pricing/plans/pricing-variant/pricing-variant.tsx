@@ -19,6 +19,7 @@ function PricingVariant({ type }: PricingVariantProps) {
       title: 'Taipy Community',
       description: [
         'Taipy Open-source',
+        'Unlimited access to Taipy community',
         'Support provided through the community of developers and contributors',
       ],
       price: 'FREE',
@@ -109,14 +110,14 @@ function PricingVariant({ type }: PricingVariantProps) {
           </ul>
           {(isEnterprise || isBusiness) && (
             <Button
-              className="relative mt-[26px] w-full max-w-[180px] leading-snug lg:mt-[22px] md:h-12 md:text-16 sm:h-11 sm:max-w-[160px] sm:text-14"
+              className="relative z-10 mt-[26px] w-full max-w-[180px] leading-snug lg:mt-[22px] md:h-12 md:text-16 sm:h-11 sm:max-w-[160px] sm:text-14"
               size="lg"
               theme={isBusiness ? 'red-filled' : 'white-filled'}
               href={ROUTES.REQUEST_A_QUOTE}
             >
               Get a quote
               {isBusiness && (
-                <span className="absolute top-[-33px] h-32 w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[24px]" />
+                <span className="absolute top-[-33px] -z-10 h-32 w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[24px]" />
               )}
             </Button>
           )}

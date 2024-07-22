@@ -1,20 +1,33 @@
 import { SVGProps } from 'react';
 
-import BirdLogo from '@/images/pages/enterprise/logos/bird.inline.svg';
-import BrainLogo from '@/images/pages/enterprise/logos/brain.inline.svg';
-import CoLogo from '@/images/pages/enterprise/logos/co.inline.svg';
-import IcbLogo from '@/images/pages/enterprise/logos/icb.inline.svg';
-import LayersLogo from '@/images/pages/enterprise/logos/layers.inline.svg';
-import LesLogo from '@/images/pages/enterprise/logos/les.inline.svg';
-import MicrosoftLogo from '@/images/pages/enterprise/logos/microsoft.inline.svg';
-import PredictiveLogo from '@/images/pages/enterprise/logos/predictive.inline.svg';
-import PrincetonLogo from '@/images/pages/enterprise/logos/princeton.inline.svg';
-import TalGroupLogo from '@/images/pages/enterprise/logos/tal-group.inline.svg';
+import BirdLogo from '@/images/pages/pricing/logos/bird.inline.svg';
+import BrainLogo from '@/images/pages/pricing/logos/brain.inline.svg';
+import CoLogo from '@/images/pages/pricing/logos/co.inline.svg';
+import IcbLogo from '@/images/pages/pricing/logos/icb.inline.svg';
+import LayersLogo from '@/images/pages/pricing/logos/layers.inline.svg';
+import LesLogo from '@/images/pages/pricing/logos/les.inline.svg';
+import MicrosoftLogo from '@/images/pages/pricing/logos/microsoft.inline.svg';
+import PredictiveLogo from '@/images/pages/pricing/logos/predictive.inline.svg';
+import PrincetonLogo from '@/images/pages/pricing/logos/princeton.inline.svg';
+import TalGroupLogo from '@/images/pages/pricing/logos/tal-group.inline.svg';
 import clsx from 'clsx';
 
 interface LogoComponents {
   [key: string]: React.FunctionComponent<SVGProps<SVGSVGElement>>;
 }
+
+const logos = [
+  'bird',
+  'brain',
+  'co',
+  'icb',
+  'layers',
+  'les',
+  'microsoft',
+  'predictive',
+  'princeton',
+  'tal-group',
+];
 
 const allLogos: LogoComponents = {
   bird: BirdLogo,
@@ -31,11 +44,10 @@ const allLogos: LogoComponents = {
 
 interface LogosProps {
   className?: string;
-  logos: string[];
   isWide?: boolean;
 }
 
-function LogosWall({ className, logos, isWide }: LogosProps) {
+function LogosWall({ className, isWide }: LogosProps) {
   return (
     <div className={clsx('logos', className)}>
       <ul className="logos-content">
@@ -74,7 +86,7 @@ function LogosWall({ className, logos, isWide }: LogosProps) {
   );
 }
 
-function Logos({ className = '', logos, isWide = true }: LogosProps) {
+function Logos({ className = '', isWide = true }: LogosProps) {
   return (
     <div
       className={clsx(
@@ -96,7 +108,7 @@ function Logos({ className = '', logos, isWide = true }: LogosProps) {
           'mt-[56px] md:mt-[43px] sm:mt-[41px]': isWide,
         })}
       >
-        <LogosWall className="logos-sides-fade" logos={logos} isWide={isWide} />
+        <LogosWall className="logos-sides-fade" isWide={isWide} />
       </div>
     </div>
   );

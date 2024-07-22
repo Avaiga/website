@@ -21,7 +21,6 @@ export const ROUTES: Record<string, URL | Route<string>> = {
   REQUEST_A_QUOTE: '/request-a-quote',
   REQUEST_A_DESIGNER_DEMO: '/request-a-designer-demo',
   MENTORSHIP: '/mentorship',
-  ENTERPRISE: '/enterprise',
   COMMUNITY: '/community',
   DESIGNER: '/designer',
   TRIAL_DESIGNER_FORM: new URL('https://forms.gle/dh9JLndzU2c6sHKL6'),
