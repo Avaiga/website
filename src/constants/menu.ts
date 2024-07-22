@@ -36,7 +36,7 @@ export const MENU = {
           icon: FolderIcon,
         },
         {
-          label: 'Apps Examples',
+          label: 'Apps Gallery',
           href: ROUTES.DOCUMENTATION_APPS_EXAMPLES,
           icon: BlocksIcon,
         },
