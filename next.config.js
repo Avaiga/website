@@ -88,6 +88,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/enterprise',
+        destination: '/pricing',
+        permanent: true,
+      },
+      {
         source: '/posts/:path*',
         destination: '/blog/:path*',
         permanent: true,
@@ -105,7 +110,8 @@ module.exports = {
       {
         source: '/company/testimonials',
         destination: '/customer-stories',
-        permanent: true,},
+        permanent: true,
+      },
       {
         source: '/about-taipy/:path*',
         destination: '/about-us',
