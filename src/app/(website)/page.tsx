@@ -34,7 +34,10 @@ async function Home() {
       <Integrations />
       <Benefits />
       <Applications />
-      <Testimonials className="mt-[200px]" items={TESTIMONIALS_ITEMS} />
+      <Testimonials
+        className="mt-[200px] lg:mt-[132px] md:mt-24 sm:mt-[76px]"
+        items={TESTIMONIALS_ITEMS}
+      />
       <RelatedPosts relatedPosts={relatedPosts} />
       <CTA />
     </>
