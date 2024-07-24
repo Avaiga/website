@@ -100,6 +100,8 @@ module.exports = {
         'radial-gradient(95.97% 100% at 50% 0%, rgba(255, 92, 77, 0.00) 28.79%, #FF5C4D 100%)',
       'digit-gradient':
         'radial-gradient(95.66% 103.97% at 4.88% 100.06%, #BCBCC3 0%, #A2A2A9 91.59%)',
+      'banner-gradient':
+        'linear-gradient(to right,rgba(91,192,243,0) 6%,rgba(91,192,243,0) 16%,rgba(50,171,232,0.5) 39%,rgba(50,171,232,0.75) 49%,rgba(50,171,232,0.5) 60%,rgba(91,192,243,0) 85%)',
     },
 
     boxShadow: {
