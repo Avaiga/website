@@ -10,7 +10,7 @@ interface BannerProps {
 
 function Banner({ title, linkText, linkUrl }: BannerProps) {
   return (
-    <div className="banner banner-pixels relative z-50 overflow-hidden bg-[#0B0B0E] text-white/95 px-safe pt-safe after:absolute after:bottom-0 after:left-0 after:right-0 after:mx-auto after:h-full after:w-full after:max-w-[1344px] after:bg-banner-gradient after:opacity-60">
+    <div className="banner banner-pixels relative z-50 overflow-hidden bg-[#0B0B0E] text-white/95 px-safe pt-safe after:absolute after:bottom-0 after:left-0 after:right-0 after:mx-auto after:h-full after:w-full after:bg-banner-gradient after:opacity-60">
       <div className="container-narrow relative before:absolute before:left-0 before:hidden before:h-full before:w-10 before:bg-[linear-gradient(to_right,rgba(0,0,0,1)_0%,rgba(238,130,238,0)_100%)] after:absolute after:right-0 after:top-0 after:hidden after:h-full after:w-10 after:bg-[linear-gradient(to_left,rgba(0,0,0,1)_0%,rgba(238,130,238,0)_100%)] before:md:block after:md:block sm:px-10">
         <Link
           className={clsx(
