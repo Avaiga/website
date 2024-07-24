@@ -1,5 +1,3 @@
-'use client';
-
 import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
 
 import Logos from '@/components/shared/logos';
