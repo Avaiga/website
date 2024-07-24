@@ -74,7 +74,7 @@ function Testimonials({ items, className }: TestimonialsProps) {
   };
 
   return (
-    <section className={clsx('testimonials safe-paddings mt-[182px]', className)}>
+    <section className={clsx('testimonials safe-paddings', className)}>
       <div className="container relative flex max-w-[920px] flex-col items-center md:max-w-[696px]">
         <h2 className="text-40 font-medium leading-dense tracking-tight lg:text-32 lg:font-semibold md:text-28">
           They speak for us

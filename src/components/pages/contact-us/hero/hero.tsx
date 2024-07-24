@@ -1,10 +1,11 @@
 'use client';
 
+import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
+
 import Logos from '@/components/shared/logos';
 
-import QuoteIcon from '@/svgs/icons/quote-sign.inline.svg';
-
 import Form from './form';
+import Testimonials from './testimonials';
 
 function Hero() {
   return (
@@ -21,32 +22,8 @@ function Hero() {
           <div className="col-span-6 pl-8 pr-[52px] lg:col-span-5 lg:pl-0 md:col-span-full md:pr-0">
             <Form />
           </div>
-          <div className="col-span-4 col-start-7 flex flex-col gap-y-[104px] lg:col-span-3 lg:col-start-6 lg:gap-y-20 md:col-span-full md:gap-y-12 sm:gap-y-10">
-            <div>
-              {/* TODO: create universal ui-component for quote */}
-              <blockquote>
-                <QuoteIcon className="w-10 lg:w-9 sm:w-[30px]" width={40} height={40} aria-hidden />
-                <p className="mt-[18px] text-24 font-light leading-normal tracking-tight text-white lg:text-20 md:mt-5 sm:mt-3.5 sm:text-18 sm:tracking-normal">
-                  Integrating Taipy into our suite of products for the Quick Service Restaurant
-                  (QSR) market has marked a significant step forward. The ease with which our
-                  development team was able to pick up Taipy was remarkable.
-                </p>
-              </blockquote>
-              <div className="mt-3.5 flex items-center gap-x-3.5">
-                <div className="flex items-center gap-x-1">
-                  <span className="font-medium leading-tight tracking-snug text-grey-70 sm:text-14">
-                    Jesselynn Mah
-                  </span>
-                  <div
-                    className="mx-1.5 h-[3px] w-[3px] rounded-full bg-grey-30"
-                    aria-hidden="true"
-                  />
-                  <span className="leading-tight tracking-snug text-grey-60 sm:text-14">
-                    KnowledgeTouch
-                  </span>
-                </div>
-              </div>
-            </div>
+          <div className="col-span-4 col-start-7 flex flex-col gap-y-10 lg:col-span-3 lg:col-start-6 lg:gap-y-20 md:col-span-full md:gap-y-12 sm:gap-y-10">
+            <Testimonials items={TESTIMONIALS_ITEMS} />
             <div>
               <span className="flex items-center gap-x-2.5 text-16 uppercase leading-snug tracking-snug text-grey-70 lg:text-14">
                 They trust us

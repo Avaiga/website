@@ -13,7 +13,7 @@ async function RelatedPosts({ relatedPosts }: { relatedPosts: SinglePage[] }) {
   const allPosts = relatedPosts[0].posts;
 
   return (
-    <section className="related mt-[200px] lg:mt-[104px] md:mt-[88px] sm:mt-16">
+    <section className="related mt-[136px] lg:mt-[104px] md:mt-[88px] sm:mt-16">
       <div className="container max-w-7xl">
         <div className="mb-8 flex items-end justify-between gap-3">
           <h2 className="text-48 font-semibold leading-dense tracking-tight lg:text-40 md:text-36 sm:text-28">
