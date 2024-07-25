@@ -52,7 +52,7 @@ export const MENU = {
         },
       ],
     },
-    { label: 'Apps Examples', href: ROUTES.DOCUMENTATION_APPS_EXAMPLES },
+    { label: 'Apps Gallery', href: ROUTES.DOCUMENTATION_APPS_EXAMPLES },
   ],
   footer: {
     main: [
