@@ -24,13 +24,13 @@ function SampleNextArrow(props: ArrowProps) {
 
   return (
     <button
-      className="absolute right-0 top-[-50px] md:-top-11"
+      className="absolute right-0 top-[-50px] sm:-top-11"
       type="button"
       aria-label="Next testimonial"
       onClick={onClick}
     >
       <ArrowIcon
-        className="size-9 shrink-0 rotate-90 opacity-80 transition-[fill,transform] duration-200 md:size-6"
+        className="size-9 shrink-0 rotate-90 opacity-80 transition-[fill,transform] duration-200 sm:size-6"
         aria-hidden
       />
     </button>
@@ -42,13 +42,13 @@ function SamplePrevArrow(props: ArrowProps) {
 
   return (
     <button
-      className="absolute right-[50px] top-[-50px] md:-top-11 md:right-[38px]"
+      className="absolute right-[50px] top-[-50px] sm:-top-11 sm:right-[38px]"
       type="button"
       aria-label="Prev testimonial"
       onClick={onClick}
     >
       <ArrowIcon
-        className="size-9 shrink-0 -rotate-90 opacity-80 transition-[fill,transform] duration-200 md:size-6"
+        className="size-9 shrink-0 -rotate-90 opacity-80 transition-[fill,transform] duration-200 sm:size-6"
         aria-hidden
       />
     </button>
@@ -57,20 +57,18 @@ function SamplePrevArrow(props: ArrowProps) {
 
 function SliderItem({ text, authorName, authorTitle }: TestimonialItem) {
   return (
-    <figure>
+    <figure className="pr-5">
       <blockquote>
         <p className="text-24 font-light leading-normal tracking-tight text-white lg:text-20 sm:text-18 sm:tracking-normal">
           {text}
         </p>
       </blockquote>
-      <figcaption className="mt-3.5 flex items-center gap-x-3.5">
-        <div className="flex items-center gap-x-2">
-          <span className="font-medium leading-tight tracking-snug text-grey-70 sm:text-14">
-            {authorName}
-          </span>
-          <div className="size-1 rounded-full bg-grey-30" aria-hidden />
-          <span className="leading-tight tracking-snug text-grey-60 sm:text-14">{authorTitle}</span>
-        </div>
+      <figcaption className="mt-3.5 flex items-center gap-x-2">
+        <span className="font-medium leading-tight tracking-snug text-grey-70 sm:text-14">
+          {authorName}
+        </span>
+        <div className="size-1 rounded-full bg-grey-30" aria-hidden />
+        <span className="leading-tight tracking-snug text-grey-60 sm:text-14">{authorTitle}</span>
       </figcaption>
     </figure>
   );
