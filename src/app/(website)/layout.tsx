@@ -27,11 +27,7 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
     >
       <head>
         {process.env.NODE_ENV === 'production' && (
-          <Script
-            strategy="beforeInteractive"
-            id="hs-script-loader"
-            src="//js-eu1.hs-scripts.com/25526783.js"
-          />
+          <Script id="hs-script-loader" src="//js-eu1.hs-scripts.com/25526783.js" />
         )}
         {process.env.NODE_ENV === 'production' && (
           <Script strategy="beforeInteractive" id="reb2b">
