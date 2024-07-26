@@ -30,7 +30,7 @@ function SampleNextArrow(props: ArrowProps) {
       onClick={onClick}
     >
       <ArrowIcon
-        className="size-9 shrink-0 rotate-90 opacity-80 transition-[fill,transform] duration-200 sm:size-6"
+        className="size-9 shrink-0 rotate-90 opacity-80 transition-[fill,transform] duration-200 sm:size-8"
         aria-hidden
       />
     </button>
@@ -42,13 +42,13 @@ function SamplePrevArrow(props: ArrowProps) {
 
   return (
     <button
-      className="absolute right-[50px] top-[-50px] sm:-top-11 sm:right-[38px]"
+      className="absolute right-[50px] top-[-50px] md:right-14 sm:-top-11"
       type="button"
       aria-label="Prev testimonial"
       onClick={onClick}
     >
       <ArrowIcon
-        className="size-9 shrink-0 -rotate-90 opacity-80 transition-[fill,transform] duration-200 sm:size-6"
+        className="size-9 shrink-0 -rotate-90 opacity-80 transition-[fill,transform] duration-200 sm:size-8"
         aria-hidden
       />
     </button>
