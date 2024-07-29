@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 interface Feature {
   title: string;
-  text: string;
+  subtitle: string;
   image: StaticImageData;
 }
 
@@ -14,14 +14,14 @@ interface ImageProps {
   quality: number;
 }
 
-interface FeaturesProps {
+type FeaturesProps = {
   items: Feature[];
   heading: string;
   subheading: string;
   className?: string;
   rowsGap?: string;
   imageProps?: ImageProps;
-}
+};
 
 function Features({
   items,
@@ -50,7 +50,7 @@ function Features({
         <div className="relative mt-[72px] flex max-w-7xl items-center md:mt-[60px] sm:mt-[35px]">
           <span className="absolute left-1/2 top-0 z-10 h-full w-1 -translate-x-1/2 bg-[url('/images/svgs/line.inline.svg')] bg-repeat-y before:absolute before:left-1/2 before:h-[120px] before:w-[30px] before:-translate-x-1/2 before:bg-gradient-to-b before:from-black before:to-transparent after:absolute after:bottom-0 after:left-1/2 after:h-[120px] after:w-[30px] after:-translate-x-1/2 after:bg-gradient-to-t after:from-black after:to-transparent sm:hidden" />
           <ul className={clsx('flex flex-col pb-[57px] sm:max-w-[446px]', rowsGap)}>
-            {items.map(({ title, text, image }, index) => (
+            {items.map(({ title, subtitle, image }, index) => (
               <li
                 className={clsx('flex items-center sm:flex-col sm:items-start sm:gap-y-4', {
                   'flex-row-reverse': index % 2 !== 0,
@@ -87,7 +87,7 @@ function Features({
                     {title}
                   </h3>
                   <p className="mt-3 leading-snug text-grey-70 md:text-14 md:leading-normal sm:mt-[9px]">
-                    {text}
+                    {subtitle}
                   </p>
                 </div>
               </li>

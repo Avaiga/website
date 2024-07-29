@@ -312,3 +312,115 @@ export const pageQuery = gql`
     }
   }
 `;
+
+export const pageByTitleQuery = gql`
+  query PricingPage($title: String!) {
+    allPage(where: { title: { eq: $title } }, limit: 1) {
+      title
+      _updatedAt
+      content {
+        ... on Hero {
+          _type
+          tag
+          heading
+          description
+          btnText
+        }
+        ... on Tools {
+          _type
+          title
+          cards {
+            ... on ToolsCard {
+              title
+              subtitle
+            }
+            ... on ToolsCardWithLink {
+              title
+              subtitle
+              linkText
+            }
+          }
+        }
+        ... on Plans {
+          title
+          _type
+          heading
+          card1 {
+            title
+            price
+            features
+          }
+          card2 {
+            title
+            price
+            features
+            btnText
+          }
+          card3 {
+            title
+            price
+            features
+            btnText
+          }
+        }
+        ... on Benefits {
+          _type
+          title
+          heading
+          description
+          btnText
+          cards {
+            title
+            description
+          }
+        }
+        ... on Features {
+          _type
+          title
+          heading
+          description
+          items {
+            title
+            subtitle
+          }
+        }
+        ... on CompairingTable {
+          _type
+          labels
+          cols {
+            isRowTitle
+            features
+            community {
+              value
+              booleanValue
+            }
+            enterprise {
+              value
+              booleanValue
+            }
+          }
+        }
+        ... on Faq {
+          title
+          _type
+          heading
+          items {
+            ... on FaqItem {
+              _type
+              question
+              simpleAnswer: answer
+            }
+            ... on FaqItemWithList {
+              _type
+              question
+              detailedAnswer: answer {
+                text
+                listOfItems
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

@@ -25,5 +25,20 @@ export const page = defineType({
       ],
       validation: (rule: ArrayRule<ReferenceRule>) => rule.min(3).max(3),
     }),
+    defineField({
+      name: 'content',
+      type: 'array',
+      title: 'Content',
+      description: 'Do not change the order, it may crash all page design',
+      of: [
+        { type: 'hero' },
+        { type: 'tools' },
+        { type: 'plans' },
+        { type: 'benefits' },
+        { type: 'features' },
+        { type: 'compairingTable' },
+        { type: 'faq' },
+      ],
+    }),
   ],
 });

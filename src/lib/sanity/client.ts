@@ -11,6 +11,7 @@ import {
   SinglePost,
 } from '@/types/blog';
 import { CustomerStory, SingleCustomerStory } from '@/types/customer-story';
+import { PricingPage, PricingPageQueryResult } from '@/types/pricing-page';
 import { Banner } from '@/types/shared';
 
 import {
@@ -27,6 +28,7 @@ import {
   customerStoryQuery,
   latestPostsQuery,
   legalQuery,
+  pageByTitleQuery,
   pageQuery,
   postQuery,
   promotedPostQuery,
@@ -218,3 +220,9 @@ export const getBanner = async (): Promise<Banner | null> =>
 
 export const getPages = async (): Promise<SinglePage[]> =>
   await graphQLClient.request<PageQueryResult>(pageQuery).then((data) => data.allPage);
+
+export const getPageByTitle = async (title: string): Promise<PricingPage | null> => {
+  return await graphQLClient
+    .request<PricingPageQueryResult>(pageByTitleQuery, { title })
+    .then((data) => data.allPage[0] || null);
+};

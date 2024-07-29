@@ -26,18 +26,18 @@ function ToolBlock({ logo, title, description, link, gradient, className }: Tool
     <li
       className={clsx('overflow-hidden rounded-lg p-px', className, {
         'bg-gradient-grey-border': !gradient,
-        'bg-gradient-left-top-orange-border sm:bg-none': gradient === 'right',
-        'bg-gradient-right-top-orange-border sm:bg-none': gradient === 'left',
-        'bg-gradient-center-top-orange-border sm:order-first': gradient === 'center',
+        'bg-gradient-left-top-orange-border sm:bg-none': gradient === Gradient.Right,
+        'bg-gradient-right-top-orange-border sm:bg-none': gradient === Gradient.Left,
+        'bg-gradient-center-top-orange-border sm:order-first': gradient === Gradient.Center,
       })}
     >
       <div
         className={clsx(
           'relative flex h-full flex-col gap-y-2.5 rounded-lg bg-grey-10 p-[31px] lg:p-[23px] sm:flex-col',
           {
-            'bg-gradient-right-top-orange sm:bg-none': gradient === 'left',
-            'bg-gradient-center-top-orange': gradient === 'center',
-            'bg-gradient-left-top-orange sm:bg-none': gradient === 'right',
+            'bg-gradient-right-top-orange sm:bg-none': gradient === Gradient.Left,
+            'bg-gradient-center-top-orange': gradient === Gradient.Center,
+            'bg-gradient-left-top-orange sm:bg-none': gradient === Gradient.Right,
           },
         )}
       >

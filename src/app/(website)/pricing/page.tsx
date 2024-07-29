@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 import { SEO_DATA } from '@/constants/seo';
 import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
 import distributedImage from '@/images/pages/pricing/features/distributed.png';
@@ -15,42 +17,68 @@ import Features from '@/components/shared/features';
 import Logos from '@/components/shared/logos';
 import Testimonials from '@/components/shared/testimonials';
 
+import { FeaturesItem } from '@/types/pricing-page';
+
 import { getMetadata } from '@/lib/get-metadata';
+import { getPageByTitle } from '@/lib/sanity/client';
 
-const items = [
-  {
-    title: 'Scenario management',
-    text: 'Native scenario management allows end-users to perform detailed what-if analyses and track executions and data sources. This supports visualization, comparison, and KPI tracking. It enhances user experience, monitors activity, and promotes collaboration between data scientists and end-users, boosting user acceptance.',
-    image: scenarioImage,
-  },
-  {
-    title: 'Distributed computing',
-    text: 'Unlock unparalleled scalability and performance with distributed computing. Ideal for handling multiple and complex computations efficiently.',
-    image: distributedImage,
-  },
-  {
-    title: 'Telemetry',
-    text: 'Ensure your applications are not just running but thriving. Gain critical insights into performance & health, enabling proactive optimizations & maintenance.',
-    image: telemetryImage,
-  },
-];
+type TotalFeaturesItem = FeaturesItem & {
+  image: StaticImageData;
+};
 
-function Pricing() {
+async function Pricing() {
+  const pageData = await getPageByTitle('Pricing page');
+
+  if (!pageData) {
+    throw new Error('Server error, please reload the page or try later');
+  }
+
+  const { content } = pageData;
+  const heroData = content.find((item) => item._type === 'hero');
+  const toolsData = content.find((item) => item._type === 'tools');
+  const plansData = content.find((item) => item._type === 'plans');
+  const benefitsData = content.find((item) => item._type === 'benefits');
+  const featuresData = content.find((item) => item._type === 'features');
+  // TODO: solve ts issue
+  // @ts-expect-error field is required in sanity schema
+
+  const compairingTableData = content.find((item) => item._type === 'compairingTable');
+  const faqData = content.find((item) => item._type === 'faq');
+
+  let totalFeaturesItems: TotalFeaturesItem[] = [];
+  const featureImages = [scenarioImage, distributedImage, telemetryImage];
+  if (featuresData && 'items' in featuresData) {
+    // @ts-expect-error field is required in sanity schema
+    totalFeaturesItems = featuresData.items.map((item, i) => ({
+      ...item,
+      image: featureImages[i],
+    }));
+  }
+
   return (
     <>
-      <Hero />
-      <Tools />
+      {heroData && heroData._type === 'hero' && <Hero {...heroData} />}
+      {toolsData && toolsData._type === 'tools' && <Tools {...toolsData} />}
       <Logos className="mt-[186px]" />
-      <Plans />
-      <Benefits />
-      <Features
-        heading="Taipy has so much more to offer"
-        subheading="Leverage a huge variety of features to level up your data and AI game!"
-        items={items}
-      />
-      <Compairing offsets="mt-[184px] lg:mt-[126px] md:mt-24 sm:mt-20" />
+      {plansData && plansData._type === 'plans' && <Plans {...plansData} />}
+      {benefitsData && benefitsData._type === 'benefits' && <Benefits {...benefitsData} />}
+      {featuresData && featuresData._type === 'features' && (
+        <Features
+          heading={featuresData.heading}
+          subheading={featuresData.description}
+          items={totalFeaturesItems}
+        />
+      )}
+      {/* TODO: solve ts issue */}
+      {/* @ts-expect-error field is required in sanity schema */}
+      {compairingTableData && compairingTableData._type === 'compairingTable' && (
+        <Compairing
+          offsets="mt-[184px] lg:mt-[126px] md:mt-24 sm:mt-20"
+          data={compairingTableData}
+        />
+      )}
       <Testimonials items={TESTIMONIALS_ITEMS} />
-      <Faq />
+      {faqData && faqData._type === 'faq' && <Faq {...faqData} />}
       <CTA
         className="mb-[184px] mt-[184px] lg:mb-[151px] md:my-[110px] sm:mb-[84px] sm:mt-[100px]"
         isEnterprise
