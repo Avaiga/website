@@ -1,7 +1,7 @@
 import { LinkIcon } from '@sanity/icons';
 import { StringRule, defineField, defineType } from 'sanity';
 
-import { title } from './constants';
+import { buttonLink, buttonText, title } from './constants';
 
 export const hero = defineType({
   name: 'hero',
@@ -28,11 +28,7 @@ export const hero = defineType({
       title: 'Description',
       validation: (rule: StringRule) => rule.required(),
     }),
-    defineField({
-      name: 'btnText',
-      type: 'string',
-      title: 'CTA Button text',
-      validation: (rule: StringRule) => rule.required(),
-    }),
+    { ...buttonText },
+    { ...buttonLink },
   ],
 });

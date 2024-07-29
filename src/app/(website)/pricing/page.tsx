@@ -6,17 +6,27 @@ import distributedImage from '@/images/pages/pricing/features/distributed.png';
 import scenarioImage from '@/images/pages/pricing/features/scenario.png';
 import telemetryImage from '@/images/pages/pricing/features/telemetry.png';
 
+import CTA from '@/components/pages/pricing/CTA';
 import Benefits from '@/components/pages/pricing/benefits/benefits';
 import Compairing from '@/components/pages/pricing/compairing';
 import Faq from '@/components/pages/pricing/faq';
 import Hero from '@/components/pages/pricing/hero';
 import Plans from '@/components/pages/pricing/plans';
 import Tools from '@/components/pages/pricing/tools';
-import CTA from '@/components/shared/CTA';
 import Features from '@/components/shared/features';
 import Logos from '@/components/shared/logos';
 import Testimonials from '@/components/shared/testimonials';
 
+import {
+  BenefitsProps,
+  CompairingTableProps,
+  CtaProps,
+  FaqProps,
+  FeaturesProps,
+  HeroProps,
+  PlansProps,
+  ToolsProps,
+} from '@/types/pricing-page';
 import { FeaturesItem } from '@/types/pricing-page';
 
 import { getMetadata } from '@/lib/get-metadata';
@@ -26,6 +36,48 @@ type TotalFeaturesItem = FeaturesItem & {
   image: StaticImageData;
 };
 
+type ContentItem =
+  | HeroProps
+  | ToolsProps
+  | PlansProps
+  | BenefitsProps
+  | FeaturesProps
+  | CompairingTableProps
+  | FaqProps
+  | CtaProps;
+
+function isHeroProps(item: ContentItem): item is HeroProps {
+  return item._type === 'hero';
+}
+
+function isToolsProps(item: ContentItem): item is ToolsProps {
+  return item._type === 'tools';
+}
+
+function isPlansProps(item: ContentItem): item is PlansProps {
+  return item._type === 'plans';
+}
+
+function isBenefitsProps(item: ContentItem): item is BenefitsProps {
+  return item._type === 'benefits';
+}
+
+function isFeaturesProps(item: ContentItem): item is FeaturesProps {
+  return item._type === 'features';
+}
+
+function isCompairingTableProps(item: ContentItem): item is CompairingTableProps {
+  return item._type === 'compairingTable';
+}
+
+function isFaqProps(item: ContentItem): item is FaqProps {
+  return item._type === 'faq';
+}
+
+function isCtaProps(item: ContentItem): item is CtaProps {
+  return item._type === 'cta';
+}
+
 async function Pricing() {
   const pageData = await getPageByTitle('Pricing page');
 
@@ -34,21 +86,18 @@ async function Pricing() {
   }
 
   const { content } = pageData;
-  const heroData = content.find((item) => item._type === 'hero');
-  const toolsData = content.find((item) => item._type === 'tools');
-  const plansData = content.find((item) => item._type === 'plans');
-  const benefitsData = content.find((item) => item._type === 'benefits');
-  const featuresData = content.find((item) => item._type === 'features');
-  // TODO: solve ts issue
-  // @ts-expect-error field is required in sanity schema
-
-  const compairingTableData = content.find((item) => item._type === 'compairingTable');
-  const faqData = content.find((item) => item._type === 'faq');
+  const heroData = content.find(isHeroProps);
+  const toolsData = content.find(isToolsProps);
+  const plansData = content.find(isPlansProps);
+  const benefitsData = content.find(isBenefitsProps);
+  const featuresData = content.find(isFeaturesProps);
+  const compairingTableData = content.find(isCompairingTableProps);
+  const faqData = content.find(isFaqProps);
+  const ctaData = content.find(isCtaProps);
 
   let totalFeaturesItems: TotalFeaturesItem[] = [];
   const featureImages = [scenarioImage, distributedImage, telemetryImage];
   if (featuresData && 'items' in featuresData) {
-    // @ts-expect-error field is required in sanity schema
     totalFeaturesItems = featuresData.items.map((item, i) => ({
       ...item,
       image: featureImages[i],
@@ -57,29 +106,23 @@ async function Pricing() {
 
   return (
     <>
-      {heroData && heroData._type === 'hero' && <Hero {...heroData} />}
-      {toolsData && toolsData._type === 'tools' && <Tools {...toolsData} />}
+      {heroData && <Hero {...heroData} />}
+      {toolsData && <Tools {...toolsData} />}
       <Logos className="mt-[186px]" />
-      {plansData && plansData._type === 'plans' && <Plans {...plansData} />}
-      {benefitsData && benefitsData._type === 'benefits' && <Benefits {...benefitsData} />}
-      {featuresData && featuresData._type === 'features' && (
+      {plansData && <Plans {...plansData} />}
+      {benefitsData && <Benefits {...benefitsData} />}
+      {featuresData && (
         <Features
           heading={featuresData.heading}
           subheading={featuresData.description}
           items={totalFeaturesItems}
         />
       )}
-      {/* TODO: solve ts issue */}
-      {/* @ts-expect-error field is required in sanity schema */}
-      {compairingTableData && compairingTableData._type === 'compairingTable' && (
-        <Compairing data={compairingTableData} />
-      )}
+
+      {compairingTableData && <Compairing data={compairingTableData} />}
       <Testimonials items={TESTIMONIALS_ITEMS} />
-      {faqData && faqData._type === 'faq' && <Faq {...faqData} />}
-      <CTA
-        className="mb-[184px] mt-[184px] lg:mb-[151px] md:my-[110px] sm:mb-[84px] sm:mt-[100px]"
-        isEnterprise
-      />
+      {faqData && <Faq {...faqData} />}
+      {ctaData && <CTA {...ctaData} />}
     </>
   );
 }

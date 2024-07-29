@@ -1,12 +1,10 @@
-import { ROUTES } from '@/constants/routes';
-
 import Button from '@/components/shared/button';
 
 type HeroProps = {
   [key: string]: string;
 };
 
-export default function Hero({ tag, heading, description, btnText }: HeroProps) {
+export default function Hero({ tag, heading, description, buttonText, buttonLink }: HeroProps) {
   return (
     <section className="hero pt-[113px] lg:pt-[102px] md:pt-[81px] sm:pt-[91px]">
       <div className="container-narrow max-w-5xl text-center lg:max-w-4xl">
@@ -21,9 +19,9 @@ export default function Hero({ tag, heading, description, btnText }: HeroProps) 
           className="relative z-10 mt-[46px] w-full max-w-[180px] lg:mt-7 sm:mt-[22px]"
           size="lgConst"
           theme="red-filled"
-          href={ROUTES.REQUEST_A_DEMO}
+          href={buttonLink}
         >
-          {btnText}
+          {buttonText}
           <span className="absolute top-[-51px] -z-10 h-[190px] w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[36px]" />
         </Button>
       </div>

@@ -39,6 +39,7 @@ export const page = defineType({
         { type: 'features' },
         { type: 'compairingTable' },
         { type: 'faq' },
+        { type: 'cta' },
       ],
     }),
   ],

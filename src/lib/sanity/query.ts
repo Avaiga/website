@@ -324,7 +324,8 @@ export const pageByTitleQuery = gql`
           tag
           heading
           description
-          btnText
+          buttonText
+          buttonLink
         }
         ... on Tools {
           _type
@@ -338,11 +339,11 @@ export const pageByTitleQuery = gql`
               title
               subtitle
               linkText
+              linkTo
             }
           }
         }
         ... on Plans {
-          title
           _type
           heading
           card1 {
@@ -354,21 +355,23 @@ export const pageByTitleQuery = gql`
             title
             price
             features
-            btnText
+            buttonText
+            buttonLink
           }
           card3 {
             title
             price
             features
-            btnText
+            buttonText
+            buttonLink
           }
         }
         ... on Benefits {
           _type
-          title
           heading
           description
-          btnText
+          buttonText
+          buttonLink
           cards {
             title
             description
@@ -376,7 +379,6 @@ export const pageByTitleQuery = gql`
         }
         ... on Features {
           _type
-          title
           heading
           description
           items {
@@ -401,7 +403,6 @@ export const pageByTitleQuery = gql`
           }
         }
         ... on Faq {
-          title
           _type
           heading
           items {
@@ -418,6 +419,15 @@ export const pageByTitleQuery = gql`
                 listOfItems
               }
             }
+          }
+        }
+        ... on Cta {
+          _type
+          cards {
+            title
+            description
+            buttonText
+            buttonLink
           }
         }
       }

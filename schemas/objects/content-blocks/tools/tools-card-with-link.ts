@@ -14,5 +14,12 @@ export const toolsCardWithLink = defineType({
       title: 'Link Text',
       validation: (rule) => rule.required(),
     },
+    {
+      name: 'linkTo',
+      type: 'string',
+      title: 'Link To',
+      description: 'Link must be specified as the page path, for example: /designer',
+      validation: (rule) => rule.required(),
+    },
   ],
 });

@@ -1,17 +1,10 @@
 import { defineType } from 'sanity';
 
+import { buttonLink, buttonText } from '../constants';
 import { plansCard } from './plans-card';
 
 export const plansCardWithBtn = defineType({
   ...plansCard,
   name: 'plansCardWithBtn',
-  fields: [
-    ...plansCard.fields,
-    {
-      name: 'btnText',
-      type: 'string',
-      title: 'CTA Button Text',
-      validation: (rule) => rule.required(),
-    },
-  ],
+  fields: [...plansCard.fields, { ...buttonText }, { ...buttonLink }],
 });

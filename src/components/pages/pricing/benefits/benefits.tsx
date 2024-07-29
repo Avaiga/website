@@ -1,5 +1,3 @@
-import { ROUTES } from '@/constants/routes';
-
 import Button from '@/components/shared/button';
 
 import { BenefitsProps } from '@/types/pricing-page';
@@ -11,7 +9,7 @@ import speedIcon from '@/svgs/pages/pricing/speed.svg';
 
 const cardsIcons = [easyUseIcon, collaborationIcon, flexIcon, speedIcon];
 
-function Benefits({ heading, description, btnText, cards }: BenefitsProps) {
+function Benefits({ heading, description, buttonText, buttonLink, cards }: BenefitsProps) {
   return (
     <section className="benefits mt-[184px] px-safe lg:mt-[184px] md:mt-[154px] md:pb-[72px] sm:mt-[129px] sm:pb-[66px]">
       <div className="container relative flex max-w-[1280px] gap-x-16 lg:max-w-[1024px] lg:gap-x-8 md:max-w-[640px] md:flex-col md:items-center md:gap-y-10 sm:gap-y-[46px]">
@@ -26,9 +24,9 @@ function Benefits({ heading, description, btnText, cards }: BenefitsProps) {
             className="mt-8 h-[46px] w-full max-w-[188px] lg:mt-7 md:absolute md:left-1/2 md:top-full md:-translate-x-1/2 md:transform sm:mt-[22px]"
             size="lg"
             theme="red-filled"
-            href={ROUTES.REQUEST_A_DESIGNER_DEMO}
+            href={buttonLink}
           >
-            {btnText}
+            {buttonText}
           </Button>
         </div>
         <div className="grid grid-cols-2 gap-x-16 gap-y-10 lg:gap-x-[48px] lg:gap-y-9 md:gap-x-[33px] sm:grid-cols-1 sm:gap-y-[21px]">

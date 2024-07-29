@@ -1,4 +1,3 @@
-import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
@@ -14,7 +13,8 @@ type CardDaraProps = {
   title: string;
   features: string[];
   price: string;
-  btnText?: string;
+  buttonText?: string;
+  buttonLink?: string;
 };
 
 function PricingVariant({ type, cardData }: PricingVariantProps) {
@@ -22,7 +22,7 @@ function PricingVariant({ type, cardData }: PricingVariantProps) {
   const isEnterprise = type === 'enterprise';
   const isBusiness = type === 'business';
 
-  const { title, features, price, btnText } = cardData;
+  const { title, features, price, buttonText, buttonLink } = cardData;
 
   return (
     <div
@@ -78,14 +78,14 @@ function PricingVariant({ type, cardData }: PricingVariantProps) {
               </li>
             ))}
           </ul>
-          {(isEnterprise || isBusiness) && btnText && (
+          {(isEnterprise || isBusiness) && buttonText && (
             <Button
               className="relative z-10 mt-[26px] w-full max-w-[180px] leading-snug lg:mt-[22px] md:h-12 md:text-16 sm:h-11 sm:max-w-[160px] sm:text-14"
               size="lg"
               theme={isBusiness ? 'red-filled' : 'white-filled'}
-              href={ROUTES.REQUEST_A_QUOTE}
+              href={buttonLink}
             >
-              {btnText}
+              {buttonText}
               {isBusiness && (
                 <span className="absolute top-[-33px] -z-10 h-32 w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[24px]" />
               )}

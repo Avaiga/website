@@ -1,44 +1,45 @@
 type BaseDocument = {
-  _type: string;
-  _id: string;
   title: string;
   _updatedAt: string;
 };
 
 export type HeroProps = {
-  _key: string;
   _type: 'hero';
-  title: string;
-  btnText: string;
+  tag: string;
   heading: string;
   description: string;
-  tag: string;
+  btnText: string;
+};
+
+export type ToolsCard = {
+  title: string;
+  subtitle: string;
+};
+
+export type ToolsCardWithLink = ToolsCard & {
+  linkText: string;
+  linkTo: string;
 };
 
 export type ToolsProps = {
-  _key: string;
   _type: 'tools';
   title: string;
-  cards: Array<{
-    title: string;
-    subtitle: string;
-    linkText?: string;
-  }>;
+  cards: Array<ToolsCard | ToolsCardWithLink>;
 };
 
 export type PlanCard = {
-  features: string[];
-  price: string;
   title: string;
+  price: string;
+  features: string[];
 };
 
 export type PlanCardWithBtn = PlanCard & {
-  btnText: string;
+  buttonText: string;
+  buttonLink: string;
 };
 
 export type PlansProps = {
   _type: 'plans';
-  title: string;
   heading: string;
   card1: PlanCard;
   card2: PlanCardWithBtn;
@@ -52,11 +53,41 @@ type BenefitsCardProps = {
 
 export type BenefitsProps = {
   _type: 'benefits';
-  title: string;
   heading: string;
   description: string;
-  btnText: string;
+  buttonText: string;
+  buttonLink: string;
   cards: BenefitsCardProps[];
+};
+
+export type FeaturesItem = {
+  title: string;
+  subtitle: string;
+};
+
+export type FeaturesProps = {
+  _type: 'features';
+  heading: string;
+  description: string;
+  items: FeaturesItem[];
+};
+
+type ValueOrBoolean = {
+  value: string | null;
+  booleanValue: boolean | null;
+};
+
+type Col = {
+  isRowTitle: boolean;
+  features: string;
+  community: ValueOrBoolean;
+  enterprise: ValueOrBoolean;
+};
+
+export type CompairingTableProps = {
+  _type: string;
+  labels: string[];
+  cols: Col[];
 };
 
 type FaqItem = {
@@ -75,47 +106,36 @@ type FaqItemWithList = {
 };
 
 export type FaqProps = {
-  title: string;
   _type: 'faq';
   heading: string;
   items: (FaqItem | FaqItemWithList)[];
 };
 
-export type FeaturesItem = {
+type Card = {
   title: string;
-  subtitle: string;
-};
-
-export type FeaturesProps = {
-  _type: 'features';
-  title: string;
-  heading: string;
   description: string;
-  items: FeaturesItem[];
+  buttonText: string;
+  buttonLink: string;
 };
 
-type Col = {
-  features: string;
-  isRowTitle: boolean;
-  community: ValueOrBoolean;
-  enterprise: ValueOrBoolean;
-};
-
-type ValueOrBoolean = {
-  value: string | null;
-  booleanValue: boolean | null;
-};
-
-export type CompairingTableProps = {
-  _type: string;
-  labels: string[];
-  cols: Col[];
+export type CtaProps = {
+  _type: 'cta';
+  cards: [Card, Card];
 };
 
 export type PricingPage = BaseDocument & {
-  content: (HeroProps | ToolsProps | PlansProps | BenefitsProps | FeaturesProps | FaqProps)[];
+  content: (
+    | HeroProps
+    | ToolsProps
+    | PlansProps
+    | BenefitsProps
+    | FeaturesProps
+    | CompairingTableProps
+    | FaqProps
+    | CtaProps
+  )[];
 };
 
-export interface PricingPageQueryResult {
+export type PricingPageQueryResult = {
   allPage: PricingPage[];
-}
+};
