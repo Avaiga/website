@@ -7,12 +7,12 @@ import scenarioImage from '@/images/pages/pricing/features/scenario.png';
 import telemetryImage from '@/images/pages/pricing/features/telemetry.png';
 
 import Benefits from '@/components/pages/pricing/benefits/benefits';
+import Compairing from '@/components/pages/pricing/compairing';
 import Faq from '@/components/pages/pricing/faq';
 import Hero from '@/components/pages/pricing/hero';
 import Plans from '@/components/pages/pricing/plans';
 import Tools from '@/components/pages/pricing/tools';
 import CTA from '@/components/shared/CTA';
-import Compairing from '@/components/shared/compairing';
 import Features from '@/components/shared/features';
 import Logos from '@/components/shared/logos';
 import Testimonials from '@/components/shared/testimonials';
@@ -72,10 +72,7 @@ async function Pricing() {
       {/* TODO: solve ts issue */}
       {/* @ts-expect-error field is required in sanity schema */}
       {compairingTableData && compairingTableData._type === 'compairingTable' && (
-        <Compairing
-          offsets="mt-[184px] lg:mt-[126px] md:mt-24 sm:mt-20"
-          data={compairingTableData}
-        />
+        <Compairing data={compairingTableData} />
       )}
       <Testimonials items={TESTIMONIALS_ITEMS} />
       {faqData && faqData._type === 'faq' && <Faq {...faqData} />}

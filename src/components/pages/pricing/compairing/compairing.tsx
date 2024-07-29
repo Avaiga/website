@@ -1,20 +1,14 @@
-import clsx from 'clsx';
-
 import { CompairingTableProps } from '@/types/pricing-page';
 
 import Table from './table';
 
 interface ComraipingProps {
-  offsets?: string;
   data: CompairingTableProps;
 }
 
-export default function Compairing({
-  offsets = 'mt-[184px] lg:mt-[72px] md:mt-16 sm:mt-12',
-  data,
-}: ComraipingProps) {
+export default function Compairing({ data }: ComraipingProps) {
   return (
-    <section className={clsx('choose-version bg-transparent text-white px-safe', offsets)}>
+    <section className="compairing-table mt-[184px] bg-transparent text-white px-safe lg:mt-[126px] md:mt-24 sm:mt-20">
       <div className="container max-w-[768px] md:max-w-[704px]">
         <h2 className="text-center text-48 font-medium leading-dense tracking-tight lg:text-40 md:text-36 sm:text-32">
           Comparison table

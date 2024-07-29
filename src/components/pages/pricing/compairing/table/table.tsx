@@ -14,6 +14,8 @@ import MinusIcon from '@/svgs/icons/minus.inline.svg';
 
 /* eslint-disable no-nested-ternary */
 
+/* eslint-disable no-nested-ternary */
+
 type TableProps = {
   data: CompairingTableProps;
 };
