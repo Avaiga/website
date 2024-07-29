@@ -49,7 +49,7 @@ function Pricing() {
         items={items}
       />
       <Compairing offsets="mt-[184px] lg:mt-[126px] md:mt-24 sm:mt-20" />
-      <Testimonials items={TESTIMONIALS_ITEMS} />
+      <Testimonials className="mt-[182px]" items={TESTIMONIALS_ITEMS} />
       <Faq />
       <CTA
         className="mb-[184px] mt-[184px] lg:mb-[151px] md:my-[110px] sm:mb-[84px] sm:mt-[100px]"
