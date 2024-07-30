@@ -11,7 +11,7 @@ import {
   SinglePost,
 } from '@/types/blog';
 import { CustomerStory, SingleCustomerStory } from '@/types/customer-story';
-import { PricingPage, PricingPageQueryResult } from '@/types/pricing-page';
+import { PricingContentItem, PricingPage, PricingPageQueryResult } from '@/types/pricing-page';
 import { Banner } from '@/types/shared';
 
 import {
@@ -225,4 +225,23 @@ export const getPageByTitle = async (title: string): Promise<PricingPage | null>
   return await graphQLClient
     .request<PricingPageQueryResult>(pageByTitleQuery, { title })
     .then((data) => data.allPage[0] || null);
+};
+
+export const getPricingPageData = async (): Promise<{
+  [key: string]: PricingContentItem;
+} | null> => {
+  const title = 'Pricing page';
+  const page = await getPageByTitle(title);
+  if (!page) {
+    return null;
+  }
+
+  return page.content.reduce(
+    (acc: { [key: string]: PricingContentItem }, item: PricingContentItem) => {
+      acc[item._type] = item;
+
+      return acc;
+    },
+    {} as { [key: string]: PricingContentItem },
+  );
 };

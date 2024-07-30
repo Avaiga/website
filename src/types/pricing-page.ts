@@ -124,17 +124,18 @@ export type CtaProps = {
 };
 
 export type PricingPage = BaseDocument & {
-  content: (
-    | HeroProps
-    | ToolsProps
-    | PlansProps
-    | BenefitsProps
-    | FeaturesProps
-    | CompairingTableProps
-    | FaqProps
-    | CtaProps
-  )[];
+  content: PricingContentItem[];
 };
+
+export type PricingContentItem =
+  | HeroProps
+  | ToolsProps
+  | PlansProps
+  | BenefitsProps
+  | FeaturesProps
+  | CompairingTableProps
+  | FaqProps
+  | CtaProps;
 
 export type PricingPageQueryResult = {
   allPage: PricingPage[];

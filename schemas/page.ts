@@ -30,7 +30,7 @@ export const page = defineType({
       type: 'array',
       title: 'Content',
       description:
-        'Do not change the order, it may crash all page design. Correct order is: Hero, Tools, Plans, Benefits, Features, Compairing table, FAQ',
+        'Do not change the order, it may crash all page design. Correct order is: 1) Hero, 2) Tools, 3) Plans, 4) Benefits, 5) Features, 6) Compairing table, 7) FAQ, 8) CTA',
       of: [
         { type: 'hero' },
         { type: 'tools' },
