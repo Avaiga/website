@@ -5,7 +5,7 @@ import contributorsImage from '@/images/pages/community/contributors/contributor
 function Contributors() {
   return (
     <section className="contributors mt-[150px] lg:mt-[116px] md:mt-[134px] sm:mt-[76px]">
-      <div className="container flex items-center lg:justify-between md:flex-wrap md:justify-center">
+      <div className="container flex items-center lg:justify-around md:flex-wrap md:justify-center">
         <div className="mt-3 max-w-lg lg:max-w-md md:mt-0 md:flex md:w-full md:max-w-[605px] md:flex-col md:items-center md:text-center">
           <span className="inline-block leading-snug text-primary-red sm:text-14">
             For the community
