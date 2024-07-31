@@ -21,6 +21,7 @@ import { hero } from './objects/content-blocks/hero';
 import { plans } from './objects/content-blocks/plans/plans';
 import { plansCard } from './objects/content-blocks/plans/plans-card';
 import { plansCardWithBtn } from './objects/content-blocks/plans/plans-card-with-btn';
+import { relatedPosts } from './objects/content-blocks/related-posts';
 import { tools } from './objects/content-blocks/tools/tools';
 import { toolsCard } from './objects/content-blocks/tools/tools-card';
 import { toolsCardWithLink } from './objects/content-blocks/tools/tools-card-with-link';
@@ -65,4 +66,5 @@ export const schemaTypes = [
   valueOrBoolean,
   cta,
   ctaCards,
+  relatedPosts,
 ];

@@ -7,15 +7,19 @@ import Integrations from '@/components/pages/home/integrations';
 import LargeData from '@/components/pages/home/large-data';
 import Learn from '@/components/pages/home/learn';
 import Optimize from '@/components/pages/home/optimize';
+import RelatedPosts from '@/components/pages/home/related-posts';
 import CTA from '@/components/shared/CTA';
-import RelatedPosts from '@/components/shared/related-posts';
 import Subscribe from '@/components/shared/subscribe';
 
 import { getMetadata } from '@/lib/get-metadata';
-import { getPages } from '@/lib/sanity/client';
+import { getHomePageData } from '@/lib/sanity/client';
 
 async function Home() {
-  const relatedPosts = await getPages();
+  const relatedPosts = await getHomePageData();
+
+  if (!relatedPosts || relatedPosts.length === 0) {
+    return null;
+  }
 
   return (
     <>

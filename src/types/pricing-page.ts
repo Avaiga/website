@@ -136,7 +136,3 @@ export type PricingContentItem =
   | CompairingTableProps
   | FaqProps
   | CtaProps;
-
-export type PricingPageQueryResult = {
-  allPage: PricingPage[];
-};

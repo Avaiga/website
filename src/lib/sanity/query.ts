@@ -300,22 +300,26 @@ export const bannerQuery = gql`
   }
 `;
 
-export const pageQuery = gql`
+export const homePageQuery = gql`
   ${commonPostFieldsFragment}
-  query Page {
-    allPage(limit: 1) {
-      title
-      posts {
-        ...commonPostFields
-        lead
+  query HomePage {
+    allPage(where: { title: { eq: "Home page" } }, limit: 1) {
+      content {
+        ... on RelatedPosts {
+          _type
+          posts {
+            ...commonPostFields
+            lead
+          }
+        }
       }
     }
   }
 `;
 
-export const pageByTitleQuery = gql`
-  query PricingPage($title: String!) {
-    allPage(where: { title: { eq: $title } }, limit: 1) {
+export const pricingPageQuery = gql`
+  query PricingPage {
+    allPage(where: { title: { eq: "Pricing page" } }, limit: 1) {
       title
       _updatedAt
       content {
