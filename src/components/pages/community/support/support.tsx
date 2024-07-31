@@ -35,7 +35,7 @@ function Support() {
           {supportCards.map(({ title, description, image }) => (
             <li
               key={title}
-              className="relative h-80 rounded-lg bg-grey-10 p-7 before:absolute before:-inset-px before:rounded-lg before:bg-card-gradient lg:h-[307px] lg:p-6 md:h-[274px] sm:p-5 xs:h-[258px]"
+              className="relative h-80 rounded-lg bg-grey-10 p-7 before:absolute before:-inset-px before:-z-10 before:rounded-lg before:bg-card-gradient lg:h-[307px] lg:p-6 md:h-[274px] sm:p-5 xs:h-[258px]"
             >
               <h3 className="relative z-10 text-24 font-medium leading-normal lg:text-20 sm:text-18">
                 {title}
@@ -43,14 +43,16 @@ function Support() {
               <p className="relative z-10 mt-2 text-16 font-light leading-normal text-grey-70 lg:mt-1.5 md:text-14">
                 {description}
               </p>
-              <Image
-                className="absolute left-0 top-0 rounded-lg lg:h-full lg:w-full lg:object-cover"
-                src={image}
-                alt={title}
-                width={464}
-                height={320}
-                quality={100}
-              />
+              <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-lg">
+                <Image
+                  className="absolute left-0 top-0 lg:top-5 lg:h-full lg:w-full lg:object-cover"
+                  src={image}
+                  alt={title}
+                  width={464}
+                  height={320}
+                  quality={100}
+                />
+              </div>
             </li>
           ))}
         </ul>
