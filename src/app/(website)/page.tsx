@@ -1,4 +1,5 @@
 import { SEO_DATA } from '@/constants/seo';
+import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
 
 import Applications from '@/components/pages/home/applications';
 import Benefits from '@/components/pages/home/benefits';
@@ -10,6 +11,7 @@ import Optimize from '@/components/pages/home/optimize';
 import RelatedPosts from '@/components/pages/home/related-posts';
 import CTA from '@/components/shared/CTA';
 import Subscribe from '@/components/shared/subscribe';
+import Testimonials from '@/components/shared/testimonials';
 
 import { getMetadata } from '@/lib/get-metadata';
 import { getHomePageData } from '@/lib/sanity/client';
@@ -36,6 +38,10 @@ async function Home() {
       <Integrations />
       <Benefits />
       <Applications />
+      <Testimonials
+        className="mt-[200px] lg:mt-[132px] md:mt-24 sm:mt-[76px]"
+        items={TESTIMONIALS_ITEMS}
+      />
       <RelatedPosts relatedPosts={relatedPosts} />
       <CTA />
     </>

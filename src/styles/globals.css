@@ -30,6 +30,13 @@ html {
   border: none;
 }
 
+.banner-pixels {
+  @apply bg-center bg-repeat;
+
+  background-image: url('/images/pixels.png');
+  background-size: auto 40px;
+}
+
 @layer components {
   .container {
     @apply mx-auto w-full max-w-[1408px] px-8 sm:px-5;
