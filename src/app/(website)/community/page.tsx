@@ -5,7 +5,7 @@ import Contributors from '@/components/pages/community/contributors';
 import Hero from '@/components/pages/community/hero';
 import Involve from '@/components/pages/community/involve';
 import LatestPosts from '@/components/pages/community/latest-posts';
-import Training from '@/components/pages/community/training';
+import Support from '@/components/pages/community/support';
 import CTA from '@/components/shared/CTA';
 import Subscribe from '@/components/shared/subscribe';
 
@@ -16,7 +16,7 @@ function Community() {
     <>
       <Hero />
       <Involve />
-      <Training />
+      <Support />
       <Subscribe
         tagline="Integrations"
         title="Subscribe to the Newsletter"
@@ -24,7 +24,7 @@ function Community() {
         className="mt-[186px] lg:mt-[142px] md:mt-[92px] sm:mt-[88px]"
       />
       <Contributors />
-      <CTA className="mt-[184px] lg:mt-[146px] md:mt-[106px] sm:mt-[96px]" />
+      <CTA className="mt-[172px] lg:mt-[126px] md:mt-[122px] sm:mt-[86px]" />
       <Benefits />
       <LatestPosts />
     </>
