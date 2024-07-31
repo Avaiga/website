@@ -31,3 +31,15 @@ export type Banner = {
   linkUrl: string;
   isPublished: boolean;
 };
+
+export type TestimonialsItem = {
+  text: string;
+  authorName: string;
+  authorTitle: string;
+  logoImage: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+};

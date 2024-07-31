@@ -4,7 +4,7 @@ import { Category, Legal, Post, SingleCategory, SingleLegal, SinglePost } from '
 import { CustomerStory, SingleCustomerStory } from '@/types/customer-story';
 import { HomePageQueryResult, RelatedPosts } from '@/types/home-page';
 import { PricingContentItem } from '@/types/pricing-page';
-import { Banner } from '@/types/shared';
+import { Banner, TestimonialsItem } from '@/types/shared';
 
 import {
   allCategoryQuery,
@@ -24,6 +24,7 @@ import {
   postQuery,
   pricingPageQuery,
   promotedPostQuery,
+  testimonialsQuery,
 } from '@/lib/sanity/query';
 import { BLOG_POST_PER_PAGE, CUSTOMER_STORY_PER_PAGE } from '@/lib/sanity/utils';
 
@@ -240,4 +241,15 @@ export const getPricingPageData = async (): Promise<{
     },
     {} as { [key: string]: PricingContentItem },
   );
+};
+
+export const getTestimonialsData = async (): Promise<{
+  title: string;
+  items: TestimonialsItem[];
+} | null> => {
+  return await graphQLClient
+    .request<{ allTestimonials: { title: string; items: TestimonialsItem[] }[] }>(testimonialsQuery)
+    .then((data) => {
+      return data.allTestimonials[0] || null;
+    });
 };

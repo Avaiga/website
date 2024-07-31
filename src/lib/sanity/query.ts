@@ -438,3 +438,24 @@ export const pricingPageQuery = gql`
     }
   }
 `;
+
+export const testimonialsQuery = gql`
+  query getTestimonials {
+    allTestimonials {
+      title
+      _type
+      items {
+        text
+        authorName
+        authorTitle
+        logoImage {
+          asset {
+            _id
+            altText
+            url
+          }
+        }
+      }
+    }
+  }
+`;

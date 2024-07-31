@@ -1,7 +1,6 @@
 import { StaticImageData } from 'next/image';
 
 import { SEO_DATA } from '@/constants/seo';
-import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
 import distributedImage from '@/images/pages/pricing/features/distributed.png';
 import scenarioImage from '@/images/pages/pricing/features/scenario.png';
 import telemetryImage from '@/images/pages/pricing/features/telemetry.png';
@@ -30,7 +29,7 @@ import {
 import { FeaturesItem } from '@/types/pricing-page';
 
 import { getMetadata } from '@/lib/get-metadata';
-import { getPricingPageData } from '@/lib/sanity/client';
+import { getPricingPageData, getTestimonialsData } from '@/lib/sanity/client';
 
 type TotalFeaturesItem = FeaturesItem & {
   image: StaticImageData;
@@ -38,6 +37,7 @@ type TotalFeaturesItem = FeaturesItem & {
 
 async function Pricing() {
   const pageData = await getPricingPageData();
+  const testimonialsData = await getTestimonialsData();
 
   if (!pageData) {
     throw new Error('Server error, please reload the page or try later');
@@ -76,7 +76,13 @@ async function Pricing() {
         />
       )}
       {compairingTableData && <Compairing data={compairingTableData} />}
-      <Testimonials items={TESTIMONIALS_ITEMS} />
+      {testimonialsData && (
+        <Testimonials
+          className="mt-[182px]"
+          heading={testimonialsData.title}
+          items={testimonialsData.items}
+        />
+      )}
       {faqData && <Faq {...faqData} />}
       {ctaData && <CTA {...ctaData} />}
     </>
