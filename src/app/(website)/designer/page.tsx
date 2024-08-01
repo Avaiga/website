@@ -14,17 +14,18 @@ import { getMetadata } from '@/lib/get-metadata';
 const items = [
   {
     title: 'Drag and drop widgets on the canvas',
-    text: 'Instead of traditional insertion methods or programming, users can simply drag and drop widgets from the toolbar on the canvas.',
+    subtitle:
+      'Instead of traditional insertion methods or programming, users can simply drag and drop widgets from the toolbar on the canvas.',
     image: widgetsImage,
   },
   {
     title: 'Connect widgets to your Python variables',
-    text: 'Connect widgets to your Python variables for instant data visuals and rendering.',
+    subtitle: 'Connect widgets to your Python variables for instant data visuals and rendering.',
     image: connectImage,
   },
   {
     title: 'Style your graphics in a click',
-    text: 'Define your own look and feel with a few clicks, no CSS needed.',
+    subtitle: 'Define your own look and feel with a few clicks, no CSS needed.',
     image: styleImage,
   },
 ];
