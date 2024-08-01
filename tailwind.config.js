@@ -102,6 +102,8 @@ module.exports = {
         'radial-gradient(95.66% 103.97% at 4.88% 100.06%, #BCBCC3 0%, #A2A2A9 91.59%)',
       'banner-gradient':
         'linear-gradient(to right, rgba(91, 192, 243, 0) 6%, rgba(91, 192, 243, 0) 16%, rgba(50, 171, 232, 0.5) 39%, rgba(50, 171, 232, 0.75) 49%, rgba(50, 171, 232, 0.5) 60%, rgba(91, 192, 243, 0) 85%)',
+      'card-gradient':
+        'linear-gradient(180deg, #2a2a2d 0%, rgba(42, 42, 45, 0.5) 4.86%, rgba(42, 42, 45, 0.4) 16.55%)',
     },
 
     boxShadow: {
