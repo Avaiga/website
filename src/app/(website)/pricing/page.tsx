@@ -1,60 +1,90 @@
+import { StaticImageData } from 'next/image';
+
 import { SEO_DATA } from '@/constants/seo';
-import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
 import distributedImage from '@/images/pages/pricing/features/distributed.png';
 import scenarioImage from '@/images/pages/pricing/features/scenario.png';
 import telemetryImage from '@/images/pages/pricing/features/telemetry.png';
 
+import CTA from '@/components/pages/pricing/CTA';
 import Benefits from '@/components/pages/pricing/benefits/benefits';
+import Compairing from '@/components/pages/pricing/compairing';
 import Faq from '@/components/pages/pricing/faq';
 import Hero from '@/components/pages/pricing/hero';
 import Plans from '@/components/pages/pricing/plans';
 import Tools from '@/components/pages/pricing/tools';
-import CTA from '@/components/shared/CTA';
-import Compairing from '@/components/shared/compairing';
 import Features from '@/components/shared/features';
 import Logos from '@/components/shared/logos';
 import Testimonials from '@/components/shared/testimonials';
 
+import {
+  BenefitsProps,
+  CompairingTableProps,
+  CtaProps,
+  FaqProps,
+  FeaturesProps,
+  HeroProps,
+  PlansProps,
+  ToolsProps,
+} from '@/types/pricing-page';
+import { FeaturesItem } from '@/types/pricing-page';
+
 import { getMetadata } from '@/lib/get-metadata';
+import { getPricingPageData, getTestimonialsData } from '@/lib/sanity/client';
 
-const items = [
-  {
-    title: 'Scenario management',
-    text: 'Native scenario management allows end-users to perform detailed what-if analyses and track executions and data sources. This supports visualization, comparison, and KPI tracking. It enhances user experience, monitors activity, and promotes collaboration between data scientists and end-users, boosting user acceptance.',
-    image: scenarioImage,
-  },
-  {
-    title: 'Distributed computing',
-    text: 'Unlock unparalleled scalability and performance with distributed computing. Ideal for handling multiple and complex computations efficiently.',
-    image: distributedImage,
-  },
-  {
-    title: 'Telemetry',
-    text: 'Ensure your applications are not just running but thriving. Gain critical insights into performance & health, enabling proactive optimizations & maintenance.',
-    image: telemetryImage,
-  },
-];
+type TotalFeaturesItem = FeaturesItem & {
+  image: StaticImageData;
+};
 
-function Pricing() {
+async function Pricing() {
+  const pageData = await getPricingPageData();
+  const testimonialsData = await getTestimonialsData();
+
+  if (!pageData) {
+    throw new Error('Server error, please reload the page or try later');
+  }
+
+  const heroData = pageData.hero as HeroProps;
+  const toolsData = pageData.tools as ToolsProps;
+  const plansData = pageData.plans as PlansProps;
+  const benefitsData = pageData.benefits as BenefitsProps;
+  const featuresData = pageData.features as FeaturesProps;
+  const compairingTableData = pageData.compairingTable as CompairingTableProps;
+  const faqData = pageData.faq as FaqProps;
+  const ctaData = pageData.cta as CtaProps;
+
+  let totalFeaturesItems: TotalFeaturesItem[] = [];
+  const featureImages = [scenarioImage, distributedImage, telemetryImage];
+  if (featuresData && 'items' in featuresData) {
+    totalFeaturesItems = featuresData.items.map((item, i) => ({
+      ...item,
+      image: featureImages[i],
+    }));
+  }
+
   return (
     <>
-      <Hero />
-      <Tools />
+      {heroData && <Hero {...heroData} />}
+      {toolsData && <Tools {...toolsData} />}
       <Logos className="mt-[186px]" />
-      <Plans />
-      <Benefits />
-      <Features
-        heading="Taipy has so much more to offer"
-        subheading="Leverage a huge variety of features to level up your data and AI game!"
-        items={items}
-      />
-      <Compairing offsets="mt-[184px] lg:mt-[126px] md:mt-24 sm:mt-20" />
-      <Testimonials className="mt-[182px]" items={TESTIMONIALS_ITEMS} />
-      <Faq />
-      <CTA
-        className="mb-[184px] mt-[184px] lg:mb-[151px] md:my-[110px] sm:mb-[84px] sm:mt-[100px]"
-        isEnterprise
-      />
+      {plansData && <Plans {...plansData} />}
+      {benefitsData && <Benefits {...benefitsData} />}
+      {featuresData && (
+        <Features
+          heading={featuresData.heading}
+          subheading={featuresData.description}
+          items={totalFeaturesItems}
+        />
+      )}
+      {compairingTableData && <Compairing data={compairingTableData} />}
+      {testimonialsData && (
+        <Testimonials
+          className="mt-[182px]"
+          heading={testimonialsData.title}
+          items={testimonialsData.items}
+        />
+      )}
+      {faqData && <Faq {...faqData} />}
+      {ctaData && <CTA {...ctaData} />}
     </>
   );
 }

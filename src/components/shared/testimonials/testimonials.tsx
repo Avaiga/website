@@ -8,22 +8,18 @@ import 'slick-carousel/slick/slick.css';
 
 import SliderItem from '@/components/shared/testimonials/slider-item';
 
+import { TestimonialsItem } from '@/types/shared';
+
 import ArrowIcon from '@/svgs/pages/pricing/faq/new-arrow.inline.svg';
 
 interface ArrowProps {
   onClick?: () => void;
 }
 
-export interface TestimonialItem {
-  text: string;
-  authorName: string;
-  authorTitle: string;
-  logo: string;
-}
-
 interface TestimonialsProps {
-  items: TestimonialItem[];
+  items: TestimonialsItem[];
   className?: string;
+  heading: string;
 }
 
 function SampleNextArrow(props: ArrowProps) {
@@ -52,7 +48,7 @@ function SamplePrevArrow(props: ArrowProps) {
   );
 }
 
-function Testimonials({ items, className }: TestimonialsProps) {
+function Testimonials({ heading, items, className }: TestimonialsProps) {
   const settings = {
     dots: false,
     slidesToShow: 1,
@@ -77,7 +73,7 @@ function Testimonials({ items, className }: TestimonialsProps) {
     <section className={clsx('testimonials safe-paddings', className)}>
       <div className="container relative flex max-w-[920px] flex-col items-center md:max-w-[696px]">
         <h2 className="text-40 font-medium leading-dense tracking-tight lg:text-32 lg:font-semibold md:text-28">
-          They speak for us
+          {heading}
         </h2>
         <Slider className="!flex w-full justify-between" {...settings}>
           {items.map((item, index) => (

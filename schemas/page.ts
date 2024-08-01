@@ -1,5 +1,5 @@
 import { DocumentTextIcon } from '@sanity/icons';
-import { ArrayRule, ReferenceRule, StringRule, defineField, defineType } from 'sanity';
+import { StringRule, defineField, defineType } from 'sanity';
 
 export const page = defineType({
   name: 'page',
@@ -14,16 +14,21 @@ export const page = defineType({
       validation: (rule: StringRule) => rule.required(),
     }),
     defineField({
-      name: 'posts',
+      name: 'content',
       type: 'array',
-      title: 'Related Posts',
+      title: 'Content',
+      description: 'Do not change the order, it may crash all page design.',
       of: [
-        {
-          type: 'reference',
-          to: [{ type: 'post' }],
-        },
+        { type: 'hero' },
+        { type: 'tools' },
+        { type: 'plans' },
+        { type: 'benefits' },
+        { type: 'features' },
+        { type: 'compairingTable' },
+        { type: 'faq' },
+        { type: 'cta' },
+        { type: 'relatedPosts' },
       ],
-      validation: (rule: ArrayRule<ReferenceRule>) => rule.min(3).max(3),
     }),
   ],
 });

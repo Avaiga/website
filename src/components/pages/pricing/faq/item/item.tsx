@@ -7,23 +7,15 @@ import { LazyMotion, domAnimation, m } from 'framer-motion';
 
 import ArrowIcon from '@/svgs/pages/pricing/faq/new-arrow.inline.svg';
 
-interface ItemProps {
+type ItemProps = {
   question: string;
   answer: string;
-  hasListOptions: boolean;
   options?: string[];
   initialState?: 'open' | 'closed';
   index: number;
-}
+};
 
-function Item({
-  question,
-  answer,
-  hasListOptions,
-  options,
-  initialState = 'closed',
-  index,
-}: ItemProps) {
+function Item({ question, answer, options, initialState = 'closed', index }: ItemProps) {
   const [isOpen, setIsOpen] = useState(initialState === 'open');
 
   const handleOpen = () => {
@@ -75,17 +67,16 @@ function Item({
         >
           <div className="flex max-w-[720px] flex-col gap-0.5 pr-6 pt-4 text-16 text-grey-80 lg:pr-0.5 md:pb-[7px] md:pt-2.5 md:text-14 sm:gap-px sm:pb-1">
             <p className="leading-snug tracking-normal">{answer}</p>
-            {hasListOptions && (
+            {options && (
               <ul className="flex list-none flex-col gap-0.5 pl-0">
-                {options &&
-                  options.map((optionText, i) => (
-                    <li
-                      key={i}
-                      className="relative flex items-center pl-4 text-16 leading-snug tracking-normal before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red lg:pl-[13px] md:pl-4 md:text-14"
-                    >
-                      {optionText}
-                    </li>
-                  ))}
+                {options.map((optionText, i) => (
+                  <li
+                    key={i}
+                    className="relative flex items-center pl-4 text-16 leading-snug tracking-normal before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary-red lg:pl-[13px] md:pl-4 md:text-14"
+                  >
+                    {optionText}
+                  </li>
+                ))}
               </ul>
             )}
           </div>
