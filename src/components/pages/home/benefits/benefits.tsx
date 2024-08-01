@@ -36,7 +36,7 @@ function Benefits() {
   return (
     <section className="benefits mt-[196px] px-safe lg:mt-32 md:mt-24 sm:mt-[76px]">
       <div className="container flex max-w-7xl gap-x-7 lg:gap-x-8 md:flex-wrap md:justify-center">
-        <div className="max-w-[452px] shrink-0 grow lg:max-w-[352px] md:max-w-full md:text-center ">
+        <div className="max-w-[452px] shrink-0 grow lg:max-w-[352px] md:max-w-full md:text-center">
           <span className="leading-snug text-primary-red md:text-14">Personas</span>
           <h2 className="mt-5 text-48 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-40 md:mx-auto md:max-w-[484px] md:text-36 sm:mt-3 sm:text-28">
             Who can benefit from Taipy&apos;s&nbsp;tools and capabilities?

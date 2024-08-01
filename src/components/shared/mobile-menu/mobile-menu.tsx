@@ -138,9 +138,10 @@ function MobileMenu({
                   className="!h-11"
                   theme="white-filled"
                   size="lgConst"
-                  href={ROUTES.ENTERPRISE}
+                  href={ROUTES.PRICING}
+                  onClick={hideMobileMenu}
                 >
-                  Enterprise
+                  Pricing
                 </Button>
               </div>
             </div>

@@ -7,6 +7,7 @@ import Button from '@/components/shared/button';
 import bg from '@/svgs/pages/home/hero/bg.svg';
 import screen from '@/svgs/pages/home/hero/screen.svg';
 
+import CopyButton from './copy-button';
 import Logos from './logos';
 
 function Hero() {
@@ -31,17 +32,10 @@ function Hero() {
           From simple pilots to production-ready web applications in no time. No more compromise on
           performance, customization, and scalability.
         </p>
-        <div className="relative mt-[42px] flex justify-center gap-x-8 lg:mt-7 md:gap-x-6 sm:mt-6 sm:gap-x-5">
+        <div className="relative mt-[42px] flex justify-center gap-x-4 md:gap-x-3.5 sm:mt-6">
+          <CopyButton />
           <Button
-            className="plausible-event-name=Click+RequestADemoBtn+BookACall w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
-            href={ROUTES.REQUEST_A_DEMO}
-            size="lg"
-            theme="red-filled"
-          >
-            Request a demo
-          </Button>
-          <Button
-            className="w-full max-w-[180px] md:max-w-40 sm:max-w-[150px]"
+            className="plausible-event-name=Click+RequestADemoBtn+BookACall w-full max-w-[166px] md:max-w-[154px]"
             href={ROUTES.DOCUMENTATION}
             size="lg"
             theme="outline"
@@ -70,12 +64,12 @@ function Hero() {
           >
             {/* -c:v libvpx-vp9 -crf 40 -vf scale=1464:-2 -deadline best -an */}
             <source
-              src="/videos/pages/home/hero/hero-current.webm?updated=20240416160806"
+              src="/videos/pages/home/hero/hero-current.webm?updated=20240724191541"
               type="video/webm"
             />
             {/* -c:v libx265 -crf 32 -vf scale=1464:-2 -preset veryslow -tag:v hvc1 -movflags faststart -an */}
             <source
-              src="/videos/pages/home/hero/hero-current.mp4?updated=20240416160806"
+              src="/videos/pages/home/hero/hero-current.mp4?updated=20240724191541"
               type="video/mp4"
             />
           </video>

@@ -9,6 +9,7 @@ export const ROUTES: Record<string, URL | Route<string>> = {
   BANNER: '/taipy-tech-talk', // https://www.taipy.io/events/taipy-tech-talk
   PRICING: '/pricing',
   ABOUT_US: '/about-us',
+  CONTACT_US: '/contact-us',
   DOCUMENTATION: 'https://docs.taipy.io/en/latest/',
   DOCUMENTATION_APPS_EXAMPLES: 'https://docs.taipy.io/en/latest/gallery/',
   DOCUMENTATION_CONTRIBUTING: 'https://docs.taipy.io/en/latest/contributing/contributing/',
@@ -20,8 +21,10 @@ export const ROUTES: Record<string, URL | Route<string>> = {
   REQUEST_A_QUOTE: '/request-a-quote',
   REQUEST_A_DESIGNER_DEMO: '/request-a-designer-demo',
   MENTORSHIP: '/mentorship',
-  ENTERPRISE: '/enterprise',
   COMMUNITY: '/community',
+  DESIGNER: '/designer',
+  TRIAL_DESIGNER_FORM: new URL('https://forms.gle/dh9JLndzU2c6sHKL6'),
+  DESIGNER_LICENSE: '/taipy-designer-evaluation-license-agreement',
   TERMS: '/terms-of-use', // https://www.taipy.io/legal/terms-of-use
   COMPANY: '/',
   TWITTER: new URL('https://twitter.com/Taipy_io'),

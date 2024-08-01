@@ -299,3 +299,16 @@ export const bannerQuery = gql`
     }
   }
 `;
+
+export const pageQuery = gql`
+  ${commonPostFieldsFragment}
+  query Page {
+    allPage(limit: 1) {
+      title
+      posts {
+        ...commonPostFields
+        lead
+      }
+    }
+  }
+`;

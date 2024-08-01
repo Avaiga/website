@@ -16,7 +16,6 @@ export const MENU = {
   header: [
     { label: 'Blog', href: ROUTES.BLOG },
     { label: 'About', href: ROUTES.ABOUT_US },
-    { label: 'Pricing', href: ROUTES.PRICING },
     {
       label: 'Docs',
       href: ROUTES.DOCUMENTATION,
@@ -37,7 +36,7 @@ export const MENU = {
           icon: FolderIcon,
         },
         {
-          label: 'Apps Examples',
+          label: 'Apps Gallery',
           href: ROUTES.DOCUMENTATION_APPS_EXAMPLES,
           icon: BlocksIcon,
         },
@@ -53,7 +52,7 @@ export const MENU = {
         },
       ],
     },
-    { label: 'Apps Examples', href: ROUTES.DOCUMENTATION_APPS_EXAMPLES },
+    { label: 'Apps Gallery', href: ROUTES.DOCUMENTATION_APPS_EXAMPLES },
   ],
   footer: {
     main: [
@@ -62,9 +61,9 @@ export const MENU = {
         items: [
           { label: 'Home', href: ROUTES.INDEX },
           { label: 'About us', href: ROUTES.ABOUT_US },
-          { label: 'Enterprise', href: ROUTES.ENTERPRISE },
           { label: 'Pricing', href: ROUTES.PRICING },
           { label: 'Customer Stories', href: ROUTES.CUSTOMER_STORIES },
+          { label: 'Contact us', href: ROUTES.CONTACT_US },
         ],
       },
       {
@@ -74,6 +73,7 @@ export const MENU = {
           { label: 'Documentation', href: ROUTES.DOCUMENTATION },
           { label: 'Free mentorship', href: ROUTES.MENTORSHIP },
           { label: 'Community', href: ROUTES.COMMUNITY },
+          { label: 'Designer', href: ROUTES.DESIGNER },
         ],
       },
       {
@@ -81,6 +81,7 @@ export const MENU = {
         items: [
           { label: 'Terms of service', href: ROUTES.TERMS },
           { label: 'Privacy policy', href: ROUTES.PRIVACY },
+          { label: 'Taipy Designer Agreement', href: ROUTES.DESIGNER_LICENSE },
         ],
       },
     ],

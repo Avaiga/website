@@ -7,12 +7,6 @@ export const SEO_DATA = {
       'From simple pilots to production-ready web applications in no times. No more compromise on performance, customization, and scalability.',
     pathname: ROUTES.INDEX as string, // /
   },
-  ENTERPRISE: {
-    title: 'Enterprise | Taipy',
-    description:
-      'Explore our premium offer and take your business to the next level with Taipy Enterprise Edition!',
-    pathname: ROUTES.ENTERPRISE as string, // /enterprise
-  },
   PRICING: {
     title: 'License Fees | Taipy',
     description: 'Compare Taipy editions and license fees, or ask for a custom quote!',
@@ -61,5 +55,15 @@ export const SEO_DATA = {
     title: 'Community | Taipy',
     description: "Be part of Taipy's adventure!",
     pathname: ROUTES.COMMUNITY as string, // /community
+  },
+  CONTACT_US: {
+    title: 'Contact Taipy',
+    description: `Have a question, seek for support? Just send us an email, and we'll be sure to respond promptly.`,
+    pathname: ROUTES.CONTACT_US as string, // /contact-us
+  },
+  DESIGNER: {
+    title: 'Low code Drag-and-Drop Python app builder',
+    description: `Explore Taipy Designer, the cutting-edge drag-and-drop GUI builder designed for Python developers. Create dynamic GUIs effortlessly with a WYSIWYG environment. Connect widgets to your Python variables, style graphics with ease, and focus on results with our sophisticated yet convenient editor. Request a demo and watch the video now!`,
+    pathname: ROUTES.DESIGNER as string, // /designer
   },
 };

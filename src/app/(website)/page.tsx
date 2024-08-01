@@ -1,4 +1,5 @@
 import { SEO_DATA } from '@/constants/seo';
+import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
 
 import Applications from '@/components/pages/home/applications';
 import Benefits from '@/components/pages/home/benefits';
@@ -8,11 +9,16 @@ import LargeData from '@/components/pages/home/large-data';
 import Learn from '@/components/pages/home/learn';
 import Optimize from '@/components/pages/home/optimize';
 import CTA from '@/components/shared/CTA';
+import RelatedPosts from '@/components/shared/related-posts';
 import Subscribe from '@/components/shared/subscribe';
+import Testimonials from '@/components/shared/testimonials';
 
 import { getMetadata } from '@/lib/get-metadata';
+import { getPages } from '@/lib/sanity/client';
 
-function Home() {
+async function Home() {
+  const relatedPosts = await getPages();
+
   return (
     <>
       <Hero />
@@ -28,6 +34,11 @@ function Home() {
       <Integrations />
       <Benefits />
       <Applications />
+      <Testimonials
+        className="mt-[200px] lg:mt-[132px] md:mt-24 sm:mt-[76px]"
+        items={TESTIMONIALS_ITEMS}
+      />
+      <RelatedPosts relatedPosts={relatedPosts} />
       <CTA />
     </>
   );
@@ -38,3 +49,5 @@ export default Home;
 export async function generateMetadata() {
   return getMetadata(SEO_DATA.INDEX);
 }
+
+export const revalidate = 60;

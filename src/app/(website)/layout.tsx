@@ -27,6 +27,16 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
     >
       <head>
         {process.env.NODE_ENV === 'production' && (
+          <Script id="hs-script-loader" src="//js-eu1.hs-scripts.com/25526783.js" />
+        )}
+        {process.env.NODE_ENV === 'production' && (
+          <Script strategy="beforeInteractive" id="reb2b">
+            {`
+            !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);}reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true;script.src = https://s3-us-west-2.amazonaws.com/b2bjsstore/b/ + key + "/reb2b.js.gz";var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("RGNLKQHLML6Q");}();
+            `}
+          </Script>
+        )}
+        {process.env.NODE_ENV === 'production' && (
           <Script strategy="beforeInteractive" id="axeptio_overlay">
             {`
                 window.axeptioSettings = {
@@ -51,17 +61,17 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
                 }
 
                 function loadPlausible() {
-                    const script = document.createElement('script'); 
-                    script.src = 'https://plausible.io/js/script.tagged-events.js'; 
-                    script.setAttribute('data-domain', 'taipy.io'); 
-                    document.head.appendChild(script); 
+                    const script = document.createElement('script');
+                    script.src = 'https://plausible.io/js/script.tagged-events.js';
+                    script.setAttribute('data-domain', 'taipy.io');
+                    document.head.appendChild(script);
                 }
 
                 function loadClearbit() {
-                  const script = document.createElement('script'); 
-                  script.src = 'https://tag.clearbitscripts.com/v1/pk_1733d1e9903ce4818fec6c5fdd8118cf/tags.js'; 
-                  script.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin'); 
-                  document.head.appendChild(script); 
+                  const script = document.createElement('script');
+                  script.src = 'https://tag.clearbitscripts.com/v1/pk_1733d1e9903ce4818fec6c5fdd8118cf/tags.js';
+                  script.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+                  document.head.appendChild(script);
                 }
 
                 function loadHandleInitialPageUrl() {
@@ -72,6 +82,9 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
 
                 void 0 === window._axcb && (window._axcb = []);
                 window._axcb.push(function (axeptio) {
+                  axeptio.on("ready", function() {
+                    document.querySelector("div#axeptio_overlay").style.zIndex = "30";
+                  });
                   axeptio.on("cookies:complete", function (choices) {
                     if (choices.hotjar) {
                       loadHotjar();
