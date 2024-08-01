@@ -1,17 +1,10 @@
 import { GraphQLClient } from 'graphql-request';
 
-import {
-  Category,
-  Legal,
-  PageQueryResult,
-  Post,
-  SingleCategory,
-  SingleLegal,
-  SinglePage,
-  SinglePost,
-} from '@/types/blog';
+import { Category, Legal, Post, SingleCategory, SingleLegal, SinglePost } from '@/types/blog';
 import { CustomerStory, SingleCustomerStory } from '@/types/customer-story';
-import { Banner } from '@/types/shared';
+import { HomePageQueryResult, RelatedPosts } from '@/types/home-page';
+import { PricingContentItem } from '@/types/pricing-page';
+import { Banner, TestimonialsItem } from '@/types/shared';
 
 import {
   allCategoryQuery,
@@ -25,11 +18,13 @@ import {
   countCustomerStoryQuery,
   countPostQuery,
   customerStoryQuery,
+  homePageQuery,
   latestPostsQuery,
   legalQuery,
-  pageQuery,
   postQuery,
+  pricingPageQuery,
   promotedPostQuery,
+  testimonialsQuery,
 } from '@/lib/sanity/query';
 import { BLOG_POST_PER_PAGE, CUSTOMER_STORY_PER_PAGE } from '@/lib/sanity/utils';
 
@@ -216,5 +211,45 @@ export const getBanner = async (): Promise<Banner | null> =>
     .then((data) => data.allBanner)
     .then((data) => data[0] || null);
 
-export const getPages = async (): Promise<SinglePage[]> =>
-  await graphQLClient.request<PageQueryResult>(pageQuery).then((data) => data.allPage);
+export const getHomePageData = async (): Promise<Post[] | null> => {
+  return await graphQLClient.request<HomePageQueryResult>(homePageQuery).then((data) => {
+    const page = data.allPage[0];
+
+    if (!page) {
+      return null;
+    }
+
+    const relatedPosts =
+      page.content.find((item): item is RelatedPosts => item._type === 'relatedPosts')?.posts || [];
+
+    return relatedPosts;
+  });
+};
+
+export const getPricingPageData = async (): Promise<{
+  [key: string]: PricingContentItem;
+} | null> => {
+  const page = await graphQLClient
+    .request<{ allPage: { content: PricingContentItem[] }[] }>(pricingPageQuery)
+    .then((data) => data.allPage[0] || null);
+
+  return page.content.reduce(
+    (acc: { [key: string]: PricingContentItem }, item: PricingContentItem) => {
+      acc[item._type] = item;
+
+      return acc;
+    },
+    {} as { [key: string]: PricingContentItem },
+  );
+};
+
+export const getTestimonialsData = async (): Promise<{
+  title: string;
+  items: TestimonialsItem[];
+} | null> => {
+  return await graphQLClient
+    .request<{ allTestimonials: { title: string; items: TestimonialsItem[] }[] }>(testimonialsQuery)
+    .then((data) => {
+      return data.allTestimonials[0] || null;
+    });
+};

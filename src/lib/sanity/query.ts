@@ -300,14 +300,161 @@ export const bannerQuery = gql`
   }
 `;
 
-export const pageQuery = gql`
+export const homePageQuery = gql`
   ${commonPostFieldsFragment}
-  query Page {
-    allPage(limit: 1) {
+  query HomePage {
+    allPage(where: { title: { eq: "Home page" } }, limit: 1) {
+      content {
+        ... on RelatedPosts {
+          _type
+          posts {
+            ...commonPostFields
+            lead
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const pricingPageQuery = gql`
+  query PricingPage {
+    allPage(where: { title: { eq: "Pricing page" } }, limit: 1) {
       title
-      posts {
-        ...commonPostFields
-        lead
+      _updatedAt
+      content {
+        ... on Hero {
+          _type
+          tag
+          heading
+          description
+          buttonText
+          buttonLink
+        }
+        ... on Tools {
+          _type
+          title
+          cards {
+            ... on ToolsCard {
+              title
+              subtitle
+            }
+            ... on ToolsCardWithLink {
+              title
+              subtitle
+              linkText
+              linkTo
+            }
+          }
+        }
+        ... on Plans {
+          _type
+          heading
+          card1 {
+            title
+            price
+            features
+          }
+          card2 {
+            title
+            price
+            features
+            buttonText
+            buttonLink
+          }
+          card3 {
+            title
+            price
+            features
+            buttonText
+            buttonLink
+          }
+        }
+        ... on Benefits {
+          _type
+          heading
+          description
+          buttonText
+          buttonLink
+          cards {
+            title
+            description
+          }
+        }
+        ... on Features {
+          _type
+          heading
+          description
+          items {
+            title
+            subtitle
+          }
+        }
+        ... on CompairingTable {
+          _type
+          labels
+          cols {
+            isRowTitle
+            features
+            community {
+              value
+              booleanValue
+            }
+            enterprise {
+              value
+              booleanValue
+            }
+          }
+        }
+        ... on Faq {
+          _type
+          heading
+          items {
+            ... on FaqItem {
+              _type
+              question
+              simpleAnswer: answer
+            }
+            ... on FaqItemWithList {
+              _type
+              question
+              detailedAnswer: answer {
+                text
+                listOfItems
+              }
+            }
+          }
+        }
+        ... on Cta {
+          _type
+          cards {
+            title
+            description
+            buttonText
+            buttonLink
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const testimonialsQuery = gql`
+  query getTestimonials {
+    allTestimonials {
+      title
+      _type
+      items {
+        text
+        authorName
+        authorTitle
+        logoImage {
+          asset {
+            _id
+            altText
+            url
+          }
+        }
       }
     }
   }

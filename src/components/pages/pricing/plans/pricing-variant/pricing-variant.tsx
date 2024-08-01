@@ -1,4 +1,3 @@
-import { ROUTES } from '@/constants/routes';
 import clsx from 'clsx';
 
 import Button from '@/components/shared/button';
@@ -7,52 +6,23 @@ import CheckListIconInline from '@/svgs/pages/pricing/plans/check-list.inline.sv
 
 type PricingVariantProps = {
   type: 'community' | 'business' | 'enterprise';
+  cardData: CardDaraProps;
 };
 
-function PricingVariant({ type }: PricingVariantProps) {
+type CardDaraProps = {
+  title: string;
+  features: string[];
+  price: string;
+  buttonText?: string;
+  buttonLink?: string;
+};
+
+function PricingVariant({ type, cardData }: PricingVariantProps) {
+  const isCommunity = type === 'community';
   const isEnterprise = type === 'enterprise';
   const isBusiness = type === 'business';
-  const isCommunity = type === 'community';
 
-  const variantState = {
-    community: {
-      title: 'Taipy Community',
-      description: [
-        'Taipy Open-source',
-        'Unlimited access to Taipy community',
-        'Support provided through the community of developers and contributors',
-      ],
-      price: 'FREE',
-    },
-    business: {
-      title: 'Taipy Business',
-      description: [
-        'Unlimited Scenarios',
-        'User management',
-        'Performance & Scalability',
-        'Taipy Designer',
-        'License for 1 developer',
-        '1 end user',
-        '24x5 support provided with 2 business hours guaranteed response times',
-      ],
-      price: `360`,
-    },
-    enterprise: {
-      title: 'Taipy Enterprise',
-      description: [
-        'Unlimited Scenarios',
-        'User management',
-        'Performance & Scalability',
-        'Taipy Designer',
-        'License for multiple developers',
-        'Multiple end users',
-        '24x5 support provided with 2 business hours guaranteed response times',
-      ],
-      price: `Contact us`,
-    },
-  };
-
-  const { title, description, price } = variantState[type];
+  const { title, features, price, buttonText, buttonLink } = cardData;
 
   return (
     <div
@@ -80,7 +50,7 @@ function PricingVariant({ type }: PricingVariantProps) {
             )}
 
             <h3 className="inline-block bg-gradient-to-r from-[#c7c7d1b7] to-white bg-clip-text text-36 font-semibold leading-dense tracking-tight text-transparent md:text-28">
-              {isBusiness ? `$${price}` : price}
+              {price}
             </h3>
             {isBusiness && (
               <p className="relative bottom-0.5 left-1.5 text-16 font-light md:bottom-0 md:text-14">
@@ -90,7 +60,7 @@ function PricingVariant({ type }: PricingVariantProps) {
           </div>
 
           <ul className="mt-3.5 flex flex-col gap-y-3.5 md:mt-[15px] md:gap-y-2.5 sm:mt-3.5">
-            {description.map((item, index) => (
+            {features.map((item, index) => (
               <li
                 className="flex items-start gap-x-2 text-16 font-light leading-normal text-grey-70 md:text-14"
                 key={index}
@@ -108,14 +78,14 @@ function PricingVariant({ type }: PricingVariantProps) {
               </li>
             ))}
           </ul>
-          {(isEnterprise || isBusiness) && (
+          {(isEnterprise || isBusiness) && buttonText && (
             <Button
               className="relative z-10 mt-[26px] w-full max-w-[180px] leading-snug lg:mt-[22px] md:h-12 md:text-16 sm:h-11 sm:max-w-[160px] sm:text-14"
               size="lg"
               theme={isBusiness ? 'red-filled' : 'white-filled'}
-              href={ROUTES.REQUEST_A_QUOTE}
+              href={buttonLink}
             >
-              Get a quote
+              {buttonText}
               {isBusiness && (
                 <span className="absolute top-[-33px] -z-10 h-32 w-full max-w-9 rotate-90 bg-hero-btn-enterprise blur-[24px]" />
               )}

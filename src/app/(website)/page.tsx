@@ -1,5 +1,4 @@
 import { SEO_DATA } from '@/constants/seo';
-import { TESTIMONIALS_ITEMS } from '@/constants/testimonials';
 
 import Applications from '@/components/pages/home/applications';
 import Benefits from '@/components/pages/home/benefits';
@@ -8,16 +7,21 @@ import Integrations from '@/components/pages/home/integrations';
 import LargeData from '@/components/pages/home/large-data';
 import Learn from '@/components/pages/home/learn';
 import Optimize from '@/components/pages/home/optimize';
+import RelatedPosts from '@/components/pages/home/related-posts';
 import CTA from '@/components/shared/CTA';
-import RelatedPosts from '@/components/shared/related-posts';
 import Subscribe from '@/components/shared/subscribe';
 import Testimonials from '@/components/shared/testimonials';
 
 import { getMetadata } from '@/lib/get-metadata';
-import { getPages } from '@/lib/sanity/client';
+import { getHomePageData, getTestimonialsData } from '@/lib/sanity/client';
 
 async function Home() {
-  const relatedPosts = await getPages();
+  const relatedPosts = await getHomePageData();
+  const testimonialsData = await getTestimonialsData();
+
+  if (!relatedPosts || relatedPosts.length === 0) {
+    return null;
+  }
 
   return (
     <>
@@ -34,10 +38,13 @@ async function Home() {
       <Integrations />
       <Benefits />
       <Applications />
-      <Testimonials
-        className="mt-[200px] lg:mt-[132px] md:mt-24 sm:mt-[76px]"
-        items={TESTIMONIALS_ITEMS}
-      />
+      {testimonialsData && (
+        <Testimonials
+          className="mt-[200px] lg:mt-[132px] md:mt-24 sm:mt-[76px]"
+          heading={testimonialsData.title}
+          items={testimonialsData.items}
+        />
+      )}
       <RelatedPosts relatedPosts={relatedPosts} />
       <CTA />
     </>
