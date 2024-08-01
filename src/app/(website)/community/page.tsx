@@ -24,7 +24,7 @@ function Community() {
         className="mt-[186px] lg:mt-[142px] md:mt-[92px] sm:mt-[88px]"
       />
       <Contributors />
-      <CTA className="mt-[172px] lg:mt-[126px] md:mt-[122px] sm:mt-[86px]" />
+      <CTA className="mt-[184px] lg:mt-[146px] md:mt-[106px] sm:mt-[96px]" />
       <Benefits />
       <LatestPosts />
     </>
