@@ -29,7 +29,9 @@ export type ToolsProps = {
 
 export type PlanCard = {
   title: string;
+  pricingLabel?: string;
   price: string;
+  paymentPeriod?: string;
   features: string[];
 };
 

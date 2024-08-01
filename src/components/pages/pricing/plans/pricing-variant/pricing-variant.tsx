@@ -12,7 +12,9 @@ type PricingVariantProps = {
 type CardDaraProps = {
   title: string;
   features: string[];
+  pricingLabel?: string;
   price: string;
+  paymentPeriod?: string;
   buttonText?: string;
   buttonLink?: string;
 };
@@ -22,7 +24,7 @@ function PricingVariant({ type, cardData }: PricingVariantProps) {
   const isEnterprise = type === 'enterprise';
   const isBusiness = type === 'business';
 
-  const { title, features, price, buttonText, buttonLink } = cardData;
+  const { title, features, pricingLabel, price, paymentPeriod, buttonText, buttonLink } = cardData;
 
   return (
     <div
@@ -45,16 +47,16 @@ function PricingVariant({ type, cardData }: PricingVariantProps) {
         <div className="mx-auto">
           <p className="text-16 font-medium leading-snug">{title}</p>
           <div className="relative mt-9 flex items-end lg:mt-[34px]">
-            {isBusiness && (
-              <p className="absolute -top-5 text-10 text-grey-70 transition-all">PRICED AT</p>
+            {pricingLabel && (
+              <p className="absolute -top-5 text-10 text-grey-70 transition-all">{pricingLabel}</p>
             )}
 
             <h3 className="inline-block bg-gradient-to-r from-[#c7c7d1b7] to-white bg-clip-text text-36 font-semibold leading-dense tracking-tight text-transparent md:text-28">
               {price}
             </h3>
-            {isBusiness && (
+            {paymentPeriod && (
               <p className="relative bottom-0.5 left-1.5 text-16 font-light md:bottom-0 md:text-14">
-                /{'month, billed annualy'}
+                {paymentPeriod}
               </p>
             )}
           </div>

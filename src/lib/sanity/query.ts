@@ -357,7 +357,9 @@ export const pricingPageQuery = gql`
           }
           card2 {
             title
+            pricingLabel
             price
+            paymentPeriod
             features
             buttonText
             buttonLink

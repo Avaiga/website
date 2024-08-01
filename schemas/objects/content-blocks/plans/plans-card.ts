@@ -12,10 +12,22 @@ export const plansCard = defineType({
       validation: (rule: Rule) => rule.required(),
     },
     {
+      name: 'pricingLabel',
+      type: 'string',
+      title: 'Pricing Label',
+      description: 'If not necessary, leave the field empty.',
+    },
+    {
       name: 'price',
       type: 'string',
       title: 'Price',
       validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'paymentPeriod',
+      type: 'string',
+      title: 'Payment Period',
+      description: 'If not necessary, leave the field empty.',
     },
     {
       name: 'features',
