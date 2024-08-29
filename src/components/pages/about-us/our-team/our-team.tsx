@@ -1,4 +1,4 @@
-of Digital Communication & Marketingimport Image from 'next/image';
+Image from 'next/image';
 
 import FR from '@/images/country-svgs/FR.svg';
 import SG from '@/images/country-svgs/SG.svg';
@@ -48,7 +48,7 @@ const teamListData = [
     position: 'CPO',
     countryIcon: FR,
   },
-    {
+  {
     photo: rymMichaut,
     name: 'Rym Michaut',
     position: 'Head of Digital Marketing & Communication',
