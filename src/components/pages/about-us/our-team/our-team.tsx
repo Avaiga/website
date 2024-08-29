@@ -1,4 +1,4 @@
-import Image from 'next/image';
+of Digital Communication & Marketingimport Image from 'next/image';
 
 import FR from '@/images/country-svgs/FR.svg';
 import SG from '@/images/country-svgs/SG.svg';
@@ -48,10 +48,10 @@ const teamListData = [
     position: 'CPO',
     countryIcon: FR,
   },
-  {
-    photo: myriamDelarue,
-    name: 'Myriam Delarue',
-    position: 'Administration and Finance Manager',
+    {
+    photo: rymMichaut,
+    name: 'Rym Michaut',
+    position: 'Head of Digital Marketing & Communication',
     countryIcon: FR,
   },
   {
@@ -60,7 +60,12 @@ const teamListData = [
     position: 'Senior Advisor to the board',
     countryIcon: US,
   },
-
+  {
+    photo: myriamDelarue,
+    name: 'Myriam Delarue',
+    position: 'Administration and Finance Manager',
+    countryIcon: FR,
+  },
   {
     photo: prNgoBaoChau,
     name: 'Pr. Ngo Bao Chau',
@@ -72,12 +77,6 @@ const teamListData = [
     name: 'Vinh Nguyen',
     position: 'CFO',
     countryIcon: VN,
-  },
-  {
-    photo: rymMichaut,
-    name: 'Rym Michaut',
-    position: 'Global Community Manager',
-    countryIcon: FR,
   },
   {
     photo: florianJacta,
@@ -92,12 +91,6 @@ const teamListData = [
     countryIcon: FR,
   },
   {
-    photo: truongGiangDo,
-    name: 'Truong Giang Do',
-    position: 'Python Developer',
-    countryIcon: VN,
-  },
-  {
     photo: fredericLefevereLaoide,
     name: 'Frédéric Lefévère-Laoide',
     position: 'Senior Software Engineer',
@@ -107,6 +100,12 @@ const teamListData = [
     photo: longNguyenDinh,
     name: 'Long Nguyen Dinh',
     position: 'Software Engineer',
+    countryIcon: VN,
+  },
+  {
+    photo: truongGiangDo,
+    name: 'Truong Giang Do',
+    position: 'Python Developer',
     countryIcon: VN,
   },
   {
