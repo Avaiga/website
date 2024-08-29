@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="text-center">
           <span className="leading-snug text-primary-red">About us</span>
           <h1 className="mx-auto mt-4 max-w-[881px] text-56 font-medium leading-dense tracking-tight lg:max-w-[792px] lg:text-48 md:max-w-[639px] md:text-40 sm:mt-3 sm:text-28">
-            We provide an open-source data & AI web application builder
+            We build Taipy, the only low-code front-end and data management for your Python applications. 
           </h1>
           <p className="mx-auto mt-5 max-w-[602px] text-20 font-light leading-normal text-white/80 lg:mt-3 lg:max-w-[602px] lg:text-18 md:max-w-[513px] sm:text-16">
             Facilitating your application&apos;s front-end and back-end development with integrated
