@@ -3,12 +3,14 @@ import { SVGProps } from 'react';
 import BirdLogo from '@/images/pages/pricing/logos/bird.inline.svg';
 import BrainLogo from '@/images/pages/pricing/logos/brain.inline.svg';
 import CoLogo from '@/images/pages/pricing/logos/co.inline.svg';
+import ENLogo from '@/images/pages/pricing/logos/en.inline.svg';
 import IcbLogo from '@/images/pages/pricing/logos/icb.inline.svg';
 import LayersLogo from '@/images/pages/pricing/logos/layers.inline.svg';
 import LesLogo from '@/images/pages/pricing/logos/les.inline.svg';
 import MicrosoftLogo from '@/images/pages/pricing/logos/microsoft.inline.svg';
 import PredictiveLogo from '@/images/pages/pricing/logos/predictive.inline.svg';
 import PrincetonLogo from '@/images/pages/pricing/logos/princeton.inline.svg';
+import SuaeeLogo from '@/images/pages/pricing/logos/suaee.inline.svg';
 import TalGroupLogo from '@/images/pages/pricing/logos/tal-group.inline.svg';
 import clsx from 'clsx';
 
@@ -25,6 +27,8 @@ const logos = [
   'les',
   'microsoft',
   'predictive',
+  'en',
+  'suaee',
   'princeton',
   'tal-group',
 ];
@@ -38,6 +42,8 @@ const allLogos: LogoComponents = {
   les: LesLogo,
   microsoft: MicrosoftLogo,
   predictive: PredictiveLogo,
+  en: ENLogo,
+  suaee: SuaeeLogo,
   princeton: PrincetonLogo,
   'tal-group': TalGroupLogo,
 };
