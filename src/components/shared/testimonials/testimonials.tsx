@@ -72,7 +72,7 @@ function Testimonials({ heading, items, className }: TestimonialsProps) {
   return (
     <section className={clsx('testimonials safe-paddings', className)}>
       <div className="container relative flex max-w-[920px] flex-col items-center md:max-w-[696px]">
-        <h2 className="text-40 font-medium leading-dense tracking-tight lg:text-32 lg:font-semibold md:text-28">
+        <h2 className="text-48 font-medium leading-dense tracking-tight lg:text-32 lg:font-semibold md:text-28">
           {heading}
         </h2>
         <Slider className="!flex w-full justify-between" {...settings}>

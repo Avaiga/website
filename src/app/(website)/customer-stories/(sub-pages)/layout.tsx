@@ -16,7 +16,7 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
       <section className="pt-40 lg:pt-[136px] md:pt-[120px] sm:pt-[104px]">
         <div className="container text-center">
           <span className="leading-snug text-primary-red sm:text-14">They speak for us</span>
-          <h1 className="mt-4 text-64 font-medium leading-dense tracking-tight lg:mt-3.5 lg:text-48 md:text-40 sm:mt-3 sm:text-28">
+          <h1 className="mt-4 text-56 font-medium leading-dense tracking-tight lg:mt-3.5 lg:text-48 md:text-40 sm:mt-3 sm:text-28">
             Customer Stories
           </h1>
           <p className="mt-5 text-18 font-light text-white/80 lg:mt-4 sm:mt-3 sm:text-16">
@@ -32,7 +32,7 @@ async function CustomerStoriesSubPagesLayout({ children }: { children: ReactNode
       <section className="related mt-[168px] lg:mt-[140px] md:mt-24 sm:mt-[72px]">
         <div className="container-narrow">
           <div className="mb-8 flex items-center justify-between gap-x-4 lg:mb-7">
-            <h2 className="text-32 font-semibold leading-none tracking-tight md:text-24">
+            <h2 className="text-48 font-semibold leading-none tracking-tight md:text-24">
               Read more about Taipy
             </h2>
             <Link

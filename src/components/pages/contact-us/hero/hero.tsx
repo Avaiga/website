@@ -9,7 +9,7 @@ function Hero() {
   return (
     <section className="hero pt-32 lg:pt-28 md:pt-[104px] sm:pt-24">
       <div className="container">
-        <h1 className="mt-2 text-center text-64 font-semibold leading-dense tracking-tight lg:text-56 md:text-48 sm:text-32">
+        <h1 className="mt-2 text-center text-56 font-semibold leading-dense tracking-tight lg:text-56 md:text-48 sm:text-32">
           Contact us
         </h1>
         <p className="mx-auto mt-4 max-w-[464px] text-center text-16 leading-snug text-white/80 md:mt-3.5 md:max-w-[393px] md:text-14 sm:mt-3 sm:max-w-[285px]">
