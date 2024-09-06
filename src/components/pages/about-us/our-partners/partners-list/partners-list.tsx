@@ -2,23 +2,22 @@ import { SVGProps } from 'react';
 
 import clsx from 'clsx';
 
-import IBMWatson from '@/svgs/logos/partners/ibm-watson.inline.svg';
-import Databricks from '@/svgs/logos/partners/databricks.inline.svg';
 import Icb from '@/svgs/logos/icb.inline.svg';
 import Ifc from '@/svgs/logos/ifc.inline.svg';
 import Kdnuggets from '@/svgs/logos/kdnuggets.inline.svg';
-import Knowledge from '@/svgs/logos/partners/knowledge.inline.svg';
-import Mousquetaires from '@/svgs/logos/partners/les-mousquetaires.inline.svg';
-import Dataiku from '@/svgs/logos/partners/dataiku.inline.svg';
-import Microsoft from '@/svgs/logos/partners/microsoft.inline.svg';
-import Princeton from '@/svgs/logos/princeton-consultants.inline.svg';
-import Stevens from '@/svgs/logos/stevens.inline.svg';
-import Tal from '@/svgs/logos/partners/tal-group.inline.svg';
-import Ttc from '@/svgs/logos/ttc.inline.svg';
 import Awc from '@/svgs/logos/partners/aws.inline.svg';
 import Colab from '@/svgs/logos/partners/colab.inline.svg';
-import Suaee from "@/svgs/logos/partners/suaee.inline.svg";
+import Databricks from '@/svgs/logos/partners/databricks.inline.svg';
+import Dataiku from '@/svgs/logos/partners/dataiku.inline.svg';
+import IBMWatson from '@/svgs/logos/partners/ibm-watson.inline.svg';
 import Ifp from '@/svgs/logos/partners/ifp.inline.svg';
+import Knowledge from '@/svgs/logos/partners/knowledge.inline.svg';
+import Mousquetaires from '@/svgs/logos/partners/les-mousquetaires.inline.svg';
+import Microsoft from '@/svgs/logos/partners/microsoft.inline.svg';
+import Suaee from '@/svgs/logos/partners/suaee.inline.svg';
+import Tal from '@/svgs/logos/partners/tal-group.inline.svg';
+import Princeton from '@/svgs/logos/princeton-consultants.inline.svg';
+import Ttc from '@/svgs/logos/ttc.inline.svg';
 
 const styles = {
   border: {
@@ -148,14 +147,14 @@ export default function PartnersList() {
       {partnersListData.map(({ logo: Logo, alt, secondClass, secondLogoClass }, index) => (
         <li
           className={clsx(
-            'relative flex flex-col gap-[30px] h-[160px] w-full max-w-[319px] items-center justify-center border-grey-15 md:h-[126px] md:max-w-[256px] sm:h-[80px] sm:max-w-[159px]',
+            'relative flex h-[160px] w-full max-w-[319px] flex-col items-center justify-center gap-[30px] border-grey-15 md:h-[126px] md:max-w-[256px] sm:h-[80px] sm:max-w-[159px]',
             secondClass,
             buttonClassName,
           )}
           key={index}
         >
           <Logo className={clsx('fill-grey-70', secondLogoClass)} alt={alt} />
-          <div className="text-[#797986] text-[14px]">{alt}</div>
+          <div className="text-[14px] text-[#797986]">{alt}</div>
         </li>
       ))}
     </ul>
