@@ -6,6 +6,10 @@ import PredictiveLayer from '@/svgs/logos/predictive-layer.inline.svg';
 import PrincetonConsultants from '@/svgs/logos/princeton-consultants.inline.svg';
 import TalGroup from '@/svgs/logos/tal-group.inline.svg';
 
+interface Props {
+  isHideMask?: boolean;
+}
+
 const LOGOS = [
   {
     logo: TalGroup,
@@ -38,13 +42,13 @@ const styles = {
   logosWrapper: 'flex h-full items-center justify-center gap-x-14 md:gap-x-0 md:justify-between',
 };
 
-function Logos() {
+function Logos({isHideMask}: Props) {
   return (
     <div className="mt-12 h-[91px] lg:mt-[9px] lg:scale-[0.585] md:mx-auto md:mt-6 md:h-14 md:max-w-[560px] md:scale-100 sm:mt-1.5 sm:max-w-[310px]">
       <ul
         className={clsx(
           styles.logosWrapper,
-          '[mask-image:linear-gradient(90deg,rgba(217,217,217,0.4)_0%,rgba(217,217,217,0.8)_48.89%,rgba(217,217,217,0.4)_100.68%)]',
+          isHideMask ?? '[mask-image:linear-gradient(90deg,rgba(217,217,217,0.4)_0%,rgba(217,217,217,0.8)_48.89%,rgba(217,217,217,0.4)_100.68%)]',
         )}
       >
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
@@ -60,7 +64,7 @@ function Logos() {
       <ul
         className={clsx(
           styles.logosWrapper,
-          '-translate-y-full [mask-image:radial-gradient(730px_460px_at_50%_-375px,#000_25%,transparent_100%)]',
+          isHideMask ?? '-translate-y-full [mask-image:radial-gradient(730px_460px_at_50%_-375px,#000_25%,transparent_100%)]',
         )}
       >
         {LOGOS.map(({ logo: Logo, width, height }, index) => (
