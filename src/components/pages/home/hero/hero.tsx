@@ -74,7 +74,7 @@ function Hero() {
             />
           </video>
         </div>
-        <Logos />
+        <Logos isHideMask />
       </div>
     </section>
   );

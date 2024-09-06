@@ -4,6 +4,7 @@ import awsSageMaker from '@/svgs/pages/home/integrations/aws-sage-maker.svg';
 import databricks from '@/svgs/pages/home/integrations/databricks.svg';
 import dataiku from '@/svgs/pages/home/integrations/dataiku.svg';
 import googleColab from '@/svgs/pages/home/integrations/google-colab.svg';
+import ibmWatson from '@/svgs/pages/home/integrations/ibm-watson.svg';
 
 const CARDS = [
   {
@@ -22,12 +23,16 @@ const CARDS = [
     icon: awsSageMaker,
     title: 'AWS SageMaker',
   },
+  {
+    icon: ibmWatson,
+    title: 'IBM Watson',
+  },
 ];
 
 function Integrations() {
   return (
     <section className="integrations mt-[154px] px-safe lg:mt-[120px] md:mt-24 sm:mt-[76px]">
-      <div className="container max-w-[776px] text-center">
+      <div className="container max-w-[986px] text-center">
         <span className="leading-snug text-primary-red md:text-14">Integrations</span>
         <h2 className="mt-5 text-56 font-semibold leading-dense tracking-tight lg:mt-4 lg:text-48 md:text-40 sm:mt-3 sm:text-28">
           Beyond the basics
@@ -36,7 +41,7 @@ function Integrations() {
           Whether standalone or paired, Taipy connects effortlessly with leading data platforms,
           amplifying your application&apos;s potential.
         </p>
-        <div className="mt-11 grid grid-cols-4 gap-x-6 lg:mt-10 md:mx-auto md:mt-8 md:max-w-[600px] sm:mt-6 sm:max-w-[280px] sm:grid-cols-2 sm:gap-4">
+        <div className="mt-11 grid grid-cols-5 gap-x-6 lg:mt-10 md:mx-auto md:mt-8 md:max-w-[600px] sm:mt-6 sm:max-w-[280px] sm:grid-cols-2 sm:gap-4">
           {CARDS.map(({ icon, title }, index) => (
             <div
               className="rounded-lg bg-[linear-gradient(180deg,#2A2A2D_0%,rgba(42,42,45,0.5)_4.86%,rgba(42,42,45,0.4)_16.55%)] p-px"

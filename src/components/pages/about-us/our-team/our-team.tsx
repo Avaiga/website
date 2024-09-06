@@ -1,4 +1,4 @@
-Image from 'next/image';
+import Image from 'next/image';
 
 import FR from '@/images/country-svgs/FR.svg';
 import SG from '@/images/country-svgs/SG.svg';

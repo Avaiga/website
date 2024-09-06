@@ -105,7 +105,7 @@ async function CustomerStory({ params }: { params: { slug: string } }) {
       <section className="related mt-[120px] lg:mt-[104px] md:mt-[88px] sm:mt-16">
         <div className="container-narrow">
           <div className="mb-8 flex items-center justify-between gap-x-4">
-            <h2 className="text-32 font-semibold leading-none tracking-tight">Related Posts</h2>
+            <h2 className="text-48 font-semibold leading-none tracking-tight">Related Posts</h2>
             <Link
               className="shrink-0 text-16 md:text-14"
               href={ROUTES.BLOG}

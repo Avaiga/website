@@ -29,7 +29,7 @@
     @apply flex will-change-transform;
 
     gap: var(--gap);
-    animation: infinityScroll 60s linear infinite;
+    animation: infinityScroll 45s linear infinite;
   }
 
   .logos-central-mask {
