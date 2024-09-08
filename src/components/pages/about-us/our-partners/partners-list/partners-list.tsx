@@ -147,14 +147,14 @@ export default function PartnersList() {
       {partnersListData.map(({ logo: Logo, alt, secondClass, secondLogoClass }, index) => (
         <li
           className={clsx(
-            'relative flex h-[160px] w-full max-w-[319px] flex-col items-center justify-center gap-[30px] border-grey-15 md:h-[126px] md:max-w-[256px] sm:h-[80px] sm:max-w-[159px]',
+            'relative flex h-[160px] w-full max-w-[319px] flex-col items-center justify-center gap-[30px] border-grey-15 md:h-[126px] md:max-w-[256px] md:gap-[10px] sm:h-auto  sm:max-w-[159px] sm:py-[10px]',
             secondClass,
             buttonClassName,
           )}
           key={index}
         >
           <Logo className={clsx('fill-grey-70', secondLogoClass)} alt={alt} />
-          <div className="text-[14px] text-[#797986]">{alt}</div>
+          <div className="text-[14px] text-[#797986] md:text-13">{alt}</div>
         </li>
       ))}
     </ul>
