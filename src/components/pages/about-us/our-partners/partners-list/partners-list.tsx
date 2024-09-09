@@ -116,13 +116,13 @@ const partnersListData: Partner[] = [
   {
     logo: Icb,
     alt: 'ICB',
-    secondClass: 'border-r border-b xl:border-r-0 2xs:border-r',
+    secondClass: 'border-r xl:border-b-0 md:border-b xl:border-r-0 2xs:border-r',
     secondLogoClass: 'w-[50px] md:w-[36px] sm:w-[30px]',
   },
   {
     logo: Suaee,
     alt: 'SUAEE Group',
-    secondClass: 'border-r border-b xl:border-r-0 md:border-l',
+    secondClass: 'border-r xl:border-b-0 md:border-b xl:border-r-0 md:border-l',
     secondLogoClass: 'w-[42px] md:w-[33px] sm:w-[27px]',
   },
   {
