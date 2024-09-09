@@ -7,16 +7,11 @@
     border-right: 1px solid var(--partners-color);
   }
 
-  /*@media (max-width: 516px) {*/
-  /*  .partners-list li:nth-child(2n + 2) {*/
-  /*    border-right: none;*/
-  /*  }*/
-  /*}*/
-
-  @media  (max-width: 515px) {
+  @media (max-width: 515px) {
     .partners-list li:nth-child(2n + 2) {
       border-right: none;
     }
+
     .partners-list li:nth-last-child(n+3) {
       border-bottom: 1px solid var(--partners-color);
     }
@@ -26,9 +21,11 @@
     .partners-list li:nth-child(3n + 3) {
       border-right: none;
     }
+
     .partners-list li:nth-last-child(n+2) {
       border-bottom: 1px solid var(--partners-color);
     }
+
     .partners-list li:last-child {
       border-left: 1px solid var(--partners-color);
     }
@@ -37,6 +34,7 @@
     .partners-list li:nth-child(4n + 4) {
       border-right: none;
     }
+
     .partners-list li:nth-last-child(n+5) {
       border-bottom: 1px solid var(--partners-color);
     }
@@ -45,6 +43,7 @@
     .partners-list li:nth-child(2n + 2) {
       border-right: none;
     }
+
     .partners-list li:nth-last-child(n+3) {
       border-bottom: 1px solid var(--partners-color);
     }
@@ -54,9 +53,11 @@
     .partners-list li:nth-child(3n + 3) {
       border-right: none;
     }
+
     .partners-list li:nth-last-child(n+2) {
       border-bottom: 1px solid var(--partners-color);
     }
+
     .partners-list li:last-child {
       border-left: 1px solid var(--partners-color);
     }
@@ -66,6 +67,7 @@
     .partners-list li:nth-child(4n + 4) {
       border-right: none;
     }
+
     .partners-list li:nth-last-child(n+5) {
       border-bottom: 1px solid var(--partners-color);
     }
