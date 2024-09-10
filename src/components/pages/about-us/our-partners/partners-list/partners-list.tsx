@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import {SVGProps} from 'react';
 
 import clsx from 'clsx';
 
@@ -42,100 +42,83 @@ const partnersListData: Partner[] = [
   {
     logo: Microsoft,
     alt: 'Microsoft',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[38px] md:w-[38px] sm:w-[38px]',
+    secondLogoClass: 'w-[38px] md:w-[30px] sm:w-[25px]',
   },
   {
     logo: Mousquetaires,
     alt: 'Les Mousquetaires',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[76px] md:w-[60px] sm:w-[38px]',
+    secondLogoClass: 'w-[76px] md:w-[42px] sm:w-[35px]',
   },
   {
     logo: Databricks,
     alt: 'Databricks',
-    secondClass:
-      'border-r border-b lg:border-r-0 xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[47px] md:w-[47px] sm:w-[47px]',
+    secondLogoClass: 'w-[47px] md:w-[35px] sm:w-[27px]',
   },
   {
     logo: Dataiku,
     alt: 'Dataiku',
-    secondClass: 'border-b xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[46px] md:w-[46px] sm:w-[46px]',
+    secondLogoClass: 'w-[46px] md:w-[32px] sm:w-[27px]',
   },
   {
     logo: Princeton,
     alt: 'Princeton Consultants',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[171px] md:w-[135px] sm:w-[85px]',
+    secondLogoClass: 'w-[171px] md:w-[125px] sm:w-[105px]',
   },
   {
     logo: IBMWatson,
     alt: 'IBM Watson',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[58px] md:w-[58px] sm:w-[58px]',
+
+    secondLogoClass: 'w-[58px] md:w-[42px] sm:w-[32px]',
   },
   {
     logo: Ttc,
     alt: 'TTC AgriS',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[82px] md:w-[65px] sm:w-[41px]',
+    secondLogoClass: 'w-[82px] md:w-[54px] sm:w-[45px]',
   },
   {
     logo: Knowledge,
     alt: 'Knowledge Touch',
-    secondClass: 'border-b xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[44px] md:w-[44px] sm:w-[44px]',
+    secondLogoClass: 'w-[44px] md:w-[34px] sm:w-[26px]',
   },
   {
     logo: Kdnuggets,
     alt: 'Kdnuggets',
-    secondClass:
-      'border-r border-b lg:border-r-0 xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[135px] md:w-[105px] sm:w-[67px]',
+    secondLogoClass: 'w-[135px] md:w-[94px] sm:w-[79px]',
   },
   {
     logo: Tal,
     alt: 'Tal Group',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b',
-    secondLogoClass: 'w-[37px] md:w-[37px] sm:w-[37px]',
+    secondLogoClass: 'w-[37px] md:w-[27px] sm:w-[23px]',
   },
   {
     logo: Awc,
     alt: 'AWS SageMaker',
-    secondClass: 'border-r border-b xl:border-r-0 xl:border-b-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[48px] md:w-[48px] sm:w-[48px]',
+    secondLogoClass: 'w-[48px] md:w-[30px] sm:w-[25px]',
   },
   {
     logo: Colab,
     alt: 'Google Colab',
-    secondClass: 'border-b xl:border-b-0 2xs:border-b 2xs:border-b',
-    secondLogoClass: 'w-[76px] md:w-[76px] sm:w-[76px]',
+    secondLogoClass: 'w-[76px] md:w-[55px] sm:w-[46px]',
   },
   {
     logo: Icb,
     alt: 'ICB',
-    secondClass: 'border-r xl:border-r-0 2xs:border-b 2xs:border-r',
-    secondLogoClass: 'w-[50px] md:w-[43px] sm:w-[27px]',
+    secondLogoClass: 'w-[50px] md:w-[36px] sm:w-[30px]',
   },
   {
     logo: Suaee,
     alt: 'SUAEE Group',
-    secondClass: 'border-r xl:border-r-0 2xs:border-b',
-    secondLogoClass: 'w-[42px] md:w-[42px] sm:w-[42px]',
+    secondLogoClass: 'w-[42px] md:w-[33px] sm:w-[27px]',
   },
   {
     logo: Ifc,
     alt: 'IFC',
-    secondClass: 'border-r xl:border-r-0',
-    secondLogoClass: 'w-[157px] md:w-[124px] sm:w-[78px]',
+    secondLogoClass: 'w-[157px] md:w-[118px] sm:w-[100px]',
   },
   {
     logo: Ifp,
     alt: 'IFP Energies nouvelles',
-    secondClass: 'border-l xl:border-l-0 2xs:border-l',
-    secondLogoClass: 'w-[109px] md:w-[109px] sm:w-[109px]',
+    secondLogoClass: 'w-[109px] md:w-[84px] sm:w-[px]',
   },
 ];
 
@@ -143,18 +126,19 @@ export default function PartnersList() {
   const buttonClassName = clsx(styles.border);
 
   return (
-    <ul className="relative mx-auto mt-[58px] flex w-full max-w-[1280px] flex-wrap justify-center overflow-hidden lg:mt-11 md:mt-[34px]">
-      {partnersListData.map(({ logo: Logo, alt, secondClass, secondLogoClass }, index) => (
+    <ul
+      className="partners-list relative mx-auto mt-[58px] flex w-full max-w-[1280px] flex-wrap justify-center overflow-hidden lg:mt-11 md:mt-[34px]">
+      {partnersListData.map(({logo: Logo, alt, secondLogoClass}, index) => (
         <li
           className={clsx(
-            'relative flex h-[160px] w-full max-w-[319px] flex-col items-center justify-center gap-[30px] border-grey-15 md:h-[126px] md:max-w-[256px] sm:h-[80px] sm:max-w-[159px]',
-            secondClass,
+            'relative flex h-[160px] w-full max-w-[319px] flex-col space-b items-center justify-center gap-[30px] md:gap-[16px] border-grey-15 md:h-[126px] md:max-w-[256px]  sm:max-w-[159px] md:text-14 sm:text-12',
+
             buttonClassName,
           )}
           key={index}
         >
-          <Logo className={clsx('fill-grey-70', secondLogoClass)} alt={alt} />
-          <div className="text-[14px] text-[#797986]">{alt}</div>
+          <Logo className={clsx('fill-grey-70', secondLogoClass)} alt={alt}/>
+          <div className="text-[14px] text-[#797986] md:text-13">{alt}</div>
         </li>
       ))}
     </ul>

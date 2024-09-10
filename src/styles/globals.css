@@ -4,6 +4,7 @@
 @import './article.css';
 @import './no-scrollbars.css';
 @import './logos.css';
+@import './partners.css';
 
 @layer base {
   body {
