@@ -9,8 +9,8 @@ import routeIcon from '@/svgs/pages/pricing/tools/route.svg';
 import serverRackIcon from '@/svgs/pages/pricing/tools/server-rack.svg';
 import speedIndicatorIcon from '@/svgs/pages/pricing/tools/speed-indicator.svg';
 import supportIcon from '@/svgs/pages/pricing/tools/support.svg';
-import surveyIcon from '@/svgs/pages/pricing/tools/survey.svg';
 import userFocusIcon from '@/svgs/pages/pricing/tools/user-focus.svg';
+import platformIcon from '@/svgs/pages/pricing/tools/platform.svg';
 
 import ToolBlock from './tool-block';
 
@@ -27,7 +27,7 @@ const cardsLogos = [
   userFocusIcon,
   serverRackIcon,
   speedIndicatorIcon,
-  surveyIcon,
+  platformIcon,
   roadmapIcon,
 ];
 
