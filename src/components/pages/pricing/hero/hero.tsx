@@ -4,7 +4,7 @@ type HeroProps = {
   [key: string]: string;
 };
 
-export default function Hero({ tag, heading, description, buttonText, buttonLink }: HeroProps) {
+export default function Hero({ tag, heading, description }: HeroProps) {
   return (
     <section className="hero pt-[113px] lg:pt-[102px] md:pt-[81px] sm:pt-[91px]">
       <div className="container-narrow max-w-5xl text-center lg:max-w-4xl">
