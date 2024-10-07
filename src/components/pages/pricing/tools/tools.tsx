@@ -40,7 +40,7 @@ function isToolsCardWithLink(card: ToolsCard | ToolsCardWithLink): card is Tools
 
 function Tools({ cards }: ToolsProps) {
   return (
-    <section className="tools mt-6 lg:mt-14 md:mt-12 sm:mt-10">
+    <section className="tools pt-[222px] lg:pt-[129px] md:pt-[122px] sm:pt-[104px]">
       <div className="container relative flex max-w-[1088px] flex-col items-center">
         <ul className="relative mt-10 grid grid-cols-3 gap-x-8 gap-y-[30px] lg:gap-x-6 lg:gap-y-6 md:mt-8 md:max-w-[640px] md:grid-cols-2 xs:mt-6 xs:grid-cols-1 xs:gap-y-5">
           {cards.slice(0, 3).map((card, index) => (
