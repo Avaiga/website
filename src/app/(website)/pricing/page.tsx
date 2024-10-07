@@ -64,9 +64,10 @@ async function Pricing() {
   return (
     <>
       {heroData && <Hero {...heroData} />}
+      {plansData && <Plans {...plansData} />}
+      {compairingTableData && <Compairing data={compairingTableData} />}
       {toolsData && <Tools {...toolsData} />}
       <Logos className="mt-[186px]" />
-      {plansData && <Plans {...plansData} />}
       {benefitsData && <Benefits {...benefitsData} />}
       {featuresData && (
         <Features
@@ -75,7 +76,6 @@ async function Pricing() {
           items={totalFeaturesItems}
         />
       )}
-      {compairingTableData && <Compairing data={compairingTableData} />}
       {testimonialsData && (
         <Testimonials
           className="mt-[182px]"
