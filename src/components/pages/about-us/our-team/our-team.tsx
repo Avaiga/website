@@ -51,7 +51,7 @@ const teamListData = [
   {
     photo: rymMichaut,
     name: 'Rym Michaut',
-    position: 'Head of Digital Marketing & Communication',
+    position: 'Head of Digital Marketing and Communication',
     countryIcon: FR,
   },
   {
