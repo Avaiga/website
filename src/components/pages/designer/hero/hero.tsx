@@ -24,14 +24,14 @@ function Hero() {
             environment!
           </p>
           <div className="mt-8 flex gap-[21px] sm:mt-[23px]">
-            <Button
+          <Button
               className="w-[180px] sm:h-12"
               size="lg"
               theme="red-filled"
               target="_blank"
-              href={ROUTES.TRIAL_DESIGNER_FORM}
+              href={ROUTES. REQUEST_A_DEMO}
             >
-              Try it for free
+              Request a demo
             </Button>
           </div>
         </div>
