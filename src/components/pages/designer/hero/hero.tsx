@@ -29,9 +29,9 @@ function Hero() {
               size="lg"
               theme="red-filled"
               target="_blank"
-              href={ROUTES.TRIAL_DESIGNER_FORM}
+              href={ROUTES.REQUEST_A_DEMO}
             >
-              Try it for free
+              Request a demo
             </Button>
           </div>
         </div>
