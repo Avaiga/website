@@ -48,8 +48,8 @@ function Designer() {
       />
       <CTAButton
         className="mt-2 md:hidden"
-        to={ROUTES.TRIAL_DESIGNER_FORM}
-        buttonText="Try it for free"
+        to={ROUTES.REQUEST_A_DEMO}
+        buttonText="Request a demo"
         isOpenInNewTab
       />
       <CTA
