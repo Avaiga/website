@@ -88,18 +88,18 @@ export const sendBrevoFullFormData = async ({
 };
 
 export const getContactInfo = async ({ email }: { email: string }) => {
-  const response = await fetch(`https://api.brevo.com/v3/contacts/${email}`, {
+  const url = '/api/contact-info';
+
+  const response = await fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      'api-key': process.env.NEXT_PUBLIC_BREVO_API_KEY!,
+      email,
     },
   });
 
-  const data = await response.json();
-
-  return data;
+  return await response.json();
 };
 
 export const updateContact = async ({
