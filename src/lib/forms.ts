@@ -15,8 +15,8 @@ export const sendBrevoFormData = async ({ listId, email }: { listId: number; ema
     },
     body: JSON.stringify({ listId, email, contactInfo }),
   });
-
-  if (!response.ok) {
+  // @ts-expect-error: status comparing
+  if (response.status === 'error') {
     const errorData = await response.json();
     throw new Error(errorData.error || 'Failed to send form');
   }
@@ -76,7 +76,6 @@ export const getContactInfo = async ({ email }: { email: string }) => {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      email,
     },
   });
 

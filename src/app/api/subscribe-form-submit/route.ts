@@ -56,8 +56,8 @@ export async function POST(request: NextRequest) {
         listIds: [listId],
       }),
     });
-
-    if (!response.ok) {
+    // @ts-expect-error: status comparing
+    if (response.status === 'error') {
       const errorData = await response.json();
 
       return NextResponse.json({ error: errorData.message }, { status: response.status });

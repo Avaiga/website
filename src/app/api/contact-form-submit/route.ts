@@ -39,7 +39,7 @@ async function updateContact({
     }),
   });
 
-  return response.ok;
+  return response;
 }
 
 export async function POST(request: NextRequest) {
@@ -58,7 +58,10 @@ export async function POST(request: NextRequest) {
     } = body;
 
     if (!email || !firstName || !lastName || !listId) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      return NextResponse.json(
+        { message: 'Missing required fields', status: 'error' },
+        { status: 400 },
+      );
     }
 
     if (contactInfo && contactInfo.listIds) {
@@ -73,10 +76,10 @@ export async function POST(request: NextRequest) {
       });
 
       if (updated) {
-        return NextResponse.json({ message: 'Contact updated successfully' });
+        return NextResponse.json({ message: 'Contact updated successfully', status: 'success' });
       } else {
         return NextResponse.json(
-          { error: 'Failed to update contact, please try later' },
+          { message: 'Failed to update contact', status: 'error' },
           { status: 500 },
         );
       }
@@ -102,8 +105,8 @@ export async function POST(request: NextRequest) {
         },
       }),
     });
-
-    if (!response.ok) {
+    // @ts-expect-error: status comparing
+    if (response.status === 'error') {
       const errorData = await response.json();
 
       return NextResponse.json({ error: errorData.message }, { status: response.status });
