@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
-    const email = request.headers.get('email');
+    const { searchParams } = new URL(request.url);
+
+    const email = searchParams.get('email');
 
     if (!email) {
-      return NextResponse.json({ error: 'Email is required' }, { status: 401 });
+      return NextResponse.json({ message: 'Email is required', status: 'error' }, { status: 401 });
     }
 
-    const response = await fetch(`https://api.brevo.com/v3/contacts/${email}`, {
+    const response = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email)}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +24,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to get contact info from server, please try later' },
+      { message: 'Failed to get contact info from server, please try later', status: 'error' },
       { status: 500 },
     );
   }

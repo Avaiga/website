@@ -16,7 +16,7 @@ async function updateContact({ email, listId }: { email: string; listId: number 
     }),
   });
 
-  return response.ok;
+  return response;
 }
 
 export async function POST(request: NextRequest) {
@@ -25,11 +25,15 @@ export async function POST(request: NextRequest) {
     const { listId, email, contactInfo } = body;
 
     if (!listId || !email) {
-      return NextResponse.json({ error: 'Missing listId or email' }, { status: 400 });
+      return NextResponse.json(
+        { message: 'Missing listId or email', status: 'error' },
+        { status: 400 },
+      );
     }
 
     if (contactInfo?.listIds && !contactInfo.listIds.includes(NEWSLETTER_LIST_ID)) {
       const updated = await updateContact({ email, listId: NEWSLETTER_LIST_ID });
+
       if (updated) {
         return NextResponse.json({ message: 'Contact updated successfully', status: 'success' });
       } else {
