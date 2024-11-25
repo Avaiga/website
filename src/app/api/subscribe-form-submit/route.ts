@@ -31,9 +31,12 @@ export async function POST(request: NextRequest) {
     if (contactInfo?.listIds && !contactInfo.listIds.includes(NEWSLETTER_LIST_ID)) {
       const updated = await updateContact({ email, listId: NEWSLETTER_LIST_ID });
       if (updated) {
-        return NextResponse.json({ message: 'Contact updated successfully' });
+        return NextResponse.json({ message: 'Contact updated successfully', status: 'success' });
       } else {
-        return NextResponse.json({ error: 'Failed to update contact' }, { status: 500 });
+        return NextResponse.json(
+          { message: 'Failed to update contact', status: 'error' },
+          { status: 500 },
+        );
       }
     }
 
