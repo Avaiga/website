@@ -119,7 +119,7 @@ function Form() {
         checkAgree: data.checkAgree,
       });
 
-      if (!response.ok) {
+      if (response.status === 'error') {
         const error = await response.json();
         throw new Error(
           error.message ?? 'Something went wrong. Please reload the page and try again.',
