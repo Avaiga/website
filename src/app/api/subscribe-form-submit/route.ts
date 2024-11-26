@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { NEWSLETTER_LIST_ID } from '@/constants/forms';
 
 async function updateContact({ email, listId }: { email: string; listId: number }) {
-  const response = await fetch(`https://api.brevo.com/v3/contacts`, {
+  const response = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email)}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
