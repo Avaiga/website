@@ -74,6 +74,12 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
                   document.head.appendChild(script);
                 }
 
+                function loadHandleInitialPageUrl() {
+                  if (!localStorage.getItem('initialPageUrl')) {
+                    localStorage.setItem('initialPageUrl', window.location.href);
+                  }
+                }
+
                 void 0 === window._axcb && (window._axcb = []);
                 window._axcb.push(function (axeptio) {
                   axeptio.on("ready", function() {
@@ -88,6 +94,9 @@ async function RootLayout({ children }: { children: React.ReactNode }) {
                     }
                     if (choices.clearbit) {
                       loadClearbit();
+                    }
+                    if (choices.initialPageUrl) {
+                      loadHandleInitialPageUrl();
                     }
                   });
                 });
