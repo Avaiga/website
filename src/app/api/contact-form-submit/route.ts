@@ -41,7 +41,6 @@ async function updateContact({
 
   return response;
 }
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -56,14 +55,12 @@ export async function POST(request: NextRequest) {
       checkAgree,
       contactInfo,
     } = body;
-
     if (!email || !firstName || !lastName || !listId) {
       return NextResponse.json(
         { message: 'Missing required fields', status: 'error' },
         { status: 400 },
       );
     }
-
     if (contactInfo && contactInfo.listIds) {
       const updated = await updateContact({
         email,
@@ -75,8 +72,11 @@ export async function POST(request: NextRequest) {
         listId: FORM_REQUEST_LIST_ID,
       });
 
-      if (updated) {
-        return NextResponse.json({ message: 'Contact updated successfully', status: 'success' });
+      if (updated.ok) {
+        return NextResponse.json(
+          { message: 'Contact updated successfully', status: 'success' },
+          { status: 200 },
+        );
       } else {
         return NextResponse.json(
           { message: 'Failed to update contact', status: 'error' },
@@ -105,15 +105,21 @@ export async function POST(request: NextRequest) {
         },
       }),
     });
-    // @ts-expect-error: status comparing
-    if (response.status === 'error') {
+
+    if (!response.ok) {
       const errorData = await response.json();
 
-      return NextResponse.json({ error: errorData.message }, { status: response.status });
+      return NextResponse.json({ message: errorData.message, status: 'error' }, { status: 500 });
     }
 
-    return NextResponse.json({ message: 'Contact created successfully' });
+    return NextResponse.json(
+      { message: 'New contact created successfully', status: 'success' },
+      { status: 200 },
+    );
   } catch (error) {
-    return NextResponse.json({ error: 'An unexpected error occurred' }, { status: 500 });
+    return NextResponse.json(
+      { message: 'An unexpected error occurred', status: 'error' },
+      { status: 500 },
+    );
   }
 }
