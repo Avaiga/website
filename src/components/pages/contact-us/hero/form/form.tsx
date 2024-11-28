@@ -104,6 +104,19 @@ function Form() {
     reset,
   } = useForm<FormProps>({ resolver: yupResolver(validationSchema) });
 
+  const handleError = (error: string) => {
+    setFormState(STATE.ERROR);
+    setServerError(error);
+
+    setTimeout(() => {
+      setServerError(null);
+    }, BUTTON_SUCCESS_TIMEOUT_MS);
+
+    setTimeout(() => {
+      setFormState(STATE.DEFAULT);
+    }, BUTTON_SUCCESS_TIMEOUT_MS);
+  };
+
   const onSubmit: SubmitHandler<FormProps> = async (data) => {
     setFormState(STATE.LOADING);
 
@@ -120,11 +133,11 @@ function Form() {
       });
 
       if (response.status === 'error') {
-        const error = await response.json();
-        throw new Error(
-          error.message ?? 'Something went wrong. Please reload the page and try again.',
-        );
+        handleError(response?.message);
+
+        return;
       }
+
       setFormState(STATE.SUCCESS);
       reset();
 
@@ -132,16 +145,7 @@ function Form() {
         setFormState(STATE.DEFAULT);
       }, BUTTON_SUCCESS_TIMEOUT_MS);
     } catch (err) {
-      setFormState(STATE.ERROR);
-      if (err instanceof Error) {
-        setServerError(err?.message ?? err);
-        setTimeout(() => {
-          setServerError(null);
-        }, BUTTON_SUCCESS_TIMEOUT_MS);
-      }
-      setTimeout(() => {
-        setFormState(STATE.DEFAULT);
-      }, BUTTON_SUCCESS_TIMEOUT_MS);
+      handleError('Something went wrong. Please reload the page and try again.');
     }
   };
 
