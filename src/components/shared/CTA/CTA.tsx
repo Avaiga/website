@@ -47,7 +47,7 @@ function CTA({
             Start with Taipy now
           </h3>
           <p className="relative mt-3.5 text-18 font-light lg:mt-3 lg:text-16 md:text-14 sm:mt-2.5">
-            Build Python production-ready data & AI web applications
+            Build Python production-ready Data & BI web applications
           </p>
           {isEnterprise || isDesigner ? (
             <div className="relative mx-auto mt-6 flex h-12 w-full max-w-[180px] items-center justify-center rounded-full bg-white px-5 transition-colors duration-300 hover:bg-[#E4E5E8] md:mt-5 sm:mt-4">
