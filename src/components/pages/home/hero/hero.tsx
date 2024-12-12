@@ -26,7 +26,7 @@ function Hero() {
           Go beyond existing libraries
         </span>
         <h1 className="mx-auto mt-5 max-w-[610px] text-64 font-medium leading-dense tracking-tight lg:max-w-[548px] lg:text-56 md:mt-3.5 md:max-w-[470px] md:text-48 sm:mt-2.5 sm:text-32">
-          Build Python Data &&nbsp;AI&nbsp;web applications
+          Build Python Data &&nbsp;BI&nbsp;web applications
         </h1>
         <p className="mx-auto mt-5 max-w-[600px] text-18 font-light text-white/80 lg:max-w-[536px] lg:text-16 md:mt-4 sm:mt-3 sm:text-14">
           From simple pilots to production-ready web applications in no time. No more compromise on

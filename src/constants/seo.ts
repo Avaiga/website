@@ -2,7 +2,7 @@ import { ROUTES } from './routes';
 
 export const SEO_DATA = {
   INDEX: {
-    title: 'Taipy — Build Python Data & AI web applications',
+    title: 'Taipy — Build Python Data & BI web applications',
     description:
       'From simple pilots to production-ready web applications in no times. No more compromise on performance, customization, and scalability.',
     pathname: ROUTES.INDEX as string, // /
