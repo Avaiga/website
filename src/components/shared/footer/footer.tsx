@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { useEffect, useState } from 'react';
+
 import { MENU } from '@/constants/menu';
 
 import Link from '@/components/shared/link';
@@ -7,6 +9,31 @@ import Link from '@/components/shared/link';
 import logo from '@/svgs/logo.svg';
 
 function Footer() {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className="relative bg-[linear-gradient(89.86deg,rgba(41,41,45,0.6)_-34.54%,rgba(19,19,21,0)_104.53%)] pt-16 px-safe pb-safe-or-12 before:absolute before:-top-px before:left-0 before:h-px before:w-full before:bg-[linear-gradient(90deg,#383839_4%,#5D2822_16%,#1E1E21_30%,#151517_54.82%)] lg:pt-12 lg:pb-safe-or-10 lg:before:bg-[linear-gradient(90deg,#383839_-7.32%,#5D2822_5.12%,#1E1E21_18.94%,#151517_48.93%)] md:pb-7 sm:pt-8">
       <div className="container">
@@ -20,6 +47,9 @@ function Footer() {
               height={28}
               alt="Taipy logo"
             />
+            <p className="text-sm sm:text-xs mt-2 text-white">
+              The only low-code frontend and data manager for your Python apps
+            </p>
           </Link>
           <nav className="flex gap-x-[105px] md:mt-12 md:w-full md:justify-between md:gap-x-0 md:pr-[116px] sm:mt-[26px] sm:flex-wrap sm:justify-start sm:gap-x-12 sm:gap-y-[26px] sm:pr-0">
             {MENU.footer.main.map(({ title, items }, index) => (
@@ -58,6 +88,16 @@ function Footer() {
           </p>
         </div>
       </div>
+
+      {showButton && (
+        <button
+          className="bg-gray-800 shadow-lg hover:bg-gray-700 fixed bottom-8 right-8 rounded-full p-3 text-white focus:outline-none"
+          aria-label="Scroll to top"
+          onClick={scrollToTop}
+        >
+          ↑
+        </button>
+      )}
     </footer>
   );
 }
