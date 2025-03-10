@@ -5,6 +5,7 @@ import BrainLogo from '@/images/pages/pricing/logos/brain.inline.svg';
 import CoLogo from '@/images/pages/pricing/logos/co.inline.svg';
 import ENLogo from '@/images/pages/pricing/logos/en.inline.svg';
 import IcbLogo from '@/images/pages/pricing/logos/icb.inline.svg';
+import IFPLogo from '@/images/pages/pricing/logos/ifp.inline.svg';
 import LayersLogo from '@/images/pages/pricing/logos/layers.inline.svg';
 import LesLogo from '@/images/pages/pricing/logos/les.inline.svg';
 import MicrosoftLogo from '@/images/pages/pricing/logos/microsoft.inline.svg';
@@ -12,6 +13,7 @@ import PredictiveLogo from '@/images/pages/pricing/logos/predictive.inline.svg';
 import PrincetonLogo from '@/images/pages/pricing/logos/princeton.inline.svg';
 import SuaeeLogo from '@/images/pages/pricing/logos/suaee.inline.svg';
 import TalGroupLogo from '@/images/pages/pricing/logos/tal-group.inline.svg';
+import UAELogo from '@/images/pages/pricing/logos/unae.inline.svg';
 import clsx from 'clsx';
 
 interface LogoComponents {
@@ -31,6 +33,8 @@ const logos = [
   'suaee',
   'princeton',
   'tal-group',
+  'ifp',
+  'uae',
 ];
 
 const allLogos: LogoComponents = {
@@ -46,6 +50,8 @@ const allLogos: LogoComponents = {
   suaee: SuaeeLogo,
   princeton: PrincetonLogo,
   'tal-group': TalGroupLogo,
+  ifp: IFPLogo,
+  uae: UAELogo,
 };
 
 interface LogosProps {
