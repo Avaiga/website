@@ -91,6 +91,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
                   document.head.appendChild(script);
                 }
 
+                function loadHandleInitialPageUrl() {
+                  if (!localStorage.getItem('initialPageUrl')) {
+                    localStorage.setItem('initialPageUrl', window.location.href);
+                  }
+                }
+
                 void 0 === window._axcb && (window._axcb = []);
                 window._axcb.push(function (axeptio) {
                   axeptio.on("ready", function() {
@@ -105,6 +111,9 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
                     }
                     if (choices.clearbit) {
                       loadClearbit();
+                    }
+                    if (choices.initialPageUrl) {
+                      loadHandleInitialPageUrl();
                     }
                   });
                 });

@@ -35,7 +35,7 @@ function Hero() {
         <div className="relative mt-[42px] flex justify-center gap-x-4 md:gap-x-3.5 sm:mt-6">
           <CopyButton />
           <Button
-            className="w-full max-w-[166px] md:max-w-[154px]"
+            className="plausible-event-name=Click+RequestADemoBtn+BookACall w-full max-w-[166px] md:max-w-[154px]"
             href={ROUTES.DOCUMENTATION}
             size="lg"
             theme="outline"
