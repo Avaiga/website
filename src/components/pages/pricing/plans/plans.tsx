@@ -1,4 +1,7 @@
+import { ROUTES } from '@/constants/routes';
+
 import Heading from '@/components/pages/pricing/heading';
+import Button from '@/components/shared/button';
 
 import { PlansProps } from '@/types/pricing-page';
 
@@ -14,6 +17,14 @@ function Plans({ heading, card1, card2, card3 }: PlansProps) {
           <PricingVariant type="business" cardData={card2} />
           <PricingVariant type="enterprise" cardData={card3} />
         </div>
+        <Button
+          className="plausible-event-name=Click+GetAQuoteBtn+RequestAQuote md:font-14 relative mt-2.5 w-full max-w-[180px] leading-snug lg:mt-1 md:mt-2 md:max-w-[160px]"
+          href={ROUTES.REQUEST_A_QUOTE}
+          size="lg"
+          theme="red-filled"
+        >
+          Get a quote
+        </Button>
       </div>
     </section>
   );
