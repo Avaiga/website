@@ -14,37 +14,37 @@ const CARDS = [
     title: 'Sales prediction',
     description: 'Extract data from an Excel file and derive meaningful insights',
     image: salesPrediction,
-    url: 'https://docs.taipy.io/en/release-3.0/knowledge_base/demos/sales_dashboard/',
+    url: 'https://docs.taipy.io/en/latest/gallery/articles/sales_dashboard/',
   },
   {
     title: 'Fraud Detection',
     description: 'An application that analyzes credit card transactions to detect fraud',
     image: fraudDetection,
-    url: 'https://docs.taipy.io/en/release-3.0/knowledge_base/demos/fraud_detection/',
+    url: 'https://docs.taipy.io/en/latest/gallery/articles/fraud_detection/',
   },
   {
     title: 'Drift Detection',
     description: 'The example of detecting drift on a dataset',
     image: driftDetection,
-    url: 'https://docs.taipy.io/en/release-3.0/knowledge_base/demos/drift_detection/',
+    url: 'https://docs.taipy.io/en/latest/gallery/articles/drift_detection/',
   },
   {
     title: 'Stock visualization ',
     description: 'Build a forecast data visualization dashboard effortlessly',
     image: stockVisualization,
-    url: 'https://docs.taipy.io/en/release-3.0/knowledge_base/demos/stock_visualization/',
+    url: 'https://docs.taipy.io/en/latest/gallery/articles/stock_visualization/',
   },
   {
     title: 'Pollution Dashboard',
     description: 'This application shows pollution levels around a factory in real-time',
     image: pollutionDashboard,
-    url: 'https://docs.taipy.io/en/release-3.0/knowledge_base/demos/pollution_sensors/',
+    url: 'https://docs.taipy.io/en/latest/gallery/articles/pollution_sensors/',
   },
   {
     title: 'Churn classification',
     description: 'Identify the churn rate and enhance customer loyalty',
     image: churnClassification,
-    url: 'https://docs.taipy.io/en/release-3.0/knowledge_base/demos/churn_classification/',
+    url: 'https://docs.taipy.io/en/latest/gallery/articles/churn_classification/',
   },
 ];
 
